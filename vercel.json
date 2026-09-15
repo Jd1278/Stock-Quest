@@ -1,12 +1,12 @@
 {
-  "buildCommand": "npm --prefix stock-quest run build",
-  "outputDirectory": "stock-quest/apps/web/dist",
-  "installCommand": "npm --prefix stock-quest ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "npm ci",
   "framework": null,
   "functions": {
     "api/index.js": {
       "maxDuration": 30,
-      "includeFiles": "stock-quest/apps/api/{dist,prisma}/**"
+      "includeFiles": "backend/{dist,prisma}/**"
     }
   },
   "routes": [
