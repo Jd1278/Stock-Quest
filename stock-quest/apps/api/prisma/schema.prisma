@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+  engineType = "client"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+enum Role {
+  APRENDIZ
+  LIDER
+  GESTOR_PEDAGOGICO
+}
+model User {
+  id String @id @default(cuid())
+  name String @db.VarChar(100)
+  document String @unique @db.VarChar(30)
+  email String @unique @db.VarChar(191)
+  company String @db.VarChar(100)
+  phone String? @db.VarChar(30)
+  passwordHash String
+  role Role @default(APRENDIZ)
+  active Boolean @default(true)
+  tokenVersion Int @default(0)
+  createdAt DateTime @default(now())
+  leaderId String?
+  leader User? @relation("Employees", fields: [leaderId], references: [id], onDelete: SetNull)
+  employees User[] @relation("Employees")
+  ledGroups TrainingGroup[]
+  memberships GroupMembership[]
+  progress LearningProgress[]
+  attempts ChallengeAttempt[]
+  simulations Simulation[]
+  achievements UserAchievement[]
+  @@index([leaderId, active])
+}
+model TrainingGroup {
+  id String @id @default(cuid())
+  name String @db.VarChar(100)
+  leaderId String
+  leader User @relation(fields: [leaderId], references: [id], onDelete: Restrict)
+  members GroupMembership[]
+  createdAt DateTime @default(now())
+  @@index([leaderId])
+}
+model GroupMembership {
+  groupId String
+  userId String
+  group TrainingGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@id([groupId, userId])
+  @@index([userId])
+}
+model Module {
+  id String @id @default(cuid())
+  title String @db.VarChar(150)
+  description String @db.Text
+  position Int @unique
+  published Boolean @default(false)
+  lessons Lesson[]
+}
+model Lesson {
+  id String @id @default(cuid())
+  moduleId String
+  module Module @relation(fields: [moduleId], references: [id], onDelete: Restrict)
+  title String @db.VarChar(150)
+  body String @db.Text
+  position Int
+  minutes Int @default(5)
+  contents Content[]
+  challenges Challenge[]
+  progress LearningProgress[]
+  @@unique([moduleId, position])
+}
+model Content {
+  id String @id @default(cuid())
+  lessonId String
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title String @db.VarChar(150)
+  youtubeId String @db.VarChar(11)
+}
+model Challenge {
+  id String @id @default(cuid())
+  lessonId String
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  question String @db.Text
+  options Json
+  correctIndex Int
+  explanation String @db.Text
+  attempts ChallengeAttempt[]
+}
+model ChallengeAttempt {
+  id String @id @default(cuid())
+  userId String
+  challengeId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge Challenge @relation(fields: [challengeId], references: [id], onDelete: Restrict)
+  answer Int
+  score Int
+  createdAt DateTime @default(now())
+  @@index([userId, challengeId, createdAt])
+}
+model LearningProgress {
+  userId String
+  lessonId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  completedAt DateTime @default(now())
+  @@id([userId, lessonId])
+  @@index([lessonId])
+}
+model SimulationScenario {
+  id String @id @default(cuid())
+  title String @db.VarChar(150)
+  description String @db.Text
+  initialStock Int
+  demand Json
+  leadTime Int
+  unitCost Float
+  salePrice Float
+  holdingCost Float
+  shortageCost Float
+  orderCost Float
+  maxOrder Int @default(200)
+  published Boolean @default(false)
+  simulations Simulation[]
+}
+model Simulation {
+  id String @id @default(cuid())
+  userId String
+  scenarioId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scenario SimulationScenario @relation(fields: [scenarioId], references: [id], onDelete: Restrict)
+  snapshot Json
+  decisions Json
+  day Int @default(0)
+  createdAt DateTime @default(now())
+  result SimulationResult?
+  @@index([userId, createdAt])
+}
+model SimulationResult {
+  id String @id @default(cuid())
+  simulationId String @unique
+  simulation Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  score Int
+  profit Float
+  serviceRate Float
+  feedback String @db.Text
+  timeline Json
+  createdAt DateTime @default(now())
+}
+model UserAchievement {
+  userId String
+  key String @db.VarChar(50)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  earnedAt DateTime @default(now())
+  @@id([userId, key])
+}
+
