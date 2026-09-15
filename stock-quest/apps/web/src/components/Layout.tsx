@@ -107,7 +107,7 @@ export default function Layout() {
           <Outlet />
         </main>
         <footer className="main-footer">
-          STOCK QUEST <span>Aprender. Practicar. Avanzar.</span>
+          <Brand /> <span>Aprender. Practicar. Avanzar.</span>
         </footer>
       </div>
     </div>

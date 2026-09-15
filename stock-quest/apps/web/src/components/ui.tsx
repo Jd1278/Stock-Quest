@@ -1,14 +1,10 @@
 import type { ReactNode } from "react";
-import { ArrowRight, PackageCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 export function Brand() {
   return (
     <span className="brand">
-      <span className="brand-icon">
-        <PackageCheck size={25} />
-      </span>
-      stock<span className="brand-light">quest</span>
-      <i>®</i>
+      <img className="brand-logo" src="/stock-quest-logo.png" alt="Stock Quest" width={601} height={425} />
     </span>
   );
 }

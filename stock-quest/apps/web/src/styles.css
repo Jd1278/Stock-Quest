@@ -3,15 +3,15 @@
 @tailwind utilities;
 :root {
   font-family: "DM Sans", sans-serif;
-  color: #19343b;
-  background: #f5f7f8;
+  color: #0b203d;
+  background: #f5f6fa;
   font-synthesis: none;
   font-size: 16px;
-  --ink: #19343b;
-  --muted: #64767b;
-  --line: #dde5e7;
-  --green: #bce76b;
-  --teal: #1f6465;
+  --ink: #0b203d;
+  --muted: #5f6b83;
+  --line: #dce1ec;
+  --gold: #eb8b13;
+  --blue: #243f78;
 }
 * {
   box-sizing: border-box;
@@ -48,7 +48,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid #258b8c;
+  outline: 3px solid #a96708;
   outline-offset: 3px;
 }
 h1,
@@ -96,7 +96,7 @@ small {
 .brand-icon {
   display: grid;
   place-items: center;
-  background: var(--green);
+  background: var(--gold);
   color: var(--ink);
   width: 39px;
   height: 39px;
@@ -117,7 +117,7 @@ small {
   letter-spacing: 1.6px;
   font-weight: 700;
   display: block;
-  color: var(--teal);
+  color: var(--blue);
 }
 .button {
   background: var(--ink);
@@ -135,7 +135,7 @@ small {
   transition: background 0.15s;
 }
 .button:hover {
-  background: #2a5257;
+  background: #243f78;
 }
 .button.secondary {
   background: white;
@@ -143,7 +143,7 @@ small {
   border-color: var(--line);
 }
 .button.secondary:hover {
-  background: #eef4f4;
+  background: #eef1f8;
 }
 .button.danger {
   background: #a52c36;
@@ -166,7 +166,7 @@ small {
 .field select,
 .field textarea {
   width: 100%;
-  border: 1px solid #ccd8db;
+  border: 1px solid #cbd3e3;
   border-radius: 7px;
   padding: 12px;
   background: white;
@@ -198,8 +198,8 @@ small {
   color: #963c2d;
 }
 .notice.success {
-  background: #eaf4df;
-  color: #355524;
+  background: #fff3d9;
+  color: #704508;
 }
 .empty {
   padding: 35px;
@@ -214,7 +214,7 @@ small {
 }
 .auth-story {
   padding: 48px 10%;
-  background: #142f36;
+  background: #0b203d;
   color: white;
   display: flex;
   flex-direction: column;
@@ -229,23 +229,23 @@ small {
   margin: 20px 0 26px;
 }
 .auth-story h1 em {
-  color: var(--green);
+  color: var(--gold);
   font-style: normal;
 }
 .auth-story p {
-  color: #b0c4c8;
+  color: #bac5dc;
   max-width: 390px;
   font-size: 1.05rem;
 }
 .auth-story .eyebrow {
-  color: #b2d884;
+  color: #eb8b13;
 }
 .auth-benefits {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 30px;
-  color: #e3ecee;
+  color: #edf0f7;
   font-size: 0.9rem;
 }
 .auth-benefits span {
@@ -254,7 +254,7 @@ small {
   align-items: center;
 }
 .auth-benefits svg {
-  color: var(--green);
+  color: var(--gold);
 }
 .auth-footer {
   display: flex;
@@ -262,7 +262,7 @@ small {
   align-items: center;
   font-size: 0.7rem;
   letter-spacing: 1.7px;
-  color: #a0b9be;
+  color: #b2bfd9;
 }
 .auth-form {
   padding: 70px max(35px, 12%);
@@ -284,7 +284,7 @@ small {
   font-size: 0.9rem;
 }
 .auth-switch button {
-  color: var(--teal);
+  color: var(--blue);
   font-weight: 700;
 }
 .app-shell {
@@ -305,7 +305,7 @@ small {
   font-size: 0.63rem;
   font-weight: 700;
   letter-spacing: 1.3px;
-  color: #87969a;
+  color: #64718a;
   margin: 45px 12px 16px;
 }
 .sidebar nav {
@@ -324,8 +324,8 @@ small {
   font-weight: 500;
 }
 .sidebar nav a.active {
-  background: #eaf2e2;
-  color: #254a37;
+  background: #fff0cc;
+  color: #0b203d;
   font-weight: 700;
 }
 .sidebar-tip {
@@ -333,7 +333,7 @@ small {
   padding: 24px 14px 16px;
 }
 .sidebar-tip > svg {
-  color: var(--teal);
+  color: var(--blue);
   margin: 18px 0 12px;
 }
 .sidebar-tip strong {
@@ -359,8 +359,8 @@ small {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #e7ecdf;
-  color: #44623b;
+  background: #ffe4a6;
+  color: #704508;
   font-weight: 700;
   font-size: 0.75rem;
 }
@@ -435,7 +435,7 @@ small {
   border-radius: 20px;
 }
 .learning-hero {
-  background: #173c42;
+  background: #172b55;
   color: white;
   border-radius: 14px;
   display: grid;
@@ -444,7 +444,7 @@ small {
   gap: 40px;
 }
 .learning-hero .eyebrow {
-  color: #c1e58c;
+  color: #eb8b13;
   font-size: 0.65rem;
 }
 .learning-hero h2 {
@@ -453,16 +453,16 @@ small {
   max-width: 520px;
 }
 .learning-hero p {
-  color: #b8ccd0;
+  color: #c0cae0;
   max-width: 480px;
   font-size: 0.9rem;
 }
 .learning-hero .button {
-  background: var(--green);
+  background: var(--gold);
   color: var(--ink);
 }
 .hero-progress {
-  border-left: 1px solid #36565b;
+  border-left: 1px solid #354a73;
   padding-left: 34px;
   display: flex;
   flex-direction: column;
@@ -471,7 +471,7 @@ small {
 .hero-progress > span {
   font-size: 0.65rem;
   letter-spacing: 1.7px;
-  color: #b8ccd0;
+  color: #c0cae0;
 }
 .hero-progress strong {
   font-family: "Space Grotesk", sans-serif;
@@ -480,7 +480,7 @@ small {
 }
 .hero-progress strong small {
   font-size: 1.7rem;
-  color: #a9c6c9;
+  color: #b8c5e0;
   margin-left: 4px;
 }
 .hero-progress p {
@@ -489,21 +489,21 @@ small {
 }
 .progress-track {
   height: 6px;
-  background: #e2e9e8;
+  background: #e1e6f0;
   border-radius: 6px;
   overflow: hidden;
 }
 .progress-track span {
   height: 100%;
   display: block;
-  background: #448177;
+  background: #a96708;
   border-radius: 6px;
 }
 .hero-progress .progress-track {
-  background: #36585d;
+  background: #354a73;
 }
 .hero-progress .progress-track span {
-  background: var(--green);
+  background: var(--gold);
 }
 .stats-grid {
   display: grid;
@@ -578,7 +578,7 @@ small {
 }
 .module-number {
   flex-shrink: 0;
-  background: #edf1e7;
+  background: #fff3d9;
   width: 44px;
   height: 44px;
   border-radius: 10px;
@@ -586,10 +586,10 @@ small {
   place-items: center;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
-  color: #517142;
+  color: #704508;
 }
 .module-number.done {
-  background: #e2f0d0;
+  background: #ffe4a6;
 }
 .module-top .eyebrow {
   font-size: 0.6rem;
@@ -606,7 +606,7 @@ small {
 }
 .module-status {
   font-size: 0.65rem;
-  color: var(--teal);
+  color: var(--blue);
   margin-left: auto;
   white-space: nowrap;
 }
@@ -614,14 +614,14 @@ small {
   padding: 0 23px;
 }
 .lesson-row {
-  border-top: 1px solid #edf0f1;
+  border-top: 1px solid #edf0f6;
   display: flex;
   align-items: center;
   gap: 13px;
   padding: 14px 0;
 }
 .lesson-row > span {
-  color: #648b70;
+  color: #815009;
 }
 .lesson-row > div {
   flex: 1;
@@ -638,14 +638,14 @@ small {
   margin-top: 5px;
 }
 .lesson-row a {
-  background: #eff4eb;
+  background: #fff3d9;
   border-radius: 6px;
   padding: 6px;
 }
 .module-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #edf0f1;
+  border-top: 1px solid #edf0f6;
   padding: 12px 23px;
   color: var(--muted);
   font-size: 0.65rem;
@@ -656,11 +656,11 @@ small {
   align-items: center;
 }
 .locked .module-number {
-  background: #f1f3f4;
-  color: #8b999d;
+  background: #f1f3f8;
+  color: #69758b;
 }
 .locked .module-top .eyebrow {
-  color: #7a8b90;
+  color: #64718a;
 }
 .learning-aside {
   display: flex;
@@ -668,8 +668,8 @@ small {
   gap: 20px;
 }
 .sim-promo {
-  background: #e6eee1;
-  border: 1px solid #d6e2cf;
+  background: #fff3d9;
+  border: 1px solid #eed4a0;
   border-radius: 12px;
   padding: 27px 24px;
 }
@@ -679,8 +679,8 @@ small {
   width: 62px;
   height: 62px;
   border-radius: 15px;
-  background: #d2dfc7;
-  color: #3b694d;
+  background: #eb8b13;
+  color: #0b203d;
   margin-bottom: 25px;
 }
 .sim-promo .eyebrow {
@@ -693,7 +693,7 @@ small {
 }
 .sim-promo p {
   font-size: 0.83rem;
-  color: #617561;
+  color: #6c5838;
 }
 .sim-promo .button {
   font-size: 0.78rem;
@@ -722,11 +722,11 @@ small {
 }
 .formula {
   display: block;
-  background: #f3f6f7;
+  background: #f3f5fa;
   padding: 13px;
   border-radius: 6px;
   font-size: 0.78rem;
-  color: #526d74;
+  color: #536483;
   line-height: 1.7;
 }
 .main-footer {
@@ -736,7 +736,7 @@ small {
   border-top: 1px solid var(--line);
   font-size: 0.65rem;
   letter-spacing: 1px;
-  color: #7b9096;
+  color: #63718c;
 }
 .main-footer span {
   letter-spacing: 0;
@@ -792,11 +792,11 @@ small {
   cursor: pointer;
 }
 .answer-option.selected {
-  border-color: #6c926c;
-  background: #f0f6e8;
+  border-color: #a96708;
+  background: #fff3d9;
 }
 .answer-option input {
-  accent-color: #356c4b;
+  accent-color: #a96708;
 }
 .scenario-grid {
   display: grid;
@@ -804,7 +804,7 @@ small {
   gap: 24px;
 }
 .scenario-card > svg {
-  color: var(--teal);
+  color: var(--blue);
   margin-bottom: 24px;
 }
 .scenario-card .eyebrow {
@@ -837,7 +837,7 @@ small {
   aspect-ratio: 800/430;
   border-radius: 12px;
   overflow: hidden;
-  background: #142d35;
+  background: #0b203d;
 }
 .game-host canvas {
   display: block;
@@ -869,7 +869,7 @@ th {
   font-size: 0.7rem;
   color: var(--muted);
   font-weight: 600;
-  background: #f5f7f8;
+  background: #f5f6fa;
   white-space: nowrap;
 }
 th,
@@ -910,8 +910,8 @@ td small {
   margin-top: 20px;
 }
 .badge {
-  background: #eff5e5;
-  border: 1px solid #dce8cb;
+  background: #fff3d9;
+  border: 1px solid #eed4a0;
   border-radius: 10px;
   padding: 15px;
   display: flex;
@@ -962,8 +962,8 @@ td small {
   font-size: 0.85rem;
 }
 .editor-list > button.selected {
-  border-color: #72966a;
-  background: #f1f6e9;
+  border-color: #a96708;
+  background: #fff3d9;
 }
 .editor-list small {
   display: block;
@@ -1184,7 +1184,7 @@ td small {
   .hero-progress {
     padding: 17px 0 0;
     border: 0;
-    border-top: 1px solid #36565b;
+    border-top: 1px solid #354a73;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -1268,4 +1268,30 @@ td small {
     display: inline-flex;
     margin-left: 10px;
   }
+}
+
+/* Original logo: preserve its white background and full proportions. */
+.brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 190px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.auth-story > .brand { width: 220px; }
+.auth-footer .brand, .main-footer .brand { width: 96px; }
+.main-footer { align-items: center; gap: 16px; }
+@media (max-width: 900px) {
+  .sidebar .brand { width: 146px; }
+}
+@media (max-width: 600px) {
+  .sidebar .brand, .auth-story > .brand { width: 130px; }
 }

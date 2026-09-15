@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { ArrowRight, Boxes, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useAuth } from "../stores/auth";
 import { authService } from "../services";
 import { useAction } from "../hooks/useResource";
@@ -43,7 +43,7 @@ export default function AuthPage() {
           </div>
         </div>
         <span className="auth-footer">
-          <Boxes /> STOCK QUEST / ACADEMIA LOGÍSTICA
+          <Brand /> ACADEMIA LOGÍSTICA
         </span>
       </section>
       <section className="auth-form">

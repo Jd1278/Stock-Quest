@@ -13,23 +13,23 @@ export function createInventoryGame(
     private dayText!: Phaser.GameObjects.Text;
     private stockBlocks: Phaser.GameObjects.Rectangle[] = [];
     create() {
-      this.cameras.main.setBackgroundColor("#142d35");
+      this.cameras.main.setBackgroundColor("#0b203d");
       this.add.text(30, 24, "BODEGA / OPERACIÓN DIARIA", {
         fontFamily: "monospace",
         fontSize: "16px",
-        color: "#b4d3d4",
+        color: "#c0cae0",
       });
       for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 8; col++) {
           const x = 65 + col * 66,
             y = 125 + row * 68;
           this.add
-            .rectangle(x, y, 54, 48, 0x25444a)
-            .setStrokeStyle(1, 0x42636a);
-          const block = this.add.rectangle(x, y, 40, 32, 0xe8b065);
+            .rectangle(x, y, 54, 48, 0x24385f)
+            .setStrokeStyle(1, 0x49608b);
+          const block = this.add.rectangle(x, y, 40, 32, 0xce740c);
           this.stockBlocks.push(block);
         }
-        this.add.rectangle(296, 154 + row * 68, 544, 6, 0x759094);
+        this.add.rectangle(296, 154 + row * 68, 544, 6, 0x8292b1);
       }
       this.stockText = this.add.text(32, 335, "", {
         fontFamily: "monospace",
@@ -39,24 +39,24 @@ export function createInventoryGame(
       this.dayText = this.add.text(32, 375, "", {
         fontFamily: "monospace",
         fontSize: "15px",
-        color: "#acc9cd",
+        color: "#b8c5e0",
       });
       const order = this.add
-        .rectangle(676, 174, 158, 84, 0xbce76b)
+        .rectangle(676, 174, 158, 84, 0xeb8b13)
         .setInteractive({ useHandCursor: true });
       this.add
         .text(676, 174, "PREPARAR\nPEDIDO", {
           align: "center",
           fontFamily: "monospace",
           fontSize: "17px",
-          color: "#142d35",
+          color: "#0b203d",
         })
         .setOrigin(0.5);
       order.on("pointerdown", () => bridge.onOrder());
       this.add.text(607, 246, "PROVEEDOR", {
         fontFamily: "monospace",
         fontSize: "14px",
-        color: "#b4d3d4",
+        color: "#c0cae0",
       });
       this.game.events.on("inventory:state", this.updateStock, this);
       this.events.once("shutdown", () =>
@@ -76,7 +76,7 @@ export function createInventoryGame(
         block.setAlpha(i < visible ? 1 : 0);
       });
       if (run.day > 0) {
-        const marker = this.add.circle(720, 310, 9, 0xbce76b);
+        const marker = this.add.circle(720, 310, 9, 0xeb8b13);
         this.tweens.add({
           targets: marker,
           x: 350,
@@ -91,7 +91,7 @@ export function createInventoryGame(
     parent,
     width: 800,
     height: 430,
-    backgroundColor: "#142d35",
+    backgroundColor: "#0b203d",
     scene: WarehouseScene,
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     render: { antialias: true },
