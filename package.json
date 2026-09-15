@@ -1,0 +1,10 @@
+{
+  "name": "stock-quest-repo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix stock-quest run build",
+    "install": "npm --prefix stock-quest ci",
+    "test": "npm --prefix stock-quest test"
+  }
+}
