@@ -4,7 +4,7 @@ Usa https://dashboard.render.com/select-repo?type=blueprint y selecciona Jd1278/
 
 Introduce DATABASE_URL usando la External Database URL de tu base Render, comenzando por postgresql:// y añadiendo ?sslmode=require. No incluyas comillas, DATABASE_URL= ni espacios. JWT_SECRET se genera automáticamente. No necesitas VITE_API_URL ni FRONTEND_URL: se usa /api y RENDER_EXTERNAL_URL.
 
-Build: npm ci && npm run build
+Build: npm ci --include=dev && npm run build
 Start: npm run db:migrate && npm run start -w @stock-quest/api
 Root Directory: raíz del repositorio (vacío).
 
