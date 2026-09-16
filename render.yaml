@@ -1,22 +1,23 @@
 services:
   - type: web
-    name: stock-quest-api
+    name: stock-quest
     runtime: node
-    buildCommand: npm ci && npm run build -w @stock-quest/api
-    preDeployCommand: npm run db:migrate
-    startCommand: npm run start -w @stock-quest/api
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm run db:migrate && npm run start -w @stock-quest/api
     healthCheckPath: /api/health
-    autoDeploy: false
     envVars:
       - key: NODE_VERSION
         value: 22.18.0
       - key: NODE_ENV
         value: production
+      - key: SERVE_WEB
+        value: "true"
       - key: DATABASE_URL
         sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 8h
-      - key: FRONTEND_URL
-        sync: false

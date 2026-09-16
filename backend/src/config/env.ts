@@ -7,7 +7,7 @@ const schema = z.object({
     .string()
     .regex(/^\d+[smhd]$/)
     .default("8h"),
-  FRONTEND_URL: z.string().url().default("http://localhost:5173"),
+  FRONTEND_URL: z.string().url().default(process.env.RENDER_EXTERNAL_URL || "http://localhost:5173"),
   PORT: z.coerce.number().int().positive().default(4000),
 });
 export const config = schema.parse(process.env);
