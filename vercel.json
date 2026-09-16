@@ -6,7 +6,11 @@
   "functions": {
     "api/index.js": {
       "maxDuration": 30,
-      "includeFiles": "backend/{dist,prisma}/**,node_modules/.prisma/client/**,node_modules/@prisma/adapter-pg/**"
+      "includeFiles": [
+        "backend/{dist,prisma}/**",
+        "node_modules/.prisma/client/**",
+        "node_modules/@prisma/adapter-pg/**"
+      ]
     }
   },
   "routes": [
