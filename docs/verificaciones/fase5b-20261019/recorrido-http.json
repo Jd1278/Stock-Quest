@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checks": [
+    "authentication-and-role-restrictions",
+    "draft-content-is-private-and-admin-contracts-match",
+    "sequential-unlock-and-hidden-answers",
+    "attempts-feedback-and-best-score-xp",
+    "completion-is-idempotent-and-next-lesson-unlocks",
+    "put-without-youtube-removes-video-and-position-conflict-is409",
+    "simulation-summary-composes-learning-progress-and-leader-report",
+    "real-outbox-to-java-inbox-and-duplicate-delivery",
+    "legacy-learning-has-no-writes-in-java-mode",
+    "learning-outage-returns503-without-fallback",
+    "restart-preserves-learning-and-simulation-progress"
+  ],
+  "userId": "cmvfljy410000qkis60rjue7u",
+  "simulationId": "be74c146-e6f9-4286-869e-e80d1c799594",
+  "runId": "501e4544-2703-4916-beaf-d7778bc8a7aa",
+  "databases": {
+    "learning": "sq_test_learning_phase5b_20261019",
+    "simulation": "sq_test_simulation_phase5b_20261019",
+    "backend": "sq_test_backend_phase5b_20261019"
+  },
+  "ports": [
+    14000,
+    14010,
+    14020
+  ],
+  "finishedAt": "2026-10-19T18:37:54.743Z"
+}

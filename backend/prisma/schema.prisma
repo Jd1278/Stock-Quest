@@ -157,3 +157,11 @@ model UserAchievement {
   @@id([userId, key])
 }
 
+model SimulationEventInbox {
+  eventId String @id @db.Uuid
+  simulationId String @unique @db.VarChar(100)
+  userId String @db.VarChar(100)
+  payloadHash String @db.VarChar(64)
+  receivedAt DateTime @default(now())
+}
+

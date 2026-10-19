@@ -1,6 +1,10 @@
 import { db, repository, AppError, publicUser } from "../repositories";
+import { javaSimulationEnabled, simulationGateway } from "./simulationGateway";
+import { javaLearningEnabled, learningGateway } from "./learningGateway";
+import { requireLegacyPeople } from "./peopleGateway";
 export const progressService = {
   async report(userId: string) {
+    if (javaLearningEnabled()) return (await learningGateway.report(userId)).progress;
     const [modules, completed, attempts, runs, achievements] =
       await Promise.all([
         repository.curriculum(),
@@ -10,12 +14,22 @@ export const progressService = {
           include: { challenge: { select: { lessonId: true } } },
           orderBy: { createdAt: "asc" },
         }),
-        db.simulation.findMany({
+        javaSimulationEnabled() ? Promise.resolve([]) : db.simulation.findMany({
           where: { userId, result: { isNot: null } },
           include: { result: true },
         }),
         db.userAchievement.findMany({ where: { userId } }),
       ]);
+    const simulationSummary = javaSimulationEnabled() ? await simulationGateway.summary(userId) : {
+      completedCount: runs.length,
+      scoreTotal: runs.reduce((sum, r) => sum + (r.result?.score ?? 0), 0),
+      hasPassingRun: runs.some(r => (r.result?.score ?? 0) >= 70),
+      firstCompletedAt: null,
+    };
+    const visibleAchievements = javaSimulationEnabled() ? achievements.filter(a => a.key !== "PRIMERA_SIMULACION") : [...achievements];
+    if (javaSimulationEnabled() && simulationSummary.firstCompletedAt) visibleAchievements.push({
+      userId, key: "PRIMERA_SIMULACION", earnedAt: new Date(simulationSummary.firstCompletedAt),
+    });
     const done = new Set(completed.map((p) => p.lessonId));
     const best = new Map<string, number>();
     for (const a of attempts)
@@ -42,7 +56,7 @@ export const progressService = {
     const xp =
       count * 50 +
       [...best.values()].reduce((n, v) => n + v / 5, 0) +
-      runs.reduce((sum, r) => sum + (r.result?.score ?? 0), 0);
+      simulationSummary.scoreTotal;
     return {
       completed: count,
       total,
@@ -50,12 +64,12 @@ export const progressService = {
       xp,
       level: Math.floor(xp / 250) + 1,
       topics,
-      achievements,
-      simulations: runs.length,
+      achievements: visibleAchievements,
+      simulations: simulationSummary.completedCount,
       passed:
         total > 0 &&
         count === total &&
-        runs.some((r) => (r.result?.score ?? 0) >= 70),
+        simulationSummary.hasPassingRun,
       recommendations: topics
         .filter((t) => t.needsReview)
         .map(
@@ -65,6 +79,7 @@ export const progressService = {
     };
   },
   async team(leaderId: string) {
+    requireLegacyPeople();
     const users = await db.user.findMany({
       where: { leaderId, role: "APRENDIZ" },
       select: publicUser,
@@ -77,11 +92,16 @@ export const progressService = {
     );
   },
   async employee(leaderId: string, userId: string) {
+    requireLegacyPeople();
     const user = await db.user.findFirst({
       where: { id: userId, leaderId, role: "APRENDIZ" },
       select: publicUser,
     });
     if (!user) throw new AppError(404, "Aprendiz no encontrado en tu equipo.");
+    if (javaLearningEnabled()) {
+      const report = await learningGateway.report(userId);
+      return { ...user, progress: report.progress, activities: report.activities };
+    }
     return {
       ...user,
       progress: await this.report(userId),
@@ -101,15 +121,20 @@ export const progressService = {
   },
 };
 export const groupService = {
-  list: (leaderId: string) =>
-    db.trainingGroup.findMany({
+  list: (leaderId: string) => {
+    requireLegacyPeople();
+    return db.trainingGroup.findMany({
       where: { leaderId },
       include: { members: { include: { user: { select: publicUser } } } },
       orderBy: { createdAt: "desc" },
-    }),
-  create: (leaderId: string, name: string) =>
-    db.trainingGroup.create({ data: { leaderId, name } }),
+    });
+  },
+  create: (leaderId: string, name: string) => {
+    requireLegacyPeople();
+    return db.trainingGroup.create({ data: { leaderId, name } });
+  },
   async own(leaderId: string, id: string) {
+    requireLegacyPeople();
     if (!(await db.trainingGroup.findFirst({ where: { id, leaderId } })))
       throw new AppError(404, "Grupo no encontrado.");
   },

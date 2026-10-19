@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-19T19:06:42.496Z",
+  "checks": {
+    "people": {
+      "database": "sq_test_people_phase5c_final_20261019",
+      "rows": [
+        {
+          "role": "APRENDIZ",
+          "active": true,
+          "token_version": 3,
+          "bcrypt_cost_12": true,
+          "assigned_leader": true
+        }
+      ]
+    },
+    "learning": {
+      "database": "sq_test_learning_phase5c_final_20261019",
+      "rows": [
+        {
+          "completed_lessons": 1,
+          "inbox_entries": 1,
+          "achievements": 2
+        }
+      ]
+    },
+    "simulation": {
+      "database": "sq_test_simulation_phase5c_final_20261019",
+      "rows": [
+        {
+          "score": 86,
+          "profit": 18,
+          "event_status": "DELIVERED"
+        }
+      ]
+    },
+    "originalSimulation": {
+      "database": "stockquest_test_simulation",
+      "rows": [
+        {
+          "score": 86,
+          "profit": 18
+        }
+      ]
+    }
+  }
+}

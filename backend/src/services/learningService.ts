@@ -1,6 +1,8 @@
 import { db, AppError, repository } from "../repositories";
+import { requireLegacyLearning } from "./learningGateway";
 export const learningService = {
   async path(userId: string) {
+    requireLegacyLearning();
     const [modules, completed] = await Promise.all([
       repository.curriculum(),
       repository.completed(userId),
@@ -19,6 +21,7 @@ export const learningService = {
     }));
   },
   async lesson(userId: string, lessonId: string) {
+    requireLegacyLearning();
     const modules = await this.path(userId);
     const lesson = modules
       .flatMap((m) => m.lessons)
@@ -29,6 +32,7 @@ export const learningService = {
     return lesson;
   },
   async complete(userId: string, lessonId: string) {
+    requireLegacyLearning();
     const lesson = await this.lesson(userId, lessonId);
     for (const challenge of lesson.challenges) {
       const pass = await db.challengeAttempt.findFirst({
@@ -45,6 +49,7 @@ export const learningService = {
     return { message: "Lección completada. La siguiente ya está disponible." };
   },
   async answer(userId: string, id: string, answer: number) {
+    requireLegacyLearning();
     const challenge = await db.challenge.findUnique({ where: { id } });
     if (!challenge) throw new AppError(404, "Desafío no encontrado.");
     await this.lesson(userId, challenge.lessonId);

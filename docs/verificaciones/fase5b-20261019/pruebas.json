@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-19",
+  "timezone": "America/Bogota",
+  "java": [
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.AprendizajeTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.HttpAprendizajeTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.ResultadosSimulacionHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "failsafe",
+      "suite": "com.stockquest.aprendizaje.PersistenciaAprendizajeIT",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.EscenariosHttpTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.FiltroServicioTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.GestionEscenariosTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.IdentidadHttpTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.MotorInventarioTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.partidas.Infrastructure.events.OutboxDispatcherTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.PartidasHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.RegistrarDecisionTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "failsafe",
+      "suite": "com.stockquest.simulacion.PersistenciaPostgresIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "backend": {
+    "source": "Observed Jest command output",
+    "suites": 8,
+    "tests": 47,
+    "passed": 47,
+    "failed": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "source": "Jest JSON report",
+    "suites": 4,
+    "tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "totalUniqueTests": 131,
+  "e2eChecks": 11
+}

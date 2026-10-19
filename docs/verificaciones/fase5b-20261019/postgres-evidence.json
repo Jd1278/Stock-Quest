@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-19T18:39:13.002Z",
+  "checks": {
+    "originalBackend": {
+      "database": "stockquest_test_backend",
+      "rows": [
+        {
+          "learner_count": 1,
+          "inbox_count": 1,
+          "achievement_count": 1
+        }
+      ]
+    },
+    "originalSimulation": {
+      "database": "stockquest_test_simulation",
+      "rows": [
+        {
+          "day": 3,
+          "score": 86,
+          "profit": 18
+        }
+      ]
+    },
+    "verificationDelivery": {
+      "database": "sq_test_simulation_phase5b_20261019",
+      "rows": [
+        {
+          "event_type": "SimulacionFinalizada",
+          "status": "DELIVERED",
+          "consumer": "legacy-learning",
+          "delivery_status": "DELIVERED",
+          "attempts": 1
+        }
+      ]
+    }
+  }
+}

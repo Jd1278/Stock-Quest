@@ -4,8 +4,10 @@ import { z } from "zod";
 import { config } from "../config/env";
 import { db, repository, AppError } from "../repositories";
 import { registration, profile } from "../validators";
+import { requireLegacyPeople } from "./peopleGateway";
 export const authService = {
   async register(input: z.infer<typeof registration>, leaderId?: string) {
+    requireLegacyPeople();
     const { password, ...data } = input;
     const user = await db.user.create({
       data: {
@@ -18,6 +20,7 @@ export const authService = {
     return repository.profile(user.id);
   },
   async login(email: string, password: string) {
+    requireLegacyPeople();
     const user = await repository.userByEmail(email);
     if (
       !user ||
@@ -35,12 +38,14 @@ export const authService = {
     return { token, user: await repository.profile(user.id) };
   },
   async logout(id: string) {
+    requireLegacyPeople();
     await db.user.update({
       where: { id },
       data: { tokenVersion: { increment: 1 } },
     });
   },
   async update(id: string, input: z.infer<typeof profile>) {
+    requireLegacyPeople();
     const { password, currentPassword, ...data } = input;
     const user = await repository.userById(id);
     if (!user) throw new AppError(404, "Usuario no encontrado.");

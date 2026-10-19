@@ -1,0 +1,44 @@
+{
+  "status": "phase-5C-three-java-services-implemented-isolated-tests-passed-global-acceptance-pending",
+  "referenceCommit": "0547d891c06e6f0c7160ecb4cd0598d7cf0f1312",
+  "rules": [
+    "One active writer per capability",
+    "No cross-service foreign keys or SQL",
+    "Derived projections never own source data",
+    "New development databases; no historical migration or deletion authorized"
+  ],
+  "models": {
+    "User": "personas-capacitacion",
+    "TrainingGroup": "personas-capacitacion",
+    "GroupMembership": "personas-capacitacion",
+    "Module": "aprendizaje-evaluacion",
+    "Lesson": "aprendizaje-evaluacion",
+    "Content": "aprendizaje-evaluacion",
+    "Challenge": "aprendizaje-evaluacion",
+    "ChallengeAttempt": "aprendizaje-evaluacion",
+    "LearningProgress": "aprendizaje-evaluacion",
+    "UserAchievement": "aprendizaje-evaluacion",
+    "SimulationEventInbox": "aprendizaje-evaluacion",
+    "SimulationScenario": "simulacion-logistica",
+    "Simulation": "simulacion-logistica",
+    "SimulationResult": "simulacion-logistica"
+  },
+  "externalReferences": [
+    {
+      "from": "ChallengeAttempt.userId",
+      "toService": "personas-capacitacion"
+    },
+    {
+      "from": "LearningProgress.userId",
+      "toService": "personas-capacitacion"
+    },
+    {
+      "from": "UserAchievement.userId",
+      "toService": "personas-capacitacion"
+    },
+    {
+      "from": "Simulation.userId",
+      "toService": "personas-capacitacion"
+    }
+  ]
+}

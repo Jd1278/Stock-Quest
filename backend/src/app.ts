@@ -1,4 +1,5 @@
 import express from "express";
+import { randomUUID } from "node:crypto";
 import path from "node:path";
 import helmet from "helmet";
 import cors from "cors";
@@ -6,6 +7,7 @@ import rateLimit from "express-rate-limit";
 import { config } from "./config/env";
 import { router } from "./routes";
 import { errorHandler } from "./middlewares";
+import { internalEvents } from "./routes/internalEvents";
 export const app = express();
 app.disable("x-powered-by");
 if (process.env.NODE_ENV === "production") app.set("trust proxy", 1);
@@ -24,9 +26,17 @@ app.use(
   cors({
     origin: config.FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Correlation-Id"],
+    exposedHeaders: ["X-Correlation-Id"],
   }),
 );
+app.use((req, res, next) => {
+  const received = req.get("X-Correlation-Id");
+  const correlation = received && /^[A-Za-z0-9._-]{1,100}$/.test(received) ? received : randomUUID();
+  req.headers["x-correlation-id"] = correlation;
+  res.setHeader("X-Correlation-Id", correlation);
+  next();
+});
 app.use(express.json({ limit: "256kb" }));
 app.use(
   rateLimit({
@@ -38,6 +48,7 @@ app.use(
   }),
 );
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
+app.use("/internal", internalEvents);
 app.use("/api", router);
 if (process.env.SERVE_WEB === "true") {
   const webRoot = path.resolve(__dirname, "../../frontend/dist");

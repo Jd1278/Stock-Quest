@@ -1,9 +1,12 @@
 import { app } from "./app";
 import { config } from "./config/env";
 import { db } from "./repositories";
+import { javaPeopleEnabled } from "./services/peopleGateway";
 async function start() {
-  await db.$connect();
-  await db.$queryRaw`SELECT 1`;
+  if (!javaPeopleEnabled()) {
+    await db.$connect();
+    await db.$queryRaw`SELECT 1`;
+  }
   const server = app.listen(config.PORT, () =>
     console.log(`Stock Quest API http://localhost:${config.PORT}`),
   );

@@ -2,6 +2,7 @@ import { Router } from "express";
 import rateLimit from "express-rate-limit";
 import { controller as c } from "../controllers";
 import { authenticate, authorize, asyncRoute as a } from "../middlewares";
+import { javaPeopleEnabled, peopleGateway } from "../services/peopleGateway";
 export const router = Router();
 const authLimit = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -13,6 +14,13 @@ const authLimit = rateLimit({
 router.post("/auth/register", authLimit, a(c.register));
 router.post("/auth/login", authLimit, a(c.login));
 router.use(authenticate);
+router.use(a(async (req, res, next) => {
+  if (javaPeopleEnabled() && /^\/(auth|users|groups|reports)(\/|$)/.test(req.path)) {
+    await peopleGateway.forward(req, res, "/api" + req.path, ["POST", "PUT", "PATCH"].includes(req.method) ? req.body : undefined);
+    return;
+  }
+  next();
+}));
 router.post("/auth/logout", a(c.logout));
 router.get("/auth/me", a(c.me));
 router.patch("/users/me", a(c.profile));

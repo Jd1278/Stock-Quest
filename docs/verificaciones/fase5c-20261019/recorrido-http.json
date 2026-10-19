@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checks": [
+    "edge-operates-without-a-prisma-connection",
+    "bcrypt-node-java-and-jwt-contract-compatible",
+    "registration-uniqueness-and-role-injection-protection",
+    "groups-memberships-idempotence-and-public-shape",
+    "leader-boundaries-and-group-role-restrictions",
+    "java-identity-authorizes-learning-and-administration",
+    "all-three-java-services-compose-progress-and-reports",
+    "simulation-event-delivered-to-java-learning",
+    "logout-revokes-at-edge-and-dependent-services",
+    "deactivation-reactivation-never-restores-old-session",
+    "profile-sensitive-changes-require-password-and-revoke-session",
+    "membership-removal-and-group-deletion-contract",
+    "identity-outage-is503-without-legacy-fallback",
+    "identity-restart-preserves-accounts-revocation-and-progress"
+  ],
+  "userId": "d4c91468-2cdf-4b7e-8adb-877454c461f1",
+  "simulationId": "5b39e638-843a-4d54-918f-4a1880ebd770",
+  "runId": "3c9ee351-21a4-472f-98b3-d7cc0bf525ac",
+  "databases": {
+    "people": "sq_test_people_phase5c_final_20261019",
+    "learning": "sq_test_learning_phase5c_final_20261019",
+    "simulation": "sq_test_simulation_phase5c_final_20261019"
+  },
+  "ports": [
+    14400,
+    14410,
+    14420,
+    14430
+  ],
+  "finishedAt": "2026-10-19T19:05:46.869Z"
+}

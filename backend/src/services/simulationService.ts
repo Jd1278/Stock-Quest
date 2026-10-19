@@ -2,6 +2,10 @@ import { Prisma } from "@prisma/client";
 import { db, AppError } from "../repositories";
 import { scenarioInput } from "../validators";
 import { evaluate } from "./simulationEngine";
+import { javaSimulationEnabled } from "./simulationGateway";
+function requireLegacy() {
+  if (javaSimulationEnabled()) throw new AppError(503, "La simulación pertenece al servicio Java.");
+}
 function view(run: any) {
   const s = scenarioInput.parse(run.snapshot);
   const orders = run.decisions as number[];
@@ -31,6 +35,7 @@ function view(run: any) {
 }
 export const simulationService = {
   async list() {
+    requireLegacy();
     return db.simulationScenario.findMany({
       where: { published: true },
       select: {
@@ -43,6 +48,7 @@ export const simulationService = {
     });
   },
   async start(userId: string, scenarioId: string) {
+    requireLegacy();
     const s = await db.simulationScenario.findUnique({
       where: { id: scenarioId },
     });
@@ -60,6 +66,7 @@ export const simulationService = {
     return view(run);
   },
   async get(userId: string, id: string) {
+    requireLegacy();
     const run = await db.simulation.findFirst({
       where: { id, userId },
       include: { result: true },
@@ -68,6 +75,7 @@ export const simulationService = {
     return view(run);
   },
   async decide(userId: string, id: string, day: number, quantity: number) {
+    requireLegacy();
     return db.$transaction(async (tx) => {
       const run = await tx.simulation.findFirst({
         where: { id, userId },
@@ -116,6 +124,7 @@ export const simulationService = {
     });
   },
   async history(userId: string) {
+    requireLegacy();
     return db.simulation.findMany({
       where: { userId },
       select: {

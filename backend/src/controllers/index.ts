@@ -7,15 +7,20 @@ import { groupService, progressService } from "../services/progressService";
 import { adminService } from "../services/adminService";
 import { repository } from "../repositories";
 import * as v from "../validators";
+import { javaSimulationEnabled, simulationGateway } from "../services/simulationGateway";
+import { javaLearningEnabled, learningGateway } from "../services/learningGateway";
+import { javaPeopleEnabled, peopleGateway } from "../services/peopleGateway";
 const id = (value: unknown) => z.string().min(1).max(100).parse(value);
 export const controller: Record<string, RequestHandler> = {
   register: async (req, res) => {
+    if (javaPeopleEnabled()) return peopleGateway.forward(req, res, "/api/auth/register", v.registration.parse(req.body));
     res
       .status(201)
       .json(await authService.register(v.registration.parse(req.body)));
   },
   login: async (req, res) => {
     const body = v.login.parse(req.body);
+    if (javaPeopleEnabled()) return peopleGateway.forward(req, res, "/api/auth/login", body);
     res.json(await authService.login(body.email, body.password));
   },
   logout: async (req, res) => {
@@ -29,12 +34,15 @@ export const controller: Record<string, RequestHandler> = {
     res.json(await authService.update(req.auth.id, v.profile.parse(req.body)));
   },
   path: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, "/api/modules");
     res.json(await learningService.path(req.auth.id));
   },
   lesson: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, `/api/lessons/${encodeURIComponent(id(req.params.id))}`);
     res.json(await learningService.lesson(req.auth.id, id(req.params.id)));
   },
   complete: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, `/api/lessons/${encodeURIComponent(id(req.params.id))}/complete`);
     res.json(await learningService.complete(req.auth.id, id(req.params.id)));
   },
   answer: async (req, res) => {
@@ -42,6 +50,7 @@ export const controller: Record<string, RequestHandler> = {
       .object({ answer: z.number().int().min(0).max(5) })
       .strict()
       .parse(req.body);
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, `/api/challenges/${encodeURIComponent(id(req.params.id))}/attempts`, body);
     res
       .status(201)
       .json(
@@ -52,7 +61,8 @@ export const controller: Record<string, RequestHandler> = {
         ),
       );
   },
-  scenarios: async (_req, res) => {
+  scenarios: async (req, res) => {
+    if (javaSimulationEnabled()) return simulationGateway.forward(req, res, "/api/simulations/scenarios");
     res.json(await simulationService.list());
   },
   start: async (req, res) => {
@@ -60,15 +70,18 @@ export const controller: Record<string, RequestHandler> = {
       .object({ scenarioId: z.string().min(1).max(100) })
       .strict()
       .parse(req.body);
+    if (javaSimulationEnabled()) return simulationGateway.forward(req, res, "/api/simulations", body);
     res
       .status(201)
       .json(await simulationService.start(req.auth.id, body.scenarioId));
   },
   simulation: async (req, res) => {
+    if (javaSimulationEnabled()) return simulationGateway.forward(req, res, `/api/simulations/${encodeURIComponent(id(req.params.id))}`);
     res.json(await simulationService.get(req.auth.id, id(req.params.id)));
   },
   decision: async (req, res) => {
     const body = v.decisionInput.parse(req.body);
+    if (javaSimulationEnabled()) return simulationGateway.forward(req, res, `/api/simulations/${encodeURIComponent(id(req.params.id))}/decisions`, body);
     res.json(
       await simulationService.decide(
         req.auth.id,
@@ -79,9 +92,11 @@ export const controller: Record<string, RequestHandler> = {
     );
   },
   history: async (req, res) => {
+    if (javaSimulationEnabled()) return simulationGateway.forward(req, res, "/api/simulations");
     res.json(await simulationService.history(req.auth.id));
   },
   progress: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, "/api/progress");
     res.json(await progressService.report(req.auth.id));
   },
   team: async (req, res) => {
@@ -151,10 +166,11 @@ export const controller: Record<string, RequestHandler> = {
     );
     res.status(204).end();
   },
-  content: async (_req, res) => {
-    res.json(await adminService.content());
+  content: async (req, res) => {
+    res.json(await adminService.content(req.headers.authorization));
   },
   module: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, req.params.id ? `/api/admin/modules/${encodeURIComponent(id(req.params.id))}` : "/api/admin/modules", v.moduleInput.parse(req.body));
     res
       .status(req.params.id ? 200 : 201)
       .json(
@@ -162,6 +178,7 @@ export const controller: Record<string, RequestHandler> = {
       );
   },
   adminLesson: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, req.params.id ? `/api/admin/lessons/${encodeURIComponent(id(req.params.id))}` : "/api/admin/lessons", v.lessonInput.parse(req.body));
     res
       .status(req.params.id ? 200 : 201)
       .json(
@@ -169,6 +186,7 @@ export const controller: Record<string, RequestHandler> = {
       );
   },
   challenge: async (req, res) => {
+    if (javaLearningEnabled()) return learningGateway.forward(req, res, req.params.id ? `/api/admin/challenges/${encodeURIComponent(id(req.params.id))}` : "/api/admin/challenges", v.challengeInput.parse(req.body));
     res
       .status(req.params.id ? 200 : 201)
       .json(
@@ -179,6 +197,10 @@ export const controller: Record<string, RequestHandler> = {
       );
   },
   scenario: async (req, res) => {
+    if (javaSimulationEnabled()) {
+      const path = req.params.id ? `/api/admin/scenarios/${encodeURIComponent(id(req.params.id))}` : "/api/admin/scenarios";
+      return simulationGateway.forward(req, res, path, v.scenarioInput.parse(req.body));
+    }
     res
       .status(req.params.id ? 200 : 201)
       .json(

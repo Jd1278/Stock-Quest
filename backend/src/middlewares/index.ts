@@ -4,6 +4,7 @@ import { Role, Prisma } from "@prisma/client";
 import { ZodError } from "zod";
 import { config } from "../config/env";
 import { repository, AppError } from "../repositories";
+import { javaPeopleEnabled, peopleGateway } from "../services/peopleGateway";
 declare module "express-serve-static-core" {
   interface Request {
     auth: { id: string; role: Role };
@@ -16,6 +17,12 @@ export const asyncRoute =
   };
 export const authenticate: RequestHandler = asyncRoute(
   async (req, _res, next) => {
+    if (javaPeopleEnabled()) {
+      const user = await peopleGateway.identity(req.headers.authorization, req.get("X-Correlation-Id"));
+      req.auth = { id: user.id, role: user.role };
+      next();
+      return;
+    }
     const token = req.headers.authorization?.match(/^Bearer ([^ ]+)$/)?.[1];
     if (!token) throw new AppError(401, "Inicia sesión para continuar.");
     let payload: jwt.JwtPayload;

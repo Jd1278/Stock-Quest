@@ -1,5 +1,9 @@
 # Stock Quest — PostgreSQL
 
+## Migración progresiva a Java
+
+El primer servicio y su arquitectura hexagonal están en [services/simulacion-logistica](services/simulacion-logistica/README.md). La [fase 4](docs/FASE-4-IMPLEMENTACION.md) implementó el corte inicial y la [fase 5A](docs/FASE-5A-SIMULACION.md) añade el puente configurable con Express. El modo Java requiere bases, migraciones y credenciales; por defecto se conserva el recorrido legacy. Las pruebas de PostgreSQL siguen aplazadas.
+
 Aplicación de capacitación en inventarios y logística: React 18, TypeScript, Zustand, React Router, TailwindCSS, Lucide y Phaser 3. Backend Express con Prisma 6, adaptador PostgreSQL de Node.js, JWT Bearer y bcrypt.
 
 ## Configuración
@@ -43,6 +47,10 @@ En Windows, si Vite falla al cargar su configuración en el entorno restringido,
 
 ## Documentación
 
+- [Pendientes de aceptación global](docs/PENDIENTES-ACEPTACION-GLOBAL.md)
+- [Fase 5C: personas y capacitación Java](docs/FASE-5C-PERSONAS.md)
+- [Fase 5B: aprendizaje y evaluación Java](docs/FASE-5B-APRENDIZAJE.md)
+- [Servicio de aprendizaje](services/aprendizaje-evaluacion/README.md)
 - [Conexión remota](docs/BASE-REMOTA.md)
 - [Despliegue en Render y Vercel](docs/DESPLIEGUE.md)
 - [Contrato de la API](docs/API.md)

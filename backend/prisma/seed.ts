@@ -130,6 +130,7 @@ const lessons = [
   },
 ];
 async function seed() {
+  if (process.env.LEARNING_BACKEND !== "java") {
   for (let i = 0; i < lessons.length; i++) {
     const item = lessons[i],
       moduleId = `module-${i + 1}`,
@@ -170,6 +171,8 @@ async function seed() {
       },
     });
   }
+  }
+  if (process.env.SIMULATION_BACKEND !== "java") {
   await db.simulationScenario.upsert({
     where: { id: "scenario-first-shift" },
     update: {},
@@ -210,6 +213,8 @@ async function seed() {
       published: true,
     },
   });
+  }
+  if (process.env.PEOPLE_BACKEND !== "java") {
   for (const [prefix, role, name, document] of [
     ["ADMIN", "GESTOR_PEDAGOGICO", "Gestor pedagógico", "SQ-GESTOR"],
     ["LEADER", "LIDER", "Líder de capacitación", "SQ-LIDER"],
@@ -235,6 +240,7 @@ async function seed() {
         company: "Stock Quest",
       },
     });
+  }
   }
   console.log(
     "Contenido inicial creado; los registros existentes se conservaron.",

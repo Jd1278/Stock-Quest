@@ -1,0 +1,696 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stock Quest domain events v1 - proposed design",
+  "description": "At-least-once delivery; inbox deduplicates eventId; per-aggregate monotonic version. No credentials or direct contact fields. User IDs require access control and retention policies.",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "SimulacionFinalizada"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "simulacion-logistica"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "simulationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "scenarioId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "score": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "profit": {
+              "type": "number"
+            },
+            "serviceRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "completedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "simulationId",
+            "userId",
+            "scenarioId",
+            "score",
+            "profit",
+            "serviceRate",
+            "completedAt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "LeccionCompletada"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "aprendizaje-evaluacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "lessonId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "moduleId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "completedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "userId",
+            "lessonId",
+            "moduleId",
+            "completedAt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "DesafioRespondido"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "aprendizaje-evaluacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "attemptId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "challengeId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "lessonId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "moduleId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "score": {
+              "type": "integer",
+              "enum": [
+                0,
+                100
+              ]
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "attemptId",
+            "userId",
+            "challengeId",
+            "lessonId",
+            "moduleId",
+            "score",
+            "createdAt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "ProgresoActualizado"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "aprendizaje-evaluacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "progress": {
+              "$ref": "#/$defs/Progress"
+            }
+          },
+          "required": [
+            "userId",
+            "progress"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "MiembroAsignado"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "personas-capacitacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "groupId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "leaderId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "required": [
+            "groupId",
+            "userId",
+            "leaderId"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "MiembroRetirado"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "personas-capacitacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "groupId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "leaderId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "required": [
+            "groupId",
+            "userId",
+            "leaderId"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "const": "UsuarioDesactivado"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "producer": {
+          "const": "personas-capacitacion"
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "aggregateId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aggregateVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "tokenVersion": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "userId",
+            "tokenVersion"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "eventId",
+        "type",
+        "schemaVersion",
+        "producer",
+        "occurredAt",
+        "aggregateId",
+        "aggregateVersion",
+        "correlationId",
+        "data"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "Progress": {
+      "type": "object",
+      "properties": {
+        "completed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "percent": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "xp": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "simulations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Topic"
+          }
+        },
+        "achievements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Achievement"
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "completed",
+        "total",
+        "percent",
+        "xp",
+        "level",
+        "simulations",
+        "passed",
+        "topics",
+        "achievements",
+        "recommendations"
+      ]
+    },
+    "Topic": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needsReview": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "completed",
+        "total",
+        "score",
+        "needsReview"
+      ]
+    },
+    "Achievement": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "earnedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "userId",
+        "key",
+        "earnedAt"
+      ]
+    }
+  }
+}

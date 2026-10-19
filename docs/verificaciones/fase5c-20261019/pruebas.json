@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-19",
+  "timezone": "America/Bogota",
+  "personas": [
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.ArquitecturaTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.GruposTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.HttpPersonasTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.IdentidadTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.InformesAprendizajeHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.TokensJwtTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "runner": "failsafe",
+      "suite": "com.stockquest.personas.PersistenciaPersonasIT",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "backend": {
+    "suites": 9,
+    "tests": 56,
+    "passed": 56,
+    "failed": 0,
+    "skipped": 0
+  },
+  "uniqueTestsThisStage": 101,
+  "e2eChecks": 14,
+  "note": "Las ejecuciones anteriores de las mismas pruebas no se vuelven a sumar."
+}
