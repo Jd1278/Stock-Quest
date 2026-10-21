@@ -1,0 +1,117 @@
+{
+  "startedAt": "2026-10-21T21:46:51.392Z",
+  "checks": [
+    "new-supervisor-new-gateway-health-header",
+    "all-data-snapshots-unchanged-and-existing-sessions-valid",
+    "three-java-readiness-ok"
+  ],
+  "before": {
+    "ready": true,
+    "stopping": false,
+    "edgeEntrypoint": "gateway/src/server.ts",
+    "eventTarget": "http://127.0.0.1:14620/internal/events",
+    "web": "http://127.0.0.1:5174",
+    "databases": {
+      "people": "stockquest_phase6_people_20261020",
+      "learning": "stockquest_phase6_learning_20261020",
+      "simulation": "stockquest_phase6_simulation_20261020"
+    },
+    "processes": {
+      "people": {
+        "pid": 11656,
+        "running": true
+      },
+      "learning": {
+        "pid": 13060,
+        "running": true
+      },
+      "simulation": {
+        "pid": 11036,
+        "running": true
+      },
+      "edge": {
+        "pid": 29996,
+        "running": true
+      },
+      "web": {
+        "pid": 18832,
+        "running": true
+      }
+    }
+  },
+  "snapshots": [
+    {
+      "path": "/api/auth/me",
+      "sha256": "229fe6fba85458a133e12d41441badac8a9b62163d24536588c108ef78651389"
+    },
+    {
+      "path": "/api/progress",
+      "sha256": "e65dd531edb24a3800759d5bf52c8e4b04939df304f86cac9ca1429dc1bb2e07"
+    },
+    {
+      "path": "/api/modules",
+      "sha256": "e2a7d5b798e20941df3c4cc3d6f2472c68f48322a50cf5aa05019f8e20f0f078"
+    },
+    {
+      "path": "/api/simulations",
+      "sha256": "7d9f20ae59eab97b717be15030fa773a7ec0d035e4744871e9afedc8e31bf22e"
+    },
+    {
+      "path": "/api/auth/me",
+      "sha256": "fb6a5cdb2e79c8914dec60a8211a231c8a0c4738de62b5c2fb53668c2f3a4351"
+    },
+    {
+      "path": "/api/reports",
+      "sha256": "3f069530833d0d359dcbdc838a813e550d42f5cc389a73e5119635079393cea7"
+    },
+    {
+      "path": "/api/groups",
+      "sha256": "1cc8945d616a344ef34e03e94efc8e5db2056c3f253d47af230e81179bc636b5"
+    },
+    {
+      "path": "/api/auth/me",
+      "sha256": "c845458d9c27287ff63dacdf0ffcf6b26567dfa215b3f90204b5fd0d42a6f5be"
+    },
+    {
+      "path": "/api/admin",
+      "sha256": "0e0d4319aeee9f27122b13fbd9234a8044bab676ac26e2854dc8fca52ef707ef"
+    }
+  ],
+  "after": {
+    "ready": true,
+    "stopping": false,
+    "edgeEntrypoint": "gateway/src/server.ts",
+    "eventTarget": "http://127.0.0.1:14620/internal/events",
+    "web": "http://127.0.0.1:5174",
+    "databases": {
+      "people": "stockquest_phase6_people_20261020",
+      "learning": "stockquest_phase6_learning_20261020",
+      "simulation": "stockquest_phase6_simulation_20261020"
+    },
+    "processes": {
+      "people": {
+        "pid": 29648,
+        "running": true
+      },
+      "learning": {
+        "pid": 30648,
+        "running": true
+      },
+      "simulation": {
+        "pid": 31860,
+        "running": true
+      },
+      "edge": {
+        "pid": 26424,
+        "running": true
+      },
+      "web": {
+        "pid": 32612,
+        "running": true
+      }
+    }
+  },
+  "snapshotCount": 9,
+  "status": "PASS",
+  "finishedAt": "2026-10-21T21:47:20.967Z"
+}

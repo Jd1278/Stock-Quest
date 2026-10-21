@@ -1,17 +1,19 @@
-# Despliegue completo en Vercel
+# Vercel: publicación temporal actual
 
-Importa Jd1278/Stock-Quest. Root Directory: stock-quest. Framework: Other. Node.js: 22.x. La configuración vercel.json instala con npm ci, compila API y web y publica apps/web/dist. /api se atiende mediante Express en una función; el resto usa React Router. No depende de localhost ni de un backend adicional en Render.
+Actualizado al 21 de octubre de 2026. Proyecto Vercel `stock-quest`, URL https://stock-quest-five.vercel.app. El usuario validó login, aprendizaje, simulador, progreso y recarga de rutas.
 
-Variables del servidor (Production):
-- DATABASE_URL: conexión externa PostgreSQL Render con ?sslmode=require&sslaccept=strict&connection_limit=2&connect_timeout=15. Usa el valor privado, no lo subas al repositorio.
-- JWT_SECRET: secreto aleatorio de al menos 32 caracteres.
-- JWT_EXPIRES_IN: 8h.
-- FRONTEND_URL: URL pública definitiva del proyecto, por ejemplo https://tu-proyecto.vercel.app.
+La interfaz estática compilada se publicó desde una carpeta `.stockquest-local/vercel-demo-*`, preparada con `scripts/prepare-vercel-demo.cjs`. Su configuración reenvía `/api` al túnel HTTPS de la API local y mantiene el fallback de React Router. No contiene los servicios Java, bases ni secretos. El PC, Stock Quest y Cloudflared deben permanecer activos.
 
-No configurar VITE_API_URL: el frontend usa /api en el mismo dominio. Nunca usar prefijo VITE_ para credenciales. Configurar una base independiente si se habilitan previews con escrituras.
+El procedimiento reproducible y el cambio de URL del túnel están en [DESPLIEGUE-TEMPORAL-VERCEL.md](DESPLIEGUE-TEMPORAL-VERCEL.md). Inicialmente se propuso crear un proyecto de demostración, pero la CLI vinculó al proyecto existente `stock-quest`; antes de una nueva publicación revisar ese destino.
 
-Las migraciones y seed no se ejecutan en cada build. La base Render actual ya tiene el esquema. Para una base nueva, ejecutar npm run db:migrate y npm run db:seed desde un entorno con sus variables privadas antes de usar la app.
+No se requieren credenciales PostgreSQL ni JWT en Vercel para este frontend estático. `VITE_API_URL=/api` se fijó al compilar. Nunca publicar secretos con prefijo VITE.
 
-Después de desplegar, verificar /api/health, /login, el logo, inicio/cierre de sesión y carga de módulos. Los límites de solicitudes actuales viven en memoria por instancia; para límites globales entre instancias se necesita un almacén compartido o reglas de Vercel Firewall.
+La CLI indicó protección de acceso Vercel. El usuario pudo ingresar y probar la aplicación; el acceso de terceros sin sesión debe comprobarse por separado antes de compartir el enlace. Cerrar el túnel deja la interfaz accesible, pero interrumpe la API.
 
-Referencia: https://vercel.com/docs/functions/runtimes/node-js
+## Configuración raíz del gateway
+
+El `vercel.json` raíz y `api/index.js` se actualizaron para servir el gateway independiente como función sin Prisma. No son la carpeta usada en la presentación temporal y no fueron publicados en este bloque. Requieren PEOPLE_SERVICE_URL, LEARNING_SERVICE_URL, SIMULATION_SERVICE_URL, sus tokens HTTP y FRONTEND_URL; los Java deben ser accesibles por HTTPS. No alojan los tres servicios ni sus bases. Las plantillas anteriores se conservaron en `legacy/`.
+
+Comprobación posterior a la activación: el túnel anterior no resolvió y `/api/health` público devolvió 502. La API local y el proxy frontend devolvieron 200; recuperar la conexión temporal antes de otra presentación.
+
+No importar toda la raíz suponiendo que eso publicará la arquitectura Java actual. Para la entrega permanente falta desplegar gateway, servicios y bases con sus criterios operativos. Consultar [FASE-8-OPERACION.md](FASE-8-OPERACION.md).

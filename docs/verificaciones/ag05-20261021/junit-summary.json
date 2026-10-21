@@ -1,0 +1,178 @@
+{
+  "tests": 120,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.ArquitecturaTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 8.472
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.FuenteSnapshotsHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.489
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.GruposTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.621
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.HttpGruposTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.944
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.HttpPersonasTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.504
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.IdentidadTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.273
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.InformesAprendizajeHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.26
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.ProyeccionesProgresoTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.541
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "surefire",
+      "name": "com.stockquest.personas.TokensJwtTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.55
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "failsafe",
+      "name": "com.stockquest.personas.PersistenciaPersonasIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 25.762
+    },
+    {
+      "service": "personas-capacitacion",
+      "kind": "failsafe",
+      "name": "com.stockquest.personas.ProyeccionesProgresoIT",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.747
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "surefire",
+      "name": "com.stockquest.aprendizaje.AprendizajeTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.481
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "surefire",
+      "name": "com.stockquest.aprendizaje.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.639
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "surefire",
+      "name": "com.stockquest.aprendizaje.HttpAprendizajeTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.591
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "surefire",
+      "name": "com.stockquest.aprendizaje.ResultadosSimulacionHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.887
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "failsafe",
+      "name": "com.stockquest.aprendizaje.PersistenciaAprendizajeIT",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.31
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "kind": "failsafe",
+      "name": "com.stockquest.aprendizaje.ProgresoSnapshotsIT",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 12.794
+    }
+  ]
+}

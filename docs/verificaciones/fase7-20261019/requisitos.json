@@ -1,0 +1,106 @@
+[
+  {
+    "id": "RF01",
+    "text": "Nombre del requerimiento:\nRegistro de Usuarios\nCaracterísticas :\nRegistro autónomo de usuarios en la plataforma.\nDescripción del requerimiento:\nEl sistema debe permitir el registro autónomo de\nnuevos usuarios en la plataforma, solicitando datos\nobligatorios (nombre, correo electrónico, documento\ny contraseña) y almacenando las credenciales de\nmanera segura.\nRequerimiento no funcional:\nRNF02, RNF04, RNF05"
+  },
+  {
+    "id": "RF02",
+    "text": "Nombre del requerimiento:\nInicio de Sesión y Verificación de Credenciales\nCaracterísticas :\nValidación de credenciales de acceso.\nDescripción del requerimiento:\nEl sistema debe validar las credenciales ingresadas\npor el usuario contra la base de datos para\nautenticar su acceso de forma segura.\nRequerimiento no funcional:\nRNF01, RNF03, RNF04"
+  },
+  {
+    "id": "RF03",
+    "text": "Nombre del requerimiento:\nIdentificación de Roles\nCaracterísticas :\nDeterminación del perfil y permisos de usuario.\nDescripción del requerimiento:\nTras una autenticación exitosa, el sistema debe\nconsultar y determinar el rol asociado al usuario\n(Aprendiz, Líder de área o Gestor de aprendizaje).\nRequerimiento no funcional:\nRNF01, RNF04"
+  },
+  {
+    "id": "RF04",
+    "text": "Nombre del requerimiento:\nRedirección por Rol\nCaracterísticas :\nNavegación a la vista correspondiente según el\nperfil.\nDescripción del requerimiento:\nEl sistema debe redirigir automáticamente al usuario\nautenticado hacia su respectivo panel o interfaz\ngráfica principal según el rol identificado.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF05",
+    "text": "Nombre del requerimiento:\nAcceso al Módulo de Estudio\nCaracterísticas :\nVisualización del entorno principal de aprendizaje.\nDescripción del requerimiento:\nEl rol de aprendiz debe poder acceder a la interfaz\nprincipal del módulo de estudio para visualizar las\nrutas de aprendizaje disponibles.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF06",
+    "text": "Nombre del requerimiento:\nEjecución de Simulaciones\nCaracterísticas :\nEjecución de minijuegos 2D interactivos.\nDescripción del requerimiento:\nEl sistema debe renderizar y ejecutar minijuegos\ninteractivos 2D que presenten escenarios logísticos\ny de inventarios para la toma de decisiones\nprácticas.\nRequerimiento no funcional:\nRNF01, RNF05, RNF06"
+  },
+  {
+    "id": "RF07",
+    "text": "Nombre del requerimiento:\nVisualización de Tarjetas de Repaso\nCaracterísticas :\nDespliegue de tarjetas conceptuales teóricas.\nDescripción del requerimiento:\nEl sistema debe mostrar tarjetas informativas breves\ncon conceptos teóricos clave previos a las\nsimulaciones o desafíos.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF08",
+    "text": "Nombre del requerimiento:\nVisualización de Resultados de Simulación\nCaracterísticas :\nReporte de desempeño operativo y financiero.\nDescripción del requerimiento:\nAl finalizar una simulación, el sistema debe generar\ny presentar un reporte detallado con las métricas\noperativas y financieras obtenidas.\nRequerimiento no funcional:\nRNF01, RNF06"
+  },
+  {
+    "id": "RF09",
+    "text": "Nombre del requerimiento:\nRecepción de Retroalimentación\nCaracterísticas :\nFeedback automático inmediato sobre decisiones.\nDescripción del requerimiento:\nEl sistema debe proveer retroalimentación\nautomatizada e inmediata explicando el impacto y\nlas consecuencias de las decisiones tomadas en el\nminijuego.\nRequerimiento no funcional:\nRNF01, RNF02, RNF06"
+  },
+  {
+    "id": "RF10",
+    "text": "Nombre del requerimiento:\nRealización de Lecciones\nCaracterísticas :\nNavegación secuencial por módulos y lecciones.\nDescripción del requerimiento:\nEl sistema debe permitir al aprendiz recorrer\nsecuencialmente lecciones teóricas organizadas por\nmódulos.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF11",
+    "text": "Nombre del requerimiento:\nEstudio de Material Teórico\nCaracterísticas :\nDespliegue de contenidos multimedia y lecturas.\nDescripción del requerimiento:\nEl sistema debe desplegar contenidos textuales y\nmultimedia (como videos de apoyo) estructurados\npara el autoaprendizaje logístico.\nRequerimiento no funcional:\nRNF01, RNF05"
+  },
+  {
+    "id": "RF12",
+    "text": "Nombre del requerimiento:\nMonitoreo de Progreso Personal\nCaracterísticas :\nRegistro continuo de avances del aprendiz.\nDescripción del requerimiento:\nEl sistema debe registrar y consolidar las métricas\nde avance del aprendizaje de forma persistente.\nRequerimiento no funcional:\nRNF03, RNF04"
+  },
+  {
+    "id": "RF13",
+    "text": "Nombre del requerimiento:\nConsulta de Temáticas que Requieren Refuerzo\nCaracterísticas :\nDetección de brechas de conocimiento.\nDescripción del requerimiento:\nEl sistema debe analizar el rendimiento del aprendiz\ne identificar qué áreas temáticas necesitan repaso\nadicional.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF14",
+    "text": "Nombre del requerimiento:\nConsulta de Porcentaje de Progreso\nCaracterísticas :\nIndicador gráfico de avance total y modular.\nDescripción del requerimiento:\nEl sistema debe calcular y mostrar gráficamente el\nporcentaje global y modular completado del\nPrograma de capacitación.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF15",
+    "text": "Nombre del requerimiento:\nAcceso al Módulo de Contenidos\nCaracterísticas :\nControl de acceso al panel pedagógico.\nDescripción del requerimiento:\nEl gestor pedagógico debe contar con un acceso\nrestringido al panel de administración de contenidos\neducativos.\nRequerimiento no funcional:\nRNF02, RNF04"
+  },
+  {
+    "id": "RF16",
+    "text": "Nombre del requerimiento:\nGestión de Contenido de Aprendizaje\nCaracterísticas :\nCreación, edición y organización de módulos.\nDescripción del requerimiento:\nEl sistema debe permitir al gestor crear, editar,\nestructurar y organizar los módulos y lecciones\nteóricas dentro de la plataforma.\nRequerimiento no funcional:\nRNF02, RNF03, RNF06"
+  },
+  {
+    "id": "RF17",
+    "text": "Nombre del requerimiento:\nGestión de Variables de Módulos\nCaracterísticas :\nConfiguración de variables de minijuegos y\ndesafíos.\nDescripción del requerimiento:\nEl sistema debe permitir configurar parámetros\ndinámicos de los desafíos y minijuegos (como\ntiempos de entrega, demanda variable y costos de\nalmacenamiento).\nRequerimiento no funcional:\nRNF02, RNF03"
+  },
+  {
+    "id": "RF18",
+    "text": "Nombre del requerimiento:\nAcceso al Módulo de Seguimiento\nCaracterísticas :\nPanel de supervisión para el líder de área.\nDescripción del requerimiento:\nEl líder de área debe disponer de una interfaz para\nsupervisar el rendimiento global de sus equipos de\ntrabajo asignados.\nRequerimiento no funcional:\nRNF01, RNF02"
+  },
+  {
+    "id": "RF19",
+    "text": "Nombre del requerimiento:\nVisualización de Informes Detallados y\nCalificaciones\nCaracterísticas :\nConsulta de métricas por aprendiz y módulo.\nDescripción del requerimiento:\nEl sistema debe mostrar informes analíticos y\ncalificaciones detalladas por módulo de cada\naprendiz adscrito a su grupo.\nRequerimiento no funcional:\nRNF01, RNF06"
+  },
+  {
+    "id": "RF20",
+    "text": "Nombre del requerimiento:\nPanel de Grupos de Trabajo y Gestión de\nColaboradores\nCaracterísticas :\nAdministración de grupos y asignación de\naprendices.\nDescripción del requerimiento:\nEl líder de área debe poder crear grupos de\ncapacitación personalizados, registrar nuevos\naprendices o asociar colaboradores existentes a los grupos bajo su supervisión.\nRequerimiento no funcional:\nRNF02, RNF03, RNF04"
+  },
+  {
+    "id": "RNF01",
+    "text": "Nombre del requerimiento:\nRendimiento y Velocidad\nCaracterísticas :\nTiempos de respuesta óptimos.\nDescripción del requerimiento:\nEl sistema deberá cargar las lecciones y\nsimulaciones en un tiempo máximo de 3 segundos\nbajo una conexión estándar de 10 Mbps."
+  },
+  {
+    "id": "RNF02",
+    "text": "Nombre del requerimiento:\nUsabilidad\nCaracterísticas :\nFacilidad de aprendizaje de la interfaz.\nDescripción del requerimiento:\nLa interfaz debe seguir principios de diseño web estándar para que el usuario pueda navegar sin manual de usuario extenso (curva de aprendizaje < 15 min)."
+  },
+  {
+    "id": "RNF03",
+    "text": "Nombre del requerimiento:\nDisponibilidad\nCaracterísticas :\nAccesibilidad del servicio.\nDescripción del requerimiento:\nLa plataforma debe mantener una disponibilidad de servicio del 99% para acceso constante."
+  },
+  {
+    "id": "RNF04",
+    "text": "Nombre del requerimiento:\nSeguridad de Datos\nCaracterísticas :\nProtección de información sensible.\nDescripción del requerimiento:\nLas contraseñas y datos sensibles deben ser encriptados antes de ser almacenados en la base de datos (ej. uso de hashes)."
+  },
+  {
+    "id": "RNF05",
+    "text": "Nombre del requerimiento:\nCompatibilidad Multiplataforma\nCaracterísticas :\nFuncionamiento en diversos dispositivos.\nDescripción del requerimiento:\nEl sistema debe ser accesible en navegadores web modernos (Chrome, Edge, Firefox, Safari) tanto en escritorio como en móviles."
+  },
+  {
+    "id": "RNF06",
+    "text": "Nombre del requerimiento:\nRetroalimentación de Interfaz\nCaracterísticas :\nConfirmación inmediata de acciones.\nDescripción del requerimiento:\nEl sistema debe proporcionar confirmaciones visuales o sonoras inmediatas ante las acciones del usuario (éxito/error)."
+  }
+]

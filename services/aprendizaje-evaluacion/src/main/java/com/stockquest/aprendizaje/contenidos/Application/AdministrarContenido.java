@@ -9,6 +9,12 @@ public final class AdministrarContenido {
     private final CatalogoFormativo catalogo;private final UnidadDeTrabajo tx;
     public AdministrarContenido(CatalogoFormativo catalogo,UnidadDeTrabajo tx) {this.catalogo=catalogo;this.tx=tx;}
     public List<Modulo> todos(UsuarioAutenticado u) {u.exigirGestor();return catalogo.modulos(true);}
+    public void eliminarModulo(UsuarioAutenticado u,String id) {
+        u.exigirGestor();tx.ejecutar(()->{catalogo.eliminarModulo(id);return null;});
+    }
+    public void eliminarLeccion(UsuarioAutenticado u,String id) {
+        u.exigirGestor();tx.ejecutar(()->{catalogo.eliminarLeccion(id);return null;});
+    }
     public Modulo modulo(UsuarioAutenticado u,String id,String title,String description,int position,boolean published) {
         u.exigirGestor();return tx.ejecutar(()->catalogo.guardarModulo(id,title.trim(),description.trim(),position,published));
     }

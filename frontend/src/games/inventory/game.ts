@@ -98,7 +98,9 @@ export function createInventoryGame(
     audio: { noAudio: true },
   });
   return {
-    update: (run: Run) => game.events.emit("inventory:state", run),
+    update: (run: Run): void => {
+      game.events.emit("inventory:state", run);
+    },
     destroy: () => game.destroy(true),
   };
 }

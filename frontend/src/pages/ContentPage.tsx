@@ -3,6 +3,8 @@ import { adminService } from "../services";
 import { useResource, useAction } from "../hooks/useResource";
 import { PageTitle, Field, Loading, Notice, Empty } from "../components/ui";
 type Kind = "modules" | "lessons" | "challenges" | "scenarios";
+const singular = { modules: "módulo", lessons: "lección", challenges: "desafío", scenarios: "escenario" };
+const deletedMessage = { modules: "Módulo eliminado.", lessons: "Lección eliminada.", challenges: "Desafío eliminado.", scenarios: "Escenario eliminado." };
 function prepare(kind: Kind, form: FormData) {
   const data: Record<string, any> = Object.fromEntries(form);
   for (const key of [
@@ -384,6 +386,32 @@ export default function ContentPage({
             <button className="button" disabled={action.busy}>
               {action.busy ? "Guardando…" : "Guardar cambios"}
             </button>
+            {selected && (
+              <div className="danger-zone mt-4">
+                <p>
+                  Solo se puede eliminar si no tiene {kind === "scenarios" ? "partidas" : kind === "challenges" ? "intentos registrados" : "intentos ni progreso de aprendizaje"}.
+                  {kind === "modules" || kind === "scenarios"
+                    ? " Si ya tiene uso, desmarca Publicado para retirarlo del catálogo."
+                    : " Si ya tiene uso, puedes despublicar el módulo que lo contiene para conservar el historial."}
+                </p>
+                <button
+                  type="button"
+                  className="button danger"
+                  disabled={action.busy}
+                  onClick={() => {
+                    if (!window.confirm(`¿Eliminar ${kind === "lessons" ? "la" : "el"} ${singular[kind]} «${selected.title ?? selected.question}»? Esta acción no se puede deshacer.`)) return;
+                    void action.run(async () => {
+                      await adminService.remove(kind, selected.id);
+                      setSelected(null);
+                      setNewKey((n) => n + 1);
+                      resource.reload();
+                    }, deletedMessage[kind]);
+                  }}
+                >
+                  Eliminar {singular[kind]}
+                </button>
+              </div>
+            )}
           </form>
         </div>
       )}

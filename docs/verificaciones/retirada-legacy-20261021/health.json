@@ -1,0 +1,24 @@
+[
+  {
+    "name": "local",
+    "http": 200,
+    "health": "ok",
+    "gateway": "java-services"
+  },
+  {
+    "name": "frontend-proxy",
+    "http": 200,
+    "health": "ok",
+    "gateway": "java-services"
+  },
+  {
+    "name": "tunnel",
+    "error": "ENOTFOUND"
+  },
+  {
+    "name": "vercel",
+    "http": 502,
+    "health": null,
+    "gateway": null
+  }
+]

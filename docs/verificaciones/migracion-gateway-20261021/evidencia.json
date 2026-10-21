@@ -1,0 +1,132 @@
+{
+  "finishedAt": "2026-10-21T21:40:21.269Z",
+  "baseCommit": "db09d1eebe2dd19c8e2c290966adef2a67734d45",
+  "tests": {
+    "gateway": 64,
+    "frontend": 23,
+    "total": 87,
+    "failed": 0
+  },
+  "build": "PASS gateway TypeScript",
+  "lint": "PASS backend frontend gateway",
+  "isolation": {
+    "status": "PASS",
+    "loadedModules": 156,
+    "legacyImports": 0,
+    "sqlDrivers": 0
+  },
+  "inventory": {
+    "status": "PASS - structural inventory only",
+    "expectedOperations": 39,
+    "contractOperations": 39,
+    "paths": 32,
+    "ownedModels": 14,
+    "eventTypes": 7,
+    "resolvedReferences": 107,
+    "requirementsMapped": 19,
+    "frontendOnly": [
+      "RF04"
+    ]
+  },
+  "integration": "PASS",
+  "liveEdgeRestarted": false,
+  "javaMavenRerun": false,
+  "files": [
+    {
+      "file": "gateway/.env.example",
+      "sha256": "d97ec9079d91d5dbc088b6b8881ba60482e20f1be0a2f6b5ee9966f69adda00d"
+    },
+    {
+      "file": "gateway/jest.config.cjs",
+      "sha256": "ef6cc971f9f3096d58fdc8e24be7a91f1e53be9c580382dea4cdfca58283ff01"
+    },
+    {
+      "file": "gateway/package.json",
+      "sha256": "750294054d237fd995b8b9d0be97538b28922b5f5b041eef4c6b44efeac8d803"
+    },
+    {
+      "file": "gateway/README.md",
+      "sha256": "28b24b154365f746c59f789a5ae15e92ad3b0cf1bb8ca7986e2ec2df5b93d014"
+    },
+    {
+      "file": "gateway/src/app.ts",
+      "sha256": "f9d08a712829b20c479c97de76f7738ee6171f72b82a4844673229a653dca6be"
+    },
+    {
+      "file": "gateway/src/Application/adminContent.ts",
+      "sha256": "fa15cdd1fa60f80af4354efe6254bba0963d01880bf2ba619166dcdf063c4d0b"
+    },
+    {
+      "file": "gateway/src/Application/ServicePort.ts",
+      "sha256": "d9cb34296d7af94e0166ea5e3058062a5c137b059e13e5c5c060cc5215964858"
+    },
+    {
+      "file": "gateway/src/domain/index.ts",
+      "sha256": "adb923c988f1d1a0d99dd679ece42f5da3457c8d2b1fe77fa14f9026813a2fb1"
+    },
+    {
+      "file": "gateway/src/gateway.test.ts",
+      "sha256": "f7dc4c86b39dff68f07c4ce894336b821474a937fc99bbea360c98ec76836695"
+    },
+    {
+      "file": "gateway/src/Infrastructure/config.ts",
+      "sha256": "122fec72208c4d230e34c411c3ecd11ee7ae488cd25b1846b85dfd4a0d208b56"
+    },
+    {
+      "file": "gateway/src/Infrastructure/controllers.ts",
+      "sha256": "f21e4f98799e1bcc390de33e0ccde18d9e1749851e1cea125ecc7c90d08739a8"
+    },
+    {
+      "file": "gateway/src/Infrastructure/HttpServices.ts",
+      "sha256": "0a24d15b22e3edbc9a7d9fe906ec68c6a488884484340862f1cd2a8cd9728a8f"
+    },
+    {
+      "file": "gateway/src/Infrastructure/middlewares.ts",
+      "sha256": "034ba166e6ecf97cb04828347d9fe6c623d2161a7a8b0767e9407fa7ed304654"
+    },
+    {
+      "file": "gateway/src/Infrastructure/routes.ts",
+      "sha256": "92751736045004204ab5da3bedb38221a6760e4bd106575ad9edd996269c3268"
+    },
+    {
+      "file": "gateway/src/Infrastructure/validators.ts",
+      "sha256": "9dc36ad75a157617428df86349dca1f5e157ed90475852bc44a080daf7454cbe"
+    },
+    {
+      "file": "gateway/src/server.ts",
+      "sha256": "8f8bc9a2294a8baab4a8355c07c16186155d8084da45968f893a2cdd019cb95a"
+    },
+    {
+      "file": "gateway/tsconfig.json",
+      "sha256": "825862fa17fb328ba94879c15d7c6aa1d2bc04fb9454d92f545679012d4ea0a7"
+    },
+    {
+      "file": "package.json",
+      "sha256": "90b019ae2535847b19278f1988c40a125ec11a7fe9475ad182469d83aa3181ee"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "a2ce07e0c600c5d5c8d94e32cc8a7d79638eeef42f6a0b0b22a97cf03d227735"
+    },
+    {
+      "file": "scripts/local-java.cjs",
+      "sha256": "c2a366920330a06b85a46ee3adb34452d13abeab78c0acd377a6f537b0c7eba5"
+    },
+    {
+      "file": "scripts/verify-java-gateway.cjs",
+      "sha256": "e5071152de67439be3b4e936cf566452763f2633eca616693a0c836ad81322ca"
+    },
+    {
+      "file": "scripts/verify-gateway-isolation.cjs",
+      "sha256": "f6967be47eb5102b250072dd907f51c660da7c79a32783e52d7354f6fe77f8ef"
+    },
+    {
+      "file": "contracts/validar-inventario.cjs",
+      "sha256": "0cb0122bb95c0e1efac12d3fa98124864a19e8fd982d6b34c0d9c880c0de5545"
+    },
+    {
+      "file": "scripts/dev-web.cjs",
+      "sha256": "6478a7e164c18e27f0463e8a8578e3e9d443d023d3fe00dd366742fc23141dc8"
+    }
+  ]
+}

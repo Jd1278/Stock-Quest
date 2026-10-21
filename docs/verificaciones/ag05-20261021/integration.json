@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "runId": "c40bfc8f-228e-4432-8ec8-fcab92a7a468",
+  "checks": [
+    "challenge-and-lesson-facts-projected-to-authorized-leader-report",
+    "concurrent-duplicates-old-versions-and-conflicting-content-preserve-projection",
+    "internal-service-auth-and-public-report-permissions",
+    "projected-report-readable-while-learning-is-down",
+    "simulation-to-learning-to-people-chain-updates-xp-and-one-achievement",
+    "outbox-survives-source-restart-and-target-outage-then-redelivers",
+    "snapshot-rebuild-restores-derived-row-without-duplicating-inbox",
+    "snapshot-and-replay-endpoints-are-not-public"
+  ],
+  "finishedAt": "2026-10-21T22:24:31.494Z",
+  "existingUserProgressPreserved": true
+}

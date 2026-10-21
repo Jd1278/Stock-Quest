@@ -1,0 +1,274 @@
+[
+  {
+    "file": "content/stockquest.json",
+    "sha256": "b99332fc4dfb45db64cb706f8159b470748fbd41b9e11fd27225d2e4187f5e4a"
+  },
+  {
+    "file": "contracts/openapi-compatibilidad.json",
+    "sha256": "8e4d3ebb5a99c21a64448b4aac6be03b6eff9174982361eb5f83153b1d94d1d5"
+  },
+  {
+    "file": "contracts/propiedad-datos.json",
+    "sha256": "8c623dd63a6a9fc085bfbf270cfe1fd592d3dd9d9ac157bfd9dbcfb05f9603f4"
+  },
+  {
+    "file": "docs/verificaciones/fase6-20261019/recorrido-http.json",
+    "sha256": "48b0f840151952269635639fb327b2123767266fe9b607554ca9cebd2152a09b"
+  },
+  {
+    "file": "frontend/src/components/Layout.tsx",
+    "sha256": "69f99e18fb2ac1f083cd1307cbf7e9f73e1f09716c3e7c5dfaa36dd51a0b866c"
+  },
+  {
+    "file": "frontend/src/components/RoleGate.test.tsx",
+    "sha256": "779c3581eb6c8f1703d2eb39b098fb3969d956b845394e9ab0c957a138fcc4f1"
+  },
+  {
+    "file": "frontend/src/components/RoleGate.tsx",
+    "sha256": "9341497ae6ff0cfedd920e0bcb9f5c1c854d5e2d7697574365cb36b71c7b5ba9"
+  },
+  {
+    "file": "frontend/src/components/YouTubePlayer.tsx",
+    "sha256": "279f4f4677d33e68f3aca7f4fc65a60307cbfc481bc55d80dd2123757e6b476f"
+  },
+  {
+    "file": "frontend/src/components/ui.tsx",
+    "sha256": "b4dae34a3e04cafa9aab8f82e8b2f77971cde05a5e15695b4fa984f8afee0a6a"
+  },
+  {
+    "file": "frontend/src/games/inventory/InventoryGame.test.tsx",
+    "sha256": "d2ec3a7700faf0eeccf2279e9944d28990766e9da16121992e1b0ef168350120"
+  },
+  {
+    "file": "frontend/src/games/inventory/game.ts",
+    "sha256": "bb3c47611634203120d36a0ab7050945378e41f1a42482773f4357eaf6282bd0"
+  },
+  {
+    "file": "frontend/src/hooks/useResource.test.tsx",
+    "sha256": "10a456d6240ed164ea9f028e0cf065662026f0e902d35bbb66f3e7f5dd207c44"
+  },
+  {
+    "file": "frontend/src/hooks/useResource.ts",
+    "sha256": "06509169184bfa01bd85da52a89b5d93d39e375c09a050761d9394bbeab1c116"
+  },
+  {
+    "file": "frontend/src/main.tsx",
+    "sha256": "d6b6635a4f4066994a6925544f58249c4961cac03a2cc57e23d505b07bb604e1"
+  },
+  {
+    "file": "frontend/src/pages/ContentPage.test.tsx",
+    "sha256": "303f9f34615c22307541b76d306ac9a86320ec330177ade03219205b0e3fe867"
+  },
+  {
+    "file": "frontend/src/pages/ContentPage.tsx",
+    "sha256": "947b6e393d7331f6ec29e37ba5383958e43d3987776824d35edff86b72a48d37"
+  },
+  {
+    "file": "frontend/src/pages/GroupsPage.tsx",
+    "sha256": "e33a24dd0acb1697390685beb78f5115436049047937836aa75fc58e70c390d5"
+  },
+  {
+    "file": "frontend/src/pages/LearningPage.tsx",
+    "sha256": "f6a1ff242fab5f09435eda03bd5e1b074841041dbf99b483fb401009b44a655e"
+  },
+  {
+    "file": "frontend/src/pages/LessonPage.tsx",
+    "sha256": "b3d7b6a8a1747f9a6ee9ce5c7df02d43a1333534b4540ab4ca6065822e80b00c"
+  },
+  {
+    "file": "frontend/src/pages/ProfilePage.tsx",
+    "sha256": "70435bb9d4c1f1c201fd50b7982ea2fa8f41f0cf6a3c902bda8144cd03534ec1"
+  },
+  {
+    "file": "frontend/src/pages/SimulationPage.tsx",
+    "sha256": "479d43b8c4054b38956b5bb8baefc52c3dd477f2f387380f811c8fab39282f05"
+  },
+  {
+    "file": "frontend/src/pages/TeamPage.tsx",
+    "sha256": "6a694fed8628487c1aa0941d6759502b71ec114d029e97064c1ea78747b16c13"
+  },
+  {
+    "file": "frontend/src/styles.css",
+    "sha256": "3a6c2b13ee0df2b93a3fbc666c93d4b339fcdbbc5d9747e84cf88179fa158ede"
+  },
+  {
+    "file": "legacy/backend/src/routes/index.ts",
+    "sha256": "cb9d2e8ad37eb0fa0eae97e1a09c1660c9238e1a25720c63ce47a1cad4ae3dfb"
+  },
+  {
+    "file": "legacy/backend/src/services/adminDeletion.integration.test.ts",
+    "sha256": "f46f2f1d331d6eeb8408c53bfa7cf33cab41addca41e9ad98e1b4dd3ade27e37"
+  },
+  {
+    "file": "legacy/backend/src/services/learningGateway.test.ts",
+    "sha256": "d36133a4d6267cb0ee9db5d0710b1c08a55da48b0dd8e03f623d40782ce64414"
+  },
+  {
+    "file": "legacy/scripts/verify-phase7.ps1",
+    "sha256": "267220a38a3efe09717c8551c52f748deef695e8c9b5c605acdf6d279f04df13"
+  },
+  {
+    "file": "package-lock.json",
+    "sha256": "26ea6eceb7b6eafdeac6dfd39c84a58357672eb90786aaed91c4b17e5d4a89b2"
+  },
+  {
+    "file": "scripts/local-java.cjs",
+    "sha256": "87e90be97ff3c17349fbb98c906b0ce426f76d979e0b539b1153bcb30b10da87"
+  },
+  {
+    "file": "scripts/verify-acceptance.cjs",
+    "sha256": "d1aef15b8f76541dbe9bb47af82ae3f824f0e05c3224e15dbecb5018d74c6116"
+  },
+  {
+    "file": "scripts/verify-admin-deletion.cjs",
+    "sha256": "a32d8b2c19e4cce214535a33003aaca98983019e33e4a4ffeca0cfc0ed9e9179"
+  },
+  {
+    "file": "scripts/verify-phase7-runtime.cjs",
+    "sha256": "b2142a9d4ca334f3c472d20466e6e08d5d09cccd46e5cabb1d46710e08e8a229"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/mvnw.cmd",
+    "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/pom.xml",
+    "sha256": "7f8cfcb38d7602aa82cedbeb4ac20714357eb745b98022c4048f14a9d764b81b"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/AdministrarContenido.java",
+    "sha256": "f8ecb185c8b42a6b60a144463e08e2f4fa2ffdb914e638df33c96904d59446ac"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/RutaAprendizaje.java",
+    "sha256": "a03dbde3f6ec2e39bf8aee83204f489773a2c9988bdf37149e23c36a17634cff"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/CompletarLeccion.java",
+    "sha256": "924b8e8e4569226786bd1500d4b43f8872530fba8d4e2b07756182f8620ecabf"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/ConsultarProgreso.java",
+    "sha256": "5157cb1c6e2eff455cf380a934048105a3309a5da9ea2dd388e42e0be8cc2d64"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/main/resources/application.properties",
+    "sha256": "8c66e268d801e4192b1bb2eb205beddf09d9d7cb30d652477c4f76a9be5d0210"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+    "sha256": "c6327bf556284fa8e261a24e08a7c11a3cbf1d7e38c03e0b9caebf023c91c0ee"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/HttpAprendizajeTest.java",
+    "sha256": "2c22301b9e35efb8a6bff3d4b20bb0377918c307e421f4c2fa9dad038e8c6da4"
+  },
+  {
+    "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java",
+    "sha256": "7fcdad2059c1e85c274cd4be450de6a98a63aaa69512b302f170c8d019c448f2"
+  },
+  {
+    "file": "services/personas-capacitacion/mvnw.cmd",
+    "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+  },
+  {
+    "file": "services/personas-capacitacion/pom.xml",
+    "sha256": "effe0aaba595adb56d0d2dd252514de296e35f214c8f0a74a911c609fa6c298b"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ConsultarEquipo.java",
+    "sha256": "8130e412264d57f994e51271e641582697c7263ae47a4670bc82eed822926c77"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/GestionGrupos.java",
+    "sha256": "635d5534c4543146894635b13af84938721cd30241bc32d42967f3d91b34bad3"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Application/GestionIdentidad.java",
+    "sha256": "43640338ac64b92515ed26cc688fff467bf5ad91d6d213bd55c813c614033749"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/ClavesBcrypt.java",
+    "sha256": "12efe2581f5da7e180340341021a7ea2b262bd7037a4b59ab4b1a25c0b8f9526"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/FiltroIdentidad.java",
+    "sha256": "db3aa2f2866cc6de8adc7f570236220955663f162bb46777e7b71de9b163312c"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/TokensJwt.java",
+    "sha256": "dc31e4aebd96ac6127f57c45843f4da05776b7db249b16e3be4967ab68990776"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Application/GestionEquipo.java",
+    "sha256": "c16d87dc8be9a2df7489a0c844fca9753bcd3f60542ac8e6eee3b678f83cb956"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/resources/application.properties",
+    "sha256": "c1fceb400e241a983ca4871c51cf06fe2a3e4d2f2a125e5fd51cb842f87a517d"
+  },
+  {
+    "file": "services/personas-capacitacion/src/main/resources/db/migration/V1__personas.sql",
+    "sha256": "2aed91fe1c98fc2f547384782f709d36da587fa6c2c64ad0b4e87e107f021235"
+  },
+  {
+    "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/GruposTest.java",
+    "sha256": "1cafc3f2d60e83a5614cd7650e8dd38d73de8d95dea278950c0bf0de972438be"
+  },
+  {
+    "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+    "sha256": "bd9590b02dfd3e2f81f7b6791a48286f9a725b50f8e2097ef6966e321586f495"
+  },
+  {
+    "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/InformesAprendizajeHttpTest.java",
+    "sha256": "f38435c2182bed6b94053e8fc1cef92b573cde58a1ab7eeca1ad6784b76866ee"
+  },
+  {
+    "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java",
+    "sha256": "97c8688afdd5d32d76d2c28e0f4bd0ed5b6048defaef9fd7c80edc6fd225972c"
+  },
+  {
+    "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/TokensJwtTest.java",
+    "sha256": "4434aa9580e010b0718bf60e7a0219846cd0d56927f0c776fbca4c723cf4da01"
+  },
+  {
+    "file": "services/simulacion-logistica/mvnw.cmd",
+    "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+  },
+  {
+    "file": "services/simulacion-logistica/pom.xml",
+    "sha256": "a98545096e7ea39db538b2b0b0d524fbea75a5e58a3228c5a92c414aef543a64"
+  },
+  {
+    "file": "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/escenarios/Application/GestionEscenarios.java",
+    "sha256": "1a6405fe85487cca70c20dd86758ba5d72046d3425eae826302347ad7d114a60"
+  },
+  {
+    "file": "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/partidas/Application/RegistrarDecision.java",
+    "sha256": "2ef1ec183bddd2d4658c10975654fb9bba9c3ed28d77ed9588ba2ca7d95535ed"
+  },
+  {
+    "file": "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/partidas/domain/MotorInventario.java",
+    "sha256": "a036dae40db7a19b9d7b9488705555bbbb88eae825b10dfc26880c21a55b68c0"
+  },
+  {
+    "file": "services/simulacion-logistica/src/main/resources/application.properties",
+    "sha256": "dd1e28a0de08efb91b23fa37a925a0dd41eb22f9a5ff1e68df6bd44a0469143b"
+  },
+  {
+    "file": "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/EscenariosHttpTest.java",
+    "sha256": "1306b2d8e57df0d6e281913459c48bae536668abe2114bdce48cab92644842f3"
+  },
+  {
+    "file": "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/GestionEscenariosTest.java",
+    "sha256": "7eb4c81e674721f1084a200927fff42d152924048fa9755de7bf4f55dc256fd8"
+  },
+  {
+    "file": "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/MotorInventarioTest.java",
+    "sha256": "732ae569442183df0b49e0d79ec80cebd080500a22c6dadb399a4b93f0adc897"
+  },
+  {
+    "file": "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/PersistenciaPostgresIT.java",
+    "sha256": "7a552192f46a483ec6491a4549d2e6b0609cf8d476fd541c4614f031a4faae94"
+  }
+]

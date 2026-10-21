@@ -1,6 +1,6 @@
 # Aprendizaje y evaluación — Java
 
-Servicio de fase 5B, puerto local 4020, Java 21 y Maven Wrapper. El usuario autorizó posteriormente la ejecución por el asistente: 27 pruebas sin BD y seis IT PostgreSQL aprobadas, junto con el recorrido aislado Express–Java y las regresiones. [Evaluación completa](../../docs/verificaciones/fase5b-20261019/RESULTADOS.md). La activación en el entorno abierto y la validación humana siguen pendientes; no se cambia automáticamente su propietario.
+Servicio iniciado en fase 5B, puerto por defecto 4020, Java 21 y Maven Wrapper. Estado al 21 de octubre de 2026: activo en el entorno integrado mediante el puerto 14620 y aceptado localmente y desde la publicación temporal Vercel. La [evaluación 5B](../../docs/verificaciones/fase5b-20261019/RESULTADOS.md) conserva resultados históricos; después se ejecutaron 29 pruebas JUnit sin BD al incorporar métricas. La aceptación de producción permanece pendiente. Consultar [estado actual](../../docs/ESTADO-ACTUAL.md).
 
 ## Capacidades
 
@@ -59,3 +59,7 @@ Solo tras validar: reiniciar Express con SIMULATION_BACKEND=java, LEARNING_BACKE
 Las pruebas SQL y cambios de usuarios de fase 5A no se trasladan al esquema de aprendizaje. La identidad continúa en Express y los resultados de simulación siguen en Java. El progreso consulta el resumen de simulación sin sumar XP del evento. Los eventos antiguos ya entregados al consumidor Express no se reproducen automáticamente en el nuevo inbox.
 
 Antes de habilitar escrituras Java puede mantenerse LEARNING_BACKEND=legacy. Después del cambio, volver a legacy exige conciliación revisada de los datos creados; no es un rollback automático por variable. No se borran tablas existentes.
+
+## Proyecciones de progreso, AG-05
+
+El snapshot completo ProgresoActualizado se publica con LEARNING_PROGRESS_ENABLED=true, LEARNING_PROGRESS_TARGET apuntando al endpoint interno de personas y LEARNING_PROGRESS_TOKEN coincidente con PEOPLE_SERVICE_TOKEN. Las tablas Flyway V2 conservan snapshots, versiones, outbox y reconciliación. El destino no es el gateway. El supervisor local ya configura este flujo. Véase [implementación y resultados](../../docs/AG05-PROYECCIONES-20261021.md).

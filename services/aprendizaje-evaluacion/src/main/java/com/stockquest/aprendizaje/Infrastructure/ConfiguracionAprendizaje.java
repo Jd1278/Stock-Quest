@@ -34,12 +34,13 @@ public class ConfiguracionAprendizaje {
     @Bean CompletarLeccion completar(RutaAprendizaje r,Intentos i,RegistroProgreso p,UnidadDeTrabajo tx,Clock clock,HechosAprendizaje hechos) {return new CompletarLeccion(r,i,p,tx,clock,hechos);}
     @Bean ResultadosSimulacion resultados(@Value("${learning.simulation-url}") URI uri,@Value("${learning.simulation-token}") String token,ObjectMapper mapper) {return new ResultadosSimulacionHttp(uri,token,mapper);}
     @Bean ConsultarProgreso consultar(CatalogoFormativo c,Intentos i,RegistroProgreso p,ResultadosSimulacion s) {return new ConsultarProgreso(c,i,p,s);}
-    @Bean RecibirSimulacion recibir(RegistroProgreso p,UnidadDeTrabajo tx) {return new RecibirSimulacion(p,tx);}
+    @Bean RecibirSimulacion recibir(RegistroProgreso p,UnidadDeTrabajo tx,HechosAprendizaje hechos) {return new RecibirSimulacion(p,tx,hechos);}
+    @Bean SnapshotsProgresoJdbc snapshots(JdbcTemplate jdbc,PlatformTransactionManager manager,ConsultarProgreso consultar,JsonPersistencia json) {return new SnapshotsProgresoJdbc(jdbc,manager,consultar,json);}
     @Bean IdentidadActual identidad(@Value("${learning.identity-me-url}") URI uri,ObjectMapper mapper) {return new IdentidadHttp(uri,mapper);}
     @Bean FilterRegistrationBean<FiltroIdentidad> identidadFiltro(IdentidadActual identidad,ObjectMapper mapper) {
         var r=new FilterRegistrationBean<>(new FiltroIdentidad(identidad,mapper));r.addUrlPatterns("/api/*","/internal/admin/*");r.setOrder(1);return r;
     }
     @Bean FilterRegistrationBean<FiltroServicio> servicioFiltro(@Value("${learning.service-token}") String token,ObjectMapper mapper) {
-        var r=new FilterRegistrationBean<>(new FiltroServicio(token,mapper));r.addUrlPatterns("/internal/users/*","/internal/admin/*","/internal/learning-reports/*");r.setOrder(0);return r;
+        var r=new FilterRegistrationBean<>(new FiltroServicio(token,mapper));r.addUrlPatterns("/internal/users/*","/internal/admin/*","/internal/learning-reports/*","/internal/progress-snapshots/*");r.setOrder(0);return r;
     }
 }

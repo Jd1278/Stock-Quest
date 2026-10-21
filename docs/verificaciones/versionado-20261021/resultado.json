@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-21",
+  "tag": "migracion-local-2026.10.21",
+  "scope": "Local source consolidation; no database records or production release",
+  "executed": {
+    "node": {
+      "gateway": 64,
+      "frontend": 23,
+      "failed": 0
+    },
+    "lint": "PASS",
+    "contracts": {
+      "operations": 39,
+      "paths": 32,
+      "references": 108
+    },
+    "legacyArchive": {
+      "sources": 42,
+      "status": "PASS"
+    },
+    "gatewayIsolation": {
+      "modules": 164,
+      "legacyImports": 0,
+      "sqlDrivers": 0
+    },
+    "indexBytes": {
+      "checked": 165,
+      "historicalChanges": [
+        "contracts/propiedad-datos.json"
+      ]
+    }
+  },
+  "javaRerun": false,
+  "excluded": [
+    "credentials",
+    "database dumps and records",
+    "DPAPI",
+    "build outputs",
+    "new video material",
+    "new RNF controls"
+  ],
+  "limitations": [
+    "Clean-checkout rebuild not performed",
+    "No remote push or production release",
+    "Whitespace in extracted historical requirements preserved"
+  ]
+}

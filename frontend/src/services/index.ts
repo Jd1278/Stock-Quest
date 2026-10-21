@@ -74,6 +74,8 @@ export const groupService = {
     request("/groups/" + id + "/members/" + userId, "DELETE"),
 };
 export const adminService = {
+  remove: (kind: "modules" | "lessons" | "challenges" | "scenarios", id: string) =>
+    request<void>("/admin/" + kind + "/" + encodeURIComponent(id), "DELETE"),
   content: () =>
     request<{ modules: Module[]; scenarios: Scenario[] }>("/admin"),
   save: (kind: string, body: unknown, id?: string) =>

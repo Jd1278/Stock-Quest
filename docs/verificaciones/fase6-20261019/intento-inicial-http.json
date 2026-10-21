@@ -1,0 +1,24 @@
+{
+  "status": "FAIL",
+  "error": "POST /api/challenges/4026f719-84db-4bcf-8a57-67af65fea339/attempts: expected 200, received 201",
+  "runId": "ede4dd7a-8cd0-4492-99c3-0ae41d42b18c",
+  "checks": [
+    "nine-original-topics-lessons-challenges-and-two-product-scenarios"
+  ],
+  "measurements": [],
+  "databases": {
+    "people": "stockquest_phase6_people_20261020",
+    "learning": "stockquest_phase6_learning_20261020",
+    "simulation": "stockquest_phase6_simulation_20261020"
+  },
+  "ports": {
+    "edge": 14600,
+    "simulation": 14610,
+    "learning": 14620,
+    "people": 14630,
+    "web": 5174,
+    "control": 14699
+  },
+  "finishedAt": "2026-10-20T02:58:28.775Z",
+  "limits": "Local sample only. UI browser and external videos not certified. No learning/personas projections enabled."
+}

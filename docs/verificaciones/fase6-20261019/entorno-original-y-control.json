@@ -1,0 +1,18 @@
+[
+  {
+    "name": "original-edge",
+    "status": 200
+  },
+  {
+    "name": "original-simulation",
+    "status": 200
+  },
+  {
+    "name": "original-web",
+    "status": 200
+  },
+  {
+    "name": "local-control-no-token",
+    "status": 401
+  }
+]

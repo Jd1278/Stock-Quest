@@ -1,0 +1,65 @@
+name: Validate and deploy
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: stock-quest-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: stockquest_test
+          POSTGRES_PASSWORD: ci-only-password
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd="pg_isready -U postgres -d stockquest_test"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    env:
+      DATABASE_URL: postgresql://postgres:ci-only-password@127.0.0.1:5432/stockquest_test
+      JWT_SECRET: ephemeral-ci-only-test-secret-minimum-32-characters
+      RUN_DB_TESTS: "1"
+      GOMAXPROCS: "2"
+      GOMEMLIMIT: 512MiB
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.18.0"
+          cache: npm
+      - run: npm ci
+      - run: npm run db:generate
+      - run: npm run db:migrate
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+  deploy:
+    needs: verify
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      FRONTEND_DEPLOY_HOOK: ${{ secrets.FRONTEND_DEPLOY_HOOK }}
+      BACKEND_DEPLOY_HOOK: ${{ secrets.BACKEND_DEPLOY_HOOK }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.18.0"
+          cache: npm
+      - run: npm ci
+      - run: npm run db:migrate
+      - name: Trigger provider deployments
+        shell: bash
+        run: |
+          test -n "$FRONTEND_DEPLOY_HOOK" && test -n "$BACKEND_DEPLOY_HOOK"
+          curl --fail --silent --show-error -X POST "$BACKEND_DEPLOY_HOOK" > /dev/null
+          curl --fail --silent --show-error -X POST "$FRONTEND_DEPLOY_HOOK" > /dev/null

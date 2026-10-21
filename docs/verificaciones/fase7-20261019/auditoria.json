@@ -1,0 +1,19 @@
+{
+  "status": "PASS - traceability and architecture inventory; pending requirements remain pending",
+  "requirements": 26,
+  "functional": {
+    "validado-local": 19,
+    "parcial": 1,
+    "pendiente": 0
+  },
+  "nonfunctional": {
+    "validado-local": 1,
+    "parcial": 3,
+    "pendiente": 2
+  },
+  "services": 3,
+  "capabilities": 8,
+  "documentSha256": "620e3ec0b5fd00366f9a6c44571ea3fd17276dc6a39f988b1bb3db4ee31dd149",
+  "productionAcceptance": false,
+  "executedSuiteTests": 232
+}

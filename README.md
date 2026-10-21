@@ -1,60 +1,62 @@
-# Stock Quest — PostgreSQL
+# Stock Quest — Java, React y PostgreSQL
 
-## Migración progresiva a Java
+Estado al 21 de octubre de 2026: tres microservicios Java y gateway independiente activos localmente. La separación del gateway fue validada por el usuario y el backend anterior quedó archivado fuera de los workspaces. Consultar [estado vigente](docs/ESTADO-ACTUAL.md) y [activación y retirada](docs/RETIRADA-LEGACY-20261021.md).
 
-El primer servicio y su arquitectura hexagonal están en [services/simulacion-logistica](services/simulacion-logistica/README.md). La [fase 4](docs/FASE-4-IMPLEMENTACION.md) implementó el corte inicial y la [fase 5A](docs/FASE-5A-SIMULACION.md) añade el puente configurable con Express. El modo Java requiere bases, migraciones y credenciales; por defecto se conserva el recorrido legacy. Las pruebas de PostgreSQL siguen aplazadas.
+## Arquitectura activa
 
-Aplicación de capacitación en inventarios y logística: React 18, TypeScript, Zustand, React Router, TailwindCSS, Lucide y Phaser 3. Backend Express con Prisma 6, adaptador PostgreSQL de Node.js, JWT Bearer y bcrypt.
+| Componente | Responsabilidad |
+|---|---|
+| services/personas-capacitacion | Identidad, usuarios, equipos y grupos |
+| services/aprendizaje-evaluacion | Contenidos, evaluaciones, progreso y logros |
+| services/simulacion-logistica | Escenarios, partidas, decisiones y resultados |
+| gateway | Entrada /api, identidad delegada, validación y composición HTTP |
+| frontend | React 18, TypeScript y Phaser 3 |
+| legacy | Fuentes y herramientas históricas, sin ejecución ni instalación habitual |
 
-## Configuración
+Cada servicio y cada una de sus ocho capacidades contiene Application, domain e Infrastructure. Los nombres de las capacidades expresan el negocio; los puertos separan los casos de uso de Spring/JDBC/HTTP. Cada servicio Java tiene su propia base PostgreSQL y un único propietario de escritura. El gateway no importa Prisma ni accede a bases de datos.
 
-Requiere Node.js 22.18 o superior. Ejecuta los comandos desde la raíz del proyecto.
+Los eventos de simulación llegan al inbox de aprendizaje. Aprendizaje publica snapshots ProgresoActualizado y personas almacena su proyección local con inbox idempotente y versiones. Los informes inicializados siguen disponibles cuando aprendizaje cae; HTTP se usa para inicialización/reconstrucción y como modo explícito de recuperación. AG-05 está implementado, activado y validado por el usuario el 21 de octubre de 2026; véase [el resultado](docs/AG05-PROYECCIONES-20261021.md). Véanse [arquitectura actual](docs/ARQUITECTURA-ACTUAL.md) y [pendientes de desarrollo](docs/PENDIENTES-DESARROLLO.md).
 
-1. `npm ci`
-2. Copia `apps/api/.env.example` a `apps/api/.env` si aún no existe. Configura `DATABASE_URL`, `JWT_SECRET` y `FRONTEND_URL`.
-3. `npm run db:generate`
-4. `npm run db:check`
-5. Para una base nueva exclusiva de Stock Quest: `npm run db:migrate` y `npm run db:seed`.
-6. `npm run dev`
+## Arranque del equipo preparado
 
-Para Render externo usa una URL `postgresql://USUARIO:CONTRASEÑA@HOST:5432/BASE?sslmode=require&sslaccept=strict&connect_timeout=15&connection_limit=5`. Las credenciales pertenecen solo al backend; nunca a variables `VITE_` ni a Git. En esta copia local se configuró la conexión Render proporcionada por el propietario en `.env`, excluido del ZIP.
+Requiere Node.js 22.18 o superior, JDK 21, PostgreSQL y los JAR ya compilados. Maven Wrapper está incluido por servicio. Desde la raíz:
 
-Para PostgreSQL local, `compose.yaml` usa PostgreSQL 16: define `POSTGRES_PASSWORD` y ejecuta `docker compose up -d`. Usa el usuario `stockquest`, puerto 5432 y base `stockquest` en la URL local. No es necesario arrancar Docker si utilizas Render.
+```powershell
+$env:SPRING_PROFILES_ACTIVE = 'observabilidad'
+node scripts/local-java.cjs start
+node scripts/local-java.cjs status
+```
 
-## Usuarios y contenido
+El supervisor usa la configuración local cifrada con Windows DPAPI y el mismo usuario Windows. No copiarla al repositorio o a Vercel. Abre la interfaz en http://127.0.0.1:5174. El gateway escucha en 14600; las bases, roles y puertos de los tres Java se registran en status. El aprovisionamiento de un clon nuevo se describe en [fase 6](docs/FASE-6-INTEGRACION.md).
 
-El registro público crea aprendices. El seed contiene nueve módulos, nueve microlecciones, nueve desafíos y dos escenarios. Para crear el gestor y el líder, define las variables `SEED_ADMIN_*` y `SEED_LEADER_*` con contraseñas propias antes del seed. No existen contraseñas universales. En la copia local se conservan las variables privadas de aprovisionamiento.
+Para desarrollo manual del borde/interfaz, configurar los orígenes y tokens Java según [gateway/README.md](gateway/README.md) y ejecutar npm run dev. El proxy web predeterminado apunta a 14600; SQ_API_PROXY_TARGET permite indicar otro origen. Los secretos no se publican con prefijo VITE.
 
-La interfaz permite aprendizaje secuencial, desafíos, simulaciones con decisiones evaluadas en el servidor, progreso, logros, perfiles, informes de equipo, grupos y gestión pedagógica. Los videos se vinculan por ID de YouTube; faltan los videos del canal específico del proyecto.
+## Construcción y pruebas
 
-## Migración de MySQL a PostgreSQL
+```powershell
+npm.cmd ci
+npm.cmd run lint
+npm.cmd test
+npm.cmd run build
+node scripts/verify-gateway-isolation.cjs
+node scripts/verify-legacy-retirement.cjs
+node contracts/validar-inventario.cjs
+```
 
-Se cambió el proveedor Prisma, el diagnóstico, el controlador de conexión, la migración inicial, Docker y CI. PostgreSQL almacena los campos JSON como JSONB y los roles como enum. La API y las pantallas conservan su contrato.
+Los comandos npm cubren gateway/frontend: 87 pruebas aprobadas en la retirada (64 del gateway y 23 de frontend). No construyen Java. Por cada servicio, ejecutar su mvnw.cmd con -f apuntando a su pom.xml y package; -Ppostgres-it verify agrega IT con bases exclusivas y variables de prueba. No usar las bases de aplicación para IT.
 
-La base MySQL anterior no fue borrada ni se trasladaron sus usuarios/resultados. Esta versión inicializa un esquema PostgreSQL nuevo; no debe aplicar SQL PostgreSQL a una base MySQL. La migración anterior se conserva como respaldo de trabajo y en los ZIP previos.
+Los verificadores HTTP actuales son scripts/verify-java-gateway.cjs, scripts/verify-admin-deletion.cjs y scripts/verify-phase7-runtime.cjs. Requieren el entorno local preparado. Crean fixtures con identificadores propios y solo limpian esos registros. El último interrumpe brevemente el borde para comprobar entrega directa de eventos y lo recupera. Las pruebas y resultados de fases anteriores se conservan como evidencia histórica, sin sumarlos como pruebas únicas de esta entrega.
 
-`npm run db:migrate` ejecuta el SQL generado por Prisma con el cliente PostgreSQL de Node.js. Usa una transacción, bloqueo asesor e historial `_prisma_migrations` con checksums. Rechaza un esquema con tablas sin historial y migraciones modificadas/incompletas. Esto evita el proveedor TLS nativo de Windows que falló en esta sesión. `npm run db:migrate:prisma -w @stock-quest/api` mantiene disponible el CLI estándar `prisma migrate deploy` para entornos compatibles.
+## Contenido y archivo histórico
 
-## Validación
+El contenido compartido está en content/stockquest.json: nueve módulos, nueve microlecciones, nueve desafíos y dos escenarios. La aplicación incluye aprendizaje, desafíos, simulaciones, progreso, perfiles, grupos, informes y gestión pedagógica con eliminaciones protegidas. Faltan los vídeos propios aceptados como pendiente de RF11.
 
-- `npm run lint`
-- `npm test`
-- `npm run build`
+[legacy/README.md](legacy/README.md) conserva el backend anterior, sus pruebas, migraciones y plantillas. Se verificaron 42 fuentes por SHA-256 antes y después del traslado. Las dependencias Prisma, los scripts db:* y los comandos habituales legacy fueron retirados del proyecto activo. pg y bcrypt permanecen como dependencias de desarrollo de las herramientas locales de aprovisionamiento/prueba; no forman parte del proceso HTTP del gateway. No se borraron bases ni progreso del usuario.
 
-Las pruebas de integración requieren `RUN_DB_TESTS=1` y una base cuyo nombre empiece con `sq_test_` o `stockquest_test`, o un esquema dedicado cuyo nombre cumpla `sq_test_[a-z0-9]+`. Nunca uses `public` en una base de aplicación para estas pruebas. CI usa PostgreSQL 16 efímero.
+## Despliegue y trabajo pendiente
 
-En Windows, si Vite falla al cargar su configuración en el entorno restringido, ejecuta el build frontend con `-- --configLoader native`, `GOMAXPROCS=2`, `GOMEMLIMIT=384MiB` y `NODE_OPTIONS=--max-old-space-size=640`. La API compilada se inicia con `npm run start -w @stock-quest/api`.
+La presentación temporal usa frontend estático en Vercel y un túnel hacia la API local. En la comprobación posterior a la retirada, la API local y el proxy web devolvieron 200; el dominio anterior del túnel no resolvió y la API pública Vercel devolvió 502. Esa conexión temporal necesita recuperación antes de otra presentación. No se modificó ni republicó Vercel durante la migración.
 
-## Documentación
+Las plantillas raíz Vercel/Render ahora usan el gateway sin Prisma y requieren orígenes/tokens de servicios Java accesibles; no alojan los Java ni sus bases. La configuración anterior se conserva en legacy. No se ejecutó despliegue permanente.
 
-- [Pendientes de aceptación global](docs/PENDIENTES-ACEPTACION-GLOBAL.md)
-- [Fase 5C: personas y capacitación Java](docs/FASE-5C-PERSONAS.md)
-- [Fase 5B: aprendizaje y evaluación Java](docs/FASE-5B-APRENDIZAJE.md)
-- [Servicio de aprendizaje](services/aprendizaje-evaluacion/README.md)
-- [Conexión remota](docs/BASE-REMOTA.md)
-- [Despliegue en Render y Vercel](docs/DESPLIEGUE.md)
-- [Contrato de la API](docs/API.md)
-- [Arquitectura](docs/ARQUITECTURA.md)
-- [Verificación PostgreSQL](docs/POSTGRESQL.md)
-
-El backend todavía requiere publicarse como servicio web; disponer de la base de datos Render no publica la API. No se ha ejecutado GitHub Actions ni certificado disponibilidad del 99 %, rendimiento de 3 segundos o compatibilidad visual en todos los navegadores.
+Jenkins, release, CloudFormation y operación continua permanecen aplazados por solicitud del usuario. AG-05 y el cierre técnico de la migración local quedaron validados expresamente por el usuario el 21 de octubre de 2026. Siguen abiertos el material de vídeos, controles RNF y consolidación/versionado. Consultar [pendientes globales](docs/PENDIENTES-ACEPTACION-GLOBAL.md), [despliegue](docs/DESPLIEGUE.md) y [evidencias de retirada](docs/verificaciones/retirada-legacy-20261021/RESULTADOS.md).

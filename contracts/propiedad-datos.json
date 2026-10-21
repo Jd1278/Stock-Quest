@@ -1,5 +1,5 @@
 {
-  "status": "phase-5C-three-java-services-implemented-isolated-tests-passed-global-acceptance-pending",
+  "status": "java-owners-active-legacy-archived-progress-projections-local-accepted",
   "referenceCommit": "0547d891c06e6f0c7160ecb4cd0598d7cf0f1312",
   "rules": [
     "One active writer per capability",
@@ -40,5 +40,28 @@
       "from": "Simulation.userId",
       "toService": "personas-capacitacion"
     }
-  ]
+  ],
+  "projections": {
+    "people_progress_projections": {
+      "owner": "personas-capacitacion",
+      "source": "aprendizaje-evaluacion",
+      "kind": "derived-report"
+    },
+    "people_progress_inbox": {
+      "owner": "personas-capacitacion",
+      "kind": "idempotent-receipts"
+    },
+    "learning_progress_snapshots": {
+      "owner": "aprendizaje-evaluacion",
+      "kind": "versioned-snapshot-metadata"
+    },
+    "learning_progress_outbox": {
+      "owner": "aprendizaje-evaluacion",
+      "kind": "delivery-log"
+    },
+    "learning_progress_refresh_queue": {
+      "owner": "aprendizaje-evaluacion",
+      "kind": "reconciliation-queue"
+    }
+  }
 }

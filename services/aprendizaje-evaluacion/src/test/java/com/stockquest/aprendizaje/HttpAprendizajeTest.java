@@ -32,6 +32,18 @@ class HttpAprendizajeTest {
                 new EventosController(recibir,new JsonPersistencia(mapper),"test-event-token-at-least-32-characters"))
                 .setMessageConverters(new MappingJackson2HttpMessageConverter(mapper)).setControllerAdvice(new ErroresHttp()).build();
     }
+    @Test void soloGestorPuedeEliminarModulos()throws Exception {
+        mvc.perform(delete("/api/admin/modules/m").requestAttr(AtributosHttp.USUARIO,user)).andExpect(status().isForbidden());
+        mvc.perform(delete("/api/admin/modules/m").requestAttr(AtributosHttp.USUARIO,new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO)))
+                .andExpect(status().isNoContent()).andExpect(content().string(""));
+    }
+    @Test void soloGestorPuedeEliminarLeccionesYDesafios()throws Exception {
+        for(String path:List.of("/api/admin/lessons/l","/api/admin/challenges/c")) {
+            mvc.perform(delete(path).requestAttr(AtributosHttp.USUARIO,user)).andExpect(status().isForbidden());
+            mvc.perform(delete(path).requestAttr(AtributosHttp.USUARIO,new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO)))
+                    .andExpect(status().isNoContent()).andExpect(content().string(""));
+        }
+    }
     @Test void respuestasPublicasNoExponenSolucion() throws Exception {
         when(ruta.ruta("u")).thenReturn(List.of(new RutaAprendizaje.ModuloPublico("m","Tema","Texto",1,true,List.of(
                 new RutaAprendizaje.LeccionPublica("l","m","Lección","Texto",1,5,List.of(),List.of(new RutaAprendizaje.PreguntaPublica("c","Pregunta",List.of("A","B"))),false,true)))));

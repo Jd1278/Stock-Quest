@@ -1,6 +1,6 @@
 # Servicio de simulación logística
 
-Primer servicio Java de Stock Quest. Incluye el corte de fase 4 y el puente configurable de fase 5A. Por defecto Express sigue siendo el propietario; Java no reemplaza tráfico público hasta configurar bases, migraciones y `SIMULATION_BACKEND=java`. Consultar `docs/FASE-5A-SIMULACION.md` desde la raíz para la entrega vigente.
+Primer servicio Java de Stock Quest. Incluye el corte de fase 4 y la extracción de fase 5A. Estado al 21 de octubre de 2026: el entorno integrado activa `SIMULATION_BACKEND=java` y usa el puerto 14610, con su base propia; el usuario validó la simulación local y la publicación temporal Vercel. La configuración por defecto del borde aún permite legacy. Después de añadir métricas pasaron 37 pruebas JUnit sin BD y se ensayó dos veces la caída/recuperación de este servicio con PASS. Consultar [estado actual](../../docs/ESTADO-ACTUAL.md); la fase 5A conserva su evidencia histórica.
 
 ## Estructura implementada
 

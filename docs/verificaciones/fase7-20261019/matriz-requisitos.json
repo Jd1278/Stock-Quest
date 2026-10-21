@@ -1,0 +1,395 @@
+{
+  "date": "2026-10-19",
+  "requirements": {
+    "path": "C:/Users/LENOVO/Downloads/Stock_Quest.docx",
+    "sha256": "620e3ec0b5fd00366f9a6c44571ea3fd17276dc6a39f988b1bb3db4ee31dd149"
+  },
+  "meaning": "Validado-local is functional/local evidence, not production certification or final human acceptance.",
+  "entries": [
+    {
+      "id": "RF01",
+      "name": "Registro de Usuarios",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Application/GestionIdentidad.java"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java"
+      ],
+      "assessment": "Registro público normaliza campos y crea solo aprendices; hash BCrypt."
+    },
+    {
+      "id": "RF02",
+      "name": "Inicio de Sesión y Verificación de Credenciales",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/TokensJwt.java",
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/ClavesBcrypt.java"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/TokensJwtTest.java"
+      ],
+      "assessment": "Firma, expiración, credenciales, cuenta activa y revocación."
+    },
+    {
+      "id": "RF03",
+      "name": "Identificación de Roles",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/FiltroIdentidad.java"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java"
+      ],
+      "assessment": "Rol consultado en la cuenta vigente; no se acepta el rol del cliente."
+    },
+    {
+      "id": "RF04",
+      "name": "Redirección por Rol",
+      "status": "validado-local",
+      "owner": "frontend",
+      "sources": [
+        "frontend/src/main.tsx",
+        "frontend/src/components/RoleGate.tsx"
+      ],
+      "testSources": [
+        "frontend/src/components/RoleGate.test.tsx"
+      ],
+      "assessment": "Guardas y destino por rol; usuario confirmó acceso a los tres roles."
+    },
+    {
+      "id": "RF05",
+      "name": "Acceso al Módulo de Estudio",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "frontend/src/pages/LearningPage.tsx",
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/RutaAprendizaje.java"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "Nueve módulos visibles y secuencia de desbloqueo, confirmados por el usuario."
+    },
+    {
+      "id": "RF06",
+      "name": "Ejecución de Simulaciones",
+      "status": "validado-local",
+      "owner": "simulacion-logistica",
+      "sources": [
+        "frontend/src/games/inventory/game.ts",
+        "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/partidas/Application/RegistrarDecision.java"
+      ],
+      "testSources": [
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/MotorInventarioTest.java",
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/PersistenciaPostgresIT.java",
+        "frontend/src/games/inventory/InventoryGame.test.tsx"
+      ],
+      "assessment": "Dos escenarios, decisiones persistidas, concurrencia y ciclo de vida React corregido; usuario confirmó funcionamiento."
+    },
+    {
+      "id": "RF07",
+      "name": "Visualización de Tarjetas de Repaso",
+      "status": "validado-local",
+      "owner": "frontend",
+      "sources": [
+        "frontend/src/pages/LessonPage.tsx",
+        "content/stockquest.json"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "Tarjetas/lecturas teóricas antes del desafío; usuario confirmó lectura."
+    },
+    {
+      "id": "RF08",
+      "name": "Visualización de Resultados de Simulación",
+      "status": "validado-local",
+      "owner": "simulacion-logistica",
+      "sources": [
+        "frontend/src/pages/SimulationPage.tsx",
+        "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/partidas/domain/MotorInventario.java"
+      ],
+      "testSources": [
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/MotorInventarioTest.java",
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/PersistenciaPostgresIT.java"
+      ],
+      "assessment": "Reporte operativo y financiero e historial finalizado; usuario confirmó resultado."
+    },
+    {
+      "id": "RF09",
+      "name": "Recepción de Retroalimentación",
+      "status": "validado-local",
+      "owner": "simulacion-logistica",
+      "sources": [
+        "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/partidas/domain/MotorInventario.java",
+        "frontend/src/pages/SimulationPage.tsx"
+      ],
+      "testSources": [
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/MotorInventarioTest.java",
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/PersistenciaPostgresIT.java"
+      ],
+      "assessment": "Feedback de faltantes, exceso y equilibrio; score determinista."
+    },
+    {
+      "id": "RF10",
+      "name": "Realización de Lecciones",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/RutaAprendizaje.java",
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/CompletarLeccion.java"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "No completa sin respuestas correctas; progreso idempotente y desbloqueo confirmado."
+    },
+    {
+      "id": "RF11",
+      "name": "Estudio de Material Teórico",
+      "status": "parcial",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "frontend/src/pages/LessonPage.tsx",
+        "frontend/src/components/YouTubePlayer.tsx",
+        "content/stockquest.json"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "Texto cargado; soporte de IDs de vídeo implementado. Vídeos del proyecto no suministrados: pendiente expresamente aceptado por el usuario."
+    },
+    {
+      "id": "RF12",
+      "name": "Monitoreo de Progreso Personal",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/ConsultarProgreso.java"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "XP, logros, intentos y simulaciones persistentes; consistencia tras reinicios."
+    },
+    {
+      "id": "RF13",
+      "name": "Consulta de Temáticas que Requieren Refuerzo",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/ConsultarProgreso.java",
+        "frontend/src/pages/ProfilePage.tsx"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "Promedio por tema y recomendaciones de refuerzo; mejor nota para XP se calcula por separado."
+    },
+    {
+      "id": "RF14",
+      "name": "Consulta de Porcentaje de Progreso",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "frontend/src/pages/ProfilePage.tsx",
+        "frontend/src/pages/LearningPage.tsx"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java"
+      ],
+      "assessment": "Porcentajes global y modular derivados de las lecciones publicadas."
+    },
+    {
+      "id": "RF15",
+      "name": "Acceso al Módulo de Contenidos",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/AdministrarContenido.java",
+        "backend/src/routes/index.ts"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/HttpAprendizajeTest.java",
+        "backend/src/services/learningGateway.test.ts"
+      ],
+      "assessment": "Panel exclusivo del gestor; permisos en borde y propietario."
+    },
+    {
+      "id": "RF16",
+      "name": "Gestión de Contenido de Aprendizaje",
+      "status": "validado-local",
+      "owner": "aprendizaje-evaluacion",
+      "sources": [
+        "frontend/src/pages/ContentPage.tsx",
+        "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/AdministrarContenido.java"
+      ],
+      "testSources": [
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+        "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java",
+        "frontend/src/pages/ContentPage.test.tsx",
+        "backend/src/services/adminDeletion.integration.test.ts"
+      ],
+      "assessment": "Crear/editar/ordenar contenido; eliminación adicional solicitada con confirmación y protección de historial."
+    },
+    {
+      "id": "RF17",
+      "name": "Gestión de Variables de Módulos",
+      "status": "validado-local",
+      "owner": "simulacion-logistica",
+      "sources": [
+        "services/simulacion-logistica/src/main/java/com/stockquest/simulacion/escenarios/Application/GestionEscenarios.java",
+        "frontend/src/pages/ContentPage.tsx"
+      ],
+      "testSources": [
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/GestionEscenariosTest.java",
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/EscenariosHttpTest.java",
+        "services/simulacion-logistica/src/test/java/com/stockquest/simulacion/PersistenciaPostgresIT.java"
+      ],
+      "assessment": "Parámetros validados; snapshots conservan variables de partidas anteriores."
+    },
+    {
+      "id": "RF18",
+      "name": "Acceso al Módulo de Seguimiento",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "frontend/src/pages/TeamPage.tsx",
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ConsultarEquipo.java"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/GruposTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java"
+      ],
+      "assessment": "Panel del líder y equipo propio; consulta manual confirmada."
+    },
+    {
+      "id": "RF19",
+      "name": "Visualización de Informes Detallados y Calificaciones",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ConsultarEquipo.java",
+        "frontend/src/pages/TeamPage.tsx"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/GruposTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/InformesAprendizajeHttpTest.java"
+      ],
+      "assessment": "Informes con avance, calificación por tema y actividades; autorización antes de consultar aprendizaje."
+    },
+    {
+      "id": "RF20",
+      "name": "Panel de Grupos de Trabajo y Gestión de Colaboradores",
+      "status": "validado-local",
+      "owner": "personas-capacitacion",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/GestionGrupos.java",
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Application/GestionEquipo.java",
+        "frontend/src/pages/GroupsPage.tsx"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/GruposTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java"
+      ],
+      "assessment": "Líder crea aprendices y administra grupos/miembros propios. Usuario confirmó asignación, retirada y eliminación."
+    },
+    {
+      "id": "RNF01",
+      "name": "Rendimiento y Velocidad",
+      "status": "parcial",
+      "owner": "transversal",
+      "sources": [
+        "docs/verificaciones/fase6-20261019/recorrido-http.json"
+      ],
+      "testSources": [],
+      "assessment": "Muestra local API hasta 1231 ms, nueve temas y 11 aprendices. No prueba carga/render completo a 10 Mbps ni arranque frío."
+    },
+    {
+      "id": "RNF02",
+      "name": "Usabilidad",
+      "status": "parcial",
+      "owner": "frontend",
+      "sources": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/pages/ContentPage.tsx"
+      ],
+      "testSources": [
+        "frontend/src/pages/ContentPage.test.tsx"
+      ],
+      "assessment": "Usuario validó flujos y correcciones visuales. No se midió una curva de aprendizaje menor de 15 minutos."
+    },
+    {
+      "id": "RNF03",
+      "name": "Disponibilidad",
+      "status": "pendiente",
+      "owner": "operacion",
+      "sources": [
+        "scripts/local-java.cjs"
+      ],
+      "testSources": [],
+      "assessment": "Health checks y recuperación probados. Sin ventana medida, monitorización ni evidencia de disponibilidad del 99 %."
+    },
+    {
+      "id": "RNF04",
+      "name": "Seguridad de Datos",
+      "status": "parcial",
+      "owner": "transversal",
+      "sources": [
+        "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/ClavesBcrypt.java",
+        "services/personas-capacitacion/src/main/resources/db/migration/V1__personas.sql",
+        "scripts/local-java.cjs"
+      ],
+      "testSources": [
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java",
+        "services/personas-capacitacion/src/test/java/com/stockquest/personas/TokensJwtTest.java"
+      ],
+      "assessment": "BCrypt, JWT, permisos, revocación y secretos locales DPAPI verificados. Correo/documento/teléfono se guardan como campos normales; cifrado de datos personales en aplicación y almacenamiento/backup no certificado."
+    },
+    {
+      "id": "RNF05",
+      "name": "Compatibilidad Multiplataforma",
+      "status": "pendiente",
+      "owner": "frontend",
+      "sources": [
+        "frontend/src/styles.css"
+      ],
+      "testSources": [
+        "frontend/src/components/RoleGate.test.tsx"
+      ],
+      "assessment": "Diseño adaptable y revisión manual local. No hay matriz Chrome/Edge/Firefox/Safari con escritorio y móvil ejecutada."
+    },
+    {
+      "id": "RNF06",
+      "name": "Retroalimentación de Interfaz",
+      "status": "validado-local",
+      "owner": "frontend",
+      "sources": [
+        "frontend/src/hooks/useResource.ts",
+        "frontend/src/components/ui.tsx",
+        "frontend/src/pages/ContentPage.tsx"
+      ],
+      "testSources": [
+        "frontend/src/hooks/useResource.test.tsx",
+        "frontend/src/pages/ContentPage.test.tsx"
+      ],
+      "assessment": "Confirmaciones y errores visuales, estados ocupados y cancelación; audio no exigido adicionalmente porque el requisito permite visual o sonoro."
+    }
+  ]
+}

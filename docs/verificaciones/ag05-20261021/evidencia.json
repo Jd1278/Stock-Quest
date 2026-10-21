@@ -1,0 +1,561 @@
+{
+  "finishedAt": "2026-10-21T22:33:52.645Z",
+  "status": "PASS - AG05 local technical checks; human validation pending",
+  "javaUniqueCases": 120,
+  "javaUnitCases": 82,
+  "javaPostgresIT": 38,
+  "nodeTests": {
+    "gateway": 64,
+    "frontend": 23,
+    "passed": 87,
+    "failed": 0
+  },
+  "integration": {
+    "status": "PASS",
+    "runId": "c40bfc8f-228e-4432-8ec8-fcab92a7a468",
+    "checks": [
+      "challenge-and-lesson-facts-projected-to-authorized-leader-report",
+      "concurrent-duplicates-old-versions-and-conflicting-content-preserve-projection",
+      "internal-service-auth-and-public-report-permissions",
+      "projected-report-readable-while-learning-is-down",
+      "simulation-to-learning-to-people-chain-updates-xp-and-one-achievement",
+      "outbox-survives-source-restart-and-target-outage-then-redelivers",
+      "snapshot-rebuild-restores-derived-row-without-duplicating-inbox",
+      "snapshot-and-replay-endpoints-are-not-public"
+    ],
+    "finishedAt": "2026-10-21T22:24:31.494Z",
+    "existingUserProgressPreserved": true
+  },
+  "gatewayIntegration": "PASS",
+  "build": {
+    "people": "PASS after controlled stop",
+    "learning": "PASS after controlled stop",
+    "testsExecutedSeparately": true
+  },
+  "inventory": {
+    "status": "PASS - structural inventory only",
+    "expectedOperations": 39,
+    "contractOperations": 39,
+    "paths": 32,
+    "ownedModels": 14,
+    "eventTypes": 7,
+    "resolvedReferences": 108,
+    "requirementsMapped": 19,
+    "frontendOnly": [
+      "RF04"
+    ]
+  },
+  "isolation": {
+    "status": "PASS",
+    "loadedModules": 164,
+    "legacyImports": 0,
+    "sqlDrivers": 0
+  },
+  "legacyArchive": {
+    "status": "PASS",
+    "activeWorkspaces": [
+      "frontend",
+      "gateway"
+    ],
+    "archivedSourcesVerified": 42,
+    "prismaInActiveLockfile": false,
+    "legacyWriteCommands": false,
+    "databasesModified": false
+  },
+  "simulacionJavaSuiteRerun": false,
+  "productionAcceptance": false,
+  "files": [
+    {
+      "file": "scripts/local-java.cjs",
+      "sha256": "87e90be97ff3c17349fbb98c906b0ce426f76d979e0b539b1153bcb30b10da87"
+    },
+    {
+      "file": "scripts/verify-ag05.cjs",
+      "sha256": "bad70f41912b9fa9a66bdf9de9c7c2fee9c5b77c63afa2ad94ce46ed87d1ee44"
+    },
+    {
+      "file": "scripts/verify-java-gateway.cjs",
+      "sha256": "830bef0f02177acc791bd0bce86acf2dde1b71ec5cb2d66dffa7700573c65137"
+    },
+    {
+      "file": "scripts/verify-phase7-runtime.cjs",
+      "sha256": "b2142a9d4ca334f3c472d20466e6e08d5d09cccd46e5cabb1d46710e08e8a229"
+    },
+    {
+      "file": "contracts/eventos-v1.schema.json",
+      "sha256": "226ee30b1a7c55d78a7961c924770a7e46982daa42d58aa186117cef2c0815b4"
+    },
+    {
+      "file": "contracts/propiedad-datos.json",
+      "sha256": "8c623dd63a6a9fc085bfbf270cfe1fd592d3dd9d9ac157bfd9dbcfb05f9603f4"
+    },
+    {
+      "file": "contracts/progreso-proyecciones-v1.md",
+      "sha256": "b5a6d674a9b0d3a96199f01ab96d420bf7d988e2ecd2405f6ff75a92205913ea"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Application/HechosPersonas.java",
+      "sha256": "83fe57e86c18fb91b4ac767a8e38831ec926bc63928617c0f017f4016eb04034"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Application/UnidadDeTrabajo.java",
+      "sha256": "cc7cceb27ae5a437c19f97ef8d7b49cef0db55db25c7c3794a5719eecd106f4b"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ConsultarEquipo.java",
+      "sha256": "8130e412264d57f994e51271e641582697c7263ae47a4670bc82eed822926c77"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ConsultarInformesProyectados.java",
+      "sha256": "e95bb90f7ddb7833a1520397f779256c7646162893d3fdd0f9a173ef18df216c"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/FuenteSnapshots.java",
+      "sha256": "14481a0db962a219fedf4f6711d6350ab4957b7164d4ca9660b5213ac13001af"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/GestionGrupos.java",
+      "sha256": "635d5534c4543146894635b13af84938721cd30241bc32d42967f3d91b34bad3"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/Grupos.java",
+      "sha256": "11e5910e5cbff7fb01dfa8fa91adf1483e00d23e3057e29dde611933347c11c5"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/InformesAprendizaje.java",
+      "sha256": "cdae35aa246ce551363a720078d4bfed4ae4e476f780293c9e6e613d2a57e5a2"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Application/ProyeccionesProgreso.java",
+      "sha256": "aac699abe1b004ae5fa749fa62e67263d68fd061bb057e50d3655a847fe7fe3e"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/domain/EventoProgreso.java",
+      "sha256": "de1c73ddcc36ebe853d9ace5baa88bf418f159aa4bc0b4c9dda91274e2803791"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/domain/Grupo.java",
+      "sha256": "4ed07ccd70e4d9abbb0b046a52990077721991f6c092906cb6b6ac5bf9271e68"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/domain/InformeAprendizaje.java",
+      "sha256": "b3951727391617eb44f7b2d62065fb9fc0de08e2bdd6eeb0c782e3700ad1e5aa"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/CapacitacionController.java",
+      "sha256": "6bda627797f38e3508488ef12de7331edc27fb2054420751fd36b4453d5311f8"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/FuenteSnapshotsHttp.java",
+      "sha256": "8466d1a028455abe694bccaceba99b85c72582e07ae387270788026ec44bfd94"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/GruposJdbc.java",
+      "sha256": "bccad44e3c5b458101a9b02f7d74859a52bdd234582ceaba2cbd61048dc53e32"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/InformesAprendizajeHttp.java",
+      "sha256": "c837f487e892af8afb76f9621d829c64b10ebb9db83003be44d1cef8a047ced6"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/ProyeccionesController.java",
+      "sha256": "41a53c78e3757326f05781f6fa9cd0fc847e6b6481f8dedd6db95d96dce17a5a"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/capacitacion/Infrastructure/ProyeccionesProgresoJdbc.java",
+      "sha256": "12616e660caf584a438812442c050239e39f40242732ebb6ffcb107c8e103e38"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/domain/Fallo.java",
+      "sha256": "2bcc47efb299b1972077ab603240c7ea4c2600259276c73b20d8192ece58fe3f"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/domain/UsuarioAutenticado.java",
+      "sha256": "fdecbc41d4600860d2da9b5c72466d248c8da5c6a8383537b6a1a622979493ed"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Application/Claves.java",
+      "sha256": "1a5a3c71174e45dba698b1c173f0efcfb1e590072a60efb26fd5e55e1ee0a5e3"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Application/GestionIdentidad.java",
+      "sha256": "43640338ac64b92515ed26cc688fff467bf5ad91d6d213bd55c813c614033749"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Application/Tokens.java",
+      "sha256": "8e514c9e1664b409a5c21a33c05c24c9becda7dfb9479ecd850455adf0137b9d"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/domain/Sesion.java",
+      "sha256": "aeba7ab563d7532a52eb152a47278fd0a123e00e07c9d19f2b240a8c87324a2b"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/ClavesBcrypt.java",
+      "sha256": "12efe2581f5da7e180340341021a7ea2b262bd7037a4b59ab4b1a25c0b8f9526"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/FiltroIdentidad.java",
+      "sha256": "db3aa2f2866cc6de8adc7f570236220955663f162bb46777e7b71de9b163312c"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/IdentidadController.java",
+      "sha256": "5caa69dddd748a91ffd3d50a1a91a472ca774c8bd9757f56c00dfc9913b1b014"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/identidad/Infrastructure/TokensJwt.java",
+      "sha256": "dc31e4aebd96ac6127f57c45843f4da05776b7db249b16e3be4967ab68990776"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/AtributosHttp.java",
+      "sha256": "f291fc57268d4b616b82b24a183698ad152a864d7dff7ef65db9b0bee83d771b"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/ConfiguracionPersonas.java",
+      "sha256": "951cb95ae03ad0cb2180df9a084c9fac4f3ffe6995d7b4335e3bb5c2b2f9844f"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/ErroresHttp.java",
+      "sha256": "285057404a62b907f130c1ff10761e5deff5845acfcae99d9f2a50ae6751c5d9"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/FiltroServicio.java",
+      "sha256": "40158616520000725b11deb871758e383cd9aea562b6ff9fdace7e7f8c8c16ba"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/HechosPersonasJdbc.java",
+      "sha256": "74123a618a98e5833a11ed9ed05538d868b99f4ab456c3182c90654469e70d43"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/JsonHttp.java",
+      "sha256": "77b61afb3055c97aed25b8155cc0c071890b3284944c5f11e2bcc717e6256c89"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/JsonPersistencia.java",
+      "sha256": "1fff46704e07772959ed87f1b2aa97230d7fd17d0dc9fe7da9ac0d1e443b1c3c"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/PersonasApplication.java",
+      "sha256": "bd162d7a03273ffa418e7238ecaf2fcb81bf56015102076935dccc71873c9aa5"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/SaludController.java",
+      "sha256": "feb99f3d98cb6144709fb3decf0be810ee7e38f5e88ee35e189d86a8f471d9e3"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/Infrastructure/UnidadDeTrabajoJdbc.java",
+      "sha256": "81ba3150b4a10273a8e44aeb9a378ac17d095ac1524f83bb326a2af920f05144"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Application/GestionEquipo.java",
+      "sha256": "c16d87dc8be9a2df7489a0c844fca9753bcd3f60542ac8e6eee3b678f83cb956"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Application/Personas.java",
+      "sha256": "bd31d8b0a9888511f6b7cdeeec6b0872689a140ef9b3a5b96c0ea836b229a1f6"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/domain/DatosPersona.java",
+      "sha256": "c5bbf3050344c145c9efb31210e44ea892c28b911ac6d6b798699b16a6a2d112"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/domain/Persona.java",
+      "sha256": "56b8ff66b13f13c78be7df78bc834faea8cb3c0e4618ffcb5feee61e6d0e2ac0"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Infrastructure/PersonasJdbc.java",
+      "sha256": "e2d17e644081263e0297a0ef8ebf61278a6d45b68323f352c50383141bce6597"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/java/com/stockquest/personas/usuarios/Infrastructure/UsuariosController.java",
+      "sha256": "a2dbbb0e24e9dc8e72e1fe33d5812c0bca0497f76527799defe3407cd61ceb8f"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/resources/application-observabilidad.properties",
+      "sha256": "46d2e04c1e0efaa98b9ec406f9c85a53d401b2bc89c193ac75082b734be45cc7"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/resources/application.properties",
+      "sha256": "c1fceb400e241a983ca4871c51cf06fe2a3e4d2f2a125e5fd51cb842f87a517d"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/resources/db/migration/V1__personas.sql",
+      "sha256": "2aed91fe1c98fc2f547384782f709d36da587fa6c2c64ad0b4e87e107f021235"
+    },
+    {
+      "file": "services/personas-capacitacion/src/main/resources/db/migration/V2__proyecciones_progreso.sql",
+      "sha256": "6afe9dc2a5e5069215b1dc9325bd756688993e19b929a9997e629e00eca3326f"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/ArquitecturaTest.java",
+      "sha256": "335422df96c605094f64d844f80f3ed80e022fe41b4a1b8c4ec6c6876e11c97d"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/FuenteSnapshotsHttpTest.java",
+      "sha256": "a4ab9906ca1e8964a6ee44ba334b0777fa5181bd92fd5e021b93c81988f1281a"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/GruposTest.java",
+      "sha256": "1cafc3f2d60e83a5614cd7650e8dd38d73de8d95dea278950c0bf0de972438be"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/HttpGruposTest.java",
+      "sha256": "8eba65f6ddea0be1eb13694048cc6ef3c6b569671e9e8612e5d80c676d3d8d5f"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/HttpPersonasTest.java",
+      "sha256": "389357e3fedb64bb41fd00a7a01e20341ba745089eea7baecdb2ccb0c9682cd7"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/IdentidadTest.java",
+      "sha256": "bd9590b02dfd3e2f81f7b6791a48286f9a725b50f8e2097ef6966e321586f495"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/InformesAprendizajeHttpTest.java",
+      "sha256": "f38435c2182bed6b94053e8fc1cef92b573cde58a1ab7eeca1ad6784b76866ee"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/PersistenciaPersonasIT.java",
+      "sha256": "97c8688afdd5d32d76d2c28e0f4bd0ed5b6048defaef9fd7c80edc6fd225972c"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/ProyeccionesProgresoIT.java",
+      "sha256": "6aa671f4c72a095a600b6f393023728dc4184a8daeb865cfb011caa0155b23bb"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/ProyeccionesProgresoTest.java",
+      "sha256": "8820fb6201c1101667a777f7e917766812dc55decb88c679d29b6397a0c599f7"
+    },
+    {
+      "file": "services/personas-capacitacion/src/test/java/com/stockquest/personas/TokensJwtTest.java",
+      "sha256": "4434aa9580e010b0718bf60e7a0219846cd0d56927f0c776fbca4c723cf4da01"
+    },
+    {
+      "file": "services/personas-capacitacion/pom.xml",
+      "sha256": "effe0aaba595adb56d0d2dd252514de296e35f214c8f0a74a911c609fa6c298b"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Application/HechosAprendizaje.java",
+      "sha256": "ed644050b83e826663f1199818ebb090b6ba697bfb6de039ad8709fa9b5a2d99"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Application/IdentidadActual.java",
+      "sha256": "9e36ad0d67b5f9d09dcab72e9f36b273f33f03c9ba8026b551b74dfb5b70cc23"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Application/UnidadDeTrabajo.java",
+      "sha256": "f7a2d639bfe5c922cf0bd932ba0d5298975d5e4d244456c17539ac63f443a1a1"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/AdministrarContenido.java",
+      "sha256": "f8ecb185c8b42a6b60a144463e08e2f4fa2ffdb914e638df33c96904d59446ac"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/CatalogoFormativo.java",
+      "sha256": "80854bac16a007fbebdf3008fa4f2e831f13d461b94399e84220044258cc8eaf"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Application/RutaAprendizaje.java",
+      "sha256": "a03dbde3f6ec2e39bf8aee83204f489773a2c9988bdf37149e23c36a17634cff"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/domain/ContenidoFormativo.java",
+      "sha256": "d659d5061e7c404ddbaea6dd4e1712c91cd2cfbd6631bc76f030fdc291de04ee"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Infrastructure/CatalogoFormativoJdbc.java",
+      "sha256": "f9a8a44d241c0fd010e30f80d3d615e7b348c8ba831590cf43048539009c47eb"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/contenidos/Infrastructure/ContenidoController.java",
+      "sha256": "1d71be69ed8b69ebf895e94246b72b6d56c434c53cf52944279e0e88aa453beb"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/domain/Fallo.java",
+      "sha256": "44cecf960cb651be412c2c0ed87356009b949f4aeb63e702af68d1e5cabf3f04"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/domain/UsuarioAutenticado.java",
+      "sha256": "24af68f34fbb294fd5515fa38507642b8aca5108a8f4222ad94f788128e0cc42"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/Application/AdministrarEvaluaciones.java",
+      "sha256": "4ebe1ebcd36e7db81bc2b346a15deadb7033f4208087e067ff4fa297b3976eda"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/Application/Intentos.java",
+      "sha256": "e5cc4cc74c4d776ccea1af1a4062e5867d74f867b6e7a9f5ea7e6ae9038159e9"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/Application/ResponderDesafio.java",
+      "sha256": "fb7fb4f935b50f7b41bc438fc94b8ae3919378b86d8fc4d2d10684ed62471863"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/domain/Intento.java",
+      "sha256": "757ad0928732c5e48b2552ecb989a1c623373676d0461e117264aa49c75146f5"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/Infrastructure/DesafiosController.java",
+      "sha256": "f281d8abf64461ef518cba7bceb825ab9c6ac5cf96f815e9d944f15ccf471903"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/evaluaciones/Infrastructure/IntentosJdbc.java",
+      "sha256": "7317e9e06f010e88ad95754d199f1e4c0e68dd27893077e18ec98eb69d13c901"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/AprendizajeApplication.java",
+      "sha256": "382b5ffc7d063da4323eb321b74124c2b34815ebf9edf70ec54bed59a9b439cd"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/AtributosHttp.java",
+      "sha256": "c64f9aa34354139cdcc9b1b76921b34b82edd4d16ecf16d933a14bce234c19ab"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/ConfiguracionAprendizaje.java",
+      "sha256": "3114214876272d11e5b88e8cfe4357cdafca9b6547cdfae7c12d8990d0292d8c"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/ErroresHttp.java",
+      "sha256": "82565a04650e02eb6b902862a0db1fd511f8b18bc0d1550dfca9450c834ababb"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/FiltroIdentidad.java",
+      "sha256": "8e1bd9ffbc0fe1aa6fb189553a146af3ac0f9d2704b63f21ff52984850bd69d7"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/FiltroServicio.java",
+      "sha256": "9e626a5de8d921ae0cdc7f2a9dd9e90be93568bb6792e956f24dcf8466831df2"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/IdentidadHttp.java",
+      "sha256": "f28e0780f796832654fda1ef0b9643fcc027fba53527fe5ae376e850d30a67ff"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/JsonHttp.java",
+      "sha256": "1edd95f59c3ecd83236f104dcc4410abf48d6ad030cb9ad5314087e7c4137597"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/JsonPersistencia.java",
+      "sha256": "a097a751920817ad17fa94b7b2ba0aa28f6331410ddce522bfd184cfa8808a01"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/SaludController.java",
+      "sha256": "8f2d2a191d62589b69111b47a65ee99d6c035c4f154297e77300bc54eb9b13a3"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/Infrastructure/UnidadDeTrabajoJdbc.java",
+      "sha256": "9eade5af9e3d10bac945999c66688c1d9f42f7517dc2b233b25a513af7c18ff6"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/CompletarLeccion.java",
+      "sha256": "924b8e8e4569226786bd1500d4b43f8872530fba8d4e2b07756182f8620ecabf"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/ConsultarProgreso.java",
+      "sha256": "5157cb1c6e2eff455cf380a934048105a3309a5da9ea2dd388e42e0be8cc2d64"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/RecibirSimulacion.java",
+      "sha256": "f9269873feaf8f05cbcad72c0c96f182f331b37f1a096b45d6da009c3e28dc9a"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/RegistroProgreso.java",
+      "sha256": "e75461d64cbc3e7bfb206b272fb58bcb764d0035ea74cf11a5fddb0bb7cfad78"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/ResultadosSimulacion.java",
+      "sha256": "ede2c8c37a9543dbef2272a408039f2046690ca8d9363cccf3ff8dbaa7ed0054"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Application/SnapshotsProgreso.java",
+      "sha256": "8ed59d7d1fc2127d165ba1771491a065f82777ca51e9a29dca828678190ad1ba"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/domain/EstadoProgreso.java",
+      "sha256": "48570219e87a8f7af54d74498574bc2f9f3925de7200f8cb48c036ea09446a77"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/domain/EventoSimulacion.java",
+      "sha256": "36348ec584516372a9b8528152968cd81ddf0dd85fe041b6b775fbde3de536ff"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/EventosController.java",
+      "sha256": "63b3915eb2ad04401e0a98ecb9468e35b8f8cb2cafdfb1b57cdd8f9b603a070d"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/HechosAprendizajeJdbc.java",
+      "sha256": "6305613687b1aaa8b27170597315665d82c3aab9d7f9fe79259ccb2d343e4b1f"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/ProgresoController.java",
+      "sha256": "b78d6575bb05c429504effd037569f783d16736b0f2acb200986fe6167f86b0b"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/ProgresoOutboxDispatcher.java",
+      "sha256": "065c7ff0071fe74e177b8362451bbf7451d4564f78e519c10c20576bad7ff0a5"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/RegistroProgresoJdbc.java",
+      "sha256": "e952e0022167fe3cc2da1fbb68205cc99d7ba2256da1368fa37959845f202459"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/ResultadosSimulacionHttp.java",
+      "sha256": "cfb6ff7f55f70d4e9ab8179b60ddde634478cd2046dcb9a47d6c15c5f03d5e96"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/SnapshotsController.java",
+      "sha256": "db840d80886e48a1edcacc8aaa47b36c31882956930de1744ecad5d50a0e0bec"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/java/com/stockquest/aprendizaje/progreso/Infrastructure/SnapshotsProgresoJdbc.java",
+      "sha256": "1f987426aa958e5202d1ef5b51dd86a780e995693fadfa758f3eaff5593fef4d"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/resources/application-observabilidad.properties",
+      "sha256": "46d2e04c1e0efaa98b9ec406f9c85a53d401b2bc89c193ac75082b734be45cc7"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/resources/application.properties",
+      "sha256": "8c66e268d801e4192b1bb2eb205beddf09d9d7cb30d652477c4f76a9be5d0210"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/resources/db/dev/contenido.sql",
+      "sha256": "ffdc64de37e023ded44019a1d2542b209df50ca0f5d5a143a1b133ba17386fa6"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/resources/db/migration/V1__aprendizaje.sql",
+      "sha256": "b6bd7e0679d9cee3fdf5610fc71f1e66f35791c7ee6d086f54ce3eb596102edd"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/main/resources/db/migration/V2__progreso_snapshots.sql",
+      "sha256": "c743207e0f6e9ce95371e76bec7d0c9c8c79b4a2c0f0b059ed3b931b69438ad3"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/AprendizajeTest.java",
+      "sha256": "c6327bf556284fa8e261a24e08a7c11a3cbf1d7e38c03e0b9caebf023c91c0ee"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/ArquitecturaTest.java",
+      "sha256": "ab4df2a57a144d755fd3cf8541d7810d3dc6be08f43023f4c50b2bc24669b884"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/HttpAprendizajeTest.java",
+      "sha256": "2c22301b9e35efb8a6bff3d4b20bb0377918c307e421f4c2fa9dad038e8c6da4"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/PersistenciaAprendizajeIT.java",
+      "sha256": "7fcdad2059c1e85c274cd4be450de6a98a63aaa69512b302f170c8d019c448f2"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/ProgresoSnapshotsIT.java",
+      "sha256": "5f89fbdfe08c2c0f7bec7b5ac5ccc3b55d00b7ab9f2335053ccddbf77f81521b"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/src/test/java/com/stockquest/aprendizaje/ResultadosSimulacionHttpTest.java",
+      "sha256": "bbe2e6285c8c3a59a64765582fb5804a93163fa0d71a33b11e61cfafedb1ecab"
+    },
+    {
+      "file": "services/aprendizaje-evaluacion/pom.xml",
+      "sha256": "7f8cfcb38d7602aa82cedbeb4ac20714357eb745b98022c4048f14a9d764b81b"
+    }
+  ]
+}

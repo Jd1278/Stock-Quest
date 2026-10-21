@@ -1,0 +1,23 @@
+# Targets refer to the integrated local Java environment, not the legacy ports.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['127.0.0.1:9090']
+
+  - job_name: stockquest-java
+    metrics_path: /actuator/prometheus
+    scrape_timeout: 5s
+    static_configs:
+      - targets: ['127.0.0.1:14630']
+        labels:
+          service: personas-capacitacion
+      - targets: ['127.0.0.1:14620']
+        labels:
+          service: aprendizaje-evaluacion
+      - targets: ['127.0.0.1:14610']
+        labels:
+          service: simulacion-logistica

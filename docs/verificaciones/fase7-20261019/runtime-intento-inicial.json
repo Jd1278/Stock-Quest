@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "error": "Local supervisor rejected the request.",
+  "runId": "71bc624f-3199-4c6d-b38f-9604aebdebf2",
+  "checks": [],
+  "finishedAt": "2026-10-20T04:34:22.654Z",
+  "scope": "New UUID fixtures only; existing learner progress and scenarios preserved."
+}

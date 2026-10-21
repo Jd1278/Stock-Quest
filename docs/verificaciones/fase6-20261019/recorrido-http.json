@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "learnerId": "fcbac8c0-e8b3-4ab6-8c2c-51912cdb243d",
+  "simulationId": "4b56acb7-2043-4694-af56-70c6c3a0aea1",
+  "score": 100,
+  "profit": 73160,
+  "expectedXp": 730,
+  "runId": "8bff26e1-b5c8-496a-ac6e-1c7eed0fac82",
+  "checks": [
+    "nine-original-topics-lessons-challenges-and-two-product-scenarios",
+    "sequential-learning-all-nine-topics-and-idempotent-completion",
+    "groups-and-authorized-team-reports-through-the-frontend-proxy",
+    "simulation-with-product-data-concurrency-and-finalization",
+    "outbox-delivery-deduplication-and-consistent-cross-service-progress",
+    "database-ownership-no-cross-service-connect-and-no-legacy-fallback",
+    "session-revocation-applies-to-all-three-services",
+    "service-restarts-preserve-curriculum-progress-membership-and-results",
+    "representative-local-team-setup",
+    "local-read-latency-nine-topics-ten-team-members"
+  ],
+  "measurements": [
+    {
+      "name": "learning-route",
+      "concurrency": 5,
+      "requests": 15,
+      "success": 15,
+      "failures": 0,
+      "p50Ms": 87,
+      "p95Ms": 133,
+      "maxMs": 133
+    },
+    {
+      "name": "progress",
+      "concurrency": 5,
+      "requests": 15,
+      "success": 15,
+      "failures": 0,
+      "p50Ms": 92,
+      "p95Ms": 120,
+      "maxMs": 120
+    },
+    {
+      "name": "leader-team-report",
+      "concurrency": 3,
+      "requests": 9,
+      "success": 9,
+      "failures": 0,
+      "p50Ms": 389,
+      "p95Ms": 1231,
+      "maxMs": 1231
+    }
+  ],
+  "databases": {
+    "people": "stockquest_phase6_people_20261020",
+    "learning": "stockquest_phase6_learning_20261020",
+    "simulation": "stockquest_phase6_simulation_20261020"
+  },
+  "ports": {
+    "edge": 14600,
+    "simulation": 14610,
+    "learning": 14620,
+    "people": 14630,
+    "web": 5174,
+    "control": 14699
+  },
+  "finishedAt": "2026-10-20T03:00:31.877Z",
+  "limits": "Local sample only. UI browser and external videos not certified. No learning/personas projections enabled."
+}

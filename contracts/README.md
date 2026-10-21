@@ -1,12 +1,12 @@
 # Contratos propuestos para la migración
 
-Estado: diseño aprobado en fase 3; simulación 5A aprobada por el usuario; aprendizaje 5B probado en PostgreSQL y recorrido aislado; el usuario autorizó 5C conservando pendientes globales. Los tres servicios Java están implementados y se verifican en puertos/bases aislados. La activación local y aceptación global siguen pendientes. Los archivos de contrato no prueban por sí mismos que un servicio esté ejecutándose.
+Estado al 21 de octubre de 2026: tres servicios Java implementados y entorno integrado local aceptado en fase 7. La publicación temporal Vercel con API local fue validada por el usuario; la aceptación de producción permanente sigue pendiente. El inventario estructural volvió a pasar en la auditoría del ciclo de vida. Los archivos de contrato no prueban por sí mismos que un servicio esté ejecutándose. Véase [estado actual](../docs/ESTADO-ACTUAL.md).
 
 | Archivo | Alcance |
 |---|---|
-| `openapi-compatibilidad.json` | OpenAPI 3.1; 35 operaciones públicas en 32 paths y 43 esquemas, derivadas del código actual |
-| `propiedad-datos.json` | Propietario objetivo de los 14 modelos Prisma actuales, incluido el inbox añadido en fase 5A |
-| `eventos-v1.schema.json` | JSON Schema 2020-12; siete tipos de eventos confirmados, versión 1 |
+| `openapi-compatibilidad.json` | OpenAPI 3.1; 39 operaciones públicas en 32 paths y 43 esquemas, incluida eliminación de módulos, lecciones, desafíos y escenarios sin uso |
+| `propiedad-datos.json` | Propietario Java de los 14 modelos de origen históricos, incluido el inbox. El esquema de referencia está archivado en legacy/backend; no pertenece al runtime |
+| `eventos-v1.schema.json` | JSON Schema 2020-12; siete tipos de eventos inventariados v1; ProgresoActualizado implementado con snapshot completo y actividades. No acredita consumidores activos para todos los tipos |
 
 Verificación estructural reproducible desde la raíz:
 
@@ -103,3 +103,7 @@ Durante 5A el consumidor temporal de SimulacionFinalizada vive en aprendizaje Ex
 Se agregan campos opcionales de evento sin romper v1; cambios de significado, tipos o campos obligatorios crean versión nueva y periodo de coexistencia. No publicar eventos desde una transacción fallida. No borrar outbox entregado sin política de retención que permita investigar y reconstruir.
 
 La validación de JSON, referencias y cobertura de inventario de fase 3 es estructural. Las pruebas HTTP, autorización, schema validator completo, fallos de transporte y replay corresponden a las siguientes fases y serán ejecutadas por el usuario.
+
+## Proyecciones activas
+
+[Contrato de snapshots, entregas y reconstrucción](progreso-proyecciones-v1.md). AG-05 está implementado y activo localmente, pendiente de validación humana. El inventario estructural no sustituye sus pruebas de idempotencia, versiones, autenticación y recuperación.

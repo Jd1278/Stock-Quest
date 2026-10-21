@@ -1,6 +1,8 @@
 # API REST
 
-Base: `/api`. Cuerpo y respuestas en JSON. Fechas en ISO 8601. IDs de registros generados por Prisma (string). No hay parámetros query ni paginación pública en este MVP. Historiales se limitan a los últimos 100 registros.
+Base: `/api`. Cuerpo y respuestas en JSON. Fechas en ISO 8601. IDs opacos de tipo string: el modo legacy usa IDs de Prisma y los propietarios Java generan sus propios IDs; el cliente no debe asumir un formato único. No hay parámetros query ni paginación pública en este MVP. Historiales se limitan a los últimos 100 registros.
+
+Estado al 21 de octubre de 2026: gateway Express hacia los tres propietarios Java, aceptado localmente y probado desde Vercel mediante túnel temporal. Consultar [arquitectura actual](ARQUITECTURA-ACTUAL.md) y [despliegue temporal](DESPLIEGUE-TEMPORAL-VERCEL.md). El inventario contractual no sustituye las pruebas de permisos e integración.
 
 Todas las rutas salvo health, register y login requieren `Authorization: Bearer <token>`. A = APRENDIZ; L = LIDER; G = GESTOR_PEDAGOGICO; Todos = cualquier usuario activo. Cada parámetro `:id` es un string no vacío de hasta 100 caracteres. Recursos privados se limitan al usuario o líder autenticado.
 
@@ -88,6 +90,10 @@ Solo se asignan aprendices activos del líder. Los usuarios autónomos no se vin
 - `ScenarioInput`: `{title,description,initialStock:integer(0..10000),demand:integer[3..30],leadTime:integer(1..10),unitCost:number,salePrice:number,holdingCost:number,shortageCost:number,orderCost:number,maxOrder:integer(1..10000),published:boolean}`. Demanda diaria 0..10000, al menos un día positivo. Costos 0..100000; venta positiva y no menor al costo unitario. PUT exige cuerpo completo. Cada partida conserva el snapshot original.
 
 ## Errores
+
+El gestor puede ejecutar `DELETE /api/admin/modules/{id}` y `DELETE /api/admin/scenarios/{id}`. Responden 204 sin cuerpo al eliminar y 404 si no existen. Un módulo sin uso se elimina con sus lecciones, contenidos y desafíos. Si tiene intentos o progreso, se rechaza con 409 y se conserva todo mediante una transacción. Un escenario con cualquier partida también devuelve 409, conservando partida, snapshot y resultado. Para retirar contenido utilizado se debe desmarcar Publicado; esta operación no borra su historial. Las mismas restricciones se aplican en modo Java y legacy.
+
+También están disponibles `DELETE /api/admin/lessons/{id}` y `DELETE /api/admin/challenges/{id}`, exclusivos del gestor. Una lección sin uso se elimina con sus vídeos y desafíos, conservando el módulo y las otras lecciones. Si tiene progreso o intentos de sus desafíos, se rechaza con 409 y se revierte la transacción completa. Un desafío sin intentos puede eliminarse sin borrar su lección; con intentos devuelve 409. Ambos responden 204 sin cuerpo, 404 si el registro ya no existe, 401 sin sesión y 403 para otros roles. Para retirar una lección o desafío con historial se puede despublicar el módulo que lo contiene; no hay un campo Publicado individual para esas entidades.
 
 `{message:string,issues?:[{field,message}]}`. Los esquemas rechazan claves inesperadas.
 

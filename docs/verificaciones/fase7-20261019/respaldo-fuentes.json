@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-19",
+  "path": "C:\\Users\\LENOVO\\Documents\\Codex\\2026-09-05\\files-mentioned-by-the-user-desarrrollo\\outputs\\Stock-Quest\\.stockquest-local\\backups\\phase7-sources-f21bc00289c8480aa657af80af2917e7.zip",
+  "sha256": "e122d2203b2729939e387d617eae66eca09f758e39f9ec7cf41e822f3c88b6fd",
+  "entries": 322,
+  "referenceCommit": "db09d1eebe2dd19c8e2c290966adef2a67734d45",
+  "verified": "ZIP inventory, required new source and secret-path exclusions",
+  "scope": "Source backup only; excludes databases, private configuration and generated dependencies",
+  "includesUntrackedSources": true
+}

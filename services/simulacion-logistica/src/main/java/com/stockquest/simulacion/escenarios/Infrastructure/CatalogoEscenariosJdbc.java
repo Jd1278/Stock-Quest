@@ -30,4 +30,12 @@ public final class CatalogoEscenariosJdbc implements CatalogoEscenarios {
         else if (jdbc.update("UPDATE simulation_scenarios SET parameters=?::jsonb WHERE id=?",json.escribir(escenario.parametros()),escenario.id())!=1)
             throw new Fallo(Fallo.Tipo.NO_ENCONTRADO,"Escenario no encontrado.");
     }
+    @Override public void eliminar(String id) {
+        try {
+            if(jdbc.update("DELETE FROM simulation_scenarios WHERE id=?",id)!=1)
+                throw new Fallo(Fallo.Tipo.NO_ENCONTRADO,"Escenario no encontrado.");
+        }catch(org.springframework.dao.DataIntegrityViolationException e) {
+            throw new Fallo(Fallo.Tipo.CONFLICTO,"Este escenario tiene partidas. Desmarca Publicado para retirarlo sin perder el historial.");
+        }
+    }
 }

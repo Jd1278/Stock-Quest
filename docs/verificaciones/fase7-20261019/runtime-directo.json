@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "runId": "533c72eb-3799-4c3f-abdb-79b9c777a74d",
+  "checks": [
+    "compatibility-edge-confirmed-unavailable",
+    "simulation-to-learning-delivered-without-express",
+    "direct-replays-keep-one-inbox-entry",
+    "edge-recovered-and-progress-result-consistent"
+  ],
+  "finishedAt": "2026-10-20T04:35:10.947Z",
+  "scope": "New UUID fixtures only; existing learner progress and scenarios preserved."
+}

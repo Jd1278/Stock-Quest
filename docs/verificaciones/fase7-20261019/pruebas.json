@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-19",
+  "success": true,
+  "java": [
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.ArquitecturaTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.GruposTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.HttpGruposTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.HttpPersonasTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.IdentidadTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.InformesAprendizajeHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.personas.TokensJwtTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "personas-capacitacion",
+      "runner": "failsafe",
+      "suite": "com.stockquest.personas.PersistenciaPersonasIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.AprendizajeTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.HttpAprendizajeTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "surefire",
+      "suite": "com.stockquest.aprendizaje.ResultadosSimulacionHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "runner": "failsafe",
+      "suite": "com.stockquest.aprendizaje.PersistenciaAprendizajeIT",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.EscenariosHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.FiltroServicioTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.GestionEscenariosTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.IdentidadHttpTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.MotorInventarioTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.partidas.Infrastructure.events.OutboxDispatcherTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.PartidasHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "surefire",
+      "suite": "com.stockquest.simulacion.RegistrarDecisionTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "service": "simulacion-logistica",
+      "runner": "failsafe",
+      "suite": "com.stockquest.simulacion.PersistenciaPostgresIT",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "backend": {
+    "tests": 72,
+    "passed": 72,
+    "failed": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "tests": 23,
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0
+  },
+  "uniqueSuiteTests": 232.0,
+  "steps": [
+    {
+      "name": "personas-capacitacion",
+      "exitCode": 0,
+      "seconds": 52.81
+    },
+    {
+      "name": "aprendizaje-evaluacion",
+      "exitCode": 0,
+      "seconds": 52.2
+    },
+    {
+      "name": "simulacion-logistica",
+      "exitCode": 0,
+      "seconds": 36.87
+    },
+    {
+      "name": "backend",
+      "exitCode": 0,
+      "seconds": 17.32
+    },
+    {
+      "name": "frontend",
+      "exitCode": 0,
+      "seconds": 14.18
+    },
+    {
+      "name": "typescript-backend",
+      "exitCode": 0,
+      "seconds": 4.74
+    },
+    {
+      "name": "lint",
+      "exitCode": 0,
+      "seconds": 5.34
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 0,
+      "seconds": 28.23
+    },
+    {
+      "name": "contracts",
+      "exitCode": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "diff-check",
+      "exitCode": 0,
+      "seconds": 0.25
+    }
+  ],
+  "localEnvironmentRestored": true,
+  "note": "Single consolidated execution; prior phase results and repeated fixtures are not added."
+}

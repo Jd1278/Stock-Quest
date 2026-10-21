@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-20T04:47:05.523Z",
+  "scope": "Read-only local operational preparation; not a build or deployment verification",
+  "branch": "codex/reestructuracion-stock-quest",
+  "tools": {
+    "java": {
+      "available": true,
+      "version": "java version \"22.0.2\" 2024-07-16"
+    },
+    "node": {
+      "available": true,
+      "version": "v24.15.0"
+    },
+    "git": {
+      "available": true,
+      "version": "git version 2.53.0.windows.2"
+    },
+    "docker": {
+      "available": false,
+      "version": null
+    },
+    "aws": {
+      "available": false,
+      "version": null
+    }
+  },
+  "services": [
+    {
+      "name": "personas-capacitacion",
+      "wrapperPresent": true,
+      "javaRelease": "21",
+      "postgresIntegrationProfile": true
+    },
+    {
+      "name": "aprendizaje-evaluacion",
+      "wrapperPresent": true,
+      "javaRelease": "21",
+      "postgresIntegrationProfile": true
+    },
+    {
+      "name": "simulacion-logistica",
+      "wrapperPresent": true,
+      "javaRelease": "21",
+      "postgresIntegrationProfile": true
+    }
+  ],
+  "files": {
+    "Jenkinsfile": false,
+    "compose.yaml": true,
+    "render.yaml": true
+  },
+  "existingGitHubWorkflow": {
+    "javaSetupPresent": false,
+    "mavenInvocationPresent": false,
+    "conditionalDeploymentPresent": true
+  },
+  "pending": [
+    "Confirm Jenkins execution host and provision a dedicated agent",
+    "Use an isolated CI workspace and test databases; do not reuse the local supervisor or DPAPI configuration",
+    "Implement and execute the Java and Node pipeline with JUnit report collection",
+    "Select and validate publication, AWS infrastructure, and monitoring in separate supervised steps"
+  ],
+  "productionReady": false
+}

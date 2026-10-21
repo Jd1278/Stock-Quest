@@ -34,6 +34,12 @@ class EscenariosHttpTest {
         mvc=MockMvcBuilders.standaloneSetup(controller).setControllerAdvice(new ErroresHttp())
                 .setMessageConverters(new MappingJackson2HttpMessageConverter(mapper)).addFilters(filter).build();
     }
+    @Test void eliminarExigeGestorYDevuelve204()throws Exception {
+        mvc.perform(delete("/api/admin/scenarios/s").header("Authorization","Bearer aprendiz")).andExpect(status().isForbidden());
+        verifyNoInteractions(catalogo);
+        mvc.perform(delete("/api/admin/scenarios/s").header("Authorization","Bearer gestor")).andExpect(status().isNoContent()).andExpect(content().string(""));
+        verify(catalogo).eliminar("s");
+    }
     @Test void crearConservaRespuestaPlanaDeEscenario() throws Exception {
         mvc.perform(post("/api/admin/scenarios").header("Authorization","Bearer gestor").contentType("application/json").content(BODY))
                 .andExpect(status().isCreated()).andExpect(jsonPath("$.id").isString()).andExpect(jsonPath("$.demand[1]").value(8))

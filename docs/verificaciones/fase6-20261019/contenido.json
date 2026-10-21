@@ -1,0 +1,60 @@
+{
+  "modules": [
+    {
+      "id": "2c2bdb77-2b5c-47e1-aef8-baba927a8ac7",
+      "title": "Fundamentos de inventarios",
+      "lessons": 1
+    },
+    {
+      "id": "45b2a0e3-aef6-4ae1-9e2a-497bff1fbcc3",
+      "title": "Control de mercancías",
+      "lessons": 1
+    },
+    {
+      "id": "1b9e9da5-df36-4de8-b39f-42e8d1ad1d61",
+      "title": "Almacenamiento",
+      "lessons": 1
+    },
+    {
+      "id": "7b572029-05bf-4137-9c48-3333b04805fa",
+      "title": "Gestión de abastecimiento",
+      "lessons": 1
+    },
+    {
+      "id": "ccd7d218-ecc0-4eda-8455-dcf2c022208e",
+      "title": "Stock de protección",
+      "lessons": 1
+    },
+    {
+      "id": "6e7632ae-4820-4205-8140-4952e4fed22d",
+      "title": "Costos de inventario",
+      "lessons": 1
+    },
+    {
+      "id": "ab092e81-06dc-4648-b7c1-98a918dee871",
+      "title": "Tiempos de entrega",
+      "lessons": 1
+    },
+    {
+      "id": "957bbd66-7420-4916-8cf0-d80465977615",
+      "title": "Fundamentos de logística",
+      "lessons": 1
+    },
+    {
+      "id": "eba8cfc8-30dc-4c7d-83ae-303d113550f1",
+      "title": "Seguridad y buenas prácticas",
+      "lessons": 1
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "59bac212-cfe1-4321-8b3c-2d9b8fdcd66e",
+      "title": "Demanda en temporada alta"
+    },
+    {
+      "id": "ca653cc0-dd9e-42c0-ac01-7013542c8904",
+      "title": "Tu primer turno de bodega"
+    }
+  ],
+  "videos": 0
+}

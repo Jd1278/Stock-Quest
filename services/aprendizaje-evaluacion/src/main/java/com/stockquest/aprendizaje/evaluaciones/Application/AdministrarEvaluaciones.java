@@ -9,6 +9,9 @@ import java.util.List;
 public final class AdministrarEvaluaciones {
     private final CatalogoFormativo catalogo;private final UnidadDeTrabajo tx;
     public AdministrarEvaluaciones(CatalogoFormativo catalogo,UnidadDeTrabajo tx) {this.catalogo=catalogo;this.tx=tx;}
+    public void eliminar(UsuarioAutenticado u,String id) {
+        u.exigirGestor();tx.ejecutar(()->{catalogo.eliminarPregunta(id);return null;});
+    }
     public Pregunta guardar(UsuarioAutenticado u,String id,String lessonId,String question,List<String> options,int correctIndex,String explanation) {
         u.exigirGestor();
         if(correctIndex<0||correctIndex>=options.size())throw Fallo.invalido("Respuesta fuera de las opciones.");

@@ -1,3 +1,4 @@
+# Gateway + frontend only. Provision the three Java services and their databases separately.
 services:
   - type: web
     name: stock-quest
@@ -6,18 +7,26 @@ services:
     region: oregon
     branch: main
     buildCommand: npm ci --include=dev && npm run build
-    startCommand: npm run db:migrate && npm run start -w @stock-quest/api
+    startCommand: npm run start -w @stock-quest/gateway
     healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
         value: 22.18.0
       - key: NODE_ENV
         value: production
+      - key: HOST
+        value: 0.0.0.0
       - key: SERVE_WEB
         value: "true"
-      - key: DATABASE_URL
+      - key: FRONTEND_URL
         sync: false
-      - key: JWT_SECRET
-        generateValue: true
-      - key: JWT_EXPIRES_IN
-        value: 8h
+      - key: PEOPLE_SERVICE_URL
+        sync: false
+      - key: LEARNING_SERVICE_URL
+        sync: false
+      - key: SIMULATION_SERVICE_URL
+        sync: false
+      - key: LEARNING_SERVICE_TOKEN
+        sync: false
+      - key: SIMULATION_SERVICE_TOKEN
+        sync: false

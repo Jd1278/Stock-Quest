@@ -1,0 +1,70 @@
+import express from "express";
+import { randomUUID } from "node:crypto";
+import path from "node:path";
+import helmet from "helmet";
+import cors from "cors";
+import rateLimit from "express-rate-limit";
+import type { GatewayConfig } from "./Infrastructure/config";
+import type { ServicePort } from "./Application/ServicePort";
+import { createRouter } from "./Infrastructure/routes";
+import { errorHandler } from "./Infrastructure/middlewares";
+
+export function createApp(config: GatewayConfig, port: ServicePort) {
+const app = express();
+app.disable("x-powered-by");
+app.set("trust proxy", process.env.NODE_ENV === "production" ? 1 : "loopback");
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      "script-src": ["'self'", "https://www.youtube.com", "https://s.ytimg.com"],
+      "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      "font-src": ["'self'", "https://fonts.gstatic.com"],
+      "frame-src": ["https://www.youtube.com", "https://www.youtube-nocookie.com"],
+      "img-src": ["'self'", "data:", "https://i.ytimg.com"],
+    },
+  },
+}));
+app.use(
+  cors({
+    origin: config.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Correlation-Id"],
+    exposedHeaders: ["X-Correlation-Id"],
+  }),
+);
+app.use((req, res, next) => {
+  const received = req.get("X-Correlation-Id");
+  const correlation = received && /^[A-Za-z0-9._-]{1,100}$/.test(received) ? received : randomUUID();
+  req.headers["x-correlation-id"] = correlation;
+  res.setHeader("X-Correlation-Id", correlation);
+  next();
+});
+app.use(express.json({ limit: "256kb" }));
+app.use(
+  rateLimit({
+    windowMs: 60000,
+    limit: 180,
+    standardHeaders: "draft-7",
+    legacyHeaders: false,
+    message: { message: "Espera un momento antes de continuar." },
+  }),
+);
+app.get("/api/health", (_req, res) => res.set("X-StockQuest-Gateway", "java-services").json({ status: "ok" }));
+app.use("/api", createRouter(port));
+if (process.env.SERVE_WEB === "true") {
+  const webRoot = path.resolve(__dirname, "../../frontend/dist");
+  app.use(express.static(webRoot));
+  app.get("*", (req, res, next) => {
+    if (req.path === "/api" || req.path.startsWith("/api/") || path.extname(req.path)) {
+      return next();
+    }
+    res.sendFile(path.join(webRoot, "index.html"));
+  });
+}
+app.use((_req, res) => {
+  res.status(404).json({ message: "Ruta no encontrada." });
+});
+app.use(errorHandler);
+
+return app;
+}

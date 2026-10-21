@@ -9,4 +9,5 @@ public interface CatalogoEscenarios {
     List<Escenario> publicados();
     List<Escenario> todos();
     void guardar(Escenario escenario, boolean nuevo);
+    void eliminar(String id);
 }

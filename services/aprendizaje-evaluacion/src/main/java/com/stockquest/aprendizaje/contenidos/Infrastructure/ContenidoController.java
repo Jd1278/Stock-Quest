@@ -23,12 +23,16 @@ public class ContenidoController {
     @GetMapping("/internal/admin/modules") public Object todos(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u) {return administrar.todos(u);}
     @PostMapping("/api/admin/modules") public ResponseEntity<?> crearModulo(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@Valid @RequestBody ModuloEntrada b) {return guardarModulo(u,null,b);}
     @PutMapping("/api/admin/modules/{id}") public ResponseEntity<?> editarModulo(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id,@Valid @RequestBody ModuloEntrada b) {return guardarModulo(u,id,b);}
+    @DeleteMapping("/api/admin/modules/{id}") @ResponseStatus(org.springframework.http.HttpStatus.NO_CONTENT)
+    public void eliminarModulo(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id) {administrar.eliminarModulo(u,id);}
     private ResponseEntity<?> guardarModulo(UsuarioAutenticado u,String id,ModuloEntrada b) {
         var m=administrar.modulo(u,id,b.title(),b.description(),b.position(),b.published());
         return ResponseEntity.status(id==null?201:200).body(java.util.Map.of("id",m.id(),"title",m.title(),"description",m.description(),"position",m.position(),"published",m.published()));
     }
     @PostMapping("/api/admin/lessons") public ResponseEntity<?> crearLeccion(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@Valid @RequestBody LeccionEntrada b) {return guardarLeccion(u,null,b);}
     @PutMapping("/api/admin/lessons/{id}") public ResponseEntity<?> editarLeccion(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id,@Valid @RequestBody LeccionEntrada b) {return guardarLeccion(u,id,b);}
+    @DeleteMapping("/api/admin/lessons/{id}") @ResponseStatus(org.springframework.http.HttpStatus.NO_CONTENT)
+    public void eliminarLeccion(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id) {administrar.eliminarLeccion(u,id);}
     private ResponseEntity<?> guardarLeccion(UsuarioAutenticado u,String id,LeccionEntrada b) {
         var l=administrar.leccion(u,id,b.moduleId(),b.title(),b.body(),b.position(),b.minutes(),b.youtubeId());
         return ResponseEntity.status(id==null?201:200).body(java.util.Map.of("id",l.id(),"moduleId",l.moduleId(),"title",l.title(),"body",l.body(),"position",l.position(),"minutes",l.minutes()));

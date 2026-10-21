@@ -1,0 +1,12 @@
+{
+  "suites": 5,
+  "tests": 11,
+  "passed": 11,
+  "failed": 0,
+  "skipped": 0,
+  "success": true,
+  "regression": "Reproduced TypeError: destroy is not a function before fixing the effect; all frontend tests passed after correction.",
+  "typescript": "PASS",
+  "eslint": "PASS",
+  "visual": "Pending user confirmation with real Phaser"
+}

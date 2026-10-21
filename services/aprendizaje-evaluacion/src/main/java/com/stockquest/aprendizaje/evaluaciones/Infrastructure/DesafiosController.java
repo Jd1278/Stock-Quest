@@ -24,6 +24,8 @@ public class DesafiosController {
     }
     @PostMapping("/api/admin/challenges") public ResponseEntity<?> crear(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@Valid @RequestBody DesafioEntrada b) {return guardar(u,null,b);}
     @PutMapping("/api/admin/challenges/{id}") public ResponseEntity<?> editar(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id,@Valid @RequestBody DesafioEntrada b) {return guardar(u,id,b);}
+    @DeleteMapping("/api/admin/challenges/{id}") @ResponseStatus(org.springframework.http.HttpStatus.NO_CONTENT)
+    public void eliminar(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado u,@PathVariable @Size(min=1,max=100) String id) {administrar.eliminar(u,id);}
     private ResponseEntity<?> guardar(UsuarioAutenticado u,String id,DesafioEntrada b) {
         return ResponseEntity.status(id==null?201:200).body(administrar.guardar(u,id,b.lessonId(),b.question(),b.options(),b.correctIndex(),b.explanation()));
     }

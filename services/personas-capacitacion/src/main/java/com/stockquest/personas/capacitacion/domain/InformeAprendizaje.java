@@ -9,14 +9,22 @@ public record InformeAprendizaje(String userId,Progreso progress,List<Actividad>
   activities=List.copyOf(activities);
   if(progress.achievements().stream().anyMatch(a->!userId.equals(a.userId())))throw new IllegalArgumentException("Logro de otro usuario.");
  }
- public record Tema(String id,String title,int completed,int total,Integer score,boolean needsReview) { }
- public record Logro(String userId,String key,Instant earnedAt) { }
+ public record Tema(String id,String title,int completed,int total,Integer score,boolean needsReview) {
+  public Tema {if(id==null||id.isBlank()||id.length()>100||title==null||title.isBlank()||completed<0||total<completed||(score!=null&&(score<0||score>100)))throw new IllegalArgumentException("Tema inválido.");}
+ }
+ public record Logro(String userId,String key,Instant earnedAt) {
+  public Logro {if(userId==null||userId.isBlank()||userId.length()>100||key==null||key.isBlank()||key.length()>50||earnedAt==null)throw new IllegalArgumentException("Logro inválido.");}
+ }
  public record Progreso(int completed,int total,int percent,double xp,long level,List<Tema> topics,List<Logro> achievements,long simulations,boolean passed,List<String> recommendations) {
   public Progreso {
    if(completed<0||total<completed||percent<0||percent>100||!Double.isFinite(xp)||xp<0||Math.rint(xp)!=xp||level<1||simulations<0)throw new IllegalArgumentException("Progreso inválido.");
    topics=List.copyOf(topics);achievements=List.copyOf(achievements);recommendations=List.copyOf(recommendations);
   }
  }
- public record Desafio(String question) { }
- public record Actividad(String id,int score,int answer,Instant createdAt,Desafio challenge) { }
+ public record Desafio(String question) {
+  public Desafio {if(question==null||question.isBlank()||question.length()>3000)throw new IllegalArgumentException("Desafío inválido.");}
+ }
+ public record Actividad(String id,int score,int answer,Instant createdAt,Desafio challenge) {
+  public Actividad {if(id==null||id.isBlank()||id.length()>100||score<0||score>100||answer<0||answer>5||createdAt==null||challenge==null)throw new IllegalArgumentException("Actividad inválida.");}
+ }
 }

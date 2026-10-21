@@ -31,7 +31,17 @@ public class ConfiguracionPersonas {
  @Bean HechosPersonas hechos(JdbcTemplate jdbc,JsonPersistencia json,Clock clock) {return new HechosPersonasJdbc(jdbc,json,clock);}
  @Bean GestionEquipo gestionarEquipo(Personas p,UnidadDeTrabajo tx,HechosPersonas hechos) {return new GestionEquipo(p,tx,hechos);}
  @Bean GestionGrupos gestionarGrupos(Grupos g,Personas p,UnidadDeTrabajo tx,HechosPersonas h,Clock clock) {return new GestionGrupos(g,p,tx,h,clock);}
- @Bean InformesAprendizaje informes(@Value("${people.learning-url}") URI url,@Value("${people.learning-token}") String token,ObjectMapper mapper) {return new InformesAprendizajeHttp(url,token,mapper);}
+ @Bean ProyeccionesProgreso proyecciones(JdbcTemplate jdbc,PlatformTransactionManager manager,JsonPersistencia json) {return new ProyeccionesProgresoJdbc(jdbc,manager,json);}
+ @Bean FuenteSnapshots fuenteSnapshots(@Value("${people.learning-url}") URI url,@Value("${people.learning-token}") String token,ObjectMapper mapper) {return new FuenteSnapshotsHttp(url,token,mapper);}
+ @Bean ConsultarInformesProyectados informesProyectados(ProyeccionesProgreso p,FuenteSnapshots f) {return new ConsultarInformesProyectados(p,f);}
+ @Bean @Primary InformesAprendizaje informes(@Value("${people.learning-url}") URI url,@Value("${people.learning-token}") String token,ObjectMapper mapper,
+   ConsultarInformesProyectados proyecciones,@Value("${people.reports-mode:http}") String mode) {
+  if(!java.util.Set.of("http","projection").contains(mode))throw new IllegalArgumentException("Modo de informes inválido.");
+  return mode.equals("projection")?proyecciones:new InformesAprendizajeHttp(url,token,mapper);
+ }
+ @Bean FilterRegistrationBean<FiltroServicio> servicioFiltro(@Value("${people.service-token}") String token,ObjectMapper mapper) {
+  var r=new FilterRegistrationBean<>(new FiltroServicio(token,mapper));r.addUrlPatterns("/internal/progress-events","/internal/progress-projections/*");r.setOrder(0);return r;
+ }
  @Bean ConsultarEquipo consultarEquipo(Personas p,InformesAprendizaje i) {return new ConsultarEquipo(p,i);}
  @Bean FilterRegistrationBean<FiltroIdentidad> identidadFiltro(GestionIdentidad identidad,ObjectMapper mapper) {
   var r=new FilterRegistrationBean<>(new FiltroIdentidad(identidad,mapper));r.addUrlPatterns("/api/*");r.setOrder(1);return r;

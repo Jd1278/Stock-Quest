@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-19",
+  "java": [
+    {
+      "suite": "com.stockquest.aprendizaje.AprendizajeTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.stockquest.aprendizaje.ArquitecturaTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.stockquest.aprendizaje.HttpAprendizajeTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.stockquest.aprendizaje.ResultadosSimulacionHttpTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "postgres": {
+    "tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "backend": {
+    "tests": 59,
+    "passed": 59,
+    "failed": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "Jest frontend execution output, 4 suites"
+  },
+  "uniqueSuiteTests": 103,
+  "e2eCheckGroups": 10,
+  "httpLoadRequests": 39,
+  "frontendBuild": "PASS with memory limits",
+  "note": "Previous personas/simulation suite results are historical and not counted as new executions."
+}

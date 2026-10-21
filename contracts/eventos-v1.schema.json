@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Stock Quest domain events v1 - proposed design",
+  "title": "Stock Quest integration events v1",
   "description": "At-least-once delivery; inbox deduplicates eventId; per-aggregate monotonic version. No credentials or direct contact fields. User IDs require access control and retention policies.",
   "oneOf": [
     {
@@ -320,11 +320,19 @@
             },
             "progress": {
               "$ref": "#/$defs/Progress"
+            },
+            "activities": {
+              "type": "array",
+              "maxItems": 100,
+              "items": {
+                "$ref": "#/$defs/Activity"
+              }
             }
           },
           "required": [
             "userId",
-            "progress"
+            "progress",
+            "activities"
           ],
           "additionalProperties": false
         }
@@ -340,7 +348,8 @@
         "correlationId",
         "data"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "Implemented full report snapshot. aggregateVersion is the independent projection sequence for this user, not the learning fact sequence. Immutable eventId/version; idempotent replay; older snapshots never regress a projection."
     },
     {
       "type": "object",
@@ -691,6 +700,51 @@
         "key",
         "earnedAt"
       ]
+    },
+    "Activity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "answer": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "challenge": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "score",
+        "answer",
+        "createdAt",
+        "challenge"
+      ],
+      "additionalProperties": false
     }
   }
 }

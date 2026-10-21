@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "runId": "e3280bf0-90bc-4a32-9af1-809d20ceef93",
+  "checks": [
+    "learner:same-response:/api/modules",
+    "learner:same-response:/api/progress",
+    "learner:same-response:/api/simulations/scenarios",
+    "learner:same-response:/api/simulations",
+    "learner-admin-and-groups-forbidden",
+    "leader:same-response:/api/reports",
+    "leader:same-response:/api/groups",
+    "manager:same-response:/api/admin",
+    "registration-login-scenario-and-three-days-score86-profit18-persistence-and409",
+    "direct-java-event-one-inbox-one-achievement-and-progress",
+    "logout-revokes-session"
+  ],
+  "finishedAt": "2026-10-21T21:56:59.118Z",
+  "liveEdgeRestarted": false,
+  "existingDataPreserved": true
+}

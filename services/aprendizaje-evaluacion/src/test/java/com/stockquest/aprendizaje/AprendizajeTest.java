@@ -90,7 +90,8 @@ class AprendizajeTest {
         var event=new EventoSimulacion(UUID.randomUUID(),"SimulacionFinalizada",1,"simulacion-logistica",clock.instant(),"sim",3,"test",
                 new EventoSimulacion.Datos("sim","user","scenario",86,18,14.0/17,clock.instant()));
         when(registro.registrarEvento(anyString(),anyString(),anyString(),anyString())).thenReturn(true,false);
-        var consumer=new RecibirSimulacion(registro,tx);consumer.ejecutar(event,"hash");consumer.ejecutar(event,"hash");
+        var consumer=new RecibirSimulacion(registro,tx,hechos);consumer.ejecutar(event,"hash");consumer.ejecutar(event,"hash");
         verify(registro,times(1)).logro("user","PRIMERA_SIMULACION",clock.instant());
+        verify(hechos,times(1)).registrar(eq("user"),eq("ResultadoSimulacionRegistrado"),anyMap(),eq(clock.instant()),eq("test"));
     }
 }

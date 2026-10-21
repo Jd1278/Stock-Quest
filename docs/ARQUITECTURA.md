@@ -1,3 +1,7 @@
+# Referencia de arquitectura vigente
+
+La descripción del estado Java actual está en [ARQUITECTURA-ACTUAL.md](ARQUITECTURA-ACTUAL.md). El documento siguiente conserva las decisiones y reglas del sistema anterior como referencia histórica; no describe por sí solo el despliegue actual de tres servicios Java.
+
 # Actualización PostgreSQL
 
 Por instrucción del propietario del 15 de septiembre de 2026, el motor vigente es PostgreSQL con adaptador Node.js/pg. La descripción funcional siguiente se conserva; las referencias a MySQL explican el diseño original. Ver POSTGRESQL.md para la verificación actual.

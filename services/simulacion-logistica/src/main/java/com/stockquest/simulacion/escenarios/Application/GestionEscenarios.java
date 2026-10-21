@@ -14,6 +14,9 @@ public final class GestionEscenarios {
         if (usuario.role()!=UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO) throw new Fallo(Fallo.Tipo.PROHIBIDO,"No tienes permiso para esta acción.");
     }
     public List<Escenario> todos(UsuarioAutenticado usuario) { gestor(usuario); return catalogo.todos(); }
+    public void eliminar(UsuarioAutenticado usuario,String id) {
+        gestor(usuario);transacciones.ejecutar(()->{catalogo.eliminar(id);return null;});
+    }
     public Escenario guardar(UsuarioAutenticado usuario, String id, ParametrosEscenario parametros) {
         gestor(usuario);
         if (parametros.demand().stream().noneMatch(n -> n > 0)) throw Fallo.invalido("Incluye demanda positiva.");

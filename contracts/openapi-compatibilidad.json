@@ -3,7 +3,7 @@
   "info": {
     "title": "Stock Quest - compatibility design",
     "version": "0.1.0-design",
-    "description": "Design contract, not implemented Java endpoints. Based on inspected Express code plus local phase-2 fix. Current public fields and status codes are preserved; 503 is proposed for unavailable dependencies. Cross-field rules remain in application validation."
+    "description": "Compatibility inventory for the active Express gateway and three Java services. Response contracts preserve the accepted frontend API. Structural inventory checks are not full OpenAPI semantic validation."
   },
   "servers": [
     {
@@ -26,7 +26,7 @@
         "x-owner": "entrada-http",
         "x-roles": [],
         "x-requirements": [],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/app.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -72,7 +72,7 @@
         "x-requirements": [
           "RF01"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -121,7 +121,7 @@
           "RF02",
           "RF03"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -173,7 +173,7 @@
         "x-requirements": [
           "RF02"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "204": {
             "description": "No content"
@@ -207,7 +207,7 @@
         "x-requirements": [
           "RF03"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -248,7 +248,7 @@
         "x-requirements": [
           "RF01"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -297,7 +297,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -346,7 +346,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -410,7 +410,7 @@
           "RF05",
           "RF10"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -456,7 +456,7 @@
           "RF10",
           "RF11"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -508,7 +508,7 @@
           "RF10",
           "RF12"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -560,7 +560,7 @@
           "RF09",
           "RF10"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -625,7 +625,7 @@
           "RF13",
           "RF14"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -666,7 +666,7 @@
         "x-requirements": [
           "RF06"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -710,7 +710,7 @@
         "x-requirements": [
           "RF08"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -750,7 +750,7 @@
         "x-requirements": [
           "RF06"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -802,7 +802,7 @@
           "RF06",
           "RF08"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -855,7 +855,7 @@
           "RF08",
           "RF09"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -916,7 +916,7 @@
         "x-requirements": [
           "RF18"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -958,7 +958,7 @@
         "x-requirements": [
           "RF19"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1009,7 +1009,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1049,7 +1049,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -1098,7 +1098,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1157,7 +1157,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "204": {
             "description": "No content"
@@ -1201,7 +1201,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1262,7 +1262,7 @@
         "x-requirements": [
           "RF20"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "204": {
             "description": "No content"
@@ -1318,7 +1318,7 @@
           "RF16",
           "RF17"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1357,7 +1357,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -1406,7 +1406,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1451,6 +1451,53 @@
             }
           }
         }
+      },
+      "delete": {
+        "operationId": "delete__admin_modules_id",
+        "tags": [
+          "aprendizaje-evaluacion"
+        ],
+        "description": "Delete module and its content only when it has no attempts or progress.",
+        "x-owner": "aprendizaje-evaluacion",
+        "x-roles": [
+          "GESTOR_PEDAGOGICO"
+        ],
+        "x-requirements": [
+          "RF16"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted; no response body"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Manager role required"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "409": {
+            "description": "Existing learning activity or games prevent deletion"
+          },
+          "503": {
+            "description": "Owner service unavailable"
+          }
+        },
+        "x-source": "gateway/src/Infrastructure/routes.ts"
       }
     },
     "/admin/lessons": {
@@ -1467,7 +1514,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -1516,7 +1563,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1561,6 +1608,53 @@
             }
           }
         }
+      },
+      "delete": {
+        "operationId": "delete__admin_lessons_id",
+        "tags": [
+          "aprendizaje-evaluacion"
+        ],
+        "description": "Delete lesson and child content only without attempts or progress.",
+        "x-owner": "aprendizaje-evaluacion",
+        "x-roles": [
+          "GESTOR_PEDAGOGICO"
+        ],
+        "x-requirements": [
+          "RF16"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted; no response body"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Manager role required"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "409": {
+            "description": "Existing learning activity or games prevent deletion"
+          },
+          "503": {
+            "description": "Owner service unavailable"
+          }
+        },
+        "x-source": "gateway/src/Infrastructure/routes.ts"
       }
     },
     "/admin/challenges": {
@@ -1577,7 +1671,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -1626,7 +1720,7 @@
         "x-requirements": [
           "RF16"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1671,6 +1765,53 @@
             }
           }
         }
+      },
+      "delete": {
+        "operationId": "delete__admin_challenges_id",
+        "tags": [
+          "aprendizaje-evaluacion"
+        ],
+        "description": "Delete challenge only without registered attempts.",
+        "x-owner": "aprendizaje-evaluacion",
+        "x-roles": [
+          "GESTOR_PEDAGOGICO"
+        ],
+        "x-requirements": [
+          "RF16"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted; no response body"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Manager role required"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "409": {
+            "description": "Existing learning activity or games prevent deletion"
+          },
+          "503": {
+            "description": "Owner service unavailable"
+          }
+        },
+        "x-source": "gateway/src/Infrastructure/routes.ts"
       }
     },
     "/admin/scenarios": {
@@ -1687,7 +1828,7 @@
         "x-requirements": [
           "RF17"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "201": {
             "description": "Success",
@@ -1736,7 +1877,7 @@
         "x-requirements": [
           "RF17"
         ],
-        "x-source": "backend/src/routes/index.ts",
+        "x-source": "gateway/src/Infrastructure/routes.ts",
         "responses": {
           "200": {
             "description": "Success",
@@ -1781,6 +1922,53 @@
             }
           }
         }
+      },
+      "delete": {
+        "operationId": "delete__admin_scenarios_id",
+        "tags": [
+          "simulacion-logistica"
+        ],
+        "description": "Delete scenario only when no games reference it.",
+        "x-owner": "simulacion-logistica",
+        "x-roles": [
+          "GESTOR_PEDAGOGICO"
+        ],
+        "x-requirements": [
+          "RF17"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted; no response body"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Manager role required"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "409": {
+            "description": "Existing learning activity or games prevent deletion"
+          },
+          "503": {
+            "description": "Owner service unavailable"
+          }
+        },
+        "x-source": "gateway/src/Infrastructure/routes.ts"
       }
     }
   },

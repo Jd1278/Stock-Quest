@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "steps": [
+    {
+      "name": "personas-capacitacion",
+      "exitCode": 0,
+      "seconds": 52.81
+    },
+    {
+      "name": "aprendizaje-evaluacion",
+      "exitCode": 0,
+      "seconds": 52.2
+    },
+    {
+      "name": "simulacion-logistica",
+      "exitCode": 0,
+      "seconds": 36.87
+    },
+    {
+      "name": "backend",
+      "exitCode": 0,
+      "seconds": 17.32
+    },
+    {
+      "name": "frontend",
+      "exitCode": 0,
+      "seconds": 14.18
+    },
+    {
+      "name": "typescript-backend",
+      "exitCode": 0,
+      "seconds": 4.74
+    },
+    {
+      "name": "lint",
+      "exitCode": 0,
+      "seconds": 5.34
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 0,
+      "seconds": 28.23
+    },
+    {
+      "name": "contracts",
+      "exitCode": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "diff-check",
+      "exitCode": 0,
+      "seconds": 0.25
+    }
+  ],
+  "error": null,
+  "localEnvironmentRestored": true,
+  "finishedAt": "2026-10-20T04:33:42.5834349Z"
+}

@@ -2,6 +2,8 @@
 
 Tercer servicio del monorepo, Java 21 y Maven Wrapper fijado como los otros servicios. Puerto local por defecto 4030. Las capacidades `identidad`, `usuarios` y `capacitacion` tienen `Application`, `domain` e `Infrastructure`. La composición Spring/JDBC/HTTP queda en infraestructura; no se importan implementaciones de aprendizaje o simulación.
 
+Estado al 21 de octubre de 2026: el entorno integrado usa el puerto 14630, con base propia y aceptación funcional local y temporal Vercel. Después de añadir métricas pasaron 40 pruebas JUnit sin BD. Los informes consultan aprendizaje por HTTP; las proyecciones AG-05 permanecen pendientes. Consultar [estado actual](../../docs/ESTADO-ACTUAL.md).
+
 ## Responsabilidades
 
 - Registro público de aprendices y alta de empleados por su líder.
@@ -52,3 +54,7 @@ Antes de aceptar escrituras Java se puede mantener PEOPLE_BACKEND=legacy. Despu�
 Rutas compatibles: POST /api/auth/register, login y logout; GET /api/auth/me; PATCH /api/users/me; POST /api/users; PATCH /api/users/{id}; GET/POST /api/groups; PATCH/DELETE /api/groups/{id}; POST /api/groups/{id}/members; DELETE /api/groups/{id}/members/{userId}; GET /api/reports y /api/reports/{id}.
 
 Errores `{message, issues?}`; sin sesión 401, rol 403, objeto ajeno/inexistente 404, unicidad/referencias 409 y dependencia inaccesible 503. Readiness comprueba la base propia, no acredita por sí sola la disponibilidad de aprendizaje. Las rutas y bases privadas deben quedar protegidas en la infraestructura de despliegue posterior.
+
+## Informes proyectados, AG-05
+
+PEOPLE_REPORTS_MODE=projection activa los informes desde su proyección local. PEOPLE_SERVICE_TOKEN protege la recepción y reconstrucción; LEARNING_SERVICE_TOKEN protege bootstrap/replay hacia la fuente. http conserva un modo explícito de recuperación. Un informe inicializado funciona con aprendizaje caído; uno sin inicializar requiere un snapshot y puede responder 503. El supervisor local está activado en projection. Véase [implementación y resultados](../../docs/AG05-PROYECCIONES-20261021.md).

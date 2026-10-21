@@ -70,6 +70,21 @@ class PersistenciaPostgresIT {
         jdbc.update("DELETE FROM simulation_runs WHERE scenario_id = ?",scenarioId);
         jdbc.update("DELETE FROM simulation_scenarios WHERE id = ?",scenarioId);
     }
+    @Test void eliminarEscenarioSinUsoYRepeticionDevuelve404() {
+        var catalogo=new CatalogoEscenariosJdbc(jdbc,json);
+        var casos=new com.stockquest.simulacion.escenarios.Application.GestionEscenarios(catalogo,tx);
+        var gestor=new com.stockquest.simulacion.domain.UsuarioAutenticado("g",com.stockquest.simulacion.domain.UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO);
+        casos.eliminar(gestor,scenarioId);assertTrue(catalogo.publicado(scenarioId).isEmpty());
+        assertEquals(Fallo.Tipo.NO_ENCONTRADO,assertThrows(Fallo.class,()->casos.eliminar(gestor,scenarioId)).tipo());
+    }
+    @Test void eliminarEscenarioConPartidaConservaSnapshotYPartida() {
+        var run=partidas.iniciar(Fixtures.aprendiz(),scenarioId);
+        var casos=new com.stockquest.simulacion.escenarios.Application.GestionEscenarios(new CatalogoEscenariosJdbc(jdbc,json),tx);
+        var gestor=new com.stockquest.simulacion.domain.UsuarioAutenticado("g",com.stockquest.simulacion.domain.UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->casos.eliminar(gestor,scenarioId)).tipo());
+        assertEquals(1,jdbc.queryForObject("SELECT count(*) FROM simulation_runs WHERE id=?",Integer.class,run.id()));
+        assertTrue(new CatalogoEscenariosJdbc(jdbc,json).publicado(scenarioId).isPresent());
+    }
     @Test void dosDecisionesConcurrentesProducenUnExitoYUnConflicto() throws Exception {
         var run=partidas.iniciar(Fixtures.aprendiz(),scenarioId);
         var start=new CountDownLatch(1); var pool=Executors.newFixedThreadPool(2);

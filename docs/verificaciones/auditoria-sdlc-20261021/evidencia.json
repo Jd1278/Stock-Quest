@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-21",
+  "timezone": "America/Bogota",
+  "scope": "Software lifecycle audit of local working tree, historical test evidence, current read-only probes and user acceptance",
+  "gitHead": "db09d1eebe2dd19c8e2c290966adef2a67734d45",
+  "workingTreeClean": false,
+  "sourceDocumentSha256": "620e3ec0b5fd00366f9a6c44571ea3fd17276dc6a39f988b1bb3db4ee31dd149",
+  "stages": [
+    {"id":1,"name":"Planificación","ready":true,"scope":"Approved migration and temporary demonstration"},
+    {"id":2,"name":"Análisis de requisitos","ready":true,"scope":"Requirements identified, traced and gaps recorded; not all fulfilled"},
+    {"id":3,"name":"Diseño","ready":true,"scope":"Approved local architecture; permanent infrastructure design pending"},
+    {"id":4,"name":"Desarrollo","ready":false,"scope":"Global scope partial; local functionality accepted"},
+    {"id":5,"name":"Pruebas","ready":false,"scope":"Global nonfunctional acceptance and final integrated regression pending"},
+    {"id":6,"name":"Despliegue","ready":true,"scope":"Temporary hybrid demonstration only"},
+    {"id":7,"name":"Operación y mantenimiento","ready":false,"scope":"Partial; continuous monitoring and operations pending"},
+    {"id":8,"name":"Retirada o sustitución","ready":false,"scope":"Legacy retirement planned, not completed; whole application remains in use"}
+  ],
+  "contractInventoryExecutedNow":{"status":"PASS - structural inventory only","operations":39,"paths":32,"ownedModels":14,"eventTypes":7,"referencesResolved":107},
+  "phase7SnapshotComparison":{"filesCompared":68,"missing":[],"changed":["services/aprendizaje-evaluacion/pom.xml","services/personas-capacitacion/pom.xml","services/simulacion-logistica/pom.xml"],"claimBoundary":"Only the historical snapshot subset; new files also exist"},
+  "historicalEvidence":{"phase7SuiteTests":232,"phase7HttpCheckGroups":14,"laterJavaSurefire":{"personas":40,"aprendizaje":29,"simulacion":37,"failures":0,"errors":0,"skipped":0},"observabilityDemoRunsPass":2,"vercelManualAcceptance":"User confirmed login, learning, simulation, progress and route reload"},
+  "currentProbes":{"supervisorReady":true,"gatewayHealth":200,"personasReadiness":200,"aprendizajeReadiness":200,"simulacionReadiness":200,"publicApiHealth":{"url":"https://stock-quest-five.vercel.app/api/health","http":200,"status":"ok"},"grafanaHealth":"connection unavailable at audit time","prometheusReadiness":"connection unavailable at audit time","jenkinsWindowsService":"Running"},
+  "limitations":["Jenkins XML access denied; job inventory not certified","Full test suite not rerun","No new load tests or penetration/dependency vulnerability assessment","Public UI flows rely on explicit user acceptance, not a new authenticated audit session","Production readiness not certified"]
+}

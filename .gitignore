@@ -7,3 +7,5 @@ coverage/
 *.log
 .vercel/
 target/
+.stockquest-local/
+.vercel

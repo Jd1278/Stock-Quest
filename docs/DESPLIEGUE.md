@@ -1,25 +1,26 @@
-# Despliegue PostgreSQL
+# Despliegue de Stock Quest
 
-## Backend en Render
+Estado actualizado al 21 de octubre de 2026. La entrega temporal fue validada anteriormente. En la verificación posterior a la retirada, la API local y el proxy frontend dieron 200; el túnel anterior no resolvió y la API pública Vercel dio 502. Esa conexión temporal necesita recuperación antes de otra presentación. No se republicó Vercel en este bloque. La infraestructura permanente sigue pendiente.
 
-Importa el proyecto como servicio web Node usando `render.yaml`. El build instala y compila la API; el predeploy aplica las migraciones PostgreSQL; el inicio ejecuta Express. Configura `DATABASE_URL` de PostgreSQL, `JWT_SECRET` y `FRONTEND_URL` (origen exacto del frontend). Render suministra `PORT`.
+## Arquitectura publicada para la presentación
 
-La base Render suministrada ya existe; no se crea otra ni se contrata un plan desde el código. La API aún debe desplegarse como servicio separado. Usa la URL interna cuando API y base estén en la misma región, con la política TLS apropiada de ese endpoint.
+- Frontend compilado en Vercel, proyecto `stock-quest`: https://stock-quest-five.vercel.app.
+- `/api` reenviado por Vercel al túnel HTTPS Cloudflare hacia el gateway local 14600.
+- Gateway Express y tres servicios Java con sus bases PostgreSQL en el equipo del usuario.
+- Stock Quest y el túnel deben estar activos; reiniciar el túnel puede cambiar su URL y exigir actualizar la publicación.
 
-## Frontend en Vercel
+El procedimiento vigente es [DESPLIEGUE-TEMPORAL-VERCEL.md](DESPLIEGUE-TEMPORAL-VERCEL.md). Se subió una carpeta de estáticos preparada, no toda la raíz del repositorio. El usuario confirmó login, aprendizaje, simulación, progreso y recarga de rutas. La auditoría verificó salud pública HTTP 200; eso no sustituye una prueba de disponibilidad prolongada.
 
-Importa la raíz del repositorio. `vercel.json` define build, directorio y fallback de React Router. Configura `VITE_API_URL=https://TU-API/api` antes de compilar. No introduzcas credenciales de PostgreSQL en el frontend.
+## Preparación de la entrega permanente
 
-## GitHub Actions
+Continúan pendientes el pipeline Java de Jenkins, una versión/release reproducible, alojamiento estable de API/servicios y bases, infraestructura acordada con CloudFormation, protección de datos, restauración/rollback y monitorización continua con alertas. Consultar [fase 8](FASE-8-OPERACION.md) y [estado actual](ESTADO-ACTUAL.md).
 
-`verify` usa PostgreSQL 16 efímero, genera Prisma, aplica migraciones, ejecuta lint, pruebas e integración y compila. Los secretos de pruebas son fixtures efímeros. Para activar el despliegue, configura el environment `production`, los secretos `DATABASE_URL`, `FRONTEND_DEPLOY_HOOK` y `BACKEND_DEPLOY_HOOK`, y la variable `DEPLOY_ENABLED=true`.
+Grafana y Prometheus ya se instalaron y se ensayaron localmente; no se certificaron como operación permanente. Jenkins ya está instalado, pero no hay ejecución acreditada del pipeline de los tres servicios. GitHub Actions se ajustó a gateway/frontend sin Prisma, migraciones ni hooks antiguos. Su nueva ejecución en GitHub, el build Java y el release no se acreditan en este bloque.
 
-Los hooks solicitan el despliegue; confirma su finalización en cada proveedor. Desactiva despliegues que no esperen a CI. No se ejecutó el workflow en GitHub desde esta sesión.
+## Plantillas del borde y archivo histórico
 
-## Migraciones
+`render.yaml`, `vercel.json` y `api/index.js` raíz ahora usan el gateway independiente sin Prisma. No se desplegaron en esta entrega ni alojan los Java/bases. Las plantillas anteriores están en `legacy/`. Véanse [RENDER.md](RENDER.md) y [VERCEL.md](VERCEL.md).
 
-Los archivos SQL se generan mediante Prisma y viven en `apps/api/prisma/migrations`. El runner Node de `npm run db:migrate` aplica versiones pendientes en una transacción, verifica checksums y escribe el historial estándar de Prisma. Tiene bloqueo de concurrencia y rechaza bases existentes sin historial. No usa `db push` ni `migrate reset`.
+Migraciones legacy archivadas en `legacy/backend/prisma/migrations`, fuera de los comandos y workspaces actuales. Migraciones Java: `services/<servicio>/src/main/resources/db/migration`, propias de cada servicio y ejecutadas por Flyway. No ejecutar migraciones/seed legacy sobre las bases Java ni aplicar SQL de MySQL a PostgreSQL. No usar `db push`, `migrate reset`, DROP o TRUNCATE como procedimiento de despliegue.
 
-El CLI estándar sigue disponible con `npm run db:migrate:prisma -w @stock-quest/api`; en esta sesión Windows falló su establecimiento TLS nativo, motivo por el que se incorporó el runner con `pg`. No mezcles la migración MySQL antigua con el nuevo historial PostgreSQL.
-
-Referencias: [Render Postgres](https://render.com/docs/postgresql-creating-connecting) y [Prisma PostgreSQL](https://docs.prisma.io/docs/orm/v6/overview/databases/postgresql).
+Secretos de base, JWT y servicio pertenecen a configuración privada del servidor; nunca a variables VITE ni al paquete estático. El archivo DPAPI local no se publica y depende del usuario Windows del equipo preparado.

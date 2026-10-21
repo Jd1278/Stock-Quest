@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "runId": "b55e12d2-0bd2-41c7-b43c-90cd9d182fb7",
+  "checks": [
+    "module-delete-authentication-and-manager-role",
+    "lesson-and-challenge-deletion-require-manager",
+    "module-progress-and-attempt-conflicts-preserve-content",
+    "lesson-progress-and-challenge-attempt-conflicts-preserve-history",
+    "unused-challenge-deletion-preserves-lesson-and-module",
+    "unused-lesson-deletion-removes-child-content-and-preserves-module",
+    "unused-module-and-child-content-delete-204-then404",
+    "scenario-with-game-is-protected-and-game-remains-readable",
+    "unused-scenario-delete-204-then404",
+    "catalog-counts-restored-and-existing-records-preserved"
+  ],
+  "finishedAt": "2026-10-20T04:20:10.678Z",
+  "fixtureCleanup": "Only IDs created in this run"
+}

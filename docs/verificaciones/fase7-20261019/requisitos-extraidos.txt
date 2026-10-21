@@ -1,0 +1,583 @@
+FORMATO IEEE830
+ESTUDIANTES:
+Perez Villamizar Julian Hernando
+Paredes Cubides Juan David
+DOCENTE
+Carlos Alfonso Pineda
+Stock Quest: Aplicación web interactiva para la parametrización y  la capacitación en gestión de inventarios y logística
+Ficha del documento 
+Fecha
+Revisión
+Autor 
+Verificado
+dep.calidad
+18/08/2026
+Revisión 1 
+Juan David Paredes Cubides
+Julian Hernando Perez villamizar
+Documento validado por las partes en la fecha:  18/08/2026
+Por los estudiantes
+Por la universidad 
+1. Introducción
+En el ecosistema laboral contemporáneo, el acceso al primer empleo enfrenta una barrera crítica: la exigencia de experiencia previa. Esta carencia es particularmente acentuada en sectores operativos como la gestión de mercancías, donde el entrenamiento requiere entornos controlados que minimicen los riesgos financieros. Ante esta brecha entre la formación académica y la realidad profesional, surge Stock Quest, una plataforma EdTech concebida para democratizar el entrenamiento logístico mediante el aprendizaje interactivo.
+Este proyecto propone un sistema de capacitación y seguimiento basado en un modelo de aprendizaje activo fundamentado en microlecciones y una arquitectura gamificada que mantiene la progresión continua del usuario. A través de un entorno accesible desde cualquier navegador web moderno y respaldado por una infraestructura en la nube descentralizada, los estudiantes y profesionales pueden adquirir competencias operativas reales sin incurrir en riesgos de capital ni requerir instalaciones complejas.
+Además de esto el sistema web permitirá realizar un seguimiento detallado en la trayectoria de la capacitación de sus empleados. 
+El presente documento constituye la Especificación de Requisitos de Software (SRS) para Stock Quest, detallando los requerimientos técnicos y funcionales necesarios para su desarrollo. Esta especificación ha sido elaborada siguiendo los lineamientos establecidos en la norma IEEE 830, garantizando un marco de trabajo riguroso que alinea la robustez de su arquitectura desacoplada con el propósito pedagógico de cerrar la brecha de empleabilidad.
+1.1. Propósito
+Stock Quest será una aplicación web orientada a la parametrización y capacitación  de competencias relacionadas con la gestión de inventarios, almacenamiento y logística mediante un enfoque basado en gamificación, simulación de situaciones empresariales e inteligencia artificial.
+La plataforma permitirá que los usuarios aprendan conceptos y procedimientos relacionados con el control de mercancías, gestión de inventarios, almacenamiento, costos, tiempos de entrega, stock de protección y seguridad en las operaciones logísticas a través de actividades interactivas y desafíos que representen situaciones similares a las que pueden presentarse en un entorno laboral.
+A diferencia de un sistema de capacitación tradicional basado principalmente en contenidos teóricos, Stock Quest buscará que el usuario aprenda mediante la toma de decisiones, reciba retroalimentación sobre sus resultados y avance progresivamente mediante diferentes niveles de dificultad, todo esto mientra a la vez permite realizar un seguimiento detallado de los avances por parte del administrador o jefe encargado del área. 
+El sistema estará dirigido inicialmente a empresas o  personas que se desempeñan o se están preparando para desempeñar funciones relacionadas con la gestión de inventarios y logística, especialmente responsables de operaciones, supervisores o encargados de bodega y pequeños y medianos empresarios.
+1.2 Alcance
+El proyecto Stock Quest contará con un alcance inicial que incluye las siguientes características mínimas para su primera versión.
+Módulo de aprendizaje: En este módulo el usuario encontrará material interactivo organizado que le permitirá el aprendizaje de temas como: 
+Fundamentos de inventarios.
+Control de mercancías.
+Almacenamiento.
+Gestión de abastecimiento.
+Stock de protección.
+Costos de inventario.
+Tiempos de entrega.
+Fundamentos de logística.
+Seguridad y buenas prácticas en bodegas.
+Módulo de desafíos: En este módulo el usuario encontrará  retos interactivos que le permitirán afianzar de mejor forma las clases teóricas que se encuentre estudiando encontrará elementos como: 
+Preguntas interactivas.
+Casos prácticos.
+Problemas de cálculo.
+Escenarios de toma de decisiones.
+Desafíos relacionados con inventarios.
+Situaciones de abastecimiento.
+Situaciones relacionadas con almacenamiento y seguridad.
+Módulo de simulación: En este módulo se encargará de la evaluación del usuario pues se  presentarán situaciones y escenarios simplificados que permitirán al usuario realizar toma de decisiones sobre estos escenarios, además de esto el usuario recibirá una retroalimentación basada en el cálculo de las consecuencias de las decisiones tomadas por el usuario. 
+Se podrán representar escenarios simplificados como:
+Una empresa tiene determinado nivel de inventario, una demanda variable y un proveedor con un tiempo de entrega determinado. El usuario debe decidir cuándo solicitar y cuándo realizar el pedido.
+El sistema calculará las consecuencias de la decisión y proporcionará retroalimentación.
+Sistema de gamificación
+Se implementarán elementos como:
+Nivel de aprendizaje.
+Desafíos interactivos.
+Progreso.
+Indicadores de desempeño.
+Indicador de aprobación.
+Perfil del usuario
+El usuario podrá consultar:
+Nivel de aprendizaje actual.
+Actividades completadas.
+Porcentaje de progreso.
+Resultados por temática.
+Indicadores de desempeño.
+Temáticas que requieren refuerzo.
+Recomendaciones de aprendizaje.
+Módulo del administrador: En este módulo el administrador o encargado de la capacitación podrá gestionar y hacer un seguimiento detallado de cada empleado, desde este módulo podrá hacer las siguientes actividades.
+Gestión de empleados (CRUD).
+Crear grupos de capacitación. 
+Revisión de progreso de cada empleado.
+Revisión de actividades realizadas o por realizar de cada empleado.
+Revisión de porcentaje de progreso en la capacitación de cada empleado.
+Revisión de análisis e indicadores de desempeño de cada empleado.
+Revisión general del progreso de los empleados. 
+Plazo de desarrolló: El proyecto stock Quest contará con un plazo de desarrollo de 4 meses.
+1.3 Personal Involucrado- stakeholders
+Autores:
+Stakeholders: 
+Nombre: 
+Julian Hernando Perez Villamizar
+Rol
+Desarrollador / Documentador
+Categoría profesional
+Bachiller
+Responsabilidades
+Análisis de requisitos, Desarrollo frontend y backend de la aplicación
+Información de contacto
+jhernandoperez@uts.edu.co
+Nombre
+Juan David Paredes Cubides
+Rol
+Desarrollador / Director
+Categoría profesional
+Bachiller
+Responsabilidades
+Análisis de requisitos, Desarrollo frontend y backend de la aplicación, dirección de desarrollo
+Información de contacto
+jhernandoperez@uts.edu.co
+1.4 Definiciones y acrónimos 
+Nombre
+Descripción 
+RF
+Requerimiento funcional
+RFN
+Requerimiento no funcional
+HU
+Historia de usuario 
+1.5 Referencias
+Título del documento
+Referencia 
+Standard IEEE 830-1998
+IEEE
+2. Historias de usuario
+Elicitación de información 
+1. Rol: Empleado en Capacitación (Estudiante / Aprendiz)
+HU01 - Registro y Autenticación
+Como empleado en capacitación,
+Quiero registrarme e iniciar sesión con mi correo electrónico y contraseña,
+Para poder acceder a la plataforma y guardar de forma segura mi progreso de aprendizaje y puntajes.
+HU02 - Visualización de Ruta de Aprendizaje
+Como empleado en capacitación,
+Quiero visualizar una interfaz gráfica con los módulos y lecciones organizados secuencialmente,
+Para entender claramente qué temas debo estudiar y cuáles niveles tengo desbloqueados.
+HU03 - Consumo de Micro Lecciones Teóricas
+Como empleado en capacitación,
+Quiero leer tarjetas informativas cortas sobre fundamentos logísticos antes de los minijuegos,
+Para asimilar los conceptos teóricos clave de forma rápida y sencilla.
+HU04 - Ejecución de Simulaciones de Inventario
+Como empleado en capacitación,
+Quiero interactuar con un minijuego 2D de gestión de inventarios y toma de decisiones,
+Para practicar situaciones reales de abastecimiento y control de mercancías sin correr riesgos financieros.
+HU05 - Retroalimentación Inmediata de Decisiones
+Como empleado en capacitación,
+Quiero recibir un reporte automático con las consecuencias financieras y operativas de mis decisiones al finalizar un escenario,
+Para identificar mis errores conceptuales y aprender cómo corregirlos en la práctica.
+HU06 - Consulta de Perfil y Progreso
+Como empleado en capacitación,
+Quiero consultar mi nivel de aprendizaje actual, consultar el porcentaje realizado del curso y las temáticas que requieren refuerzo,
+Para monitorear mi desempeño personal y saber en qué áreas debo enfocarme.
+2. Rol: Administrador del Empleado (Supervisor / Líder de Área)
+HU07 - Seguimiento del Rendimiento del Personal
+Como administrador del empleado,
+Quiero visualizar un panel de control con el progreso, las actividades completadas y los indicadores de desempeño de mi equipo de trabajo,
+Para verificar si el personal está cumpliendo con la capacitación requerida en gestión logística.
+HU08 - Identificación de Brechas de Conocimiento
+Como administrador del empleado,
+Quiero consultar los resultados por temática y las áreas que requieren refuerzo de cada colaborador,
+Para evaluar si el empleado está preparado para asumir responsabilidades operativas en bodega o si necesita capacitación adicional.
+HU09 - Gestión de grupos de capacitación
+Como administrador del empleado,
+Quiero crear y gestionar grupos de capacitación personalizados
+Para agregar o registrar empleados en grupos de capacitación específicos. 
+3. Rol: Encargado del Contenido de cada Módulo (Gestor Pedagógico / Docente)
+HU10 - Gestión de Módulos y Lecciones
+Como encargado del contenido de cada módulo,
+Quiero crear, editar y organizar el material interactivo y las micro lecciones teóricas dentro de la plataforma,
+Para mantener actualizada la información sobre normativas, costos y buenas prácticas de inventarios.
+HU11 - Configuración de Escenarios de Simulación
+Como encargado del contenido de cada módulo,
+Quiero definir las variables de los desafíos y minijuegos (como tiempos de entrega, demanda variable y costos de almacenamiento),
+Para asegurar que los retos planteados reflejan de forma realista las situaciones del entorno laboral.
+2.1 Perspectiva del producto - rentabilidad 
+Stock Quest se proyecta como una solución EdTech de alto impacto, diseñada como una plataforma web educativa e interactiva que democratiza el acceso a la capacitación logística. Su arquitectura está concebida bajo un enfoque desacoplado, separando rigurosamente el núcleo de simulación gráfica de los servicios de gestión de datos. Mientras el motor de simulación desarrollado para ofrecer una experiencia inmersiva tipo tycoon  se ejecuta en el navegador mediante tecnologías web aceleradas, la lógica de negocio y el seguimiento del progreso se gestionan a través de servicios en la nube (Backend-as-a-Service).
+Esta separación de responsabilidades garantiza una escalabilidad eficiente y una accesibilidad multiplataforma universal; el usuario solo requiere un navegador moderno para acceder al entorno, eliminando fricciones técnicas como instalaciones pesadas o dependencias de hardware específico. El sistema integra un modelo de microaprendizaje (micro-learning), donde la progresión técnica se vincula directamente a un sistema de incentivos gamificados. Al completar las microlecciones, el usuario no solo valida conocimientos teóricos sino que contará con análisis de desempeño en cada aŕea evaluada. Esta arquitectura asegura que el sistema sea tanto un entorno de simulación robusto como una herramienta pedagógica persistente, capaz de transformar la adquisición de habilidades logísticas en un proceso dinámico, medible y accesible desde cualquier dispositivo conectado.
+2.2 Funcionalidad del producto
+2.2 Funcionalidad del producto
+El sistema Stock Quest ofrecerá un conjunto integral de capacidades operativas diseñadas para cubrir tanto el proceso de aprendizaje autónomo del usuario como el seguimiento institucional. Las funcionalidades del producto se estructuran en los siguientes subsistemas principales:
+Subsistema de Autenticación y Gestión de Usuarios:
+Permite el registro e inicio de sesión seguro de los usuarios en la plataforma.
+Gestiona perfiles individualizados para almacenar el progreso formativo, los niveles alcanzados y el historial de desempeño.
+Subsistema del Módulo de Aprendizaje:
+Facilita la navegación estructurada a través de una ruta formativa organizada en módulos y lecciones secuenciales.
+Despliega micro lecciones teóricas cortas enfocadas en fundamentos de inventarios, control de mercancías, almacenamiento, costos y seguridad operativa.
+Subsistema del Módulo de Desafíos y Simulación (Minijuegos 2D):
+Ejecuta simulaciones logísticas interactivas orientadas al control de inventarios y la toma de decisiones bajo condiciones de variables dinámicas (como demanda variable y tiempos de entrega de proveedores).
+Procesa y calcula de manera automática el impacto financiero y operativo de las decisiones tomadas por el usuario, generando un desglose de penalizaciones y rentabilidad.
+Subsistema de Retroalimentación y Gamificación:
+Integra un panel de retroalimentación pedagógica inmediata que detalla el porqué de los resultados obtenidos tras cada simulación.
+Implementa mecánicas de recompensa basadas en niveles, barras de progreso e indicadores de desempeño para mantener el incentivo continuo del usuario.
+Subsistema de Seguimiento Administrativo:
+Provee herramientas para que los administradores o encargados de capacitación realicen un seguimiento detallado del rendimiento de los colaboradores, identificando áreas de refuerzo y métricas de aprobación.
+Recolección de datos 
+2.3 Diagrama UML 
+2.4 Características de los usuarios
+Tipo de usuario
+Visitante 
+Formación
+NA
+Actividades 
+Observa e indaga información sobre Stock Quest, puede realizar su registro en la plataforma
+Tipo de usuario
+Estudiante / empleado 
+Formación
+Bachiller
+Actividades 
+Realizar talleres y actividades de capacitación y revisar resultados. 
+Tipo de usuario
+Supervisor / líder de área 
+Formación
+Jefe de Bodega
+Actividades 
+Visualizar estado de capacitación del equipo de trabajo, gestionar registro de empleados.
+Tipo de usuario
+Gestor pedagógico 
+Formación
+Gestor de Capacitación y Desarrollo
+Actividades 
+Gestionar, crear y actualizar los módulos de aprendizaje de acuerdo a las normativas vigentes. 
+2.5 Restricciones
+El acceso a la plataforma se realizará exclusivamente a través de internet mediante navegadores web estándar.
+El tiempo de desarrollo está estrictamente acotado al marco de 4 meses.
+La persistencia de datos de usuario se gestionará mediante servicios en la nube ligeros (como Firebase Firestore o bases de datos relacionales equivalentes en la nube).
+2.5 Suposiciones y dependencias
+Se asume que los usuarios disponen de un dispositivo con conexión estable a internet y un navegador actualizado.
+Los requisitos descritos se mantendrán estables durante las fases de diseño e implementación del semestre.
+3. Requisitos Funcionales (RF)
+Identificación del requerimiento:
+RF01
+Nombre del requerimiento:
+Registro de Usuarios
+Características :
+Registro autónomo de usuarios en la plataforma.
+Descripción del requerimiento:
+El sistema debe permitir el registro autónomo de
+nuevos usuarios en la plataforma, solicitando datos
+obligatorios (nombre, correo electrónico, documento
+y contraseña) y almacenando las credenciales de
+manera segura.
+Requerimiento no funcional:
+RNF02, RNF04, RNF05
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF02
+Nombre del requerimiento:
+Inicio de Sesión y Verificación de Credenciales
+Características :
+Validación de credenciales de acceso.
+Descripción del requerimiento:
+El sistema debe validar las credenciales ingresadas
+por el usuario contra la base de datos para
+autenticar su acceso de forma segura.
+Requerimiento no funcional:
+RNF01, RNF03, RNF04
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF03
+Nombre del requerimiento:
+Identificación de Roles
+Características :
+Determinación del perfil y permisos de usuario.
+Descripción del requerimiento:
+Tras una autenticación exitosa, el sistema debe
+consultar y determinar el rol asociado al usuario
+(Aprendiz, Líder de área o Gestor de aprendizaje).
+Requerimiento no funcional:
+RNF01, RNF04
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF04
+Nombre del requerimiento:
+Redirección por Rol
+Características :
+Navegación a la vista correspondiente según el
+perfil.
+Descripción del requerimiento:
+El sistema debe redirigir automáticamente al usuario
+autenticado hacia su respectivo panel o interfaz
+gráfica principal según el rol identificado.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF05
+Nombre del requerimiento:
+Acceso al Módulo de Estudio
+Características :
+Visualización del entorno principal de aprendizaje.
+Descripción del requerimiento:
+El rol de aprendiz debe poder acceder a la interfaz
+principal del módulo de estudio para visualizar las
+rutas de aprendizaje disponibles.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF06
+Nombre del requerimiento:
+Ejecución de Simulaciones
+Características :
+Ejecución de minijuegos 2D interactivos.
+Descripción del requerimiento:
+El sistema debe renderizar y ejecutar minijuegos
+interactivos 2D que presenten escenarios logísticos
+y de inventarios para la toma de decisiones
+prácticas.
+Requerimiento no funcional:
+RNF01, RNF05, RNF06
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RF07
+Nombre del requerimiento:
+Visualización de Tarjetas de Repaso
+Características :
+Despliegue de tarjetas conceptuales teóricas.
+Descripción del requerimiento:
+El sistema debe mostrar tarjetas informativas breves
+con conceptos teóricos clave previos a las
+simulaciones o desafíos.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RF08
+Nombre del requerimiento:
+Visualización de Resultados de Simulación
+Características :
+Reporte de desempeño operativo y financiero.
+Descripción del requerimiento:
+Al finalizar una simulación, el sistema debe generar
+y presentar un reporte detallado con las métricas
+operativas y financieras obtenidas.
+Requerimiento no funcional:
+RNF01, RNF06
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF09
+Nombre del requerimiento:
+Recepción de Retroalimentación
+Características :
+Feedback automático inmediato sobre decisiones.
+Descripción del requerimiento:
+El sistema debe proveer retroalimentación
+automatizada e inmediata explicando el impacto y
+las consecuencias de las decisiones tomadas en el
+minijuego.
+Requerimiento no funcional:
+RNF01, RNF02, RNF06
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF10
+Nombre del requerimiento:
+Realización de Lecciones
+Características :
+Navegación secuencial por módulos y lecciones.
+Descripción del requerimiento:
+El sistema debe permitir al aprendiz recorrer
+secuencialmente lecciones teóricas organizadas por
+módulos.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF11
+Nombre del requerimiento:
+Estudio de Material Teórico
+Características :
+Despliegue de contenidos multimedia y lecturas.
+Descripción del requerimiento:
+El sistema debe desplegar contenidos textuales y
+multimedia (como videos de apoyo) estructurados
+para el autoaprendizaje logístico.
+Requerimiento no funcional:
+RNF01, RNF05
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF12
+Nombre del requerimiento:
+Monitoreo de Progreso Personal
+Características :
+Registro continuo de avances del aprendiz.
+Descripción del requerimiento:
+El sistema debe registrar y consolidar las métricas
+de avance del aprendizaje de forma persistente.
+Requerimiento no funcional:
+RNF03, RNF04
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RF13
+Nombre del requerimiento:
+Consulta de Temáticas que Requieren Refuerzo
+Características :
+Detección de brechas de conocimiento.
+Descripción del requerimiento:
+El sistema debe analizar el rendimiento del aprendiz
+e identificar qué áreas temáticas necesitan repaso
+adicional.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RF14
+Nombre del requerimiento:
+Consulta de Porcentaje de Progreso
+Características :
+Indicador gráfico de avance total y modular.
+Descripción del requerimiento:
+El sistema debe calcular y mostrar gráficamente el
+porcentaje global y modular completado del
+Programa de capacitación.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RF15
+Nombre del requerimiento:
+Acceso al Módulo de Contenidos
+Características :
+Control de acceso al panel pedagógico.
+Descripción del requerimiento:
+El gestor pedagógico debe contar con un acceso
+restringido al panel de administración de contenidos
+educativos.
+Requerimiento no funcional:
+RNF02, RNF04
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF16
+Nombre del requerimiento:
+Gestión de Contenido de Aprendizaje
+Características :
+Creación, edición y organización de módulos.
+Descripción del requerimiento:
+El sistema debe permitir al gestor crear, editar,
+estructurar y organizar los módulos y lecciones
+teóricas dentro de la plataforma.
+Requerimiento no funcional:
+RNF02, RNF03, RNF06
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF17
+Nombre del requerimiento:
+Gestión de Variables de Módulos
+Características :
+Configuración de variables de minijuegos y
+desafíos.
+Descripción del requerimiento:
+El sistema debe permitir configurar parámetros
+dinámicos de los desafíos y minijuegos (como
+tiempos de entrega, demanda variable y costos de
+almacenamiento).
+Requerimiento no funcional:
+RNF02, RNF03
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF18
+Nombre del requerimiento:
+Acceso al Módulo de Seguimiento
+Características :
+Panel de supervisión para el líder de área.
+Descripción del requerimiento:
+El líder de área debe disponer de una interfaz para
+supervisar el rendimiento global de sus equipos de
+trabajo asignados.
+Requerimiento no funcional:
+RNF01, RNF02
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF19
+Nombre del requerimiento:
+Visualización de Informes Detallados y
+Calificaciones
+Características :
+Consulta de métricas por aprendiz y módulo.
+Descripción del requerimiento:
+El sistema debe mostrar informes analíticos y
+calificaciones detalladas por módulo de cada
+aprendiz adscrito a su grupo.
+Requerimiento no funcional:
+RNF01, RNF06
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RF20
+Nombre del requerimiento:
+Panel de Grupos de Trabajo y Gestión de
+Colaboradores
+Características :
+Administración de grupos y asignación de
+aprendices.
+Descripción del requerimiento:
+El líder de área debe poder crear grupos de
+capacitación personalizados, registrar nuevos
+aprendices o asociar colaboradores existentes a los grupos bajo su supervisión.
+Requerimiento no funcional:
+RNF02, RNF03, RNF04
+Prioridad del requerimiento:
+Alta
+3.1 Requisitos No Funcionales (RNF)
+Identificación del requerimiento:
+RNF01
+Nombre del requerimiento:
+Rendimiento y Velocidad
+Características :
+Tiempos de respuesta óptimos.
+Descripción del requerimiento:
+El sistema deberá cargar las lecciones y
+simulaciones en un tiempo máximo de 3 segundos
+bajo una conexión estándar de 10 Mbps.
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RNF02
+Nombre del requerimiento:
+Usabilidad
+Características :
+Facilidad de aprendizaje de la interfaz.
+Descripción del requerimiento:
+La interfaz debe seguir principios de diseño web estándar para que el usuario pueda navegar sin manual de usuario extenso (curva de aprendizaje < 15 min).
+Prioridad del requerimiento:
+Media
+Identificación del requerimiento:
+RNF03
+Nombre del requerimiento:
+Disponibilidad
+Características :
+Accesibilidad del servicio.
+Descripción del requerimiento:
+La plataforma debe mantener una disponibilidad de servicio del 99% para acceso constante.
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RNF04
+Nombre del requerimiento:
+Seguridad de Datos
+Características :
+Protección de información sensible.
+Descripción del requerimiento:
+Las contraseñas y datos sensibles deben ser encriptados antes de ser almacenados en la base de datos (ej. uso de hashes).
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RNF05
+Nombre del requerimiento:
+Compatibilidad Multiplataforma
+Características :
+Funcionamiento en diversos dispositivos.
+Descripción del requerimiento:
+El sistema debe ser accesible en navegadores web modernos (Chrome, Edge, Firefox, Safari) tanto en escritorio como en móviles.
+Prioridad del requerimiento:
+Alta
+Identificación del requerimiento:
+RNF06
+Nombre del requerimiento:
+Retroalimentación de Interfaz
+Características :
+Confirmación inmediata de acciones.
+Descripción del requerimiento:
+El sistema debe proporcionar confirmaciones visuales o sonoras inmediatas ante las acciones del usuario (éxito/error).
+Prioridad del requerimiento:
+Baja
+Requisitos específicos
+3.2 Interfaces de Hardware
+No se requiere hardware especializado para el uso de la aplicación, debido a la sencillez del sistema, se puede acceder a la aplicación por medio de Celulares y Computadores con conexión a internet para la descarga de los contenidos pertinentes.
+.3.3 Interfaces de Software
+Plataforma de video (Youtube)
+Los videos estarán alojados en un canal de Youtube, en una lista de reproducciones no listada. Base de datos (PostgreSQL) Los datos que se recojan. Por ejemplo, las contraseñas, los usuarios, los correos de las persona registradas, se encriptan y se guardan en la base de datos para mayor control.
+3.4 Interfaces de comunicación y red
+En el momento en que se comienza a interactuar con la aplicación, mientras que esté conectada a red wi-fi, va a enviar datos sensibles a la base de datos y va a recibir la métricas necesarias para que la página pueda funcionar de manera óptima.
+Stack 
+DIAGRAMA UML 
+MER, SECUENCIA, DIAGRAMA DE CLASE,

@@ -3,18 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "backend",
-    "frontend"
+    "frontend",
+    "gateway"
   ],
   "scripts": {
-    "dev": "concurrently -n API,WEB \"npm run dev -w @stock-quest/api\" \"npm run dev -w @stock-quest/web\"",
-    "build": "npm run build --workspaces",
-    "lint": "eslint backend frontend --max-warnings 0",
-    "test": "npm run test --workspaces",
-    "db:generate": "npm run db:generate -w @stock-quest/api",
-    "db:migrate": "npm run db:migrate -w @stock-quest/api",
-    "db:seed": "npm run db:seed -w @stock-quest/api",
-    "db:check": "npm run db:check -w @stock-quest/api --"
+    "dev": "concurrently -n API,WEB \"npm run dev -w @stock-quest/gateway\" \"node scripts/dev-web.cjs\"",
+    "build": "npm run build -w @stock-quest/gateway && npm run build -w @stock-quest/web",
+    "lint": "eslint frontend gateway --max-warnings 0",
+    "test": "npm run test -w @stock-quest/gateway && npm run test -w @stock-quest/web",
+    "verify:gateway": "node scripts/verify-gateway-isolation.cjs"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
@@ -23,6 +20,8 @@
     "typescript": "~5.8.3",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.6",
-    "@types/jest": "^29.5.14"
+    "@types/jest": "^29.5.14",
+    "pg": "^8.16.3",
+    "bcrypt": "^6.0.0"
   }
 }

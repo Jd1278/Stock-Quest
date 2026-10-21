@@ -1,0 +1,222 @@
+{
+  "finishedAt": "2026-10-21T21:58:31.086Z",
+  "scope": "Activation of independent Java-facing gateway and recoverable archive of the old backend",
+  "userValidatedPreparation": true,
+  "activeGateway": "gateway/src/server.ts",
+  "unchangedSnapshots": 9,
+  "build": {
+    "gateway": "PASS",
+    "frontend": "PASS",
+    "warning": "Existing Phaser bundle exceeds the Vite chunk-size warning threshold"
+  },
+  "npmTests": {
+    "passed": 87,
+    "failed": 0,
+    "gateway": 64,
+    "frontend": 23,
+    "source": "npm test execution in this task; not cumulative with historical suites"
+  },
+  "lint": "PASS",
+  "isolation": {
+    "status": "PASS",
+    "loadedModules": 164,
+    "legacyImports": 0,
+    "sqlDrivers": 0
+  },
+  "retirement": {
+    "status": "PASS",
+    "activeWorkspaces": [
+      "frontend",
+      "gateway"
+    ],
+    "archivedSourcesVerified": 42,
+    "prismaInActiveLockfile": false,
+    "legacyWriteCommands": false,
+    "databasesModified": false
+  },
+  "inventory": {
+    "status": "PASS - structural inventory only",
+    "expectedOperations": 39,
+    "contractOperations": 39,
+    "paths": 32,
+    "ownedModels": 14,
+    "eventTypes": 7,
+    "resolvedReferences": 107,
+    "requirementsMapped": 19,
+    "frontendOnly": [
+      "RF04"
+    ]
+  },
+  "httpGroups": {
+    "integration": 11,
+    "deletion": 10,
+    "directEvents": 4
+  },
+  "health": [
+    {
+      "name": "local",
+      "http": 200,
+      "health": "ok",
+      "gateway": "java-services"
+    },
+    {
+      "name": "frontend-proxy",
+      "http": 200,
+      "health": "ok",
+      "gateway": "java-services"
+    },
+    {
+      "name": "tunnel",
+      "error": "ENOTFOUND"
+    },
+    {
+      "name": "vercel",
+      "http": 502,
+      "health": null,
+      "gateway": null
+    }
+  ],
+  "javaMavenRerun": false,
+  "databasesDropped": false,
+  "globalAcceptance": false,
+  "ag05": "pending",
+  "externalDeploymentExecuted": false,
+  "files": [
+    {
+      "file": "package.json",
+      "sha256": "bc3d7051c053044ba76d345b98bd7942bfaa55a351bf00db4f728b25c88dc918"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "26ea6eceb7b6eafdeac6dfd39c84a58357672eb90786aaed91c4b17e5d4a89b2"
+    },
+    {
+      "file": "api/index.js",
+      "sha256": "b1dcf8f5b614e4d9c5c4e1a41c0c92150f532611c5194c3167f77c0cd206ef28"
+    },
+    {
+      "file": "render.yaml",
+      "sha256": "76deacfd4e99cd3b697d441f8e88c086daf037cd49184cf9405a36d6356dfcfb"
+    },
+    {
+      "file": "vercel.json",
+      "sha256": "f00388ced4d50aab14b6400be1369cf236e21ab380065b529632271de41bcb88"
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "sha256": "ec27d2029686490e915a03c7333200b54723e700f3ec4d7c5636cd0e0aad09fd"
+    },
+    {
+      "file": ".vercelignore",
+      "sha256": "2410a8509f3a52a078050b3933eb7b74a74877c18473c7a9efdf9ea781a767c0"
+    },
+    {
+      "file": "scripts/local-java.cjs",
+      "sha256": "a71fdced8d08c5a81eeda303eaf38188bfc562d0e94d097b62a377f1c4478112"
+    },
+    {
+      "file": "scripts/dev-web.cjs",
+      "sha256": "95e05d46265dd3eccf7b1fa09bdb8d407e0a75658963a8f7c4e809e8620c77e9"
+    },
+    {
+      "file": "scripts/verify-phase7.ps1",
+      "sha256": "1300258c4dd576bc74c8519d1e69e8da7f302ebe4e7ee84cd2b0dde48f0c9fd7"
+    },
+    {
+      "file": "scripts/verify-acceptance.cjs",
+      "sha256": "d1aef15b8f76541dbe9bb47af82ae3f824f0e05c3224e15dbecb5018d74c6116"
+    },
+    {
+      "file": "scripts/verify-gateway-isolation.cjs",
+      "sha256": "b12c4f6a1bfc35dea740804b268f813d69027ae3e1c3eb89c5e2e016beeb694e"
+    },
+    {
+      "file": "scripts/verify-legacy-retirement.cjs",
+      "sha256": "591d4ff8465ecaad51a643d61c4cf52e327d4d3c4e7529aac2deb50840cf23bd"
+    },
+    {
+      "file": "contracts/validar-inventario.cjs",
+      "sha256": "d5d003c2daa17de051809009f33cb9f29bd4f2ae12020c7dd9cfed2ef96151bf"
+    },
+    {
+      "file": "contracts/openapi-compatibilidad.json",
+      "sha256": "8e4d3ebb5a99c21a64448b4aac6be03b6eff9174982361eb5f83153b1d94d1d5"
+    },
+    {
+      "file": "contracts/propiedad-datos.json",
+      "sha256": "9a35251c96515848a1128276e3bc3a2965df34ec26121fd86df5a08fa26ead7a"
+    },
+    {
+      "file": "legacy/source-manifest.json",
+      "sha256": "535568f321055ac15c564f6650c6444d0d8ee5ae3dc740f59ea09bb6f5a4b168"
+    },
+    {
+      "file": "gateway/.env.example",
+      "sha256": "d97ec9079d91d5dbc088b6b8881ba60482e20f1be0a2f6b5ee9966f69adda00d"
+    },
+    {
+      "file": "gateway/jest.config.cjs",
+      "sha256": "ef6cc971f9f3096d58fdc8e24be7a91f1e53be9c580382dea4cdfca58283ff01"
+    },
+    {
+      "file": "gateway/package.json",
+      "sha256": "750294054d237fd995b8b9d0be97538b28922b5f5b041eef4c6b44efeac8d803"
+    },
+    {
+      "file": "gateway/README.md",
+      "sha256": "03753585634ef4e07064ae988856569441d3f97eabad864842ef75eaafa266a2"
+    },
+    {
+      "file": "gateway/src/app.ts",
+      "sha256": "28751de2c506ce093b5255a7e3545f53e39098d2f35b5b45c9cddf5a95105820"
+    },
+    {
+      "file": "gateway/src/Application/adminContent.ts",
+      "sha256": "fa15cdd1fa60f80af4354efe6254bba0963d01880bf2ba619166dcdf063c4d0b"
+    },
+    {
+      "file": "gateway/src/Application/ServicePort.ts",
+      "sha256": "d9cb34296d7af94e0166ea5e3058062a5c137b059e13e5c5c060cc5215964858"
+    },
+    {
+      "file": "gateway/src/domain/index.ts",
+      "sha256": "adb923c988f1d1a0d99dd679ece42f5da3457c8d2b1fe77fa14f9026813a2fb1"
+    },
+    {
+      "file": "gateway/src/gateway.test.ts",
+      "sha256": "f6a62b2c582350fc6ade44e68f186ae5f5e302b60699d9e41332e97ac7728b29"
+    },
+    {
+      "file": "gateway/src/Infrastructure/config.ts",
+      "sha256": "122fec72208c4d230e34c411c3ecd11ee7ae488cd25b1846b85dfd4a0d208b56"
+    },
+    {
+      "file": "gateway/src/Infrastructure/controllers.ts",
+      "sha256": "f21e4f98799e1bcc390de33e0ccde18d9e1749851e1cea125ecc7c90d08739a8"
+    },
+    {
+      "file": "gateway/src/Infrastructure/HttpServices.ts",
+      "sha256": "0a24d15b22e3edbc9a7d9fe906ec68c6a488884484340862f1cd2a8cd9728a8f"
+    },
+    {
+      "file": "gateway/src/Infrastructure/middlewares.ts",
+      "sha256": "034ba166e6ecf97cb04828347d9fe6c623d2161a7a8b0767e9407fa7ed304654"
+    },
+    {
+      "file": "gateway/src/Infrastructure/routes.ts",
+      "sha256": "92751736045004204ab5da3bedb38221a6760e4bd106575ad9edd996269c3268"
+    },
+    {
+      "file": "gateway/src/Infrastructure/validators.ts",
+      "sha256": "9dc36ad75a157617428df86349dca1f5e157ed90475852bc44a080daf7454cbe"
+    },
+    {
+      "file": "gateway/src/server.ts",
+      "sha256": "8dc452c6bd81ee0d3816ce7ebf88ebe625b3307cb9eb7260c4c8ec5f284d3112"
+    },
+    {
+      "file": "gateway/tsconfig.json",
+      "sha256": "825862fa17fb328ba94879c15d7c6aa1d2bc04fb9454d92f545679012d4ea0a7"
+    }
+  ]
+}

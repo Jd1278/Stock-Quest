@@ -1,0 +1,170 @@
+[
+  {
+    "file": "backend/.env.example",
+    "sha256": "9a0f8964fbf978708889a5ad07cc1dc21190de00258975190adedcb2a19bd4de"
+  },
+  {
+    "file": "backend/jest.config.cjs",
+    "sha256": "ef6cc971f9f3096d58fdc8e24be7a91f1e53be9c580382dea4cdfca58283ff01"
+  },
+  {
+    "file": "backend/package.json",
+    "sha256": "ed95d1b2a85237bced27889b3b0dd06fb4f3ea70a17a972a2233983930a17f02"
+  },
+  {
+    "file": "backend/tsconfig.json",
+    "sha256": "825862fa17fb328ba94879c15d7c6aa1d2bc04fb9454d92f545679012d4ea0a7"
+  },
+  {
+    "file": "backend/prisma/client.cjs",
+    "sha256": "4154677fbe106fd40fdfe09ff23bfad482626926f81b77cae968a9eee2ae7dd2"
+  },
+  {
+    "file": "backend/prisma/package.json",
+    "sha256": "1bf0e53fc74b05f1aade7451fbac72f1944b067d4229d96bae7a225519a250e4"
+  },
+  {
+    "file": "backend/prisma/schema.prisma",
+    "sha256": "eda1168dca22b419d3ab508b24583ab3c044abd8d4431ce171d502571413e0ae"
+  },
+  {
+    "file": "backend/prisma/seed.ts",
+    "sha256": "52ddfc32f7cdfc7eef2d8ff0dc1ea037d67c73221bb2ee151f72648c4f59131f"
+  },
+  {
+    "file": "backend/prisma/migrations/migration_lock.toml",
+    "sha256": "e0f301404b533bea819cafbc56ca2a9d9bcc2cf97d6350473e3a008f0637cc12"
+  },
+  {
+    "file": "backend/prisma/migrations/202609150001_postgresql/migration.sql",
+    "sha256": "edfac80df05bd012370ebdc5d1cb3a89ecca8aae212ee2ca6aff3e8f85183740"
+  },
+  {
+    "file": "backend/prisma/migrations/202610190001_simulation_event_inbox/migration.sql",
+    "sha256": "9891ec4c8d193a12dd9f115faef91c81ea01fd403491f4f2c0ac44bf9de653f5"
+  },
+  {
+    "file": "backend/scripts/check-database.mjs",
+    "sha256": "b3bd9f76e8b0e2d11bc30af890b96767350c264334fd89e2f865321d8e0bc5c5"
+  },
+  {
+    "file": "backend/scripts/migrate-postgres.mjs",
+    "sha256": "af2b40c2984d696b696d78ac0da7a8a958c512c7578b2c0d34b6f9000e568d62"
+  },
+  {
+    "file": "backend/src/app.ts",
+    "sha256": "f7dce79a6eee8399f87a55e2b80166136282c22fb856a14d95691f787b642d7d"
+  },
+  {
+    "file": "backend/src/server.ts",
+    "sha256": "c482a40db5c3d846291c9f899b25ec052fa1fd6457aae8090ee365541593e46b"
+  },
+  {
+    "file": "backend/src/config/database.test.ts",
+    "sha256": "549afe8d1ed71b5570b18633a6002f2757ee398759984bfa03b04ea152c4d350"
+  },
+  {
+    "file": "backend/src/config/env.ts",
+    "sha256": "2684bda01c7f79932702a829d9e5c8c32527863c1b43187827797c9000c3d86f"
+  },
+  {
+    "file": "backend/src/controllers/index.ts",
+    "sha256": "a0771554eb334ff8901248ec909ad29052ff613904ac6dac2bd80489f060dd9f"
+  },
+  {
+    "file": "backend/src/middlewares/auth.test.ts",
+    "sha256": "58f3439da6f4e43eddad257db776381de927f431df31c48658257efb78f0cc6b"
+  },
+  {
+    "file": "backend/src/middlewares/index.ts",
+    "sha256": "760c81235595cd396cd33b61afb225ef8ac5322bf339d4c8b15754e91ba3e0bc"
+  },
+  {
+    "file": "backend/src/repositories/index.ts",
+    "sha256": "738e5fb7bee32764bce452c313ce5a415bef99f6ee1c43368f0c6727a98755ea"
+  },
+  {
+    "file": "backend/src/routes/index.ts",
+    "sha256": "cb9d2e8ad37eb0fa0eae97e1a09c1660c9238e1a25720c63ce47a1cad4ae3dfb"
+  },
+  {
+    "file": "backend/src/routes/internalEvents.ts",
+    "sha256": "1ebcdc39841ac163bebce47a593d271d9b442114dd2045b086272076e7b57563"
+  },
+  {
+    "file": "backend/src/services/adminDeletion.integration.test.ts",
+    "sha256": "f46f2f1d331d6eeb8408c53bfa7cf33cab41addca41e9ad98e1b4dd3ade27e37"
+  },
+  {
+    "file": "backend/src/services/adminService.ts",
+    "sha256": "9d9ffa62592de5cfc48945d7495f0ee7b6c7a1bb9f01be069de637986f4fef8a"
+  },
+  {
+    "file": "backend/src/services/authService.ts",
+    "sha256": "7583d63fe2c8632c18bc6083e7db716d899e71c08281d80acef16f900aa8f744"
+  },
+  {
+    "file": "backend/src/services/integration.test.ts",
+    "sha256": "5c89f6e00b539e3b1050429a42197c97e8bc32b9e82c5077f692c9e7eaf8bb78"
+  },
+  {
+    "file": "backend/src/services/learningGateway.test.ts",
+    "sha256": "d36133a4d6267cb0ee9db5d0710b1c08a55da48b0dd8e03f623d40782ce64414"
+  },
+  {
+    "file": "backend/src/services/learningGateway.ts",
+    "sha256": "91a55821e5a05422d5195b271db6bd0475da422259bbb9137e2248fc37e253b5"
+  },
+  {
+    "file": "backend/src/services/learningService.ts",
+    "sha256": "b41c0eb9ad612ef449851b0b96888314944058a3d1f5ff241b13572ae1181100"
+  },
+  {
+    "file": "backend/src/services/peopleGateway.test.ts",
+    "sha256": "6a9e9d1c9ea3835f999c9ba2f3944de96df37dbf2d1e9ef97749c53f5e82b471"
+  },
+  {
+    "file": "backend/src/services/peopleGateway.ts",
+    "sha256": "7e18d465a06a947e4195cbd48b8189444ebc9a22a2fbb1a4b990666aa3105af0"
+  },
+  {
+    "file": "backend/src/services/progressService.ts",
+    "sha256": "5a98fe9824b54489a27e56d0a309ab790f6df7f36a98c3c9f1377dfba0ff56dd"
+  },
+  {
+    "file": "backend/src/services/simulationEngine.test.ts",
+    "sha256": "1cd3f381450c484724977dec0dcc444acd966333935db13436c87d225bd41815"
+  },
+  {
+    "file": "backend/src/services/simulationEngine.ts",
+    "sha256": "2407d693c3f128bed888714b007d0a8b9ae03d8ac332de9a73946b8faacadae4"
+  },
+  {
+    "file": "backend/src/services/simulationEvents.integration.test.ts",
+    "sha256": "192608ab4a7eaa752009736779924e2c742cca2c1536450c56da706731b727dc"
+  },
+  {
+    "file": "backend/src/services/simulationEvents.ts",
+    "sha256": "680b36a0072649868ef2a0defdfcc9b9b658781b5fd4fb5930c3f0d7b68f9392"
+  },
+  {
+    "file": "backend/src/services/simulationGateway.test.ts",
+    "sha256": "8d0b57d7aa9175496466899de66741b76fe21e2eef133bf0d5ac4525ff28a50d"
+  },
+  {
+    "file": "backend/src/services/simulationGateway.ts",
+    "sha256": "bcc33227cac020291bc3d255f1a4150aa87573f4fcd8a63cb249b66d8acf4341"
+  },
+  {
+    "file": "backend/src/services/simulationService.ts",
+    "sha256": "eb2cc9c58e6a055a30d3c4ed4250135571a6ae5a02dd500579f47116517add35"
+  },
+  {
+    "file": "backend/src/validators/index.test.ts",
+    "sha256": "02b45134a608d039ed51bc789f2190090089a6ece45e1e01fc17bb1701419fff"
+  },
+  {
+    "file": "backend/src/validators/index.ts",
+    "sha256": "9dc36ad75a157617428df86349dca1f5e157ed90475852bc44a080daf7454cbe"
+  }
+]

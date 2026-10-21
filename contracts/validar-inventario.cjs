@@ -6,7 +6,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const spec = JSON.parse(read('contracts/openapi-compatibilidad.json'));
 const owners = JSON.parse(read('contracts/propiedad-datos.json'));
 const events = JSON.parse(read('contracts/eventos-v1.schema.json'));
-const routes = read('backend/src/routes/index.ts');
+const routes = read('gateway/src/Infrastructure/routes.ts');
 const expected = new Set();
 const normalize = value => value.replace(/:([A-Za-z][A-Za-z0-9]*)/g, '{$1}');
 
@@ -19,7 +19,7 @@ for (const match of routes.matchAll(/\["(modules|lessons|challenges|scenarios)",
   expected.add('POST /admin/' + match[1]);
   expected.add('PUT /admin/' + match[1] + '/{id}');
 }
-if (!read('backend/src/app.ts').includes('app.get("/api/health",')) {
+if (!read('gateway/src/app.ts').includes('app.get("/api/health",')) {
   throw new Error('Health route source changed; review the inventory parser.');
 }
 expected.add('GET /health');
@@ -47,7 +47,8 @@ const missing = [...expected].filter(value => !actual.has(value));
 const extra = [...actual].filter(value => !expected.has(value));
 if (missing.length || extra.length) throw new Error(JSON.stringify({ missing, extra }));
 
-const models = [...read('backend/prisma/schema.prisma').matchAll(/^model\s+(\w+)\s*\{/gm)].map(match => match[1]);
+// Historical source inventory only; this schema is never loaded by the active runtime.
+const models = [...read('legacy/backend/prisma/schema.prisma').matchAll(/^model\s+(\w+)\s*\{/gm)].map(match => match[1]);
 if (models.some(model => !services.has(owners.models[model])) || Object.keys(owners.models).some(model => !models.includes(model))) {
   throw new Error('Model ownership mismatch');
 }

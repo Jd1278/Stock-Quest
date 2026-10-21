@@ -41,4 +41,6 @@ public class EscenariosController {
             @PathVariable @Size(min=1,max=100) String id,@Valid @RequestBody Entrada body) {
         return Salida.de(casos.guardar(usuario,id,body.parametros()));
     }
+    @DeleteMapping("/api/admin/scenarios/{id}") @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@RequestAttribute(AtributosHttp.USUARIO) UsuarioAutenticado usuario,@PathVariable @Size(min=1,max=100) String id) {casos.eliminar(usuario,id);}
 }

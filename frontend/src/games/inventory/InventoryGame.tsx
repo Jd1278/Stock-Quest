@@ -35,7 +35,9 @@ export default function InventoryGame({
       game.current = undefined;
     };
   }, []);
-  useEffect(() => game.current?.update(run), [run]);
+  useEffect(() => {
+    game.current?.update(run);
+  }, [run]);
   return (
     <div
       className="game-host"

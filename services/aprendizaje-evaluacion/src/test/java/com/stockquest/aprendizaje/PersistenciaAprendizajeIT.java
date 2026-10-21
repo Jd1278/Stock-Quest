@@ -74,7 +74,7 @@ class PersistenciaAprendizajeIT {
     @Test void inboxConcurrenteDeduplicaYRechazaPayloadDistinto() throws Exception {
         var event=new EventoSimulacion(UUID.randomUUID(),"SimulacionFinalizada",1,"simulacion-logistica",clock.instant(),"sim-"+userId,3,"it",
                 new EventoSimulacion.Datos("sim-"+userId,userId,"scenario",86,18,14.0/17,clock.instant()));
-        var consumer=new RecibirSimulacion(registro,tx);var pool=Executors.newFixedThreadPool(2);var start=new CountDownLatch(1);
+        var consumer=new RecibirSimulacion(registro,tx,hechos);var pool=Executors.newFixedThreadPool(2);var start=new CountDownLatch(1);
         try {
             Callable<Void> task=()->{if(!start.await(5,TimeUnit.SECONDS))throw new IllegalStateException("Timeout");consumer.ejecutar(event,"a".repeat(64));return null;};
             var first=pool.submit(task);var second=pool.submit(task);start.countDown();first.get(15,TimeUnit.SECONDS);second.get(15,TimeUnit.SECONDS);
@@ -96,6 +96,76 @@ class PersistenciaAprendizajeIT {
         assertTrue(ruta.leccion(userId,firstId).contents().isEmpty());
         assertThrows(org.springframework.dao.DataIntegrityViolationException.class,()->tx.ejecutar(()->catalogo.guardarLeccion(firstId,moduleId,"Cambio","Texto",2,5,"abcdefghijk")));
         assertEquals("Uno",ruta.leccion(userId,firstId).title());
+    }
+    @Test void catalogoCompletoUsaUnaConexionSinPerderOrdenVideosNiDesafios() {
+        var config=new com.zaxxer.hikari.HikariConfig();
+        config.setJdbcUrl(required("SQ_LEARNING_TEST_JDBC_URL"));config.setUsername(required("SQ_LEARNING_TEST_DB_USER"));config.setPassword(required("SQ_LEARNING_TEST_DB_PASSWORD"));
+        config.setMaximumPoolSize(1);config.setConnectionTimeout(1000);
+        try(var ds=new com.zaxxer.hikari.HikariDataSource(config)) {
+            var repository=new CatalogoFormativoJdbc(new JdbcTemplate(ds),new JsonPersistencia(new ObjectMapper().registerModule(new JavaTimeModule())));
+            var module=repository.modulos(false).stream().filter(m->m.id().equals(moduleId)).findFirst().orElseThrow();
+            assertEquals(List.of(firstId,secondId),module.lessons().stream().map(l->l.id()).toList());
+            assertEquals("abcdefghijk",module.lessons().getFirst().contents().getFirst().youtubeId());
+            assertEquals(challengeId,module.lessons().getFirst().challenges().getFirst().id());
+            assertTrue(module.lessons().getLast().contents().isEmpty());
+            tx.ejecutar(()->catalogo.guardarModulo(moduleId,"IT","Fixture",module.position(),false));
+            assertTrue(repository.modulos(false).stream().noneMatch(m->m.id().equals(moduleId)));
+            assertTrue(repository.modulos(true).stream().anyMatch(m->m.id().equals(moduleId)));
+        }
+    }
+    @Test void eliminarModuloSinUsoRetiraLeccionesVideosYDesafios() {
+        var admin=new AdministrarContenido(catalogo,tx);
+        admin.eliminarModulo(new UsuarioAutenticado("gestor",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),moduleId);
+        assertTrue(catalogo.modulos(true).stream().noneMatch(m->m.id().equals(moduleId)));
+        assertTrue(catalogo.pregunta(challengeId).isEmpty());
+        assertEquals(0,jdbc.queryForObject("SELECT count(*) FROM learning_contents WHERE lesson_id=?",Integer.class,firstId));
+        assertEquals(Fallo.Tipo.NO_ENCONTRADO,assertThrows(Fallo.class,()->admin.eliminarModulo(new UsuarioAutenticado("gestor",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),moduleId)).tipo());
+    }
+    @Test void eliminarModuloConIntentosNoBorraActividad() {
+        responder.ejecutar(user,challengeId,1,"it");
+        var admin=new AdministrarContenido(catalogo,tx);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->admin.eliminarModulo(new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),moduleId)).tipo());
+        assertEquals(1,count("learning_attempts"));assertTrue(catalogo.pregunta(challengeId).isPresent());
+    }
+    @Test void eliminarModuloConProgresoRevierteTambienBorradoDeDesafios() {
+        jdbc.update("INSERT INTO learning_progress VALUES (?,?,CURRENT_TIMESTAMP)",userId,secondId);
+        var admin=new AdministrarContenido(catalogo,tx);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->admin.eliminarModulo(new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),moduleId)).tipo());
+        assertEquals(1,count("learning_progress"));assertTrue(catalogo.pregunta(challengeId).isPresent());
+        assertEquals(2,catalogo.modulos(true).stream().filter(m->m.id().equals(moduleId)).findFirst().orElseThrow().lessons().size());
+        assertEquals(1,jdbc.queryForObject("SELECT count(*) FROM learning_contents WHERE lesson_id=?",Integer.class,firstId));
+    }
+    @Test void eliminarLeccionSinUsoRetiraHijosYConservaModuloYOtraLeccion() {
+        var admin=new AdministrarContenido(catalogo,tx);var gestor=new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO);
+        admin.eliminarLeccion(gestor,firstId);
+        assertTrue(catalogo.pregunta(challengeId).isEmpty());
+        assertEquals(0,jdbc.queryForObject("SELECT count(*) FROM learning_contents WHERE lesson_id=?",Integer.class,firstId));
+        assertEquals(List.of(secondId),catalogo.modulos(true).stream().filter(m->m.id().equals(moduleId)).findFirst().orElseThrow().lessons().stream().map(l->l.id()).toList());
+        assertEquals(Fallo.Tipo.NO_ENCONTRADO,assertThrows(Fallo.class,()->admin.eliminarLeccion(gestor,firstId)).tipo());
+    }
+    @Test void eliminarLeccionConIntentosConservaActividad() {
+        responder.ejecutar(user,challengeId,1,"it");
+        var admin=new AdministrarContenido(catalogo,tx);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->admin.eliminarLeccion(new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),firstId)).tipo());
+        assertEquals(1,count("learning_attempts"));assertTrue(catalogo.pregunta(challengeId).isPresent());
+    }
+    @Test void eliminarLeccionConProgresoRevierteDesafiosYConservaVideo() {
+        jdbc.update("INSERT INTO learning_progress VALUES (?,?,CURRENT_TIMESTAMP)",userId,firstId);
+        var admin=new AdministrarContenido(catalogo,tx);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->admin.eliminarLeccion(new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),firstId)).tipo());
+        assertEquals(1,count("learning_progress"));assertTrue(catalogo.pregunta(challengeId).isPresent());
+        assertEquals(1,jdbc.queryForObject("SELECT count(*) FROM learning_contents WHERE lesson_id=?",Integer.class,firstId));
+    }
+    @Test void eliminarDesafioSinUsoConservaLeccionYModulo() {
+        var admin=new AdministrarEvaluaciones(catalogo,tx);var gestor=new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO);
+        admin.eliminar(gestor,challengeId);assertTrue(catalogo.pregunta(challengeId).isEmpty());
+        assertTrue(catalogo.modulos(true).stream().anyMatch(m->m.id().equals(moduleId)&&m.lessons().size()==2));
+        assertEquals(Fallo.Tipo.NO_ENCONTRADO,assertThrows(Fallo.class,()->admin.eliminar(gestor,challengeId)).tipo());
+    }
+    @Test void eliminarDesafioConIntentosConservaDesafioYResultado() {
+        responder.ejecutar(user,challengeId,1,"it");var admin=new AdministrarEvaluaciones(catalogo,tx);
+        assertEquals(Fallo.Tipo.CONFLICTO,assertThrows(Fallo.class,()->admin.eliminar(new UsuarioAutenticado("g",UsuarioAutenticado.Rol.GESTOR_PEDAGOGICO),challengeId)).tipo());
+        assertEquals(1,count("learning_attempts"));assertTrue(catalogo.pregunta(challengeId).isPresent());
     }
     int count(String table) {
         if(!Set.of("learning_progress","learning_attempts","learning_achievements","learning_outbox","learning_simulation_inbox").contains(table))throw new IllegalArgumentException();
