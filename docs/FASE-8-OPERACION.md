@@ -5,8 +5,8 @@ Entrada: cierre funcional local de fase 7 validado por el usuario. Actualizació
 | Subfase | Situación vigente |
 |---|---|
 | 8A | Entorno Windows elegido; JDK 21 y Jenkins instalados. Jenkins observado Running en auditoría; el inventario inicial es histórico |
-| 8B | Pendiente configurar agente, credenciales, Jenkinsfile/job y ejecución acreditada. Los builds y pruebas locales no equivalen a un job Jenkins |
-| 8C | Pendiente consolidar una versión y acreditar release/publicación de esta entrega en GitHub |
+| 8B | Agente stockquest-windows conectado, diagnóstico de herramientas SUCCESS y tres credenciales CI creadas por el usuario. Jenkinsfile de microservicios preparado; ejecución Java en Jenkins pendiente. Los builds y pruebas locales no equivalen a un job Jenkins |
+| 8C | Fuentes consolidadas y publicadas: etiqueta migracion-local-2026.10.21. Release de artefactos y fusión a la rama principal pendientes |
 | 8D | Pendientes diseño y ejecución de infraestructura permanente con CloudFormation |
 | 8E | Actuator/Micrometer, Prometheus, dashboard Grafana y dos ensayos locales PASS realizados. Pendientes alertas y operación continua; herramientas sin conexión en el momento de la auditoría |
 | 8F | Aceptación de presentación temporal recibida; aceptación de producción permanente pendiente |
@@ -47,8 +47,12 @@ Cada subfase termina con evidencias y validación expresa del usuario antes de c
 
 ## Pendientes que continúan abiertos
 
-Vídeos RF11, rendimiento y usabilidad según condiciones del documento, disponibilidad observada, protección completa de datos sensibles, matriz de navegadores/móvil, proyecciones AG-05 y retirada física AG-08. El registro global conserva su estado; iniciar operaciones no los da por resueltos.
+Vídeos RF11, rendimiento y usabilidad según condiciones del documento, disponibilidad observada, protección completa de datos sensibles y matriz de navegadores/móvil. AG-05 y archivo de fuentes legacy AG-08 ya fueron aceptados en el alcance técnico local; las bases históricas se conservan. El registro global conserva su estado; iniciar operaciones no los da por resueltos.
 
 ## Evidencia inicial y avances posteriores
 
-`verificaciones/fase8a/preflight.json` conserva el inventario anterior a las instalaciones; sus valores no describen el entorno actual. Posteriormente se instaló Jenkins en este equipo y JDK 21, se ejecutaron 106 pruebas Java con métricas y se completaron dos ensayos de observabilidad PASS. Las capturas y presentaciones están en `entregables/grafana`; los informes locales del ensayo quedan en `.stockquest-local/observability`. El usuario confirmó login, aprendizaje, simulación, progreso y recarga de rutas desde Vercel. No se acredita un job Jenkins, una release GitHub o infraestructura AWS ejecutados.
+`verificaciones/fase8a/preflight.json` conserva el inventario anterior a las instalaciones; sus valores no describen el entorno actual. Posteriormente se instaló Jenkins en este equipo y JDK 21, se ejecutaron 106 pruebas Java con métricas y se completaron dos ensayos de observabilidad PASS. Las capturas y presentaciones están en `entregables/grafana`; los informes locales del ensayo quedan en `.stockquest-local/observability`. El usuario confirmó login, aprendizaje, simulación, progreso y recarga de rutas desde Vercel. Se acredita un diagnóstico de herramientas SUCCESS en Jenkins, pero no una ejecución de pruebas de producto en Jenkins, una release GitHub ni infraestructura AWS.
+
+## Primer job Java preparado
+
+Véase [Jenkins: microservicios](JENKINS-MICROSERVICIOS.md) y el Jenkinsfile de la raíz. La configuración histórica de 8B que menciona generación/migración Node ya no corresponde al gateway independiente: este no utiliza Prisma ni base de datos. Las migraciones de integración las ejecuta Flyway en bases exclusivas. Gateway/frontend se añadirán en un siguiente bloque supervisado.

@@ -1,0 +1,267 @@
+{
+  "finishedAt": "2026-10-22T02:50:48.474Z",
+  "status": "PASS - local Java tests; Jenkins product job not executed",
+  "javaMajor": 21,
+  "command": "mvnw.cmd -B -ntp -Ppostgres-it test failsafe:integration-test failsafe:verify",
+  "services": [
+    {
+      "service": "personas-capacitacion",
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.stockquest.personas.ArquitecturaTest",
+          "kind": "unit-http-architecture",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.FuenteSnapshotsHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.GruposTest",
+          "kind": "unit-http-architecture",
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.HttpGruposTest",
+          "kind": "unit-http-architecture",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.HttpPersonasTest",
+          "kind": "unit-http-architecture",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.IdentidadTest",
+          "kind": "unit-http-architecture",
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.InformesAprendizajeHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.ProyeccionesProgresoTest",
+          "kind": "unit-http-architecture",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.TokensJwtTest",
+          "kind": "unit-http-architecture",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.PersistenciaPersonasIT",
+          "kind": "postgresql-it",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.personas.ProyeccionesProgresoIT",
+          "kind": "postgresql-it",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    {
+      "service": "aprendizaje-evaluacion",
+      "tests": 52,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.stockquest.aprendizaje.AprendizajeTest",
+          "kind": "unit-http-architecture",
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.aprendizaje.ArquitecturaTest",
+          "kind": "unit-http-architecture",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.aprendizaje.HttpAprendizajeTest",
+          "kind": "unit-http-architecture",
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.aprendizaje.ResultadosSimulacionHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.aprendizaje.PersistenciaAprendizajeIT",
+          "kind": "postgresql-it",
+          "tests": 15,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.aprendizaje.ProgresoSnapshotsIT",
+          "kind": "postgresql-it",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    {
+      "service": "simulacion-logistica",
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.stockquest.simulacion.ArquitecturaTest",
+          "kind": "unit-http-architecture",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.EscenariosHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.FiltroServicioTest",
+          "kind": "unit-http-architecture",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.GestionEscenariosTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.IdentidadHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.MotorInventarioTest",
+          "kind": "unit-http-architecture",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.partidas.Infrastructure.events.OutboxDispatcherTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.PartidasHttpTest",
+          "kind": "unit-http-architecture",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.RegistrarDecisionTest",
+          "kind": "unit-http-architecture",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.stockquest.simulacion.PersistenciaPostgresIT",
+          "kind": "postgresql-it",
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    }
+  ],
+  "tests": 164,
+  "files": [
+    {
+      "file": "Jenkinsfile",
+      "sha256": "2aac823ca90e86c437fd2003e5318e1845fa94b9f26fd9ae9cb6eb6f058a315c"
+    },
+    {
+      "file": "scripts/ci/test-java.ps1",
+      "sha256": "1e3825a80af16b5f34518ebf13acfb71ccd14f107af27f4a93f0c1fc027d5dd2"
+    }
+  ],
+  "scope": "Historical exclusive PostgreSQL test databases; no application database or CI credential store accessed",
+  "packagingExecuted": false,
+  "jenkinsExecution": false,
+  "jenkinsfileServerValidation": false,
+  "nodeTestsRerun": false
+}
