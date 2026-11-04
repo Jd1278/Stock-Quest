@@ -39,3 +39,11 @@ Ante error de credenciales, corregir la credencial Jenkins conservando su ID. An
 ## Resultado de preparación local
 
 Se ejecutó el script con TestsOnly sobre las tres bases históricas exclusivas de pruebas: 68 casos de personas, 52 de aprendizaje y 44 de simulación (164 total), cero fallos, errores u omisiones. Todos los reportes utilizados se regeneraron durante esta ejecución. Incluye pruebas de PostgreSQL real, dominio, HTTP y arquitectura según las suites de cada servicio. No se empaquetaron JAR para evitar los bloqueos Windows de la aplicación activa. El empaquetado clean verify y la sintaxis del Jenkinsfile en el servidor siguen pendientes de la primera ejecución Jenkins. [Evidencia saneada](verificaciones/jenkins-java-local/resultado.json).
+
+## Incidencia de memoria del 4 de noviembre de 2026
+
+La ejecución #4 falló antes de ejecutar pruebas: la JVM de Surefire no pudo reservar 32 MB para el overflow mark stack del recolector concurrente. El dumpstream confirma la causa; la falta de XML JUnit es una consecuencia y no se resuelve aceptando resultados vacíos. Se mantienen los fallos estrictos del pipeline.
+
+El runner CI ahora utiliza SerialGC y heap inicial de 32 MB, manteniendo máximos de 192 MB para pruebas y 256 MB para Maven. No se modifican Windows, el archivo de paginación ni las JVM de la aplicación. La JVM arrancó y pasaron 53 pruebas de personas (dominio/HTTP/arquitectura), cero fallos, errores u omisiones. No se repitieron en este bloque las IT PostgreSQL ni aprendizaje/simulación: pendiente nueva ejecución Jenkins completa. [Evidencia](verificaciones/jenkins-memoria-20261104/resultado.json). [Referencia de recolectores Java 21](https://docs.oracle.com/en/java/javase/21/gctuning/available-collectors.html).
+
+Para continuar: Build Now en stockquest-java-ci y confirmar que el checkout identifica el nuevo commit. Si vuelve a fallar, conservar dumpstream y revisar memoria comprometida/procesos antes de modificar límites. No usar Replay de un script antiguo ni ignorar tests.

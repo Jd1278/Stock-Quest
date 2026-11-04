@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "jenkinsBuild": 4,
+  "failedCommit": "6d94320459bc549faeca4448e2c0d3ddbdbef38e",
+  "sourceSha256": "f37a39043512d768537ab906fae8f577f3280c9c8259bab97f4dd4e1c231ee3b",
+  "failure": {
+    "phase": "Surefire fork startup, before any test",
+    "testsExecuted": 0,
+    "diagnostic": [
+      "Failed to reserve memory for new overflow mark stack with 4096 chunks and size 33554432B.",
+      "Failed to allocate initial concurrent mark overflow mark stack."
+    ],
+    "secondary": "No JUnit XML generated; report publication cannot find results"
+  },
+  "fix": {
+    "scope": "CI JVM flags only, no Windows settings or application changes",
+    "collector": "SerialGC",
+    "initialHeapMB": 32,
+    "maxTestHeapMB": 192,
+    "maxMavenHeapMB": 256
+  },
+  "verification": {
+    "java": 21,
+    "collectorStartup": "PASS",
+    "powershellSyntax": "PASS",
+    "localPersonasUnitHttpArchitecture": {
+      "tests": 53,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "BUILD SUCCESS"
+    },
+    "postgresIntegrationRerun": false,
+    "otherServicesRerun": false,
+    "jenkinsRerun": false
+  },
+  "runnerSha256": "416569a5de55106e023577c762c089499e7eb4d9966c85997ef37fc26b15dd16"
+}

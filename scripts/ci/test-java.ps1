@@ -33,8 +33,9 @@ foreach ($key in @('MAVEN_OPTS','JAVA_TOOL_OPTIONS')) {
     $saved[$key] = [Environment]::GetEnvironmentVariable($key)
 }
 try {
-    $env:MAVEN_OPTS = '-Xmx256m -XX:ActiveProcessorCount=2'
-    $env:JAVA_TOOL_OPTIONS = '-Xmx192m -XX:MaxMetaspaceSize=128m -XX:ReservedCodeCacheSize=48m -XX:ActiveProcessorCount=2'
+    # Small CI JVMs on a memory-constrained Windows host: avoid G1 concurrent mark stacks.
+    $env:MAVEN_OPTS = '-Xms32m -Xmx256m -XX:+UseSerialGC -XX:ActiveProcessorCount=2'
+    $env:JAVA_TOOL_OPTIONS = '-Xms32m -Xmx192m -XX:+UseSerialGC -XX:MaxMetaspaceSize=128m -XX:ReservedCodeCacheSize=48m -XX:ActiveProcessorCount=2'
     $goals = if ($TestsOnly) { @('test','failsafe:integration-test','failsafe:verify') } else { @('clean','verify') }
     Write-Host "Servicio: $Service; base exclusiva: $database; empaquetar: $(!$TestsOnly)"
     & (Join-Path $serviceRoot 'mvnw.cmd') -f (Join-Path $serviceRoot 'pom.xml') -B -ntp -Ppostgres-it @goals
