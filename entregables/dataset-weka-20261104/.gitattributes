@@ -1,0 +1,3 @@
+# Preserve dataset bytes: SHA-256 validation depends on unchanged line endings.
+*.csv -text
+*.arff -text

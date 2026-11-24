@@ -1,0 +1,16 @@
+posicion_weka,campo,tipo_arff,descripcion
+1,id_registro,numeric,Identificador del movimiento; no usar como predictor ni en IQR.
+2,dia_operacion,numeric,"Dia del periodo simulado, entero de 1 a 365."
+3,almacen,"{norte,sur,centro,NORTE,SUR,CENTRO}","Almacen; solo norte, sur y centro son formas canonicas."
+4,categoria,"{alimentos,aseo,papeleria,tecnologia}",Categoria del producto.
+5,proveedor,"{P01,P02,P03,P04,P05}",Codigo sintetico de proveedor.
+6,stock_inicial,numeric,"Unidades al inicio, rango normal 50-200."
+7,demanda,numeric,"Unidades solicitadas, rango normal 10-60."
+8,unidades_recibidas,numeric,"Unidades recibidas, rango normal 0-80."
+9,unidades_vendidas,numeric,"min(stock_inicial + unidades_recibidas, demanda)."
+10,stock_final,numeric,stock_inicial + unidades_recibidas - unidades_vendidas.
+11,costo_unitario,numeric,"Unidades monetarias ficticias por unidad, rango normal 10-50."
+12,precio_unitario,numeric,Unidades monetarias ficticias; costo por margen de 1.4 a 1.8.
+13,plazo_entrega_dias,numeric,Plazo entero normal 1-7; casos extremos 365-730.
+14,costo_pedido,numeric,Costo por pedido en unidades monetarias ficticias; normal 0-30.
+15,canal_venta,"{tienda,web,mayorista}",Canal de venta nominal; no es clase objetivo.

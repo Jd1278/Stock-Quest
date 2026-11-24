@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "testedWith": "WEKA stable 3.8.6, CLI filters, Java 21",
+  "GUIExecuted": false,
+  "method": "Same filters and options as Explorer; no GUI screenshots claimed",
+  "original": {
+    "rows": 100000,
+    "fields": 15,
+    "normal": 80000,
+    "outliers": 10000,
+    "dirty": 10000,
+    "disjoint": true
+  },
+  "steps": [
+    {
+      "step": "Original",
+      "rows": 100000,
+      "fields": 15,
+      "missingCells": 4000
+    },
+    {
+      "step": "RemoveDuplicates",
+      "rows": 98000,
+      "fields": 15,
+      "missingCells": 4000
+    },
+    {
+      "step": "RenameNominalValues",
+      "rows": 98000,
+      "fields": 15,
+      "missingCells": 4000
+    },
+    {
+      "step": "NumericCleaner",
+      "rows": 98000,
+      "fields": 15,
+      "missingCells": 6000
+    },
+    {
+      "step": "ReplaceMissingValues",
+      "rows": 98000,
+      "fields": 15,
+      "missingCells": 0
+    },
+    {
+      "step": "InterquartileRange",
+      "rows": 98000,
+      "fields": 17,
+      "missingCells": 0
+    },
+    {
+      "step": "RemoveWithValues",
+      "rows": 88000,
+      "fields": 17,
+      "missingCells": 0
+    },
+    {
+      "step": "Remove indicadores (final)",
+      "rows": 88000,
+      "fields": 15,
+      "missingCells": 0
+    }
+  ],
+  "detection": {
+    "truePositive": 10000,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "precision": 1,
+    "recall": 1,
+    "scope": "This deliberately separated synthetic distribution only; not a general accuracy claim"
+  },
+  "final": {
+    "rows": 88000,
+    "fields": 15,
+    "missingCells": 0,
+    "duplicates": 0,
+    "nonCanonicalWarehouse": 0,
+    "negativeOrderCost": 0,
+    "stockEquationViolations": 0
+  },
+  "hashes": {
+    "diccionario_campos.csv": "e7140fd27f27170dd82dc6f1111cad2bde90ae66ff6fdca974b852370882e915",
+    "outliers_detectados_revision.csv": "00e164cc5126a4cca8f173bb3122065c43c406ee314f3be28a96ae438edd906a",
+    "referencia_anomalias_NO_IMPORTAR_EN_WEKA.csv": "8a19e0c23f0aba98b9283c71efd10e46c530622441b0a4efd590a96174389383",
+    "stockquest_100000_15_original.arff": "c050c3f14a8cfe66508214ef4361617fbb0bfe2db381e7bb2a12f263e8f9980c",
+    "stockquest_100000_15_original.csv": "de2936197282c5ab1a6912bbc7d68d198e2022f7901541dc15c44258fc1ec209",
+    "stockquest_88000_15_limpio_weka.arff": "90edff27895d09b27b8ed18948178121bdc6e42e9dcc716969a914ae52d435ab",
+    "stockquest_88000_15_limpio_weka.csv": "bafc711a7e75ae7efa3c4e30541c999f86c9d473dc158d55ab8d46e13b12f8ba"
+  },
+  "independentCsvValidation": "PASS (Python csv reader)",
+  "deliveredPowerShellRecipe": "PASS: all seven real WEKA filters; output equals reference",
+  "finalIqrRecheckOutliers": 0,
+  "correction": "Explorer blocks IQR with missing values: ReplaceMissingValues moved before IQR; only warehouse/order cost imputed.",
+  "GUICompatibilityCapabilitiesTest": {
+    "beforeImputation": "FAIL: Cannot handle missing values",
+    "afterImputation": "PASS"
+  }
+}
