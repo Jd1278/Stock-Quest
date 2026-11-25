@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "sameTemporalTest": true,
+  "eachFlowSelectedOnlyWithValidation": true,
+  "cleaned": {
+    "minimum": 20,
+    "threshold": 0.15,
+    "test": {
+      "rows": 16000,
+      "positives": 4511,
+      "alerts": 10295,
+      "TP": 3819,
+      "FN": 692,
+      "FP": 6476,
+      "TN": 5013,
+      "accuracy": 0.552,
+      "precision": 0.37095677513355996,
+      "recall": 0.8465972068277544,
+      "specificity": 0.4363304029941683,
+      "F1": 0.515871943806565,
+      "F2": 0.6738064151875507,
+      "ROC_AUC": 0.7244021388978488,
+      "average_precision": 0.5144745839047802,
+      "Brier": 0.18005210122121712
+    }
+  },
+  "raw": {
+    "minimum": 100,
+    "threshold": 0.1,
+    "test": {
+      "rows": 16000,
+      "positives": 4511,
+      "alerts": 16000,
+      "TP": 4511,
+      "FN": 0,
+      "FP": 11489,
+      "TN": 0,
+      "accuracy": 0.2819375,
+      "precision": 0.2819375,
+      "recall": 1.0,
+      "specificity": 0.0,
+      "F1": 0.4398615377114719,
+      "F2": 0.6625249676888733,
+      "ROC_AUC": 0.6910713550781246,
+      "average_precision": 0.47749586905429386,
+      "Brier": 0.1868436557920145
+    }
+  },
+  "caveat": "End-to-end pipelines with separately selected configurations, not isolated causal effect of cleaning",
+  "savedCleanModelReloadMatches": true
+}

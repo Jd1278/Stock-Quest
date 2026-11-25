@@ -1,0 +1,17 @@
+{
+  "engine":"WEKA 3.8.6",
+  "trainingRows":64000,
+  "usesAuditOrGoldenReference":false,
+  "retainsRows":true,
+  "outlierAttribute":7,
+  "outlierFactor":6,
+  "extremeFactor":12,
+  "lowerFence":-333.0,
+  "upperFence":473.0,
+  "IQR":62.0,
+  "medianMinutes":67.0,
+  "imputedMinutesMean":64.04085069444444,
+  "trainingOutliers":6400,
+  "diagnosticOutliers":{"diagnostico_actual_100000_15":10000,"diagnostico_7dias_despues_100000_15":10000},
+  "firstImputationMeansByOneBasedAttribute":{"4":48.8675,"5":1.0,"6":0.988359375,"7":758.591328125,"8":7.3568125,"9":66.46403370812234,"10":0.5806821701948335,"11":0.7879375,"12":57.5929528925265,"13":1.3708088950224258,"14":0.7429423196691798}
+}

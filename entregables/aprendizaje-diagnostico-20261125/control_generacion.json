@@ -45,8 +45,8 @@
     }
   },
   "latestUnknownCases": 4000,
-  "intentionalDirtyData": false,
-  "missingPolicy": "? means no observation or insufficient prior window, not an invalid zero",
+  "intentionalDirtyData": true,
+  "missingPolicy": "Raw legitimate missing observations plus deliberately invalid predictors; WEKA V2 handles both with train-only statistics",
   "referenceRubric": {
     "assessmentItems": 20,
     "initial": "score < 60",
@@ -81,26 +81,37 @@
     "trainedWEKAModel": false
   },
   "futurePhase": {
-    "target7DaysCreated": false,
-    "possiblePairedRowsWithinHistory": 96000,
-    "latestRowsWithoutFutureAssessment": 4000,
-    "note": "Preserve dated assessments for later pairing; do not invent last-week future labels"
+    "target7DaysCreated": true,
+    "folder": "../aprendizaje-refuerzo-7dias-20261125",
+    "cleaningAndForecastVersion": 2
   },
   "sha256": {
     "actividad_diaria_sintetica.csv": "95ba7c3750586e200828455e5e179edade6d4a812e702293102c5eb11c822f22",
+    "auditoria_calidad_NO_USAR_COMO_PREDICTOR.csv": "785567b7513c2e4724f1ee4998793fb6976de6e1c96ca5dace1b8fb419dcbde6",
     "catalogo_modulos.csv": "09371c79364a5d9b1f070977e52bef44bbe5375bac29432303687cfdd8cabcf5",
-    "diagnostico_actual_100000_15.arff": "39d7c3deb2d14f5da4be32df3d5f0c97f8746cf17f7484ec696b9a6f9e925b01",
-    "diagnostico_actual_100000_15.csv": "58c9909ebdf8080ae8e78847186e6ed9038bf3ca385667db0b7bd49db35aa7e6",
-    "diccionario_campos.csv": "02aebe4191411b2fa6d1afb9bb08f054727b3d193d002cebd612e485e32ee804",
+    "diagnostico_actual_100000_15.arff": "bae33f27cc5883d0a6023d5a151a116d529496cf6b0d1bedee81353c7b78e05c",
+    "diagnostico_actual_100000_15.csv": "c71f09a100ab30c330caa36f8b0c45fff99249a1133276779de3d9f2e150bce6",
+    "diccionario_campos.csv": "f46ad3d26901d443840125e7c7e6054593110fcb0cad5ba8bdb923a8631d4bd8",
+    "limpios/diagnostico_actual_100000_15_limpio.arff": "cef324bf72046dd15531a297f6a3a44b1eed9dfa826085a7b14d7cbedee4334c",
+    "limpios/diagnostico_actual_100000_15_limpio.csv": "f0522db710a31e72e1e294c2bbac2beabed5b96e70ba3bfc822979558ec39770",
     "particiones_aprendices.csv": "b9a4b62ab937e3c25b45fd122244958350306db2b5876658a0b33904c5b400d8",
     "referencia_evaluacion_NO_USAR_COMO_PREDICTOR.csv": "58d5ef86711bf6964aa107701f205a994c796c6dcb671821f2229d1c800f45ba",
-    "weka/diagnosticar_ultimo_corte.arff": "3b34f9d0cd6d3c80ec72c2a4c072fdbeee7f369cc12a9da333e1448d102d66f1",
-    "weka/diagnosticar_ultimo_corte.csv": "d4238fdd365bd27ad1a8a9559642f8ae17b1eecafad48417c7299057a5636226",
-    "weka/entrenamiento.arff": "a8716f3a09810ac50813cee30688d3d868705d0548d8b3929a2e463bc9fad831",
-    "weka/entrenamiento.csv": "39868db9dcf158089396cfc4106a06a08d21b2fcb58d970e34f820220977c1d3",
-    "weka/prueba.arff": "c25d19152476d47a99e54070f3972d233a51c6a35fcb7434d1486ac1c91f7a8b",
-    "weka/prueba.csv": "168055985ebc229df3d974c6ba56d21eea000921c422ad38d1233efdb69e47f7",
-    "weka/validacion.arff": "7d13fa0dbea9a6ca86c9f3730a4f980e955d6ca9b25dfe0c8f57d2d18dc4985a",
-    "weka/validacion.csv": "da4121776bb0e77f1bda6431c157ec6ebb88584430e4152c827e2a5683c8100f"
+    "weka/diagnosticar_ultimo_corte.arff": "e1f1ee55191fc4dadf2d4c707dddd1ea055e78b06dd7dc5644b6e6f0de1d7cee",
+    "weka/diagnosticar_ultimo_corte.csv": "aa0981c5af328e4c7821d5224cb9c4efe859588cca9beee2458d4619bd91128b",
+    "weka/entrenamiento.arff": "3d05594c4bbc67d19276c13a0298966228d6323472369b2bb15a85b1f5f05131",
+    "weka/entrenamiento.csv": "da5dd3951e74b7f609af97540a7b74c32a4d592934ac7501a8c210b01e23a46e",
+    "weka/prueba.arff": "330a906aac04bb17608625e4f558066ac76ff944991dfcd2255364fbc2c23603",
+    "weka/prueba.csv": "5d4d16cba61ce2aa535304d2f623c8b06657df0f55d17018c3590f3df923277c",
+    "weka/validacion.arff": "a5ffa0912e32f1cbe7d3a685d2dc8c5c4123c8cdbf5d281f7898f6d089ffff72",
+    "weka/validacion.csv": "36aafbcce87fa09e797ab45b82ea09b3b74af5922d63844f3a040ef6b6bfe906"
+  },
+  "version": 2,
+  "qualityDesign": {
+    "rows": 100000,
+    "fields": 15,
+    "normalRows": 80000,
+    "outlierRows": 10000,
+    "dirtyRows": 10000,
+    "groupsDisjoint": true
   }
 }

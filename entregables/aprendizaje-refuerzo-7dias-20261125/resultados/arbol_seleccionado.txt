@@ -1,7 +1,7 @@
-FilteredClassifier using weka.classifiers.trees.J48 -A -C 0.25 -M 100 on data filtered through weka.filters.unsupervised.attribute.Remove -R 1-2
+FilteredClassifier using weka.classifiers.trees.J48 -A -C 0.25 -M 20 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.RenameNominalValues -R 3 -N m01:M01,m02:M02,m03:M03,m04:M04,m05:M05,m06:M06,m07:M07,m08:M08,m09:M09" -F "weka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 100.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 9,12 -decimals -1" -F "weka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 1.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 10 -decimals -1" -F "weka.filters.unsupervised.attribute.ReplaceMissingValues " -F "weka.filters.unsupervised.attribute.InterquartileRange -R 7 -O 6.0 -E 12.0 -E-as-O" -F "weka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 473.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 7 -decimals -1" -F "weka.filters.unsupervised.attribute.Remove -R 16-17" -F "weka.filters.unsupervised.attribute.ReplaceMissingValues " -F "weka.filters.unsupervised.attribute.Remove -R 1-2" -S -1969050567
 
 Filtered Header
-@relation stockquest_refuerzo_7dias-weka.filters.unsupervised.attribute.Remove-R1-2
+@relation 'stockquest_calidad_v2-weka.filters.unsupervised.attribute.RenameNominalValues-R3-Nm01:M01,m02:M02,m03:M03,m04:M04,m05:M05,m06:M06,m07:M07,m08:M08,m09:M09-weka.filters.unsupervised.attribute.NumericCleaner-min0.0-min-defaultNaN-max100.0-max-defaultNaN-closeto0.0-closeto-default0.0-closeto-tolerance0.0-R9,12-decimals-1-weka.filters.unsupervised.attribute.NumericCleaner-min0.0-min-defaultNaN-max1.0-max-defaultNaN-closeto0.0-closeto-default0.0-closeto-tolerance0.0-R10-decimals-1-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.InterquartileRange-R7-O6.0-E12.0-E-as-O-weka.filters.unsupervised.attribute.NumericCleaner-min0.0-min-defaultNaN-max473.0-max-defaultNaN-closeto0.0-closeto-default0.0-closeto-tolerance0.0-R7-decimals-1-weka.filters.unsupervised.attribute.Remove-R16-17-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.Remove-R1-2-weka.filters.MultiFilter-Fweka.filters.unsupervised.attribute.RenameNominalValues -R 3 -N m01:M01,m02:M02,m03:M03,m04:M04,m05:M05,m06:M06,m07:M07,m08:M08,m09:M09-Fweka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 100.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 9,12 -decimals -1-Fweka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 1.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 10 -decimals -1-Fweka.filters.unsupervised.attribute.ReplaceMissingValues-Fweka.filters.unsupervised.attribute.InterquartileRange -R 7 -O 6.0 -E 12.0 -E-as-O-Fweka.filters.unsupervised.attribute.NumericCleaner -min 0.0 -min-default NaN -max 473.0 -max-default NaN -closeto 0.0 -closeto-default 0.0 -closeto-tolerance 0.0 -R 7 -decimals -1-Fweka.filters.unsupervised.attribute.Remove -R 16-17-Fweka.filters.unsupervised.attribute.ReplaceMissingValues-Fweka.filters.unsupervised.attribute.Remove -R 1-2-S-1969050567'
 
 @attribute modulo {M01,M02,M03,M04,M05,M06,M07,M08,M09}
 @attribute nota_diagnostica_inicial numeric
@@ -24,143 +24,397 @@ Classifier Model
 J48 pruned tree
 ------------------
 
-nota_diagnostica_inicial <= 50
-|   puntaje_medio_simulaciones_7dias <= 52.333333
-|   |   nota_media_desafios_7dias <= 50: si (8972.56/1746.57)
-|   |   nota_media_desafios_7dias > 50
-|   |   |   intentos_desafio_7dias <= 1: si (1361.37/355.75)
-|   |   |   intentos_desafio_7dias > 1
-|   |   |   |   simulaciones_completadas_7dias <= 0
-|   |   |   |   |   minutos_estudio_7dias <= 47
-|   |   |   |   |   |   nota_diagnostica_inicial <= 40
-|   |   |   |   |   |   |   mejora_semanal <= 29.464286
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 70.588235: si (432.5/157.69)
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 70.588235: no (246.29/111.43)
-|   |   |   |   |   |   |   mejora_semanal > 29.464286: si (274.64/82.85)
-|   |   |   |   |   |   nota_diagnostica_inicial > 40
-|   |   |   |   |   |   |   nota_media_desafios_7dias <= 70.588235: si (133.9/61.14)
-|   |   |   |   |   |   |   nota_media_desafios_7dias > 70.588235: no (145.01/51.03)
-|   |   |   |   |   minutos_estudio_7dias > 47
-|   |   |   |   |   |   nota_media_desafios_7dias <= 66.666667
-|   |   |   |   |   |   |   mejora_semanal <= 5.392157: no (747.14/285.65)
-|   |   |   |   |   |   |   mejora_semanal > 5.392157
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 61.111111: si (234.36/69.63)
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 61.111111
-|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 20: si (100.38/40.51)
-|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 20: no (148.44/68.28)
-|   |   |   |   |   |   nota_media_desafios_7dias > 66.666667
-|   |   |   |   |   |   |   intentos_desafio_7dias <= 8
-|   |   |   |   |   |   |   |   mejora_semanal <= 44.285714: no (784.7/246.96)
-|   |   |   |   |   |   |   |   mejora_semanal > 44.285714: si (111.64/51.91)
-|   |   |   |   |   |   |   intentos_desafio_7dias > 8: no (361.26/75.28)
-|   |   |   |   simulaciones_completadas_7dias > 0
-|   |   |   |   |   puntaje_medio_simulaciones_7dias <= 39.333333: si (1415.0/277.0)
-|   |   |   |   |   puntaje_medio_simulaciones_7dias > 39.333333
-|   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 47.5
+puntaje_medio_simulaciones_7dias <= 59.25
+|   nota_diagnostica_inicial <= 50
+|   |   puntaje_medio_simulaciones_7dias <= 39.75: si (4523.0/532.0)
+|   |   puntaje_medio_simulaciones_7dias > 39.75
+|   |   |   nota_media_desafios_7dias <= 66.464034
+|   |   |   |   mejora_semanal <= 0.657895
+|   |   |   |   |   puntaje_medio_simulaciones_7dias <= 46.8: si (1109.0/317.0)
+|   |   |   |   |   puntaje_medio_simulaciones_7dias > 46.8
+|   |   |   |   |   |   nota_media_desafios_7dias <= 50
+|   |   |   |   |   |   |   dias_desde_ultima_actividad <= 3
+|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 42.857143: si (2305.0/576.0)
+|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 42.857143
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 20
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0: si (510.0/185.0)
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 0: si (42.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 0
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M01: si (28.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M02: si (22.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M03: no (17.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M04: no (32.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M05: no (30.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M06: si (27.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M07: no (26.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M08: no (25.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M09: no (28.0/9.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 20
+|   |   |   |   |   |   |   |   |   |   mejora_semanal <= -18.128655
+|   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.133333
+|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -45: si (32.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40: si (28.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: no (29.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: no (35.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.133333: no (399.0/159.0)
+|   |   |   |   |   |   |   |   |   |   mejora_semanal > -18.128655
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 19
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M01: si (103.0/43.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M02
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0: no (47.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: si (28.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M03
+|   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 10: no (60.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 10: si (21.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M04
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 48.275862: si (21.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 48.275862
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 7: si (32.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 7: no (32.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M05
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (22.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30: no (33.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: si (28.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M06
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -3.589744: no (45.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -3.589744: si (21.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: si (36.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M07
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.285714: si (24.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.285714: no (27.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: si (20.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M08: si (71.0/23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M09: si (73.0/29.0)
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 19: no (32.0/9.0)
+|   |   |   |   |   |   |   dias_desde_ultima_actividad > 3: si (706.0/185.0)
+|   |   |   |   |   |   nota_media_desafios_7dias > 50
+|   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.083333: si (36.0/8.0)
+|   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.083333
+|   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 3
+|   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 73
+|   |   |   |   |   |   |   |   |   |   modulo = M01
+|   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0: no (88.0/36.0)
+|   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0
+|   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 56: no (21.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 56: si (37.0/14.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M02
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 9
+|   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0: si (38.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: no (45.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 9: no (38.0/9.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M03
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 11: no (104.0/32.0)
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 11: si (22.0/8.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M04
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 40: si (23.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 40
+|   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0: si (36.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: no (27.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: no (45.0/17.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M05: no (104.0/38.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M06
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -6.015038
+|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -25.961538: si (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -25.961538: no (40.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: no (29.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -6.015038: si (37.0/10.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M07
+|   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.384615: si (29.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.384615: no (97.0/40.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M08
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 58: si (52.0/22.0)
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 58: no (58.0/18.0)
+|   |   |   |   |   |   |   |   |   |   modulo = M09
+|   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -34.615385: si (21.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -34.615385
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= -9.714286: no (29.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > -9.714286: si (30.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: no (31.0/14.0)
+|   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 73: no (972.0/324.0)
+|   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 3: si (105.0/40.0)
+|   |   |   |   mejora_semanal > 0.657895
+|   |   |   |   |   minutos_estudio_7dias <= 50: si (4001.0/782.0)
+|   |   |   |   |   minutos_estudio_7dias > 50
+|   |   |   |   |   |   nota_media_desafios_7dias <= 55.555556: si (2378.0/500.0)
+|   |   |   |   |   |   nota_media_desafios_7dias > 55.555556
+|   |   |   |   |   |   |   dias_desde_ultima_actividad <= 6
+|   |   |   |   |   |   |   |   lecciones_completadas <= 0: si (32.0/3.0)
+|   |   |   |   |   |   |   |   lecciones_completadas > 0
+|   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 48: si (342.0/105.0)
+|   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 48
+|   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 61.111111
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (393.0/134.0)
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M01
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0: no (24.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: si (21.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M02: si (25.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M03: no (37.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M04: no (40.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M05: si (38.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M06: si (45.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M07: no (33.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M08: si (29.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M09: si (25.0/11.0)
+|   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 61.111111
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 0.909091
+|   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40: si (132.0/39.0)
+|   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: no (43.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 0.909091
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M01: no (61.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M02
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0: no (35.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: si (21.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M03: no (48.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M04
+|   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 78: si (36.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 78: no (26.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M05
+|   |   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 56.75: si (20.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 56.75: no (45.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M06
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 13.068182: no (26.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 13.068182: si (37.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M07: no (57.0/23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M08
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 17.171717: no (28.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 17.171717: si (23.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   modulo = M09
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 20: si (32.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 20: no (27.0/10.0)
+|   |   |   |   |   |   |   dias_desde_ultima_actividad > 6: si (131.0/19.0)
+|   |   |   nota_media_desafios_7dias > 66.464034
+|   |   |   |   mejora_semanal <= 46.153846
+|   |   |   |   |   minutos_estudio_7dias <= 46
+|   |   |   |   |   |   acierto_primer_intento_7dias <= 0.571429
+|   |   |   |   |   |   |   mejora_semanal <= 0.294118
+|   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (107.0/44.0)
+|   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30: no (111.0/47.0)
+|   |   |   |   |   |   |   mejora_semanal > 0.294118: si (375.0/97.0)
+|   |   |   |   |   |   acierto_primer_intento_7dias > 0.571429
+|   |   |   |   |   |   |   intentos_desafio_7dias <= 2
+|   |   |   |   |   |   |   |   mejora_semanal <= 4.524887: si (390.0/128.0)
+|   |   |   |   |   |   |   |   mejora_semanal > 4.524887
+|   |   |   |   |   |   |   |   |   modulo = M01: no (54.0/21.0)
+|   |   |   |   |   |   |   |   |   modulo = M02: no (33.0/15.0)
+|   |   |   |   |   |   |   |   |   modulo = M03: no (48.0/22.0)
+|   |   |   |   |   |   |   |   |   modulo = M04: si (39.0/18.0)
+|   |   |   |   |   |   |   |   |   modulo = M05: si (56.0/25.0)
+|   |   |   |   |   |   |   |   |   modulo = M06: no (45.0/22.0)
+|   |   |   |   |   |   |   |   |   modulo = M07
+|   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (20.0/5.0)
+|   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30: no (29.0/12.0)
+|   |   |   |   |   |   |   |   |   modulo = M08: si (39.0/19.0)
+|   |   |   |   |   |   |   |   |   modulo = M09: no (43.0/13.0)
+|   |   |   |   |   |   |   intentos_desafio_7dias > 2
+|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 84.210526
+|   |   |   |   |   |   |   |   |   mejora_semanal <= 28.365385
+|   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 4
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 57.25: si (105.0/47.0)
+|   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 57.25: no (313.0/131.0)
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: no (146.0/50.0)
+|   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 4: si (33.0/10.0)
+|   |   |   |   |   |   |   |   |   mejora_semanal > 28.365385: si (132.0/37.0)
+|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 84.210526: no (238.0/79.0)
+|   |   |   |   |   minutos_estudio_7dias > 46
+|   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 49
+|   |   |   |   |   |   |   simulaciones_completadas_7dias <= 2
+|   |   |   |   |   |   |   |   intentos_desafio_7dias <= 3
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (61.0/12.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30
+|   |   |   |   |   |   |   |   |   |   mejora_semanal <= 18.333333: si (26.0/7.0)
+|   |   |   |   |   |   |   |   |   |   mejora_semanal > 18.333333: no (21.0/8.0)
+|   |   |   |   |   |   |   |   intentos_desafio_7dias > 3
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40
+|   |   |   |   |   |   |   |   |   |   mejora_semanal <= 9.615385: no (214.0/94.0)
+|   |   |   |   |   |   |   |   |   |   mejora_semanal > 9.615385
+|   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 84.210526: si (273.0/99.0)
+|   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 84.210526
+|   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 46.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 30.06536: no (20.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 30.06536: si (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 46.75: no (23.0/5.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: no (138.0/54.0)
+|   |   |   |   |   |   |   simulaciones_completadas_7dias > 2: si (52.0/15.0)
+|   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 49
+|   |   |   |   |   |   |   nota_media_desafios_7dias <= 66.666667
+|   |   |   |   |   |   |   |   mejora_semanal <= 24.074074
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 3
+|   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 7
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 0.294118: no (252.0/93.0)
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 0.294118
+|   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 57: no (55.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 57: si (161.0/60.0)
+|   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40: no (67.0/26.0)
+|   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 7: no (421.0/151.0)
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 3: si (44.0/17.0)
+|   |   |   |   |   |   |   |   mejora_semanal > 24.074074: si (108.0/33.0)
+|   |   |   |   |   |   |   nota_media_desafios_7dias > 66.666667
+|   |   |   |   |   |   |   |   mejora_semanal <= -1.587301: no (739.0/149.0)
+|   |   |   |   |   |   |   |   mejora_semanal > -1.587301
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 40
+|   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 73
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 7
+|   |   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 72.727273: si (96.0/40.0)
+|   |   |   |   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 72.727273
+|   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 1: si (94.0/42.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 1: no (721.0/303.0)
+|   |   |   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 7: no (280.0/91.0)
+|   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 73
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 27.272728
+|   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 0.909091
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal <= 0.657895: no (75.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 0.657895: si (50.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 0.909091: no (690.0/163.0)
+|   |   |   |   |   |   |   |   |   |   |   mejora_semanal > 27.272728
+|   |   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.818182
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 10: si (42.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 93: no (49.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 93: si (50.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.818182: no (162.0/43.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 40
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 2: no (786.0/197.0)
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 2: si (29.0/12.0)
+|   |   |   |   mejora_semanal > 46.153846
+|   |   |   |   |   minutos_estudio_7dias <= 87
+|   |   |   |   |   |   mejora_semanal <= 57.894737
+|   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.8125: si (98.0/24.0)
+|   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.8125
+|   |   |   |   |   |   |   |   intentos_desafio_7dias <= 2: si (351.0/113.0)
+|   |   |   |   |   |   |   |   intentos_desafio_7dias > 2
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 2
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0: no (78.0/25.0)
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 20: si (26.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 20: no (37.0/11.0)
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 2: si (29.0/12.0)
+|   |   |   |   |   |   mejora_semanal > 57.894737: si (371.0/84.0)
+|   |   |   |   |   minutos_estudio_7dias > 87: no (84.0/31.0)
+|   nota_diagnostica_inicial > 50
+|   |   puntaje_medio_simulaciones_7dias <= 52.333333
+|   |   |   puntaje_medio_simulaciones_7dias <= 44.75
+|   |   |   |   dias_desde_ultima_actividad <= 4
+|   |   |   |   |   nota_media_desafios_7dias <= 61.904762: si (388.0/119.0)
+|   |   |   |   |   nota_media_desafios_7dias > 61.904762
+|   |   |   |   |   |   nota_diagnostica_inicial <= 80
 |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 1
-|   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 30: si (655.0/231.0)
-|   |   |   |   |   |   |   |   nota_diagnostica_inicial > 30
-|   |   |   |   |   |   |   |   |   mejora_semanal <= -0.840336: no (136.2/56.33)
-|   |   |   |   |   |   |   |   |   mejora_semanal > -0.840336: si (327.8/134.13)
-|   |   |   |   |   |   |   simulaciones_completadas_7dias > 1: si (672.0/213.0)
-|   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 47.5
-|   |   |   |   |   |   |   acierto_primer_intento_7dias <= 0.692308
-|   |   |   |   |   |   |   |   mejora_semanal <= -9.890109: no (213.37/83.02)
-|   |   |   |   |   |   |   |   mejora_semanal > -9.890109
-|   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 51: si (163.99/45.77)
-|   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 51
-|   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 20: si (216.66/82.78)
-|   |   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 20
-|   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0
-|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 1: no (160.77/70.55)
-|   |   |   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 1: si (101.66/47.55)
-|   |   |   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: si (101.55/40.33)
-|   |   |   |   |   |   |   acierto_primer_intento_7dias > 0.692308
-|   |   |   |   |   |   |   |   intentos_desafio_7dias <= 6
-|   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 90.909091: no (126.0/54.0)
-|   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 90.909091: si (130.0/59.0)
-|   |   |   |   |   |   |   |   intentos_desafio_7dias > 6: no (257.0/84.0)
-|   puntaje_medio_simulaciones_7dias > 52.333333
-|   |   simulaciones_completadas_7dias <= 0
-|   |   |   nota_media_desafios_7dias <= 50: si (3447.77/825.79)
-|   |   |   nota_media_desafios_7dias > 50
-|   |   |   |   intentos_desafio_7dias <= 1: si (1055.3/284.89)
-|   |   |   |   intentos_desafio_7dias > 1
-|   |   |   |   |   minutos_estudio_7dias <= 47
-|   |   |   |   |   |   nota_diagnostica_inicial <= 40
-|   |   |   |   |   |   |   mejora_semanal <= 29.464286
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 70.588235: si (423.49/154.41)
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 70.588235: no (241.16/109.1)
-|   |   |   |   |   |   |   mejora_semanal > 29.464286: si (268.92/81.13)
-|   |   |   |   |   |   nota_diagnostica_inicial > 40
-|   |   |   |   |   |   |   nota_media_desafios_7dias <= 70.588235: si (131.1/59.86)
-|   |   |   |   |   |   |   nota_media_desafios_7dias > 70.588235: no (141.99/49.97)
-|   |   |   |   |   minutos_estudio_7dias > 47
-|   |   |   |   |   |   nota_media_desafios_7dias <= 66.666667
-|   |   |   |   |   |   |   mejora_semanal <= 5.392157: no (731.56/279.69)
-|   |   |   |   |   |   |   mejora_semanal > 5.392157
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 61.111111: si (229.48/68.18)
-|   |   |   |   |   |   |   |   nota_media_desafios_7dias > 61.111111
-|   |   |   |   |   |   |   |   |   intentos_desafio_7dias <= 8: si (137.96/61.49)
-|   |   |   |   |   |   |   |   |   intentos_desafio_7dias > 8: no (105.68/49.01)
-|   |   |   |   |   |   nota_media_desafios_7dias > 66.666667: no (1231.39/374.02)
-|   |   simulaciones_completadas_7dias > 0
-|   |   |   puntaje_medio_simulaciones_7dias <= 63
-|   |   |   |   nota_media_desafios_7dias <= 60.869565
-|   |   |   |   |   dias_desde_ultima_actividad <= 3
-|   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 59
-|   |   |   |   |   |   |   nota_media_desafios_7dias <= 46.666667: si (469.98/190.95)
-|   |   |   |   |   |   |   nota_media_desafios_7dias > 46.666667
-|   |   |   |   |   |   |   |   mejora_semanal <= 2.29885: no (677.59/284.38)
-|   |   |   |   |   |   |   |   mejora_semanal > 2.29885: si (345.89/144.85)
-|   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 59: no (666.01/253.86)
-|   |   |   |   |   dias_desde_ultima_actividad > 3: si (98.6/30.01)
-|   |   |   |   nota_media_desafios_7dias > 60.869565: no (2991.92/932.1)
-|   |   |   puntaje_medio_simulaciones_7dias > 63: no (4945.0/847.0)
-nota_diagnostica_inicial > 50
-|   puntaje_medio_simulaciones_7dias <= 61.5
-|   |   nota_diagnostica_inicial <= 70
-|   |   |   nota_media_desafios_7dias <= 61.904762
-|   |   |   |   puntaje_medio_simulaciones_7dias <= 43.25
-|   |   |   |   |   simulaciones_completadas_7dias <= 0: no (171.64/70.9)
-|   |   |   |   |   simulaciones_completadas_7dias > 0: si (309.01/80.6)
-|   |   |   |   puntaje_medio_simulaciones_7dias > 43.25
-|   |   |   |   |   nota_media_desafios_7dias <= 43.478261: si (375.9/176.11)
-|   |   |   |   |   nota_media_desafios_7dias > 43.478261: no (1399.55/573.53)
-|   |   |   nota_media_desafios_7dias > 61.904762
-|   |   |   |   simulaciones_completadas_7dias <= 0: no (1421.67/395.78)
-|   |   |   |   simulaciones_completadas_7dias > 0
-|   |   |   |   |   puntaje_medio_simulaciones_7dias <= 51.75
+|   |   |   |   |   |   |   |   modulo = M01: si (22.0/10.0)
+|   |   |   |   |   |   |   |   modulo = M02: no (39.0/16.0)
+|   |   |   |   |   |   |   |   modulo = M03: no (22.0/8.0)
+|   |   |   |   |   |   |   |   modulo = M04: si (35.0/16.0)
+|   |   |   |   |   |   |   |   modulo = M05: si (37.0/15.0)
+|   |   |   |   |   |   |   |   modulo = M06: no (32.0/14.0)
+|   |   |   |   |   |   |   |   modulo = M07: si (27.0/12.0)
+|   |   |   |   |   |   |   |   modulo = M08
+|   |   |   |   |   |   |   |   |   nota_media_desafios_7dias <= 72.727273: si (20.0/7.0)
+|   |   |   |   |   |   |   |   |   nota_media_desafios_7dias > 72.727273: no (21.0/9.0)
+|   |   |   |   |   |   |   |   modulo = M09: si (26.0/12.0)
+|   |   |   |   |   |   |   simulaciones_completadas_7dias > 1: si (66.0/24.0)
+|   |   |   |   |   |   nota_diagnostica_inicial > 80: no (28.0/8.0)
+|   |   |   |   dias_desde_ultima_actividad > 4: si (40.0/4.0)
+|   |   |   puntaje_medio_simulaciones_7dias > 44.75
+|   |   |   |   nota_diagnostica_inicial <= 70
+|   |   |   |   |   mejora_semanal <= 40.47619
 |   |   |   |   |   |   simulaciones_completadas_7dias <= 1
-|   |   |   |   |   |   |   intentos_desafio_7dias <= 7
-|   |   |   |   |   |   |   |   mejora_semanal <= 21.691176: no (191.55/76.51)
-|   |   |   |   |   |   |   |   mejora_semanal > 21.691176: si (192.83/75.15)
-|   |   |   |   |   |   |   intentos_desafio_7dias > 7: no (171.0/55.0)
-|   |   |   |   |   |   simulaciones_completadas_7dias > 1: si (173.2/74.6)
-|   |   |   |   |   puntaje_medio_simulaciones_7dias > 51.75: no (1220.97/336.39)
-|   |   nota_diagnostica_inicial > 70
-|   |   |   simulaciones_completadas_7dias <= 0: no (2064.83/333.63)
-|   |   |   simulaciones_completadas_7dias > 0
-|   |   |   |   puntaje_medio_simulaciones_7dias <= 44.75: si (172.0/77.0)
-|   |   |   |   puntaje_medio_simulaciones_7dias > 44.75: no (1465.0/355.0)
-|   puntaje_medio_simulaciones_7dias > 61.5
-|   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   nota_media_desafios_7dias <= 61.904762
+|   |   |   |   |   |   |   |   modulo = M01: si (23.0/10.0)
+|   |   |   |   |   |   |   |   modulo = M02: no (37.0/12.0)
+|   |   |   |   |   |   |   |   modulo = M03: si (28.0/12.0)
+|   |   |   |   |   |   |   |   modulo = M04: no (31.0/12.0)
+|   |   |   |   |   |   |   |   modulo = M05
+|   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias <= 48.5: no (26.0/12.0)
+|   |   |   |   |   |   |   |   |   puntaje_medio_simulaciones_7dias > 48.5: si (20.0/5.0)
+|   |   |   |   |   |   |   |   modulo = M06: si (19.0/7.0)
+|   |   |   |   |   |   |   |   modulo = M07: si (17.0/7.0)
+|   |   |   |   |   |   |   |   modulo = M08: no (38.0/16.0)
+|   |   |   |   |   |   |   |   modulo = M09: no (26.0/13.0)
+|   |   |   |   |   |   |   nota_media_desafios_7dias > 61.904762: no (320.0/109.0)
+|   |   |   |   |   |   simulaciones_completadas_7dias > 1
+|   |   |   |   |   |   |   modulo = M01: no (16.0/7.0)
+|   |   |   |   |   |   |   modulo = M02: no (40.0/15.0)
+|   |   |   |   |   |   |   modulo = M03: si (21.0/9.0)
+|   |   |   |   |   |   |   modulo = M04: no (20.0/10.0)
+|   |   |   |   |   |   |   modulo = M05: no (37.0/15.0)
+|   |   |   |   |   |   |   modulo = M06: si (32.0/15.0)
+|   |   |   |   |   |   |   modulo = M07: si (15.0/3.0)
+|   |   |   |   |   |   |   modulo = M08: si (32.0/13.0)
+|   |   |   |   |   |   |   modulo = M09: si (17.0/7.0)
+|   |   |   |   |   mejora_semanal > 40.47619: si (49.0/14.0)
+|   |   |   |   nota_diagnostica_inicial > 70: no (365.0/112.0)
+|   |   puntaje_medio_simulaciones_7dias > 52.333333
 |   |   |   nota_diagnostica_inicial <= 70
 |   |   |   |   dias_desde_ultima_actividad <= 5
 |   |   |   |   |   nota_media_desafios_7dias <= 52.173913
-|   |   |   |   |   |   nota_media_desafios_7dias <= 43.478261: si (319.83/143.94)
-|   |   |   |   |   |   nota_media_desafios_7dias > 43.478261
-|   |   |   |   |   |   |   mejora_semanal <= -4.812835: no (370.26/123.17)
-|   |   |   |   |   |   |   mejora_semanal > -4.812835: si (140.1/65.13)
-|   |   |   |   |   nota_media_desafios_7dias > 52.173913: no (2857.17/737.54)
+|   |   |   |   |   |   mejora_semanal <= -4.195804
+|   |   |   |   |   |   |   nota_media_desafios_7dias <= 44
+|   |   |   |   |   |   |   |   modulo = M01: no (27.0/9.0)
+|   |   |   |   |   |   |   |   modulo = M02
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 60: no (30.0/14.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 60: si (20.0/6.0)
+|   |   |   |   |   |   |   |   modulo = M03: si (37.0/15.0)
+|   |   |   |   |   |   |   |   modulo = M04: no (38.0/19.0)
+|   |   |   |   |   |   |   |   modulo = M05
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad <= 0: si (29.0/12.0)
+|   |   |   |   |   |   |   |   |   dias_desde_ultima_actividad > 0: no (31.0/13.0)
+|   |   |   |   |   |   |   |   modulo = M06: no (57.0/24.0)
+|   |   |   |   |   |   |   |   modulo = M07
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 60: si (26.0/9.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 60: no (21.0/8.0)
+|   |   |   |   |   |   |   |   modulo = M08
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 60: si (27.0/12.0)
+|   |   |   |   |   |   |   |   |   nota_diagnostica_inicial > 60: no (22.0/7.0)
+|   |   |   |   |   |   |   |   modulo = M09: si (36.0/15.0)
+|   |   |   |   |   |   |   nota_media_desafios_7dias > 44: no (543.0/183.0)
+|   |   |   |   |   |   mejora_semanal > -4.195804
+|   |   |   |   |   |   |   nota_diagnostica_inicial <= 60: si (256.0/101.0)
+|   |   |   |   |   |   |   nota_diagnostica_inicial > 60
+|   |   |   |   |   |   |   |   intentos_desafio_7dias <= 12: no (218.0/100.0)
+|   |   |   |   |   |   |   |   intentos_desafio_7dias > 12: si (35.0/10.0)
+|   |   |   |   |   nota_media_desafios_7dias > 52.173913
+|   |   |   |   |   |   intentos_desafio_7dias <= 1
+|   |   |   |   |   |   |   mejora_semanal <= 58.333333
+|   |   |   |   |   |   |   |   nota_diagnostica_inicial <= 60
+|   |   |   |   |   |   |   |   |   lecciones_completadas <= 0: si (41.0/19.0)
+|   |   |   |   |   |   |   |   |   lecciones_completadas > 0
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0: no (284.0/116.0)
+|   |   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: si (32.0/14.0)
+|   |   |   |   |   |   |   |   nota_diagnostica_inicial > 60
+|   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias <= 0
+|   |   |   |   |   |   |   |   |   |   mejora_semanal <= 39.16084: no (312.0/100.0)
+|   |   |   |   |   |   |   |   |   |   mejora_semanal > 39.16084
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias <= 24: no (26.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   minutos_estudio_7dias > 24: si (23.0/5.0)
+|   |   |   |   |   |   |   |   |   simulaciones_completadas_7dias > 0: no (32.0/5.0)
+|   |   |   |   |   |   |   mejora_semanal > 58.333333: si (26.0/7.0)
+|   |   |   |   |   |   intentos_desafio_7dias > 1: no (4959.0/1235.0)
 |   |   |   |   dias_desde_ultima_actividad > 5
-|   |   |   |   |   intentos_desafio_7dias <= 0
-|   |   |   |   |   |   nota_diagnostica_inicial <= 60: si (205.91/86.58)
-|   |   |   |   |   |   nota_diagnostica_inicial > 60: no (204.51/100.38)
-|   |   |   |   |   intentos_desafio_7dias > 0: no (103.91/43.13)
-|   |   |   nota_diagnostica_inicial > 70: no (3895.17/629.37)
-|   |   simulaciones_completadas_7dias > 0: no (9502.0/982.0)
+|   |   |   |   |   intentos_desafio_7dias <= 1
+|   |   |   |   |   |   nota_diagnostica_inicial <= 60: si (331.0/141.0)
+|   |   |   |   |   |   nota_diagnostica_inicial > 60
+|   |   |   |   |   |   |   dias_desde_ultima_actividad <= 8: no (170.0/68.0)
+|   |   |   |   |   |   |   dias_desde_ultima_actividad > 8: si (164.0/68.0)
+|   |   |   |   |   intentos_desafio_7dias > 1: no (127.0/48.0)
+|   |   |   nota_diagnostica_inicial > 70: no (6867.0/1154.0)
+puntaje_medio_simulaciones_7dias > 59.25
+|   nota_media_desafios_7dias <= 41.37931
+|   |   puntaje_medio_simulaciones_7dias <= 62.25
+|   |   |   mejora_semanal <= -37.727273: no (29.0/6.0)
+|   |   |   mejora_semanal > -37.727273: si (91.0/37.0)
+|   |   puntaje_medio_simulaciones_7dias > 62.25: no (252.0/82.0)
+|   nota_media_desafios_7dias > 41.37931: no (16266.0/2389.0)
 
-Number of Leaves  : 	69
+Number of Leaves  : 	231
 
-Size of the tree : 	137
+Size of the tree : 	391

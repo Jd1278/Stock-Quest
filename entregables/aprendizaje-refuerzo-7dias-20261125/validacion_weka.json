@@ -1,11 +1,19 @@
 {
   "status": "PASS",
-  "wekaVersion": "3.8.6",
-  "ARFFFilesParsed": 9,
-  "instancesIncludingPartitions": 404000,
-  "fieldsEach": 15,
-  "savedModelRoundtripIdenticalPredictions": true,
-  "pdfPages": 7,
-  "pdfRenderedWith": "Poppler",
-  "allPagesVisuallyReviewed": true
+  "version": 2,
+  "engine": "WEKA 3.8.6",
+  "rawARFFFilesParsed": 9,
+  "rawInstancesIncludingPartitions": 404000,
+  "allForecastARFFFilesParsedIncludingStages": 30,
+  "allForecastInstancesIncludingRepeatedStages": 1756000,
+  "diagnosticARFFFilesParsed": 6,
+  "diagnosticInstancesIncludingPartitions": 304000,
+  "cleaningExecuted": true,
+  "manualFilterEquivalenceRows": 200000,
+  "savedModelReloadMatches": true,
+  "pdfPages": 9,
+  "pdfRendered": "Poppler",
+  "allPDFPagesVisuallyReviewed": true,
+  "GUIAutomated": false,
+  "note": "Missing optional MTJ libraries warning did not prevent executed J48 or filters."
 }

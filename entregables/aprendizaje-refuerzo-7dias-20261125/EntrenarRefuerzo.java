@@ -3,6 +3,7 @@ import java.nio.file.*;
 import java.util.*;
 import weka.core.*;
 import weka.filters.unsupervised.attribute.Remove;
+import weka.filters.*;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.J48;
 
@@ -36,15 +37,25 @@ public class EntrenarRefuerzo {
       predict(model,data,Path.of(args[3]));
       System.out.println("RELOADED saved model and predicted "+data.numInstances()+" rows");return;
     }
-    Path root=Path.of(args[0]);Files.createDirectories(root.resolve("resultados"));
+    Path root=Path.of(args[0]);boolean rawOnly=args.length>1 && args[1].equals("sin-limpieza");
+    String resultDir=rawOnly?"resultados_sin_limpieza":"resultados";
+    Files.createDirectories(root.resolve(resultDir));
+    double upper=Double.parseDouble(Files.readAllLines(root.resolve("limpios/parametros_limpieza.json")).stream()
+      .filter(s->s.contains("\"upperFence\"")).findFirst().orElseThrow().split(":")[1].replace(",","").trim());
     Instances train=load(root.resolve("weka/entrenamiento.arff"));
     if(train.numInstances()!=64000)throw new IllegalStateException("Expected 64000 training rows");
     for(int min:new int[]{20,100}) {
       Remove remove=new Remove();remove.setAttributeIndices("1-2");
       J48 tree=new J48();tree.setMinNumObj(min);tree.setConfidenceFactor(.25f);tree.setUseLaplace(true);
-      FilteredClassifier model=new FilteredClassifier();model.setFilter(remove);model.setClassifier(tree);
+      FilteredClassifier model=new FilteredClassifier();
+      if(rawOnly)model.setFilter(remove);
+      else {
+        List<Filter> stages=new ArrayList<>(Arrays.asList(LimpiezaRefuerzo.filters(upper)));stages.add(remove);
+        MultiFilter all=new MultiFilter();all.setFilters(stages.toArray(new Filter[0]));model.setFilter(all);
+      }
+      model.setClassifier(tree);
       long start=System.currentTimeMillis();model.buildClassifier(train);
-      Path dir=root.resolve("resultados/M"+min);Files.createDirectories(dir);
+      Path dir=root.resolve(resultDir+"/M"+min);Files.createDirectories(dir);
       SerializationHelper.writeAll(dir.resolve("refuerzo.model").toString(),new Object[]{model,new Instances(train,0)});
       Files.writeString(dir.resolve("arbol.txt"),model.toString());
       for(String split:new String[]{"validacion","prueba","predecir_ultimo_corte_4000"}) {

@@ -1,0 +1,4 @@
+etapa,filas,atributos,faltantes_predictores,atipicos_detectados
+00_crudo,64000,15,48164,0
+05_iqr,64000,17,0,6400
+08_limpio,64000,15,0,0

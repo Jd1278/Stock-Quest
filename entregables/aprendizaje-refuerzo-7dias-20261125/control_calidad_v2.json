@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "synthetic": true,
+  "seedContamination": 2026112502,
+  "percentagesReferToRows": true,
+  "disjointGroups": true,
+  "oneAlteredCellPerAffectedRow": true,
+  "datasets": {
+    "actual": {
+      "rows": 100000,
+      "fields": 15,
+      "groups": {
+        "sucio": 10000,
+        "sin_alteracion": 80000,
+        "atipico": 10000
+      },
+      "alterationTypes": {
+        "modulo_minusculas": 2500,
+        "puntaje_negativo": 2500,
+        "nota_mayor_100": 2500,
+        "proporcion_mayor_1": 2500,
+        "minutos_extremos": 10000
+      }
+    },
+    "futuro": {
+      "rows": 100000,
+      "fields": 15,
+      "groups": {
+        "sin_alteracion": 80000,
+        "sucio": 10000,
+        "atipico": 10000
+      },
+      "alterationTypes": {
+        "modulo_minusculas": 2500,
+        "minutos_extremos": 10000,
+        "nota_mayor_100": 2500,
+        "puntaje_negativo": 2500,
+        "proporcion_mayor_1": 2500
+      }
+    }
+  },
+  "sharedObservationsExactlyEqual": 96000,
+  "protectedFields": [
+    "ID",
+    "date",
+    "target nivel_actual"
+  ],
+  "naturalMissingValuesAreNotCountedAsDirtyRows": true,
+  "cleaningUsesAuditOrGoldenValues": false,
+  "plannedCleaning": "WEKA train-fitted filters; repair and impute; retain 100000 rows",
+  "hashes": {
+    "actividad_semana_adicional_28000.csv": "f56f9a0dd006040953b39e984d59be393776b77d18b5b7a023d909aa8628a0c1",
+    "auditoria_actual_NO_USAR_COMO_PREDICTOR.csv": "785567b7513c2e4724f1ee4998793fb6976de6e1c96ca5dace1b8fb419dcbde6",
+    "auditoria_futuro_NO_USAR_COMO_PREDICTOR.csv": "bcfbbae2fb6f2dd3c40ffd5930cf7d6d00e407252ca96a69b98816423c8f4e2f",
+    "catalogo_modulos.csv": "09371c79364a5d9b1f070977e52bef44bbe5375bac29432303687cfdd8cabcf5",
+    "contraste_actual_vs_7dias_100000.csv": "4988a8cc48f74d8edb0e24753fb3c7c3b9ab056f9be171918680bc6574482cd0",
+    "diagnostico_7dias_despues_100000_15.arff": "09ad381ea258e7a37ca6c270944fe3af98abc76d90b1e2b692b30293886c26ed",
+    "diagnostico_7dias_despues_100000_15.csv": "6d506bc782b07429029f6a44c647ef8c1567dd93fe7222e370863f6f05fa5d89",
+    "diagnostico_actual_100000_15.arff": "bae33f27cc5883d0a6023d5a151a116d529496cf6b0d1bedee81353c7b78e05c",
+    "diagnostico_actual_100000_15.csv": "c71f09a100ab30c330caa36f8b0c45fff99249a1133276779de3d9f2e150bce6",
+    "modelado/refuerzo_7dias_100000_15.arff": "d7264ea74936f8c77d73289156999d992fd261abe128aa7b302a496f23d9cf0c",
+    "modelado/refuerzo_7dias_100000_15.csv": "9d10b01e1d110702ef5cf95a938370b50e46de5a58a3b94b3360defed05055f7",
+    "referencia_evaluaciones_104000_NO_PREDICTORES.csv": "e8fb09c28fe6ee6172c175c7524758bd2c6db1987bdd462a3c590ba6dee2af15",
+    "referencia_sin_contaminar/diagnostico_7dias_despues_100000_15.arff": "27229eff6c36fbaf6c50e4b26e9f8908ac57a208cb25a78a9041367c066ec8c4",
+    "referencia_sin_contaminar/diagnostico_7dias_despues_100000_15.csv": "56397a1818fd7f8d55335a549c1c1bce7635c2a9cba84471a0aa1a46f2b844ff",
+    "referencia_sin_contaminar/diagnostico_actual_100000_15.arff": "39d7c3deb2d14f5da4be32df3d5f0c97f8746cf17f7484ec696b9a6f9e925b01",
+    "referencia_sin_contaminar/diagnostico_actual_100000_15.csv": "58c9909ebdf8080ae8e78847186e6ed9038bf3ca385667db0b7bd49db35aa7e6",
+    "weka/entrenamiento.arff": "e2b39b5b86a246ae9a3134b4f2d915fb4bdfd918ae47ab7c9b8cc1a4e17794ce",
+    "weka/entrenamiento.csv": "bacff0ced6cd3ad472b748ef64dd2150ef24a4dfd045d85767b14d95f1576e19",
+    "weka/predecir_ultimo_corte_4000.arff": "aa14335b8f37deb5f0f5aa5466ea7d08999efb47196f41e480af7151f9675ba2",
+    "weka/predecir_ultimo_corte_4000.csv": "a439038d15cd813a3b1f54622405db50ec173be44c1f943db96a74602539d513",
+    "weka/prueba.arff": "6dc7084efabdf4e1fb88999a03fe400e70bc9db2d5c4dfbfb199ff397677d474",
+    "weka/prueba.csv": "f9130040a7efdd157d4d33fa077c3dddd1d209365359857641668a9b66d52ec2",
+    "weka/separacion_1.arff": "8df092723128067e283dc49fd4ac99c5c5e5da5cd82b81afc5eaf55093abc932",
+    "weka/separacion_1.csv": "3f462a2b07bebbd867a13894d33447757356ffb8d78ccbea9e41f769680458bd",
+    "weka/separacion_2.arff": "eab9eb742e2f8db981b714e2fafab117b1a2c7956924212f46084bad92b031a0",
+    "weka/separacion_2.csv": "aee1511a23a8db1c12177e331679d909600cc6656bf976a1b72eef9f9a3862bd",
+    "weka/validacion.arff": "4c240954ecf96474c6fe59f64896d8113cd19f9cd0a45a45a2bc732ea3ba7180",
+    "weka/validacion.csv": "d39dc52ebd8ac694cc5a9d1433eb52baeaffd3a3cb409dd8aa557f4d7eea4e5e"
+  }
+}

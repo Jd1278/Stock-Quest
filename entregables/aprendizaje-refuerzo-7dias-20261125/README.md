@@ -1,68 +1,56 @@
-# Stock Quest: necesidad de refuerzo siete días después
+# Stock Quest: limpieza y predicción de refuerzo - versión 2
 
-Entrega del 25/11/2026. **Todos los datos, aprendices, evaluaciones futuras y resultados son sintéticos.** No se modificaron bases ni se desplegó el modelo en Stock Quest.
+Entrega corregida el 25/11/2026. **La versión 1 no contenía el 10% de atípicos y otro 10% de datos sucios requeridos. Esta versión sustituye sus archivos principales, limpieza, métricas e informe.**
 
-## Pregunta y alcance
+## Qué se entrega
 
-¿Qué aprendiz podría necesitar refuerzo en alguno de sus módulos siete días después del corte?
+Cada uno de los dos datasets crudos tiene **100.000 filas y 15 campos**: 80.000 filas sin alteración intencional, 10.000 con valores atípicos y otras 10.000 con errores de calidad. Los grupos son excluyentes y se refieren a filas, no celdas. Las versiones limpias también mantienen 100.000 filas y 15 campos.
 
-Se considera necesidad de refuerzo una evaluación independiente a t+7 inferior a 60/100. Es una regla didáctica provisional, no validada pedagógica ni psicométricamente. No equivale a nivel de XP ni a una decisión definitiva sobre una persona.
-
-Cada fila es un aprendiz/módulo/corte. Hay 2.000 aprendices ficticios, dos módulos por persona y 25 cortes semanales. Los mismos aprendices aparecen repetidamente; no son 100.000 personas.
-
-## Archivos principales
-
-| Archivo | Uso |
+| Archivo o carpeta | Uso |
 |---|---|
-| `diagnostico_actual_100000_15.csv/.arff` | 100.000 filas y 15 campos originales, conservados exactamente |
-| `diagnostico_7dias_despues_100000_15.csv/.arff` | Los mismos pares, con observaciones siete días posteriores; 100.000 x 15 |
-| `contraste_actual_vs_7dias_100000.csv` | ID, módulo, fechas, notas de referencia, niveles, cambio y etiqueta futura |
-| `modelado/refuerzo_7dias_100000_15.csv/.arff` | Los primeros 14 campos de t y objetivo binario requiere_refuerzo_7dias |
-| `weka/entrenamiento.arff` | 64.000 filas; solo estas ajustan los dos árboles |
-| `weka/validacion.arff` | 12.000 filas; selecciona árbol y umbral |
-| `weka/prueba.arff` | 16.000 filas; evaluación final posterior a la selección |
-| `weka/separacion_1.arff`, `separacion_2.arff` | 4.000 filas cada una, excluidas de ajuste y evaluación |
-| `weka/predecir_ultimo_corte_4000.arff` | Indicadores del 24/11; clase ?; objetivo 01/12 |
-| `referencia_evaluaciones_104000_NO_PREDICTORES.csv` | Evaluaciones independientes para auditoría; nunca introducir como predictores |
-| `actividad_semana_adicional_28000.csv` | Siete días adicionales por cada uno de los 4.000 pares aprendiz/módulo |
-| `resultados/refuerzo_7dias.model` | Modelo WEKA seleccionado, con filtro y cabecera guardados |
-| `resultados/predicciones_ultimo_corte_4000.csv` | Puntuación, alerta y contraste sintético de los 4.000 casos |
-| `resultados/alertas_refuerzo_por_modulo.csv` | Las 3.410 alertas por módulo |
-| `resultados/priorizacion_2000_aprendices.csv` | Lista por aprendiz con sus módulos señalados |
-| `resultados/metricas_modelo.json` | Métricas, baselines y recuentos completos |
-| `resultados/seleccion_solo_validacion.json` | Las 38 combinaciones consideradas y su selección |
-| `control_pares.json`, `validacion_entrega.json`, `validacion_weka.json` | Trazabilidad y comprobaciones ejecutadas |
-| `StockQuest-Refuerzo-Aprendizaje-7dias.pdf` | Informe de siete páginas incluido en el ZIP |
+| `diagnostico_actual_100000_15.csv/.arff` | CRUDO actual con 10% atípicos y 10% sucios |
+| `diagnostico_7dias_despues_100000_15.csv/.arff` | CRUDO a t+7 con los mismos porcentajes |
+| `limpios/diagnostico_*_limpio.csv/.arff` | Los dos resultados finales de la limpieza real con WEKA |
+| `auditoria_*_NO_USAR_COMO_PREDICTOR.csv` | Evidencia de la contaminación; no introducir al modelo |
+| `limpios/auditoria_cambios_*.csv` | Cambios realizados por la limpieza, celda a celda |
+| `limpios/parametros_limpieza.json` | Estadísticas aprendidas únicamente con entrenamiento |
+| `limpios/etapas_*` | Evidencias intermedias; IQR añade temporalmente dos columnas |
+| `limpios/preprocesador.filter` | Filtros WEKA ajustados y cabecera para su aplicación posterior |
+| `GUIA-LIMPIEZA-WEKA-V2.md` | Procedimiento manual probado sobre ambos datasets |
+| `modelado/refuerzo_7dias_100000_15.csv/.arff` | Indicadores crudos de t más etiqueta binaria de t+7 |
+| `weka/` | Particiones CRUDAS temporales e inferencia; entrada del modelo completo |
+| `limpios/weka/` | Las mismas particiones ya limpias; usar solo con un modelo que no repita la limpieza |
+| `resultados/` | Modelo completo, puntuaciones, alertas, métricas y lista por aprendiz |
+| `resultados_sin_limpieza/` | Comparación del flujo que recibe las anomalías sin repararlas |
+| `referencia_sin_contaminar/` | Bases y controles V1 para auditoría; NO se consultan al limpiar ni predecir |
+| `validacion_calidad_v2.json` | Recuentos, reparaciones y coherencia verificados independientemente |
+| `control_calidad_v2.json`, `control_pares.json` | Diseño, trazabilidad, fechas y hashes |
 
-El futuro se generó continuando exactamente el mismo proceso y sus semillas; se verificaron las 100.000 filas originales antes de emparejar. Los cortes de t abarcan 09/06-24/11/2026 y los de t+7, 16/06-01/12/2026. El 01/12 todavía es futuro respecto a la fecha de elaboración: su evaluación es simulada, no una observación real.
+El PDF actualizado está en `output/pdf/StockQuest-Refuerzo-Aprendizaje-7dias.pdf` desde la raíz del proyecto y dentro del ZIP completo. Los códigos y personas son ficticios. No se tocaron las bases operativas.
 
-**El dataset de siete días después sirve para contrastar y obtener etiquetas. Sus indicadores futuros NO se usan como variables de entrada.** Si se usaran, la evaluación no sería un pronóstico válido.
+## Contaminación y coherencia temporal
 
-## Los 15 campos
+Se conserva la base sintética original y se introduce una alteración por fila afectada. Los atípicos llevan minutos de estudio de 5.000 a 9.000. Las filas sucias se reparten en 2.500 puntajes negativos, 2.500 notas >100, 2.500 proporciones >1 y 2.500 códigos de módulo en minúsculas.
 
-1. id_aprendiz_sintetico
-2. fecha_corte
-3. modulo
-4. nota_diagnostica_inicial
-5. lecciones_asignadas
-6. lecciones_completadas
-7. minutos_estudio_7dias
-8. intentos_desafio_7dias
-9. nota_media_desafios_7dias
-10. acierto_primer_intento_7dias
-11. simulaciones_completadas_7dias
-12. puntaje_medio_simulaciones_7dias
-13. dias_desde_ultima_actividad
-14. mejora_semanal
-15. nivel_actual en los diagnósticos; requiere_refuerzo_7dias {no,si} en modelado.
+Se seleccionan exactamente 400 atípicos y 400 sucios por corte de 4.000 observaciones con semilla 2026112502. La corrupción se decide por observación (aprendiz/módulo/fecha), no por archivo: las 96.000 observaciones presentes en ambos archivos coinciden antes y después de limpiar. Se protegen ID, fecha y etiqueta nivel_actual. Las etiquetas no se ensucian en esta práctica, para aislar la limpieza de predictores.
 
-Los ? corresponden a ausencia legítima de observación. No rellenarlos con cero. J48 los admite. El nivel actual y la nota actual de la evaluación de referencia no se introdujeron como predictores del modelo futuro. La nota diagnóstica inicial es un pretest anterior al historial, no la evaluación actual.
+Los ? legítimos previos no cuentan como errores introducidos. El dataset representa 2.000 aprendices, dos módulos por persona y 25 cortes, no 100.000 personas. El actual abarca 09/06-24/11/2026; el futuro, 16/06-01/12/2026. Los resultados de diciembre son simulados, no observaciones reales del futuro.
 
-Los temas coinciden con los nueve módulos del contenido del proyecto. La generación supone instrumentación aún propuesta: minutos de estudio, banco adicional de práctica, evaluación independiente, primeros intentos por sesión y vínculo simulación-módulo. No se afirma que todo eso exista ya en producción.
+## Limpieza ejecutada
 
-## Separación temporal
+Se ejecutaron filtros de WEKA 3.8.6: RenameNominalValues; NumericCleaner en 9,12 (rango 0-100) y 10 (0-1); ReplaceMissingValues ajustado con entrenamiento; InterquartileRange en el campo 7 con factores 6/12 y extremos incluidos; NumericCleaner con límite superior 473; Remove 16-17; segunda imputación para minutos, con media 64.04085069444444.
 
-| Partición | Fechas de indicadores | Fechas de etiquetas | Filas |
+Se mantienen todas las filas. Se corrigen categorías y se imputan las celdas inválidas y atípicas. No se restauran valores consultando la referencia original. Los parámetros se aprendieron con 64.000 filas de entrenamiento y se guardaron para las demás particiones y ambos datasets. Las medias imputadas no son mediciones observadas.
+
+La [guía manual](GUIA-LIMPIEZA-WEKA-V2.md) reproduce los mismos resultados con constantes de entrenamiento, StringToNominal temporal para el ID y ReplaceMissingWithUserConstant. Su equivalencia se verificó con las 200.000 filas. No rellenar ni aprender medias globalmente antes de separar entrenamiento y prueba.
+
+## Predicción: ¿quién podría necesitar refuerzo?
+
+Se define `requiere_refuerzo_7dias = si` cuando la evaluación independiente de t+7 queda por debajo de 60. El resto es `no`. La rúbrica es provisional, no validada por docentes o psicométricamente. No es nivel de XP.
+
+El modelo utiliza solo los 14 primeros campos de t; descarta ID y fecha. No recibe los indicadores futuros ni la evaluación independiente exacta actual o futura. Conserva los quince campos de entrada; tras el filtro hay doce predictores y una clase. Las auditorías y las bases sin contaminar están excluidas.
+
+| Partición | Indicadores | Etiquetas | Filas |
 |---|---|---|---:|
 | Entrenamiento | 09/06-22/09 | 16/06-29/09 | 64.000 |
 | Separación 1 | 29/09 | 06/10 | 4.000 |
@@ -70,68 +58,61 @@ Los temas coinciden con los nueve módulos del contenido del proyecto. La genera
 | Separación 2 | 27/10 | 03/11 | 4.000 |
 | Prueba | 03/11-24/11 | 10/11-01/12 | 16.000 |
 
-Todas las fechas son de 2026. No usar las particiones por aprendiz del diagnóstico anterior para medir este pronóstico temporal. Aquí se evalúan semanas posteriores de los mismos alumnos; no generalización a personas nuevas.
+Se entrenaron J48 con mínimo de 20 o 100 instancias por hoja, confianza 0,25 y Laplace. Modelo y umbral se seleccionan exclusivamente en validación mediante F2, entre 0,05 y 0,95. La prueba temporal se reevaluó después de corregir la calidad; para nuevos ajustes hará falta reservar otro periodo de prueba.
 
-## Resultado y límites
+**El modelo vigente en resultados/refuerzo_7dias.model incluye la limpieza dentro de FilteredClassifier y recibe ARFF CRUDOS V2.** WEKA aplicará los filtros guardados. No aplicar el mismo modelo a datos previamente limpiados como si fuera la ruta original. Para usar limpios/weka con otro entrenamiento, elegir Remove 1-2 + J48 sin añadir de nuevo la limpieza.
 
-Se ejecutó WEKA 3.8.6 con FilteredClassifier(Remove 1-2, J48). Se evaluaron mínimos de 20 y 100 instancias por hoja, confianza 0,25 y Laplace activado. Se eligieron mínimo 100 y umbral **0,15** usando exclusivamente F2 de validación entre umbrales 0,05-0,95 (paso 0,05). F2 favorece la recuperación de casos de dificultad. Es una política exploratoria de alta sensibilidad, no una decisión pedagógica acordada.
+La política seleccionada es mínimo 20 y umbral 0,15. En prueba: recall 84,66%, precisión de alerta 37,10%, F2 0,674 y AUC 0,724. El flujo sin limpieza, también seleccionado en validación, alerta a todos en prueba: precisión 28,19%, F2 0,663 y AUC 0,691. Se comparan flujos completos con sus configuraciones seleccionadas; no es una estimación causal aislada del efecto de limpiar.
 
-Prueba temporal: recall 93,86 %, precisión de alerta 31,19 %, F1 0,468, F2 0,669 y AUC 0,711. Hay 4.234 verdaderos positivos, 277 falsos negativos, 9.343 falsos positivos y 2.146 verdaderos negativos. La exactitud es 39,88 %. Alertar a todos ya obtiene F2 0,663: la mejora en ese criterio es pequeña. No presentar la alta sensibilidad como éxito operativo completo.
+Hay 2.570 alertas en los 4.000 casos del último corte y 1.658 aprendices ficticios con algún módulo señalado. Las puntuaciones no están calibradas. Un máximo entre módulos ordena la lista; no representa una probabilidad de riesgo de la persona. No asignar refuerzo intensivo automáticamente: confirmar con una actividad breve y revisión humana.
 
-En el último corte: 3.410 alertas de 4.000 casos; 1.897 personas con algún módulo señalado. Se detectan 1.051 de 1.126 casos de refuerzo de la referencia, pero hay 2.359 falsas alertas. El clasificador produce puntuaciones **no calibradas**. El máximo entre módulos sirve para ordenar la lista por persona; no es la probabilidad de riesgo de esa persona. Hay 91 aprendices empatados en la mayor puntuación; el ID solo ordena el empate.
+## Reproducción con comandos
 
-El baseline de persistencia utiliza una evaluación independiente actual que no recibe el predictor: es una referencia más informada. La prueba no demuestra eficacia de intervenciones de refuerzo ni validez en usuarios reales. Recomendar revisión humana y una actividad breve de confirmación; no decisiones punitivas, de certificación o exclusión.
-
-## Reproducir paso a paso en WEKA Explorer
-
-1. Abrir `weka/entrenamiento.arff`: comprobar 64.000 instancias y 15 atributos.
-2. Elegir Class = requiere_refuerzo_7dias. La clase es nominal no/si.
-3. Classify > Choose > meta > FilteredClassifier.
-4. Su filtro: unsupervised.attribute.Remove; attributeIndices = 1-2; invertSelection = False.
-5. Su classifier: trees.J48; minNumObj = 100; confidenceFactor = 0.25; useLaplace = True.
-6. Supplied test set: `weka/validacion.arff`. Esta etapa selecciona configuración; no usar prueba para elegir.
-7. Con configuración fijada, evaluar `weka/prueba.arff`. **El resumen estándar de WEKA usa la clase más probable; no representa automáticamente el umbral 0,15 del informe.**
-8. Para cargar el modelo entregado: en la lista de resultados, clic derecho > Load model > `resultados/refuerzo_7dias.model`.
-9. Establecer Supplied test set = `weka/predecir_ultimo_corte_4000.arff`. En las opciones de salida elegir predicciones CSV y habilitar distribución de probabilidades. Re-evaluate model on current test set desde el modelo cargado.
-10. Usar la probabilidad de **si**, no la de la clase elegida, y marcar alerta si es >= 0,15. Los CSV entregados ya aplican esta regla. No interpretar la etiqueta predicha al umbral predeterminado 0,5 como si fuera la del informe.
-
-Los resultados de 4.000 casos incluyen etiquetas sintéticas de referencia añadidas **después** de predecir; sus ARFF de entrada llevan clase ?. No se usaron las notas futuras para calcular la puntuación.
-
-## Reproducir exactamente con comandos
-
-Requisitos: Java 21 o compatible, WEKA 3.8.6 instalado y Python 3.11 o posterior. Los scripts de análisis y validación usan solo la biblioteca estándar de Python. Para regenerar el PDF se necesita además reportlab.
-
-Extraer el ZIP en una ruta corta como `C:\StockQuestLab\refuerzo7dias`. Abrir PowerShell en la carpeta que contiene este README. Ajustar `$wekaDir` a la instalación real:
+Requisitos: Java 21 compatible, WEKA 3.8.6 y Python 3.11+. Los scripts de datos y validación usan biblioteca estándar; regenerar el PDF requiere reportlab y pypdf. Extraer el paquete completo en una ruta corta, conservando las carpetas `entregables` y `output`. Abrir PowerShell en esta carpeta de refuerzo.
 
 ```powershell
 $wekaDir = 'C:\Program Files\Weka-3-8-6'
-if (!(Test-Path (Join-Path $wekaDir 'weka.jar'))) {
-    throw 'Ajusta wekaDir a la carpeta que contiene weka.jar.'
-}
+if (!(Test-Path (Join-Path $wekaDir 'weka.jar'))) { throw 'Ajusta wekaDir a tu instalación.' }
 $cp = "$wekaDir\weka.jar;$wekaDir\*;$wekaDir\lib\*"
 
-java -Xmx512m -cp $cp .\VerificarRefuerzo.java .
-if ($LASTEXITCODE -ne 0) { throw 'Falló la lectura de los ARFF.' }
+# Solo si quieres regenerar: usar una copia; se sobrescriben los archivos generados.
+python .\ajustar_calidad.py
+if ($LASTEXITCODE -ne 0) { throw 'Falló la preparación.' }
 
-java -Xmx512m -cp $cp .\EntrenarRefuerzo.java .
-if ($LASTEXITCODE -ne 0) { throw 'Falló el entrenamiento.' }
+java -Xmx512m -cp $cp .\LimpiezaRefuerzo.java .
+if ($LASTEXITCODE -ne 0) { throw 'Falló la limpieza.' }
 
+java -Xmx512m -cp $cp .\LimpiezaRefuerzo.java . verificar-guia
+if ($LASTEXITCODE -ne 0) { throw 'La guía manual no coincidió.' }
+
+New-Item -ItemType Directory -Force .\runtime-classes | Out-Null
+javac -cp $cp -d .\runtime-classes .\LimpiezaRefuerzo.java .\EntrenarRefuerzo.java
+if ($LASTEXITCODE -ne 0) { throw 'Falló la compilación.' }
+$cpModelo = "$cp;.\runtime-classes"
+java -Xmx512m -cp $cpModelo EntrenarRefuerzo .
+if ($LASTEXITCODE -ne 0) { throw 'Falló el modelo con limpieza.' }
 python .\analizar_resultados.py
 if ($LASTEXITCODE -ne 0) { throw 'Falló el análisis.' }
 
-python .\validar_entrega.py
+java -Xmx512m -cp $cpModelo EntrenarRefuerzo . sin-limpieza
+if ($LASTEXITCODE -ne 0) { throw 'Falló la comparación sin limpieza.' }
+python .\analizar_resultados.py --sin-limpieza
+if ($LASTEXITCODE -ne 0) { throw 'Falló el análisis comparativo.' }
+
+python .\validar_calidad_v2.py
 if ($LASTEXITCODE -ne 0) { throw 'Falló la validación.' }
+java -Xmx512m -cp $cp .\VerificarRefuerzo.java .
+if ($LASTEXITCODE -ne 0) { throw 'Falló la lectura de ARFF crudos.' }
 ```
 
-Para cargar el modelo guardado y producir puntuaciones sin reentrenar:
+Para predecir sin volver a entrenar:
 
 ```powershell
-java -Xmx512m -cp $cp .\EntrenarRefuerzo.java predict `
+java -Xmx512m -cp $cpModelo EntrenarRefuerzo predict `
     .\resultados\refuerzo_7dias.model `
     .\weka\predecir_ultimo_corte_4000.arff `
     .\resultados\nuevas_probabilidades.csv
-if ($LASTEXITCODE -ne 0) { throw 'Falló la inferencia.' }
-
+if ($LASTEXITCODE -ne 0) { throw 'Falló la predicción.' }
 $puntajes = Import-Csv .\resultados\nuevas_probabilidades.csv
 $alertas = $puntajes | Where-Object {
     [double]::Parse($_.probabilidad_refuerzo, [Globalization.CultureInfo]::InvariantCulture) -ge 0.15
@@ -139,19 +120,16 @@ $alertas = $puntajes | Where-Object {
 $alertas | Export-Csv .\resultados\nuevas_alertas.csv -NoTypeInformation -Encoding UTF8
 ```
 
-Las notas de referencia de diciembre no son necesarias para este comando de predicción. Solo sirven después para comprobar aciertos. Para datos nuevos se necesitan el mismo esquema y orden, fecha de corte correcta, indicadores calculados hasta esa fecha y clase ?. Validar que la instrumentación real coincide con las definiciones del generador.
+La clase si está en la segunda posición. La clasificación estándar por clase más probable de WEKA no reproduce automáticamente el umbral 0,15: usar la puntuación de si. La clase de los 4.000 casos de inferencia es ?. Las referencias futuras se añaden después para auditar; no son necesarias para obtener puntuaciones.
 
-Para regenerar todos los datos, **usar una copia de la entrega**, porque se sobrescriben los archivos generados:
+En Explorer puedes cargar el modelo guardado desde la lista de resultados y reevaluar el ARFF crudo de inferencia con salida de probabilidades. Para reproducir la selección exacta y aplicar el umbral personalizado, usar los comandos anteriores. No utilizar validación cruzada aleatoria para este pronóstico.
 
-```powershell
-python .\preparar_refuerzo.py
-if ($LASTEXITCODE -ne 0) { throw 'Falló la generación.' }
-```
+`preparar_refuerzo.py` y el generador de la carpeta de diagnóstico redirigen a la preparación V2. El generador base V1 se conserva separado, exclusivamente para reproducir la simulación inicial en una carpeta aislada. No ejecutarlo sobre los archivos vigentes.
 
-Se incluye el generador original y su control. Dentro del repositorio usa el dataset diagnóstico vecino; fuera de él usa las copias incluidas. Para regenerar el PDF, instalar reportlab si falta y ejecutar `python crear_informe.py`. Si se usa fuera del checkout, el script sitúa la salida en `output/pdf` dos niveles por encima de su carpeta; el PDF terminado ya está incluido en el ZIP.
+## Límites y validaciones pendientes
 
-## Próximas mejoras
+La detección perfecta de las anomalías inyectadas se debe a su separación didáctica; no valida un detector de anomalías reales. La imputación no recupera valores verdaderos. Las variables propuestas (minutos, pretest, nuevas evaluaciones, primer intento por sesión, asociación simulación-módulo) requieren instrumentación real. El modelo evalúa semanas posteriores de los mismos aprendices sintéticos; no generalización a nuevas personas ni eficacia de una intervención.
 
-Validar rúbrica e indicadores con el responsable pedagógico. Recoger datos reales con permisos apropiados. Calibrar puntuaciones, revisar errores por módulo, acordar capacidad de atención y una política más selectiva. Seleccionar cambios con nueva validación y reservar una prueba futura nueva: no seguir ajustando contra las métricas ya publicadas. Evaluar nuevos aprendices por separado. Integrar en la aplicación solo después de esa validación.
+Faltan validación pedagógica, calibración, una política de atención más selectiva, evaluación por subgrupos y nuevos aprendices, y validación prospectiva con datos reales. No se conectó este modelo a la aplicación ni se modificaron sus bases.
 
-Referencias técnicas: [FilteredClassifier/J48](https://weka.sourceforge.io/doc.stable-3-8/weka/classifiers/meta/FilteredClassifier.html), [J48](https://weka.sourceforge.io/doc.stable/weka/classifiers/trees/J48.html), [separación temporal](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html). No se utilizó scikit-learn para entrenar.
+Documentación técnica de filtros y del procedimiento manual: [guía WEKA](GUIA-LIMPIEZA-WEKA-V2.md). Fuentes del clasificador: [FilteredClassifier/J48](https://weka.sourceforge.io/doc.stable-3-8/weka/classifiers/meta/FilteredClassifier.html). Criterio temporal: [TimeSeriesSplit y gap](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html). No se entrenó con scikit-learn.

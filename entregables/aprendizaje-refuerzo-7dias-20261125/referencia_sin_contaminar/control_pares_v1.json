@@ -1,0 +1,111 @@
+{
+  "synthetic": true,
+  "seed": 20261125,
+  "rowsEachDiagnostic": 100000,
+  "fieldsEachDiagnostic": 15,
+  "originalRowsPreservedExactly": 100000,
+  "pairedExactly7Days": 100000,
+  "additionalDailyRows": 28000,
+  "sourceFeatureDates": [
+    "2026-06-09",
+    "2026-11-24"
+  ],
+  "futureObservationDates": [
+    "2026-06-16",
+    "2026-12-01"
+  ],
+  "riskDefinition": "independent synthetic assessment at t+7 < 60; provisional didactic rubric",
+  "labelAt15": "requiere_refuerzo_7dias {no,si}",
+  "predictors": "original fields 1-14 at t; Remove 1-2 excludes ID/date inside fitted model",
+  "futureObservationsNeverUsedAsFeatures": true,
+  "latestInferenceRows": 4000,
+  "currentDistribution": {
+    "inicial": 38378,
+    "avanzado": 19014,
+    "intermedio": 42608
+  },
+  "futureDistribution": {
+    "inicial": 37087,
+    "intermedio": 43418,
+    "avanzado": 19495
+  },
+  "transitionMatrix": {
+    "inicial": {
+      "inicial": 25152,
+      "intermedio": 11661,
+      "avanzado": 1565
+    },
+    "intermedio": {
+      "inicial": 10505,
+      "intermedio": 22949,
+      "avanzado": 9154
+    },
+    "avanzado": {
+      "inicial": 1430,
+      "intermedio": 8808,
+      "avanzado": 8776
+    }
+  },
+  "splits": {
+    "entrenamiento": {
+      "rows": 64000,
+      "featureFirst": "2026-06-09",
+      "featureLast": "2026-09-22",
+      "labelFirst": "2026-06-16",
+      "labelLast": "2026-09-29"
+    },
+    "separacion_1": {
+      "rows": 4000,
+      "featureFirst": "2026-09-29",
+      "featureLast": "2026-09-29",
+      "labelFirst": "2026-10-06",
+      "labelLast": "2026-10-06"
+    },
+    "validacion": {
+      "rows": 12000,
+      "featureFirst": "2026-10-06",
+      "featureLast": "2026-10-20",
+      "labelFirst": "2026-10-13",
+      "labelLast": "2026-10-27"
+    },
+    "separacion_2": {
+      "rows": 4000,
+      "featureFirst": "2026-10-27",
+      "featureLast": "2026-10-27",
+      "labelFirst": "2026-11-03",
+      "labelLast": "2026-11-03"
+    },
+    "prueba": {
+      "rows": 16000,
+      "featureFirst": "2026-11-03",
+      "featureLast": "2026-11-24",
+      "labelFirst": "2026-11-10",
+      "labelLast": "2026-12-01"
+    }
+  },
+  "evaluationScope": "Same synthetic learners, later weeks; not unseen-learner or real-world validation",
+  "hashes": {
+    "actividad_semana_adicional_28000.csv": "f56f9a0dd006040953b39e984d59be393776b77d18b5b7a023d909aa8628a0c1",
+    "catalogo_modulos.csv": "09371c79364a5d9b1f070977e52bef44bbe5375bac29432303687cfdd8cabcf5",
+    "contraste_actual_vs_7dias_100000.csv": "4988a8cc48f74d8edb0e24753fb3c7c3b9ab056f9be171918680bc6574482cd0",
+    "diagnostico_7dias_despues_100000_15.arff": "27229eff6c36fbaf6c50e4b26e9f8908ac57a208cb25a78a9041367c066ec8c4",
+    "diagnostico_7dias_despues_100000_15.csv": "56397a1818fd7f8d55335a549c1c1bce7635c2a9cba84471a0aa1a46f2b844ff",
+    "diagnostico_actual_100000_15.arff": "39d7c3deb2d14f5da4be32df3d5f0c97f8746cf17f7484ec696b9a6f9e925b01",
+    "diagnostico_actual_100000_15.csv": "58c9909ebdf8080ae8e78847186e6ed9038bf3ca385667db0b7bd49db35aa7e6",
+    "modelado/refuerzo_7dias_100000_15.arff": "b61a9925eb94763ae547dbed21779b0bd7b6e5f3864febc612b6f99b2079834c",
+    "modelado/refuerzo_7dias_100000_15.csv": "a4b6c72a25ed42120b3f45e4383a16003e7947f81a26bb09a10795b795185824",
+    "referencia_evaluaciones_104000_NO_PREDICTORES.csv": "e8fb09c28fe6ee6172c175c7524758bd2c6db1987bdd462a3c590ba6dee2af15",
+    "weka/entrenamiento.arff": "8e3392fadc289620625d2c63b04ac083844d15b23cff03a82b7f3135b9b4ceb9",
+    "weka/entrenamiento.csv": "c51770c859b8f0c134ee9acb9dbeb57439ab6c0c0a623c3b03928cb4d866b6db",
+    "weka/predecir_ultimo_corte_4000.arff": "de7855fc1168e968a17b050e08b7c7d49e6e321143856c012044c8a79ed50936",
+    "weka/predecir_ultimo_corte_4000.csv": "5ade14b232b48e50ee9b77fc5fc2dda9af50c6e506a3be86e41c919937eb977f",
+    "weka/prueba.arff": "83302e9fe680f2667f67419e9ad00ba718b1ed4b4af4ec9b40195e136cbdbceb",
+    "weka/prueba.csv": "2c52f150300deddacf474ae2f2cb72a5077860812095cf254b13abb5c168421e",
+    "weka/separacion_1.arff": "f464cc73b452405898f6cf82a118efba8f3fb75eba738dd40315d4c9d2e825eb",
+    "weka/separacion_1.csv": "4da02a5e14175cece85c2f1e8e23d81663c1ee83a5befbc97f36c190fa983a58",
+    "weka/separacion_2.arff": "262b8c4c85b75e97f81daed1f324ce853d517e121d617974c8bcdaf8061b7a1d",
+    "weka/separacion_2.csv": "1a04f8bc8464d6f90c982aa1d04659ca6e2cf316c85f695ec0ab7aaa0d52c333",
+    "weka/validacion.arff": "9bed21a3139e1b8047d97212ac9d5844c24e00f78475e62fb5c7c9faeb4a9e1f",
+    "weka/validacion.csv": "077338d7eb60f3499d18fab81d87a91348217ce731a03a97c349ff42b415e680"
+  }
+}

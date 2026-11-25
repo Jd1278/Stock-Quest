@@ -1,7 +1,7 @@
 from pathlib import Path
 from collections import Counter, defaultdict
 from datetime import date,timedelta
-import csv, json, math, shutil, os
+import csv, json, math, shutil, os,sys
 
 ROOT=Path(__file__).resolve().parent
 if os.name=='nt' and not str(ROOT).startswith('\\\\?\\'):ROOT=Path('\\\\?\\'+str(ROOT))
@@ -11,7 +11,7 @@ def dump(p,obj):p.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',en
 def write(p,rows):
     with p.open('w',encoding='utf-8',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
-def key(r):return r['id_aprendiz_sintetico'],r.get('fecha_corte',r.get('fecha_actual')),r['modulo']
+def key(r):return r['id_aprendiz_sintetico'],r.get('fecha_corte',r.get('fecha_actual')),r['modulo'].upper()
 
 def metrics(y,p,t):
     tp=sum(a and b>=t for a,b in zip(y,p));fn=sum(a and b<t for a,b in zip(y,p))
@@ -33,7 +33,8 @@ def metrics(y,p,t):
 
 def main():
     contrast=read(ROOT/'contraste_actual_vs_7dias_100000.csv');by_key={key(r):r for r in contrast}
-    results=ROOT/'resultados';candidates=[]
+    raw_only='--sin-limpieza' in sys.argv
+    results=ROOT/('resultados_sin_limpieza' if raw_only else 'resultados');candidates=[]
     # Elegir exclusivamente con validacion, sin consultar las etiquetas de prueba.
     for minimum in [20,100]:
         val=read(results/f'M{minimum}/validacion_probabilidades.csv')
@@ -66,7 +67,7 @@ def main():
         assert r['clase_referencia']=='?'
         c=by_key[key(r)];p=float(r['probabilidad_refuerzo']);alert=p>=threshold
         # Reference fields appended only AFTER score generation for synthetic audit.
-        predictions.append({'id_aprendiz_sintetico':r['id_aprendiz_sintetico'],'modulo':r['modulo'],
+        predictions.append({'id_aprendiz_sintetico':r['id_aprendiz_sintetico'],'modulo':r['modulo'].upper(),
             'fecha_corte':r['fecha_corte'],'fecha_objetivo':c['fecha_objetivo'],
             'probabilidad_modelo_no_calibrada':p,'umbral_alerta':threshold,
             'alerta_refuerzo':'si' if alert else 'no','nivel_actual_referencia':c['nivel_actual_referencia'],
@@ -99,7 +100,9 @@ def main():
     latest_current=Counter(r['nivel_actual_referencia'] for r in predictions)
     latest_future=Counter(r['nivel_7dias_referencia_sintetica'] for r in predictions)
     latest_transition=Counter((r['nivel_actual_referencia'],r['nivel_7dias_referencia_sintetica']) for r in predictions)
-    model_report={'syntheticOnly':True,'weka':'3.8.6','algorithm':'FilteredClassifier(Remove 1-2, J48 Laplace C=.25)',
+    model_report={'syntheticOnly':True,'datasetVersion':2,'weka':'3.8.6',
+        'cleaningApplied':not raw_only,
+        'algorithm':'FilteredClassifier('+('Remove 1-2' if raw_only else 'MultiFilter: limpieza WEKA + Remove 1-2')+', J48 Laplace C=.25)',
         'selectedMinNumObj':minimum,'selectedThreshold':threshold,'thresholdCriterion':'validation F2',
         'calibratedProbabilities':False,'trainingRows':64000,'trainingPrevalence':train_prevalence,
         'testUsedToTune':False,'metrics':summaries,'allPairedNewRiskCases':new_risk,
@@ -115,6 +118,8 @@ def main():
         'persistenceBaselineCaveat':'Uses independent current assessment unavailable to this predictor; useful stronger reference, not identical information budget',
         'action':'Human review and optional practice; never punitive or automatic pass/fail decisions'}
     dump(results/'metricas_modelo.json',model_report)
-    print(json.dumps(model_report,ensure_ascii=False,indent=2))
+    print(json.dumps({'cleaningApplied':not raw_only,'minimum':minimum,'threshold':threshold,
+        'test':summaries['prueba']['model'],'latestAlerts':len(alerts),
+        'learnersWithAlert':model_report['latest']['learnersWithAtLeastOneAlert']},indent=2))
 
 if __name__=='__main__':main()

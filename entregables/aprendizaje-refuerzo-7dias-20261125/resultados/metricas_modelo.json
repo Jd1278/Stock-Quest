@@ -1,8 +1,10 @@
 {
   "syntheticOnly": true,
+  "datasetVersion": 2,
   "weka": "3.8.6",
-  "algorithm": "FilteredClassifier(Remove 1-2, J48 Laplace C=.25)",
-  "selectedMinNumObj": 100,
+  "cleaningApplied": true,
+  "algorithm": "FilteredClassifier(MultiFilter: limpieza WEKA + Remove 1-2, J48 Laplace C=.25)",
+  "selectedMinNumObj": 20,
   "selectedThreshold": 0.15,
   "thresholdCriterion": "validation F2",
   "calibratedProbabilities": false,
@@ -14,20 +16,20 @@
       "model": {
         "rows": 12000,
         "positives": 3513,
-        "alerts": 10198,
-        "TP": 3346,
-        "FN": 167,
-        "FP": 6852,
-        "TN": 1635,
-        "accuracy": 0.41508333333333336,
-        "precision": 0.3281035497156305,
-        "recall": 0.9524622829490464,
-        "specificity": 0.19264757864969953,
-        "F1": 0.4880752680329662,
-        "F2": 0.6898969072164948,
-        "ROC_AUC": 0.7330628672689776,
-        "average_precision": 0.5267091164981875,
-        "Brier": 0.1809563147789759
+        "alerts": 7951,
+        "TP": 3027,
+        "FN": 486,
+        "FP": 4924,
+        "TN": 3563,
+        "accuracy": 0.5491666666666667,
+        "precision": 0.38070682932964406,
+        "recall": 0.8616567036720751,
+        "specificity": 0.41981854601154706,
+        "F1": 0.5280879274249825,
+        "F2": 0.6878607462618733,
+        "ROC_AUC": 0.7355052255704552,
+        "average_precision": 0.5350812539501288,
+        "Brier": 0.18041835957330135
       },
       "majorityBaseline": {
         "rows": 12000,
@@ -88,20 +90,20 @@
       "model": {
         "rows": 16000,
         "positives": 4511,
-        "alerts": 13577,
-        "TP": 4234,
-        "FN": 277,
-        "FP": 9343,
-        "TN": 2146,
-        "accuracy": 0.39875,
-        "precision": 0.31185092435736905,
-        "recall": 0.9385945466637109,
-        "specificity": 0.18678736182435374,
-        "F1": 0.4681556833259619,
-        "F2": 0.6694917934284177,
-        "ROC_AUC": 0.7108164761377972,
-        "average_precision": 0.49302108854780535,
-        "Brier": 0.18350061368636336
+        "alerts": 10295,
+        "TP": 3819,
+        "FN": 692,
+        "FP": 6476,
+        "TN": 5013,
+        "accuracy": 0.552,
+        "precision": 0.37095677513355996,
+        "recall": 0.8465972068277544,
+        "specificity": 0.4363304029941683,
+        "F1": 0.515871943806565,
+        "F2": 0.6738064151875507,
+        "ROC_AUC": 0.7244021388978488,
+        "average_precision": 0.5144745839047802,
+        "Brier": 0.18005210122121712
       },
       "majorityBaseline": {
         "rows": 16000,
@@ -161,20 +163,20 @@
     "ultimo_corte": {
       "rows": 4000,
       "positives": 1126,
-      "alerts": 3410,
-      "TP": 1051,
-      "FN": 75,
-      "FP": 2359,
-      "TN": 515,
-      "accuracy": 0.3915,
-      "precision": 0.3082111436950147,
-      "recall": 0.933392539964476,
-      "specificity": 0.1791927627000696,
-      "F1": 0.46340388007054667,
-      "F2": 0.664013141268638,
-      "ROC_AUC": 0.7114110893154898,
-      "average_precision": 0.5076861989690128,
-      "Brier": 0.18261007223023315
+      "alerts": 2570,
+      "TP": 948,
+      "FN": 178,
+      "FP": 1622,
+      "TN": 1252,
+      "accuracy": 0.55,
+      "precision": 0.3688715953307393,
+      "recall": 0.8419182948490231,
+      "specificity": 0.43562978427279053,
+      "F1": 0.5129870129870131,
+      "F2": 0.6700593723494488,
+      "ROC_AUC": 0.726134721660851,
+      "average_precision": 0.5180598843677355,
+      "Brier": 0.17800661911809754
     }
   },
   "allPairedNewRiskCases": 11935,
@@ -183,38 +185,47 @@
     "target": "2026-12-01",
     "moduleCases": 4000,
     "learners": 2000,
-    "moduleAlerts": 3410,
-    "learnersWithAtLeastOneAlert": 1897,
+    "moduleAlerts": 2570,
+    "learnersWithAtLeastOneAlert": 1658,
     "currentLevels": {
       "inicial": 1135,
-      "avanzado": 1006,
-      "intermedio": 1859
+      "intermedio": 1859,
+      "avanzado": 1006
     },
     "futureLevels": {
-      "inicial": 1126,
       "intermedio": 1824,
+      "inicial": 1126,
       "avanzado": 1050
     },
     "observedNewRiskSynthetic": 478,
-    "newAlertsAmongCurrentlyNonInitial": 2334,
-    "detectedNewRiskSynthetic": 419,
+    "newAlertsAmongCurrentlyNonInitial": 1611,
+    "detectedNewRiskSynthetic": 355,
     "top10Learners": [
+      {
+        "id_aprendiz_sintetico": "A0010",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M05;M01",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
+        "requiere_revision": "si"
+      },
       {
         "id_aprendiz_sintetico": "A0052",
         "fecha_corte": "2026-11-24",
         "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M07;M02",
+        "modulos_con_alerta": "M02;M07",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
-        "id_aprendiz_sintetico": "A0072",
+        "id_aprendiz_sintetico": "A0062",
         "fecha_corte": "2026-11-24",
         "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M09;M04",
-        "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "modulos_con_alerta": "M03",
+        "cantidad_modulos_con_alerta": 1,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
@@ -223,16 +234,16 @@
         "fecha_objetivo": "2026-12-01",
         "modulos_con_alerta": "M05;M01",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
-        "id_aprendiz_sintetico": "A0098",
+        "id_aprendiz_sintetico": "A0131",
         "fecha_corte": "2026-11-24",
         "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M03;M08",
+        "modulos_con_alerta": "M05;M09",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
@@ -241,25 +252,7 @@
         "fecha_objetivo": "2026-12-01",
         "modulos_con_alerta": "M05;M09",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
-        "requiere_revision": "si"
-      },
-      {
-        "id_aprendiz_sintetico": "A0157",
-        "fecha_corte": "2026-11-24",
-        "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M04;M08",
-        "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
-        "requiere_revision": "si"
-      },
-      {
-        "id_aprendiz_sintetico": "A0166",
-        "fecha_corte": "2026-11-24",
-        "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M04;M08",
-        "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
@@ -268,29 +261,38 @@
         "fecha_objetivo": "2026-12-01",
         "modulos_con_alerta": "M04;M09",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
-        "id_aprendiz_sintetico": "A0194",
+        "id_aprendiz_sintetico": "A0262",
         "fecha_corte": "2026-11-24",
         "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M05;M09",
+        "modulos_con_alerta": "M01;M05",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       },
       {
-        "id_aprendiz_sintetico": "A0209",
+        "id_aprendiz_sintetico": "A0273",
         "fecha_corte": "2026-11-24",
         "fecha_objetivo": "2026-12-01",
-        "modulos_con_alerta": "M06;M02",
+        "modulos_con_alerta": "M03;M07",
         "cantidad_modulos_con_alerta": 2,
-        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0274",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M04;M08",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.882209944751,
         "requiere_revision": "si"
       }
     ],
-    "learnersTiedAtHighestModuleRisk": 91,
+    "learnersTiedAtHighestModuleRisk": 68,
     "transition": {
       "inicial": {
         "inicial": 648,

@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "version": 2,
+  "datasets": {
+    "actual": {
+      "rawRows": 100000,
+      "cleanRows": 100000,
+      "fields": 15,
+      "rawGroups": {
+        "sucio": 10000,
+        "sin_alteracion": 80000,
+        "atipico": 10000
+      },
+      "outliersDetectedAndRepaired": 10000,
+      "dirtyRowsRepaired": 10000,
+      "preexistingMissingCellsImputed": 73393,
+      "changesByReason": {
+        "modulo_minusculas": 2500,
+        "faltante_preexistente_imputado": 73393,
+        "puntaje_negativo": 2500,
+        "nota_mayor_100": 2500,
+        "proporcion_mayor_1": 2500,
+        "minutos_extremos": 10000
+      },
+      "remainingMissingCells": 0
+    },
+    "futuro": {
+      "rawRows": 100000,
+      "cleanRows": 100000,
+      "fields": 15,
+      "rawGroups": {
+        "sin_alteracion": 80000,
+        "sucio": 10000,
+        "atipico": 10000
+      },
+      "outliersDetectedAndRepaired": 10000,
+      "dirtyRowsRepaired": 10000,
+      "preexistingMissingCellsImputed": 69642,
+      "changesByReason": {
+        "faltante_preexistente_imputado": 69642,
+        "modulo_minusculas": 2500,
+        "minutos_extremos": 10000,
+        "nota_mayor_100": 2500,
+        "puntaje_negativo": 2500,
+        "proporcion_mayor_1": 2500
+      },
+      "remainingMissingCells": 0
+    }
+  },
+  "sharedRawAndCleanObservations": 96000,
+  "pairedExactly7Days": 100000,
+  "imputationMeansIndependentlyRecomputedFromTraining": true,
+  "allRawDataHashesVerified": true,
+  "futureFeaturesOutsidePredictors": true,
+  "predictionsChecked": 4000,
+  "learnersChecked": 2000,
+  "temporalGapsChecked": true,
+  "labelsPreserved": true,
+  "cleaningRestoresOriginalTrueValues": false,
+  "note": "Imputation estimates damaged/missing values; it does not recover lost true measurements."
+}
