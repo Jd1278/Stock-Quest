@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "rows": 100000,
+  "fields": 15,
+  "learners": 2000,
+  "learnerModulePairs": 4000,
+  "snapshotsPerPair": 25,
+  "dailyEventsReconciled": 700000,
+  "weeklyAggregatesReconciled": 100000,
+  "labelsFromIndependentAssessmentReconciled": 100000,
+  "classCounts": {
+    "inicial": 38378,
+    "avanzado": 19014,
+    "intermedio": 42608
+  },
+  "missingByField": {
+    "puntaje_medio_simulaciones_7dias": 45230,
+    "mejora_semanal": 15699,
+    "nota_media_desafios_7dias": 6843,
+    "acierto_primer_intento_7dias": 6843,
+    "dias_desde_ultima_actividad": 234
+  },
+  "learnersDisjointAcrossSplits": true,
+  "unknownCurrentDiagnosisCases": 4000,
+  "checks": [
+    "unique learner/module/cut",
+    "consecutive weekly dates",
+    "nondecreasing lesson completion",
+    "weekly features reconstructed from preceding daily activity",
+    "scores only missing without observations",
+    "labels verified against held-out current assessment",
+    "no current assessment score among predictors",
+    "no learner overlap across splits",
+    "all CSV/ARFF SHA-256 verified"
+  ],
+  "WEKAModelTrained": false,
+  "educatorRubricValidation": false,
+  "future7DayForecastCreated": false
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "pairedRows": 100000,
+  "fieldsPerDataset": 15,
+  "priorRowsReconciled": 96000,
+  "newWeeklyCasesReconciledWithDailyEvents": 4000,
+  "newDailyEvents": 28000,
+  "temporalGapBetweenPartitions": true,
+  "futureLabelsOutsideFeatures": true,
+  "latestPredictions": 4000,
+  "learnersPrioritized": 2000,
+  "calibrationValidated": false,
+  "realWorldValidation": false,
+  "checks": [
+    "one-to-one learner/module pairing",
+    "exactly seven days",
+    "15 fields and original features preserved",
+    "independent 20-item reference labels",
+    "nonoverlapping temporal partitions with gaps",
+    "all exported data hashes",
+    "new weekly aggregates from daily events",
+    "prediction threshold and counts"
+  ]
+}

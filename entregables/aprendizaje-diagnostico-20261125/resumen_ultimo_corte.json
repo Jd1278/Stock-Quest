@@ -1,0 +1,64 @@
+{
+  "synthetic": true,
+  "cut": "2026-11-24",
+  "learnerModuleCases": 4000,
+  "learners": 2000,
+  "levels": {
+    "avanzado": 1006,
+    "intermedio": 1859,
+    "inicial": 1135
+  },
+  "percentages": {
+    "avanzado": 25.15,
+    "intermedio": 46.48,
+    "inicial": 28.38
+  },
+  "byModule": {
+    "M01": {
+      "avanzado": 121,
+      "intermedio": 202,
+      "inicial": 122
+    },
+    "M05": {
+      "intermedio": 204,
+      "avanzado": 82,
+      "inicial": 159
+    },
+    "M02": {
+      "avanzado": 115,
+      "inicial": 101,
+      "intermedio": 229
+    },
+    "M06": {
+      "avanzado": 106,
+      "intermedio": 206,
+      "inicial": 133
+    },
+    "M03": {
+      "inicial": 108,
+      "intermedio": 201,
+      "avanzado": 135
+    },
+    "M07": {
+      "inicial": 133,
+      "intermedio": 195,
+      "avanzado": 116
+    },
+    "M04": {
+      "inicial": 160,
+      "intermedio": 201,
+      "avanzado": 83
+    },
+    "M08": {
+      "inicial": 124,
+      "intermedio": 219,
+      "avanzado": 101
+    },
+    "M09": {
+      "avanzado": 147,
+      "intermedio": 202,
+      "inicial": 95
+    }
+  },
+  "meaning": "Synthetic independent assessment labels; not predictions and not real application users"
+}

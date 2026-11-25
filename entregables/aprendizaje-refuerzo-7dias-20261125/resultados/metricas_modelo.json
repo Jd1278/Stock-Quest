@@ -1,0 +1,315 @@
+{
+  "syntheticOnly": true,
+  "weka": "3.8.6",
+  "algorithm": "FilteredClassifier(Remove 1-2, J48 Laplace C=.25)",
+  "selectedMinNumObj": 100,
+  "selectedThreshold": 0.15,
+  "thresholdCriterion": "validation F2",
+  "calibratedProbabilities": false,
+  "trainingRows": 64000,
+  "trainingPrevalence": 0.417234375,
+  "testUsedToTune": false,
+  "metrics": {
+    "validacion": {
+      "model": {
+        "rows": 12000,
+        "positives": 3513,
+        "alerts": 10198,
+        "TP": 3346,
+        "FN": 167,
+        "FP": 6852,
+        "TN": 1635,
+        "accuracy": 0.41508333333333336,
+        "precision": 0.3281035497156305,
+        "recall": 0.9524622829490464,
+        "specificity": 0.19264757864969953,
+        "F1": 0.4880752680329662,
+        "F2": 0.6898969072164948,
+        "ROC_AUC": 0.7330628672689776,
+        "average_precision": 0.5267091164981875,
+        "Brier": 0.1809563147789759
+      },
+      "majorityBaseline": {
+        "rows": 12000,
+        "positives": 3513,
+        "alerts": 0,
+        "TP": 0,
+        "FN": 3513,
+        "FP": 0,
+        "TN": 8487,
+        "accuracy": 0.70725,
+        "precision": 0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "F1": 0,
+        "F2": 0,
+        "ROC_AUC": 0.5,
+        "average_precision": 0.29275,
+        "Brier": 0.22254379711914063
+      },
+      "alertEveryoneBaseline": {
+        "rows": 12000,
+        "positives": 3513,
+        "alerts": 12000,
+        "TP": 3513,
+        "FN": 0,
+        "FP": 8487,
+        "TN": 0,
+        "accuracy": 0.29275,
+        "precision": 0.29275,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "F1": 0.4529104621929994,
+        "F2": 0.6742284661446338,
+        "ROC_AUC": 0.5,
+        "average_precision": 0.29275,
+        "Brier": 0.70725
+      },
+      "persistenceWithIndependentCurrentAssessment": {
+        "rows": 12000,
+        "positives": 3513,
+        "alerts": 3591,
+        "TP": 2066,
+        "FN": 1447,
+        "FP": 1525,
+        "TN": 6962,
+        "accuracy": 0.7523333333333333,
+        "precision": 0.5753272069061542,
+        "recall": 0.5881013378878451,
+        "specificity": 0.8203134205255096,
+        "F1": 0.5816441441441441,
+        "F2": 0.5855013319730203,
+        "ROC_AUC": 0.7042073792066774,
+        "average_precision": 0.4589340334381198,
+        "Brier": 0.24766666666666667
+      }
+    },
+    "prueba": {
+      "model": {
+        "rows": 16000,
+        "positives": 4511,
+        "alerts": 13577,
+        "TP": 4234,
+        "FN": 277,
+        "FP": 9343,
+        "TN": 2146,
+        "accuracy": 0.39875,
+        "precision": 0.31185092435736905,
+        "recall": 0.9385945466637109,
+        "specificity": 0.18678736182435374,
+        "F1": 0.4681556833259619,
+        "F2": 0.6694917934284177,
+        "ROC_AUC": 0.7108164761377972,
+        "average_precision": 0.49302108854780535,
+        "Brier": 0.18350061368636336
+      },
+      "majorityBaseline": {
+        "rows": 16000,
+        "positives": 4511,
+        "alerts": 0,
+        "TP": 0,
+        "FN": 4511,
+        "FP": 0,
+        "TN": 11489,
+        "accuracy": 0.7180625,
+        "precision": 0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "F1": 0,
+        "F2": 0,
+        "ROC_AUC": 0.5,
+        "average_precision": 0.2819375,
+        "Brier": 0.22075399047851563
+      },
+      "alertEveryoneBaseline": {
+        "rows": 16000,
+        "positives": 4511,
+        "alerts": 16000,
+        "TP": 4511,
+        "FN": 0,
+        "FP": 11489,
+        "TN": 0,
+        "accuracy": 0.2819375,
+        "precision": 0.2819375,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "F1": 0.4398615377114719,
+        "F2": 0.6625249676888733,
+        "ROC_AUC": 0.5,
+        "average_precision": 0.2819375,
+        "Brier": 0.7180625
+      },
+      "persistenceWithIndependentCurrentAssessment": {
+        "rows": 16000,
+        "positives": 4511,
+        "alerts": 4532,
+        "TP": 2581,
+        "FN": 1930,
+        "FP": 1951,
+        "TN": 9538,
+        "accuracy": 0.7574375,
+        "precision": 0.5695057369814651,
+        "recall": 0.5721569496785636,
+        "specificity": 0.8301853947253895,
+        "F1": 0.5708282649563199,
+        "F2": 0.5716247342310419,
+        "ROC_AUC": 0.7011711722019766,
+        "average_precision": 0.44647166529575744,
+        "Brier": 0.2425625
+      }
+    },
+    "ultimo_corte": {
+      "rows": 4000,
+      "positives": 1126,
+      "alerts": 3410,
+      "TP": 1051,
+      "FN": 75,
+      "FP": 2359,
+      "TN": 515,
+      "accuracy": 0.3915,
+      "precision": 0.3082111436950147,
+      "recall": 0.933392539964476,
+      "specificity": 0.1791927627000696,
+      "F1": 0.46340388007054667,
+      "F2": 0.664013141268638,
+      "ROC_AUC": 0.7114110893154898,
+      "average_precision": 0.5076861989690128,
+      "Brier": 0.18261007223023315
+    }
+  },
+  "allPairedNewRiskCases": 11935,
+  "latest": {
+    "cut": "2026-11-24",
+    "target": "2026-12-01",
+    "moduleCases": 4000,
+    "learners": 2000,
+    "moduleAlerts": 3410,
+    "learnersWithAtLeastOneAlert": 1897,
+    "currentLevels": {
+      "inicial": 1135,
+      "avanzado": 1006,
+      "intermedio": 1859
+    },
+    "futureLevels": {
+      "inicial": 1126,
+      "intermedio": 1824,
+      "avanzado": 1050
+    },
+    "observedNewRiskSynthetic": 478,
+    "newAlertsAmongCurrentlyNonInitial": 2334,
+    "detectedNewRiskSynthetic": 419,
+    "top10Learners": [
+      {
+        "id_aprendiz_sintetico": "A0052",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M07;M02",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0072",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M09;M04",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0091",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M05;M01",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0098",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M03;M08",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0149",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M05;M09",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0157",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M04;M08",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0166",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M04;M08",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0189",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M04;M09",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0194",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M05;M09",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      },
+      {
+        "id_aprendiz_sintetico": "A0209",
+        "fecha_corte": "2026-11-24",
+        "fecha_objetivo": "2026-12-01",
+        "modulos_con_alerta": "M06;M02",
+        "cantidad_modulos_con_alerta": 2,
+        "maximo_indice_riesgo_modulo": 0.805274956993,
+        "requiere_revision": "si"
+      }
+    ],
+    "learnersTiedAtHighestModuleRisk": 91,
+    "transition": {
+      "inicial": {
+        "inicial": 648,
+        "intermedio": 409,
+        "avanzado": 78
+      },
+      "intermedio": {
+        "inicial": 411,
+        "intermedio": 978,
+        "avanzado": 470
+      },
+      "avanzado": {
+        "inicial": 67,
+        "intermedio": 437,
+        "avanzado": 502
+      }
+    }
+  },
+  "scope": "Later observations of same synthetic learners; probabilities uncalibrated; no real deployment or pedagogical certification",
+  "persistenceBaselineCaveat": "Uses independent current assessment unavailable to this predictor; useful stronger reference, not identical information budget",
+  "action": "Human review and optional practice; never punitive or automatic pass/fail decisions"
+}

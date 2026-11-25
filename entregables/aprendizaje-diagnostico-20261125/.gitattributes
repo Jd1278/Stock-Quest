@@ -1,0 +1,4 @@
+# Preserve dataset evidence and reproducible archive bytes on all platforms.
+* -text
+*.csv -text
+*.arff -text

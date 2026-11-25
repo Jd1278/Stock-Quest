@@ -1,0 +1,6 @@
+# Preserve manifest hashes for data, reports, models and reproducibility sources.
+* -text
+*.csv -text
+*.arff -text
+*.model -text
+*.pdf -text

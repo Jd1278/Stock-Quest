@@ -1,0 +1,16 @@
+posicion,campo,tipo_arff,descripcion
+1,id_aprendiz_sintetico,string,ID ficticio de trazabilidad; retirar antes de modelar.
+2,fecha_corte,"date ""yyyy-MM-dd""",Cierre semanal; la actividad agregada precede la evaluacion de ese corte.
+3,modulo,"{M01,M02,M03,M04,M05,M06,M07,M08,M09}","Uno de los nueve temas de Stock Quest, con codigo sintetico."
+4,nota_diagnostica_inicial,numeric,"Pretest inicial de diez preguntas, anterior a la actividad del periodo."
+5,lecciones_asignadas,numeric,Una leccion por modulo en el contenido actual de la aplicacion.
+6,lecciones_completadas,numeric,"Acumulado no decreciente, de cero a una leccion."
+7,minutos_estudio_7dias,numeric,Minutos simulados de actividad en este modulo durante siete dias.
+8,intentos_desafio_7dias,numeric,"Todos los intentos, correctos o incorrectos, en siete dias."
+9,nota_media_desafios_7dias,numeric,Media de notas 0/100 de los intentos; ? si no hubo intentos.
+10,acierto_primer_intento_7dias,numeric,Proporcion de primeras respuestas correctas por sesion de practica; ? si no hubo sesiones.
+11,simulaciones_completadas_7dias,numeric,Numero de simulaciones didacticas asignadas a este modulo; vinculacion propuesta.
+12,puntaje_medio_simulaciones_7dias,numeric,Media de puntajes de esas simulaciones; ? si no hubo simulaciones.
+13,dias_desde_ultima_actividad,numeric,Dias desde la ultima actividad del modulo; ? si nunca hubo actividad.
+14,mejora_semanal,numeric,Diferencia de medias de desafios entre dos semanas; ? si falta alguna de ellas.
+15,nivel_actual,"{inicial,intermedio,avanzado}","Etiqueta de evaluacion independiente actual: <60 inicial, [60,80) intermedio, >=80 avanzado."

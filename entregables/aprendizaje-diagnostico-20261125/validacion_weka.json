@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "wekaVersion": "3.8.6",
+  "ARFFFilesParsed": 5,
+  "instancesParsedIncludingPartitions": 204000,
+  "attributesBeforeFilter": 15,
+  "attributesAfterRemove1to2": 13,
+  "nominalClasses": 3,
+  "J48CapabilitiesOnLabeledPartitions": "PASS",
+  "modelTrained": false,
+  "warning": "Optional MTJ libraries unavailable; ARFF and J48 capability checks completed successfully"
+}
