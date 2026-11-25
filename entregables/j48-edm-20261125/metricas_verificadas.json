@@ -1,0 +1,74 @@
+{
+  "n": 100000,
+  "correctos": 99374,
+  "errores": 626,
+  "exactitud": 0.99374,
+  "kappa": 0.9900010172351709,
+  "acuerdo_azar": 0.3739363146,
+  "hojas": 167,
+  "nodos": 323,
+  "fuente": "D:\\Documentos\\Stock-Quest\\dataset_edm\\j48_resultados.txt",
+  "sha256_reporte": "83b390ca42e65bbeca75c3cbd3048db885caae6a301b8dc4123d93c0e15812dd",
+  "test_mode": "10-fold cross-validation",
+  "reentrenado": false,
+  "dataset": {
+    "filas": 100000,
+    "usuarios": 5000,
+    "duplicados_excedentes": 3333,
+    "filas_con_nulos": 3334,
+    "costos_negativos": 3333,
+    "tiempos_9999": 3334
+  },
+  "arff_presentes": {
+    "train_80.arff": {
+      "atributos": [
+        "user_id",
+        "nivel_experiencia_previa",
+        "horas_capacitacion_teorica",
+        "modulos_completados",
+        "puntaje_evaluacion_teorica",
+        "intentos_quiz",
+        "tiempo_lectura_contenido_seg",
+        "tasa_acierto_conceptual",
+        "simulacion_id",
+        "tiempo_decision_critica_seg",
+        "variacion_stock_seguridad_pct",
+        "frecuencia_consulta_pistas",
+        "cambios_orden_antes_confirmar",
+        "costo_operativo_resultante",
+        "quiebres_stock_generados",
+        "sobrecosto_almacenamiento",
+        "nivel_riesgo_asumido",
+        "clase_perfil_aprendiz",
+        "Outlier",
+        "ExtremeValue"
+      ],
+      "filas": 77333
+    },
+    "test_20.arff": {
+      "atributos": [
+        "user_id",
+        "nivel_experiencia_previa",
+        "horas_capacitacion_teorica",
+        "modulos_completados",
+        "puntaje_evaluacion_teorica",
+        "intentos_quiz",
+        "tiempo_lectura_contenido_seg",
+        "tasa_acierto_conceptual",
+        "simulacion_id",
+        "tiempo_decision_critica_seg",
+        "variacion_stock_seguridad_pct",
+        "frecuencia_consulta_pistas",
+        "cambios_orden_antes_confirmar",
+        "costo_operativo_resultante",
+        "quiebres_stock_generados",
+        "sobrecosto_almacenamiento",
+        "nivel_riesgo_asumido",
+        "clase_perfil_aprendiz",
+        "Outlier",
+        "ExtremeValue"
+      ],
+      "filas": 15466
+    }
+  }
+}

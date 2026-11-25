@@ -1,0 +1,4 @@
+# Modelos binarios reproducibles y compilación local; disponibles en este equipo.
+*.class
+modelos/*.model
+__pycache__/

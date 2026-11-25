@@ -1,0 +1,62 @@
+{
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1"
+  },
+  "raw_n": 100000,
+  "detected": {
+    "outlier_inyectado": 10000,
+    "nulo": 3334,
+    "formato_o_imposible": 3333,
+    "duplicado_excedente": 3333
+  },
+  "union_anomalies": 20000,
+  "reference_n": 80000,
+  "pre_iqr_n": 96667,
+  "injection": {
+    "limpio": 80000,
+    "outlier": 10000,
+    "nulo": 3334,
+    "formato_o_imposible": 3333,
+    "duplicado": 3333
+  },
+  "partition": {
+    "train_n": 77333,
+    "test_n": 15466,
+    "row_overlap": 15466,
+    "union_n": 77333,
+    "test_fraction_of_sum": 0.16666127867757197,
+    "test_subset_of_train": true,
+    "shared_users": 4839,
+    "shared_simulations": 15466,
+    "exact_80_20_counts": false,
+    "valid_disjoint_80_20": false,
+    "train_relation": "stockquest_edm_100000-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.instance.RemoveDuplicates-weka.filters.unsupervised.attribute.InterquartileRange-Rfirst-last-O3.0-E6.0-weka.filters.unsupervised.instance.Resample-S1-Z80.0-no-replacement",
+    "test_relation": "stockquest_edm_100000-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.instance.RemoveDuplicates-weka.filters.unsupervised.attribute.InterquartileRange-Rfirst-last-O3.0-E6.0-weka.filters.unsupervised.instance.Resample-S1-Z80.0-no-replacement-weka.filters.unsupervised.instance.Resample-S1-Z20.0-no-replacement",
+    "same_schema": true
+  },
+  "clean_file": {
+    "exists": false
+  },
+  "flag_mismatches": {
+    "train": {
+      "Outlier": 0,
+      "ExtremeValue": 0,
+      "matched": 77333
+    },
+    "test": {
+      "Outlier": 0,
+      "ExtremeValue": 0,
+      "matched": 15466
+    }
+  },
+  "warning": "Referencia por reglas no demuestra limpieza Weka ni mejora de modelos. P-valores no corrigen dependencia por usuario.",
+  "sha256": {
+    "stockquest_edm_100000.csv": "803852ff1dcfb077f8ff2c0c1d110764aa9c3edf4e9c222c3e5e26c5d9c0edb1",
+    "train_80.arff": "484a1ff217f565d1736f73ef287c81fa871edd6d8cc4ace08a0e839b6cf8f5ee",
+    "test_20.arff": "153dc30d83bf523f84e16ff84b49bc7ce2c3d42ae01042daa8fb5bbb719ca14b",
+    "j48_resultados.txt": "83b390ca42e65bbeca75c3cbd3048db885caae6a301b8dc4123d93c0e15812dd"
+  }
+}

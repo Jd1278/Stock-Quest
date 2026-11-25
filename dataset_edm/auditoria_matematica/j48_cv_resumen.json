@@ -1,0 +1,7 @@
+{
+  "n": 100000,
+  "accuracy": 0.99374,
+  "kappa": 0.9900010172351709,
+  "evaluation": "10-fold CV original; NO holdout",
+  "MAE_RMSE_ROC": "Consultar log; no recuperables desde matriz"
+}

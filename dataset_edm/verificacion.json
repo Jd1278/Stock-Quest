@@ -1,0 +1,19 @@
+{
+  "semilla": 42,
+  "filas": 100000,
+  "columnas": 18,
+  "inyeccion": {
+    "limpio": 80000,
+    "outlier": 10000,
+    "nulo": 3334,
+    "formato_o_imposible": 3333,
+    "duplicado": 3333
+  },
+  "clases": {
+    "Apto": 49779,
+    "Bloqueo_Cognitivo": 25248,
+    "Exceso_Confianza": 24973
+  },
+  "numpy": "2.5.5",
+  "pandas": "3.1.1"
+}

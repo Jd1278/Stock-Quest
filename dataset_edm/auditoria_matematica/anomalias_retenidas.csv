@@ -1,0 +1,9 @@
+stage,tipo,n
+test,formato_o_imposible,559
+test,limpio,12732
+test,nulo,505
+test,outlier,1670
+train,formato_o_imposible,2692
+train,limpio,63995
+train,nulo,2654
+train,outlier,7992

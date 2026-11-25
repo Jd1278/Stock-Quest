@@ -1,0 +1,388 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     stockquest_edm_100000-weka.filters.unsupervised.attribute.StringToNominal-R5
+Instances:    100000
+Attributes:   18
+              user_id
+              nivel_experiencia_previa
+              horas_capacitacion_teorica
+              modulos_completados
+              puntaje_evaluacion_teorica
+              intentos_quiz
+              tiempo_lectura_contenido_seg
+              tasa_acierto_conceptual
+              simulacion_id
+              tiempo_decision_critica_seg
+              variacion_stock_seguridad_pct
+              frecuencia_consulta_pistas
+              cambios_orden_antes_confirmar
+              costo_operativo_resultante
+              quiebres_stock_generados
+              sobrecosto_almacenamiento
+              nivel_riesgo_asumido
+              clase_perfil_aprendiz
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+tiempo_decision_critica_seg <= 28.96
+|   quiebres_stock_generados <= 0
+|   |   costo_operativo_resultante <= 6820.2
+|   |   |   tiempo_decision_critica_seg <= 21.32
+|   |   |   |   nivel_riesgo_asumido = Bajo
+|   |   |   |   |   frecuencia_consulta_pistas <= 0: Exceso_Confianza (25.0/1.0)
+|   |   |   |   |   frecuencia_consulta_pistas > 0
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 13.58: Exceso_Confianza (2.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 13.58: Apto (7.0)
+|   |   |   |   nivel_riesgo_asumido = Alto: Exceso_Confianza (385.0)
+|   |   |   |   nivel_riesgo_asumido = Medio
+|   |   |   |   |   variacion_stock_seguridad_pct <= 25.5: Exceso_Confianza (180.0)
+|   |   |   |   |   variacion_stock_seguridad_pct > 25.5
+|   |   |   |   |   |   variacion_stock_seguridad_pct <= 180: Apto (4.0)
+|   |   |   |   |   |   variacion_stock_seguridad_pct > 180: Exceso_Confianza (8.0)
+|   |   |   tiempo_decision_critica_seg > 21.32
+|   |   |   |   nivel_riesgo_asumido = Bajo: Apto (65.0/1.0)
+|   |   |   |   nivel_riesgo_asumido = Alto
+|   |   |   |   |   frecuencia_consulta_pistas <= 0: Exceso_Confianza (57.0/2.0)
+|   |   |   |   |   frecuencia_consulta_pistas > 0: Apto (6.0/2.0)
+|   |   |   |   nivel_riesgo_asumido = Medio
+|   |   |   |   |   variacion_stock_seguridad_pct <= -7.27: Exceso_Confianza (28.0/5.0)
+|   |   |   |   |   variacion_stock_seguridad_pct > -7.27: Apto (34.0/2.0)
+|   |   costo_operativo_resultante > 6820.2
+|   |   |   variacion_stock_seguridad_pct <= -18.9
+|   |   |   |   tiempo_decision_critica_seg <= 17.51: Exceso_Confianza (31.0)
+|   |   |   |   tiempo_decision_critica_seg > 17.51
+|   |   |   |   |   nivel_riesgo_asumido = Bajo: Apto (28.0/1.0)
+|   |   |   |   |   nivel_riesgo_asumido = Alto
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 24.35: Exceso_Confianza (14.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 24.35: Apto (2.0)
+|   |   |   |   |   nivel_riesgo_asumido = Medio
+|   |   |   |   |   |   cambios_orden_antes_confirmar <= 0
+|   |   |   |   |   |   |   tiempo_decision_critica_seg <= 27.31: Exceso_Confianza (2.0)
+|   |   |   |   |   |   |   tiempo_decision_critica_seg > 27.31: Apto (2.0)
+|   |   |   |   |   |   cambios_orden_antes_confirmar > 0: Apto (9.0)
+|   |   |   variacion_stock_seguridad_pct > -18.9
+|   |   |   |   tiempo_decision_critica_seg <= 19.38
+|   |   |   |   |   nivel_riesgo_asumido = Bajo: Apto (110.0/1.0)
+|   |   |   |   |   nivel_riesgo_asumido = Alto
+|   |   |   |   |   |   frecuencia_consulta_pistas <= 0: Exceso_Confianza (20.0/2.0)
+|   |   |   |   |   |   frecuencia_consulta_pistas > 0: Apto (4.0/1.0)
+|   |   |   |   |   nivel_riesgo_asumido = Medio: Apto (81.0/13.0)
+|   |   |   |   tiempo_decision_critica_seg > 19.38: Apto (1354.0/3.0)
+|   quiebres_stock_generados > 0: Exceso_Confianza (22158.0)
+tiempo_decision_critica_seg > 28.96
+|   frecuencia_consulta_pistas <= 2
+|   |   quiebres_stock_generados <= 0
+|   |   |   sobrecosto_almacenamiento <= 40
+|   |   |   |   cambios_orden_antes_confirmar <= 3
+|   |   |   |   |   tiempo_decision_critica_seg <= 140.64
+|   |   |   |   |   |   variacion_stock_seguridad_pct <= -33.69
+|   |   |   |   |   |   |   tiempo_decision_critica_seg <= 39.84
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 0: Exceso_Confianza (18.0/1.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 0: Apto (2.0)
+|   |   |   |   |   |   |   tiempo_decision_critica_seg > 39.84
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= -48.01: Exceso_Confianza (3.0)
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > -48.01: Apto (48.0/1.0)
+|   |   |   |   |   |   variacion_stock_seguridad_pct > -33.69
+|   |   |   |   |   |   |   costo_operativo_resultante <= 6674.6
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 41.12
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante <= -1000000: Apto (166.0)
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante > -1000000
+|   |   |   |   |   |   |   |   |   |   costo_operativo_resultante <= 6428.4: Exceso_Confianza (17.0)
+|   |   |   |   |   |   |   |   |   |   costo_operativo_resultante > 6428.4
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Bajo: Apto (17.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Alto: Exceso_Confianza (3.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Medio
+|   |   |   |   |   |   |   |   |   |   |   |   tiempo_lectura_contenido_seg <= 992: Apto (9.69/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   tiempo_lectura_contenido_seg > 992: Exceso_Confianza (4.31/0.31)
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 41.12: Apto (1417.0/1.0)
+|   |   |   |   |   |   |   costo_operativo_resultante > 6674.6: Apto (37353.0/17.0)
+|   |   |   |   |   tiempo_decision_critica_seg > 140.64
+|   |   |   |   |   |   variacion_stock_seguridad_pct <= 37.94: Apto (3248.0/75.0)
+|   |   |   |   |   |   variacion_stock_seguridad_pct > 37.94
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 1
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.65
+|   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 1: Apto (13.0/1.0)
+|   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 1
+|   |   |   |   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 0: Apto (2.0)
+|   |   |   |   |   |   |   |   |   |   cambios_orden_antes_confirmar > 0
+|   |   |   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 180: Bloqueo_Cognitivo (7.0)
+|   |   |   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 180: Apto (2.0)
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.65: Apto (57.0)
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar > 1
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 0: Apto (17.0/2.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 0: Bloqueo_Cognitivo (89.0/16.0)
+|   |   |   |   cambios_orden_antes_confirmar > 3
+|   |   |   |   |   tiempo_decision_critica_seg <= 160.15
+|   |   |   |   |   |   cambios_orden_antes_confirmar <= 6
+|   |   |   |   |   |   |   frecuencia_consulta_pistas <= 1: Apto (876.0/4.0)
+|   |   |   |   |   |   |   frecuencia_consulta_pistas > 1
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 82.5: Apto (158.0)
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 82.5
+|   |   |   |   |   |   |   |   |   sobrecosto_almacenamiento <= 31.2: Apto (56.0/8.0)
+|   |   |   |   |   |   |   |   |   sobrecosto_almacenamiento > 31.2: Bloqueo_Cognitivo (14.0/1.0)
+|   |   |   |   |   |   cambios_orden_antes_confirmar > 6
+|   |   |   |   |   |   |   sobrecosto_almacenamiento <= 18.8: Apto (7.0/1.0)
+|   |   |   |   |   |   |   sobrecosto_almacenamiento > 18.8: Bloqueo_Cognitivo (19.0)
+|   |   |   |   |   tiempo_decision_critica_seg > 160.15
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 1200
+|   |   |   |   |   |   |   tiempo_decision_critica_seg <= 194.85
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 30.75
+|   |   |   |   |   |   |   |   |   intentos_quiz <= 3
+|   |   |   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.65: Bloqueo_Cognitivo (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.65: Apto (22.0/2.0)
+|   |   |   |   |   |   |   |   |   intentos_quiz > 3: Bloqueo_Cognitivo (10.0)
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 30.75: Bloqueo_Cognitivo (30.0)
+|   |   |   |   |   |   |   tiempo_decision_critica_seg > 194.85: Bloqueo_Cognitivo (327.0/1.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 1200
+|   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 37.79
+|   |   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 5: Apto (36.0/1.0)
+|   |   |   |   |   |   |   |   cambios_orden_antes_confirmar > 5
+|   |   |   |   |   |   |   |   |   intentos_quiz <= 1: Apto (2.0)
+|   |   |   |   |   |   |   |   |   intentos_quiz > 1: Bloqueo_Cognitivo (4.0)
+|   |   |   |   |   |   |   variacion_stock_seguridad_pct > 37.79: Bloqueo_Cognitivo (13.0)
+|   |   |   sobrecosto_almacenamiento > 40
+|   |   |   |   tiempo_decision_critica_seg <= 126.87
+|   |   |   |   |   cambios_orden_antes_confirmar <= 3
+|   |   |   |   |   |   variacion_stock_seguridad_pct <= 51.02: Apto (686.0/3.0)
+|   |   |   |   |   |   variacion_stock_seguridad_pct > 51.02
+|   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 180
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 0: Apto (2.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 0: Bloqueo_Cognitivo (13.0/1.0)
+|   |   |   |   |   |   |   variacion_stock_seguridad_pct > 180: Apto (22.0/1.0)
+|   |   |   |   |   cambios_orden_antes_confirmar > 3
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 64.85: Apto (11.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 64.85
+|   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.6: Bloqueo_Cognitivo (27.0)
+|   |   |   |   |   |   |   tasa_acierto_conceptual > 0.6
+|   |   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 5
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 107.08: Apto (6.0)
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 107.08: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   |   |   cambios_orden_antes_confirmar > 5: Bloqueo_Cognitivo (6.0)
+|   |   |   |   tiempo_decision_critica_seg > 126.87
+|   |   |   |   |   cambios_orden_antes_confirmar <= 1
+|   |   |   |   |   |   sobrecosto_almacenamiento <= 62.4
+|   |   |   |   |   |   |   frecuencia_consulta_pistas <= 1: Apto (51.0/5.0)
+|   |   |   |   |   |   |   frecuencia_consulta_pistas > 1
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 192.13: Apto (7.0)
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 192.13
+|   |   |   |   |   |   |   |   |   modulos_completados <= 2: Apto (2.0)
+|   |   |   |   |   |   |   |   |   modulos_completados > 2: Bloqueo_Cognitivo (11.0)
+|   |   |   |   |   |   sobrecosto_almacenamiento > 62.4: Bloqueo_Cognitivo (19.0/1.0)
+|   |   |   |   |   cambios_orden_antes_confirmar > 1: Bloqueo_Cognitivo (870.0/26.0)
+|   |   quiebres_stock_generados > 0
+|   |   |   cambios_orden_antes_confirmar <= 2
+|   |   |   |   frecuencia_consulta_pistas <= 1
+|   |   |   |   |   variacion_stock_seguridad_pct <= 2.45: Exceso_Confianza (1835.0/7.0)
+|   |   |   |   |   variacion_stock_seguridad_pct > 2.45
+|   |   |   |   |   |   quiebres_stock_generados <= 1
+|   |   |   |   |   |   |   costo_operativo_resultante <= 7199.4
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 0: Exceso_Confianza (9.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 0
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 152.68: Exceso_Confianza (2.0)
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 152.68: Bloqueo_Cognitivo (4.0)
+|   |   |   |   |   |   |   costo_operativo_resultante > 7199.4
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 26.69: Apto (13.0/1.0)
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 26.69: Bloqueo_Cognitivo (10.0)
+|   |   |   |   |   |   quiebres_stock_generados > 1: Exceso_Confianza (72.0/1.0)
+|   |   |   |   frecuencia_consulta_pistas > 1
+|   |   |   |   |   tiempo_decision_critica_seg <= 103.99
+|   |   |   |   |   |   modulos_completados <= 5: Apto (4.0)
+|   |   |   |   |   |   modulos_completados > 5: Exceso_Confianza (3.0)
+|   |   |   |   |   tiempo_decision_critica_seg > 103.99: Bloqueo_Cognitivo (62.0/2.0)
+|   |   |   cambios_orden_antes_confirmar > 2
+|   |   |   |   tiempo_decision_critica_seg <= 63.14
+|   |   |   |   |   tiempo_decision_critica_seg <= 48.59: Exceso_Confianza (33.0)
+|   |   |   |   |   tiempo_decision_critica_seg > 48.59: Apto (2.0)
+|   |   |   |   tiempo_decision_critica_seg > 63.14
+|   |   |   |   |   tiempo_decision_critica_seg <= 1200: Bloqueo_Cognitivo (597.0/1.0)
+|   |   |   |   |   tiempo_decision_critica_seg > 1200
+|   |   |   |   |   |   variacion_stock_seguridad_pct <= -2.13: Exceso_Confianza (24.0)
+|   |   |   |   |   |   variacion_stock_seguridad_pct > -2.13: Bloqueo_Cognitivo (17.0)
+|   frecuencia_consulta_pistas > 2
+|   |   tiempo_decision_critica_seg <= 119.87
+|   |   |   cambios_orden_antes_confirmar <= 3
+|   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   frecuencia_consulta_pistas <= 5
+|   |   |   |   |   |   sobrecosto_almacenamiento <= 42.4
+|   |   |   |   |   |   |   tiempo_decision_critica_seg <= 84.17: Apto (2480.0/1.0)
+|   |   |   |   |   |   |   tiempo_decision_critica_seg > 84.17
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.65
+|   |   |   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 2
+|   |   |   |   |   |   |   |   |   |   sobrecosto_almacenamiento <= 34: Apto (189.0/6.0)
+|   |   |   |   |   |   |   |   |   |   sobrecosto_almacenamiento > 34
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Bajo: Bloqueo_Cognitivo (5.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Alto: Apto (1.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Medio: Apto (3.0/1.0)
+|   |   |   |   |   |   |   |   |   cambios_orden_antes_confirmar > 2
+|   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Bajo
+|   |   |   |   |   |   |   |   |   |   |   modulos_completados <= 1: Apto (2.0)
+|   |   |   |   |   |   |   |   |   |   |   modulos_completados > 1: Bloqueo_Cognitivo (9.0)
+|   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Alto: Apto (1.0)
+|   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Medio: Apto (6.0/1.0)
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.65: Apto (566.0/2.0)
+|   |   |   |   |   |   sobrecosto_almacenamiento > 42.4
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 1
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 4
+|   |   |   |   |   |   |   |   |   nivel_experiencia_previa = Intermedio: Apto (12.0)
+|   |   |   |   |   |   |   |   |   nivel_experiencia_previa = Avanzado
+|   |   |   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.7: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.7: Apto (2.0)
+|   |   |   |   |   |   |   |   |   nivel_experiencia_previa = Principiante: Apto (18.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 4: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar > 1
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 72.08
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante <= 7054.6: Apto (9.0)
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante > 7054.6: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 72.08: Bloqueo_Cognitivo (41.0/2.0)
+|   |   |   |   |   frecuencia_consulta_pistas > 5
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 73.9
+|   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.65: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   |   tasa_acierto_conceptual > 0.65: Apto (13.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 73.9: Bloqueo_Cognitivo (107.0/8.0)
+|   |   |   |   quiebres_stock_generados > 0
+|   |   |   |   |   frecuencia_consulta_pistas <= 3
+|   |   |   |   |   |   cambios_orden_antes_confirmar <= 0: Apto (2.0)
+|   |   |   |   |   |   cambios_orden_antes_confirmar > 0: Bloqueo_Cognitivo (10.0/1.0)
+|   |   |   |   |   frecuencia_consulta_pistas > 3: Bloqueo_Cognitivo (88.0)
+|   |   |   cambios_orden_antes_confirmar > 3
+|   |   |   |   tiempo_decision_critica_seg <= 62.95
+|   |   |   |   |   variacion_stock_seguridad_pct <= 34.06
+|   |   |   |   |   |   quiebres_stock_generados <= 0: Apto (42.0/2.0)
+|   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (4.0)
+|   |   |   |   |   variacion_stock_seguridad_pct > 34.06: Bloqueo_Cognitivo (12.0)
+|   |   |   |   tiempo_decision_critica_seg > 62.95
+|   |   |   |   |   tasa_acierto_conceptual <= 0.75
+|   |   |   |   |   |   sobrecosto_almacenamiento <= 18.8
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar <= 4
+|   |   |   |   |   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 28.64: Apto (9.0/1.0)
+|   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 28.64: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (6.0)
+|   |   |   |   |   |   |   cambios_orden_antes_confirmar > 4: Bloqueo_Cognitivo (45.0)
+|   |   |   |   |   |   sobrecosto_almacenamiento > 18.8: Bloqueo_Cognitivo (581.0/2.0)
+|   |   |   |   |   tasa_acierto_conceptual > 0.75
+|   |   |   |   |   |   cambios_orden_antes_confirmar <= 4
+|   |   |   |   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 48.39: Apto (23.0)
+|   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 48.39: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   cambios_orden_antes_confirmar > 4: Bloqueo_Cognitivo (37.0/3.0)
+|   |   tiempo_decision_critica_seg > 119.87
+|   |   |   cambios_orden_antes_confirmar <= 1
+|   |   |   |   frecuencia_consulta_pistas <= 4
+|   |   |   |   |   variacion_stock_seguridad_pct <= 36.21
+|   |   |   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   |   |   sobrecosto_almacenamiento <= 28.4: Apto (279.0/16.0)
+|   |   |   |   |   |   |   sobrecosto_almacenamiento > 28.4
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.55: Bloqueo_Cognitivo (17.0)
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.55: Apto (48.0/14.0)
+|   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (29.0/1.0)
+|   |   |   |   |   variacion_stock_seguridad_pct > 36.21
+|   |   |   |   |   |   tiempo_decision_critica_seg <= 189.43
+|   |   |   |   |   |   |   sobrecosto_almacenamiento <= 33.2
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.6: Bloqueo_Cognitivo (5.0)
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.6
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante <= 6996.2: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   |   |   |   costo_operativo_resultante > 6996.2: Apto (9.0)
+|   |   |   |   |   |   |   sobrecosto_almacenamiento > 33.2: Bloqueo_Cognitivo (25.0)
+|   |   |   |   |   |   tiempo_decision_critica_seg > 189.43: Bloqueo_Cognitivo (125.0)
+|   |   |   |   frecuencia_consulta_pistas > 4: Bloqueo_Cognitivo (641.0/19.0)
+|   |   |   cambios_orden_antes_confirmar > 1
+|   |   |   |   cambios_orden_antes_confirmar <= 2
+|   |   |   |   |   tasa_acierto_conceptual <= 0.75
+|   |   |   |   |   |   frecuencia_consulta_pistas <= 3
+|   |   |   |   |   |   |   sobrecosto_almacenamiento <= 18
+|   |   |   |   |   |   |   |   quiebres_stock_generados <= 0: Apto (24.0/6.0)
+|   |   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   sobrecosto_almacenamiento > 18: Bloqueo_Cognitivo (215.0/15.0)
+|   |   |   |   |   |   frecuencia_consulta_pistas > 3
+|   |   |   |   |   |   |   tiempo_decision_critica_seg <= 132.34
+|   |   |   |   |   |   |   |   sobrecosto_almacenamiento <= 26.4
+|   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 4: Apto (4.0)
+|   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 4: Bloqueo_Cognitivo (5.0/1.0)
+|   |   |   |   |   |   |   |   sobrecosto_almacenamiento > 26.4: Bloqueo_Cognitivo (29.0)
+|   |   |   |   |   |   |   tiempo_decision_critica_seg > 132.34: Bloqueo_Cognitivo (1491.0/2.0)
+|   |   |   |   |   tasa_acierto_conceptual > 0.75
+|   |   |   |   |   |   sobrecosto_almacenamiento <= 28
+|   |   |   |   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 4
+|   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 45.84: Apto (50.0)
+|   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 45.84: Bloqueo_Cognitivo (3.0/1.0)
+|   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 4
+|   |   |   |   |   |   |   |   |   intentos_quiz <= 2: Apto (2.0)
+|   |   |   |   |   |   |   |   |   intentos_quiz > 2: Bloqueo_Cognitivo (6.0)
+|   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (10.0)
+|   |   |   |   |   |   sobrecosto_almacenamiento > 28: Bloqueo_Cognitivo (90.0/2.0)
+|   |   |   |   cambios_orden_antes_confirmar > 2
+|   |   |   |   |   cambios_orden_antes_confirmar <= 3
+|   |   |   |   |   |   frecuencia_consulta_pistas <= 4
+|   |   |   |   |   |   |   sobrecosto_almacenamiento <= 33.6
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual <= 0.65
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 151.13
+|   |   |   |   |   |   |   |   |   |   costo_operativo_resultante <= 7288.4
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Bajo: Apto (5.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Alto: Apto (0.0)
+|   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Medio: Bloqueo_Cognitivo (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   costo_operativo_resultante > 7288.4: Bloqueo_Cognitivo (5.0)
+|   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 151.13
+|   |   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg <= 1200: Bloqueo_Cognitivo (242.0)
+|   |   |   |   |   |   |   |   |   |   tiempo_decision_critica_seg > 1200
+|   |   |   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   quiebres_stock_generados <= 0: Apto (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (2.0)
+|   |   |   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 3: Bloqueo_Cognitivo (7.0)
+|   |   |   |   |   |   |   |   tasa_acierto_conceptual > 0.65
+|   |   |   |   |   |   |   |   |   quiebres_stock_generados <= 0
+|   |   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct <= 42.14
+|   |   |   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   costo_operativo_resultante <= 6735.2: Bloqueo_Cognitivo (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   costo_operativo_resultante > 6735.2: Apto (15.0)
+|   |   |   |   |   |   |   |   |   |   |   frecuencia_consulta_pistas > 3
+|   |   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Bajo: Bloqueo_Cognitivo (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Alto: Bloqueo_Cognitivo (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   nivel_riesgo_asumido = Medio: Apto (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   variacion_stock_seguridad_pct > 42.14: Bloqueo_Cognitivo (12.0)
+|   |   |   |   |   |   |   |   |   quiebres_stock_generados > 0: Bloqueo_Cognitivo (19.0)
+|   |   |   |   |   |   |   sobrecosto_almacenamiento > 33.6: Bloqueo_Cognitivo (612.0)
+|   |   |   |   |   |   frecuencia_consulta_pistas > 4: Bloqueo_Cognitivo (2129.0/1.0)
+|   |   |   |   |   cambios_orden_antes_confirmar > 3: Bloqueo_Cognitivo (16364.0/11.0)
+
+Number of Leaves  : 	167
+
+Size of the tree : 	323
+
+
+Time taken to build model: 3.85 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       99374               99.374  %
+Incorrectly Classified Instances       626                0.626  %
+Kappa statistic                          0.99  
+Mean absolute error                      0.0061
+Root mean squared error                  0.0626
+Relative absolute error                  1.4506 %
+Root relative squared error             13.6969 %
+Total Number of Instances           100000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,994    0,006    0,994      0,994    0,994      0,988    0,997     0,993     Apto
+                 0,990    0,003    0,990      0,990    0,990      0,987    0,997     0,990     Bloqueo_Cognitivo
+                 0,997    0,001    0,998      0,997    0,997      0,996    0,999     0,998     Exceso_Confianza
+Weighted Avg.    0,994    0,004    0,994      0,994    0,994      0,990    0,997     0,994     
+
+=== Confusion Matrix ===
+
+     a     b     c   <-- classified as
+ 49480   247    52 |     a = Apto
+   233 25008     7 |     b = Bloqueo_Cognitivo
+    78     9 24886 |     c = Exceso_Confianza
+

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Filas, claves, objetivos y MAE recomputados para h1-h4; 800 predicciones nuevas no negativas",
+    "Matriz de confusión y AUC independientes de sklearn verificadas",
+    "200 recomendaciones recalculadas; pedidos no negativos y sin doble conteo del baseline",
+    "SHA-256 de fuente original conservado",
+    "Enlaces y gráficas locales del informe existentes"
+  ],
+  "GUI_ejecutada": false,
+  "politica_replay_ejecutada": false,
+  "despliegue": false
+}

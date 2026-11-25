@@ -1,0 +1,1623 @@
+
+REPTree
+============
+
+producto = P001
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 25.57 : 16.49 (27/4.23) [18/5.55]
+|   |   media_demanda_28_dias >= 25.57 : 22.31 (27/5.26) [18/7.85]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 23.38 : 16.69 (31/6.25) [8/4.47]
+|   |   media_demanda_28_dias >= 23.38 : 23.23 (37/5.28) [16/7.85]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 25.23 : 20.53 (33/14.42) [12/35.13]
+|   |   media_demanda_28_dias >= 25.23 : 29.17 (29/30.37) [18/33.64]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hoy < 19.5 : 22.53 (32/18.21) [19/36.21]
+|   |   demanda_hoy >= 19.5 : 30.85 (31/31.22) [10/39.55]
+|   dia_semana_objetivo = viernes : 31.42 (63/64.98) [29/70.5]
+|   dia_semana_objetivo = sabado : 34.23 (59/76.62) [31/77.56]
+|   dia_semana_objetivo = domingo : 20.39 (63/20.24) [27/39.92]
+producto = P002
+|   media_demanda_28_dias < 24.27
+|   |   dia_semana_objetivo = lunes : 18.32 (20/18.43) [18/23.41]
+|   |   dia_semana_objetivo = martes : 19.46 (26/19.6) [13/25.48]
+|   |   dia_semana_objetivo = miercoles : 21.77 (29/23.42) [10/31.69]
+|   |   dia_semana_objetivo = jueves : 22.77 (19/27.64) [20/25.42]
+|   |   dia_semana_objetivo = viernes : 24.59 (24/6.96) [15/10.34]
+|   |   dia_semana_objetivo = sabado : 26.66 (24/7.71) [14/10.23]
+|   |   dia_semana_objetivo = domingo : 17.26 (24/22.58) [14/16.99]
+|   media_demanda_28_dias >= 24.27
+|   |   dia_semana_objetivo = lunes : 25.52 (30/22.8) [22/29.77]
+|   |   dia_semana_objetivo = martes : 27.26 (38/35.94) [15/26.76]
+|   |   dia_semana_objetivo = miercoles : 30.32 (35/25.51) [18/45.5]
+|   |   dia_semana_objetivo = jueves : 31.94 (40/40.31) [13/33.44]
+|   |   dia_semana_objetivo = viernes : 33.89 (35/12.92) [18/10.31]
+|   |   dia_semana_objetivo = sabado : 37.04 (39/9.97) [13/14.91]
+|   |   dia_semana_objetivo = domingo : 24 (43/24.71) [9/13.06]
+producto = P003
+|   dia_semana_objetivo = lunes : 24.02 (58/39.84) [32/35.3]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 25.91 : 18.52 (28/4.96) [14/6.27]
+|   |   media_demanda_28_dias >= 25.91 : 26.16 (25/6.44) [25/9.54]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 28.66 : 21.8 (33/8.3) [18/5.26]
+|   |   media_demanda_28_dias >= 28.66 : 29.95 (26/9.69) [15/5.71]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 27.09 : 24.98 (28/18.05) [19/53.79]
+|   |   media_demanda_28_dias >= 27.09 : 34.58 (28/29.11) [17/74.6]
+|   dia_semana_objetivo = viernes : 35.41 (60/87.45) [32/73.03]
+|   dia_semana_objetivo = sabado : 38.17 (58/105.27) [32/95.82]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 29.5 : 18.47 (31/8.11) [16/12.94]
+|   |   demanda_hoy >= 29.5 : 27.37 (32/21.13) [11/25.98]
+producto = P004
+|   dia_semana_objetivo = lunes : 24.63 (53/58.39) [37/24.28]
+|   dia_semana_objetivo = martes : 26.4 (58/52.5) [34/54.14]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 39.5 : 25.44 (42/20.13) [17/44.35]
+|   |   demanda_ayer >= 39.5 : 35.42 (25/39.76) [8/49.51]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hoy < 25.5 : 25.06 (31/16) [21/30.58]
+|   |   demanda_hoy >= 25.5 : 37.9 (28/36.5) [12/54.79]
+|   dia_semana_objetivo = viernes : 36.79 (63/94.77) [29/82.61]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 27.32 : 29.57 (30/14.4) [14/10.93]
+|   |   media_demanda_28_dias >= 27.32 : 42.5 (31/23.47) [15/9.46]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 187.5 : 17.32 (34/6.78) [10/7.58]
+|   |   indice_tiempo_objetivo >= 187.5 : 24.74 (30/7) [16/10.42]
+producto = P005
+|   dia_semana_objetivo = lunes : 26.37 (56/50.8) [34/49.97]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 42.5 : 22.49 (32/15.39) [21/13.22]
+|   |   demanda_hoy >= 42.5 : 34.28 (20/31.69) [19/49]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 162.5 : 21.76 (32/7.19) [6/7.49]
+|   |   indice_tiempo_objetivo >= 162.5 : 31.76 (35/10.88) [19/21.15]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 29.14 : 23.58 (29/10.53) [14/14.28]
+|   |   media_demanda_28_dias >= 29.14 : 33.69 (27/8.21) [22/19.93]
+|   dia_semana_objetivo = viernes
+|   |   precio_objetivo < 16.52 : 46.86 (26/67.98) [16/122.9]
+|   |   precio_objetivo >= 16.52 : 32.06 (29/31.57) [21/41.49]
+|   dia_semana_objetivo = sabado : 41.5 (63/169.61) [27/61.34]
+|   dia_semana_objetivo = domingo
+|   |   sin_anual_objetivo < 0.18 : 20.39 (32/17.69) [12/12.45]
+|   |   sin_anual_objetivo >= 0.18 : 29.15 (32/38.08) [14/33.45]
+producto = P006
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 32.09 : 19.67 (22/9.45) [21/19.55]
+|   |   media_demanda_28_dias >= 32.09 : 29.15 (30/10.38) [17/9.81]
+|   dia_semana_objetivo = martes : 28.87 (64/84.96) [28/46.71]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 176.5 : 26.14 (27/18.52) [15/63.33]
+|   |   indice_tiempo_objetivo >= 176.5 : 37.3 (36/61.69) [14/44.64]
+|   dia_semana_objetivo = jueves : 34.04 (66/85.39) [26/122.9]
+|   dia_semana_objetivo = viernes : 40.53 (58/106.22) [34/137.25]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 28.5 : 31.87 (20/21.75) [10/19.15]
+|   |   demanda_hoy >= 28.5 : 49.08 (42/48.06) [18/237.49]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 166.5 : 18.34 (24/8.19) [14/14.84]
+|   |   indice_tiempo_objetivo >= 166.5 : 26.08 (38/10.07) [14/9.49]
+producto = P007
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 167.5 : 23.08 (29/14.24) [9/37.17]
+|   |   indice_tiempo_objetivo >= 167.5 : 32.38 (36/39.66) [16/46.75]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 44.5 : 24.73 (37/15.54) [11/12.87]
+|   |   demanda_hoy >= 44.5 : 36 (30/23.21) [14/107.29]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 48.5 : 28.69 (40/24.09) [21/32.1]
+|   |   demanda_ayer >= 48.5 : 43.06 (20/52.51) [11/31.91]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 29.5 : 25.16 (27/9.02) [10/10.76]
+|   |   media_demanda_28_dias >= 29.5 : 35.71 (30/11.25) [25/8.89]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 30.88 : 31.2 (26/14.01) [14/26.11]
+|   |   media_demanda_28_dias >= 30.88 : 42.96 (33/8.68) [19/8.86]
+|   dia_semana_objetivo = sabado : 45.74 (63/143.64) [27/161.4]
+|   dia_semana_objetivo = domingo : 27.03 (73/46.1) [17/52.68]
+producto = P008
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 32.89 : 22.31 (28/8.76) [14/3.42]
+|   |   media_demanda_28_dias >= 32.89 : 30.71 (31/7.13) [17/11.78]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 33.57 : 23.5 (31/6.5) [15/7.92]
+|   |   media_demanda_28_dias >= 33.57 : 32.39 (29/9.77) [17/7.99]
+|   dia_semana_objetivo = miercoles : 35.03 (58/76.63) [34/107.49]
+|   dia_semana_objetivo = jueves
+|   |   indice_tiempo_objetivo < 170.5 : 30.27 (22/34.78) [18/29.73]
+|   |   indice_tiempo_objetivo >= 170.5 : 41.67 (29/56.64) [23/96.36]
+|   dia_semana_objetivo = viernes : 43.52 (66/111.07) [26/135.88]
+|   dia_semana_objetivo = sabado : 47.94 (56/181.11) [34/131.28]
+|   dia_semana_objetivo = domingo : 27.96 (58/57.08) [32/54.53]
+producto = P009
+|   media_demanda_28_dias < 34.39
+|   |   dia_semana_objetivo = lunes : 25.39 (29/38.89) [15/18.11]
+|   |   dia_semana_objetivo = martes : 27.41 (31/40.3) [15/17.85]
+|   |   dia_semana_objetivo = miercoles : 30.47 (30/33.73) [15/70.3]
+|   |   dia_semana_objetivo = jueves : 32.67 (28/41.58) [17/60.53]
+|   |   dia_semana_objetivo = viernes : 34.2 (35/18.03) [10/40.86]
+|   |   dia_semana_objetivo = sabado : 37.14 (21/18.49) [23/16.43]
+|   |   dia_semana_objetivo = domingo : 23.55 (29/25.55) [15/33.78]
+|   media_demanda_28_dias >= 34.39
+|   |   dia_semana_objetivo = lunes : 35.83 (32/38.82) [14/67.6]
+|   |   dia_semana_objetivo = martes : 37.98 (31/70.09) [15/34.39]
+|   |   dia_semana_objetivo = miercoles : 41.66 (25/102.62) [22/60.3]
+|   |   dia_semana_objetivo = jueves : 44.17 (33/95.58) [14/67.79]
+|   |   dia_semana_objetivo = viernes : 46.74 (28/16.92) [19/19.74]
+|   |   dia_semana_objetivo = sabado : 51.11 (28/31.66) [18/18.84]
+|   |   dia_semana_objetivo = domingo : 34.37 (28/47.08) [18/34.89]
+producto = P010
+|   dia_semana_objetivo = lunes
+|   |   demanda_ayer < 40.5 : 26.49 (41/13.75) [14/27.97]
+|   |   demanda_ayer >= 40.5 : 40.46 (25/50.63) [10/58.71]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 37.55 : 25.83 (33/11.34) [19/15.08]
+|   |   media_demanda_28_dias >= 37.55 : 35.52 (30/13.69) [10/26.05]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 36.2 : 28.13 (30/15.12) [17/13.78]
+|   |   media_demanda_28_dias >= 36.2 : 39.47 (27/14.99) [18/18.14]
+|   dia_semana_objetivo = jueves : 39.01 (64/124.42) [28/97.44]
+|   dia_semana_objetivo = viernes : 46.98 (64/172.05) [28/134.08]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 30.5 : 39.67 (24/58.41) [12/77.2]
+|   |   demanda_hoy >= 30.5 : 57.74 (30/119.2) [24/151.15]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 39.5 : 24.5 (33/15.69) [19/15.98]
+|   |   demanda_hoy >= 39.5 : 37.61 (28/40.15) [10/73.4]
+producto = P011
+|   dia_semana_objetivo = lunes
+|   |   precio_objetivo < 24.41 : 40.92 (22/39.26) [14/81.92]
+|   |   precio_objetivo >= 24.41 : 28.5 (37/25.83) [17/45.03]
+|   dia_semana_objetivo = martes : 34.76 (55/98.65) [37/78.59]
+|   dia_semana_objetivo = miercoles : 38.49 (67/93.56) [25/159.41]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hoy < 30 : 30.34 (24/19.85) [11/17.74]
+|   |   demanda_hoy >= 30 : 47.46 (39/76.69) [18/88.75]
+|   dia_semana_objetivo = viernes
+|   |   demanda_ayer < 30.5 : 36.14 (21/16.09) [16/23.6]
+|   |   demanda_ayer >= 30.5 : 56.75 (40/106.35) [15/146.53]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 36.16 : 39.07 (27/18.22) [16/23.36]
+|   |   media_demanda_28_dias >= 36.16 : 55.57 (30/22.43) [17/36.35]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_7_dias < 40.71 : 24.56 (31/11.31) [19/23.97]
+|   |   media_demanda_7_dias >= 40.71 : 33.23 (25/10.48) [15/16.71]
+producto = P012
+|   dia_semana_objetivo = lunes : 34.2 (57/90.47) [33/75.25]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 51.5 : 29.6 (38/26.69) [14/16.34]
+|   |   demanda_ayer >= 51.5 : 44.3 (26/62.08) [14/61.02]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_7_dias < 38.43 : 30.08 (28/8.33) [11/19.61]
+|   |   media_demanda_7_dias >= 38.43 : 40.92 (35/25.2) [18/29.49]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 39.02 : 31.66 (26/8.75) [18/19.21]
+|   |   media_demanda_28_dias >= 39.02 : 44 (41/19.73) [7/33.93]
+|   dia_semana_objetivo = viernes : 50.54 (59/168.11) [33/162.79]
+|   dia_semana_objetivo = sabado : 54.79 (66/262.04) [24/96.72]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 37.11 : 26.33 (30/37.63) [9/32.28]
+|   |   media_demanda_28_dias >= 37.11 : 37.08 (33/40.59) [18/89.61]
+producto = P013
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 167.5 : 26.05 (22/13.94) [16/18.86]
+|   |   indice_tiempo_objetivo >= 167.5 : 36.13 (34/12.65) [18/13.47]
+|   dia_semana_objetivo = martes : 37.38 (60/108.21) [32/70.98]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 40.09 : 33.69 (29/39.51) [13/109.95]
+|   |   media_demanda_28_dias >= 40.09 : 46.9 (36/53.08) [14/113.68]
+|   dia_semana_objetivo = jueves : 42.87 (59/122.32) [33/124.83]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 33.5 : 39 (22/31.06) [11/34.93]
+|   |   demanda_hoy >= 33.5 : 58.32 (37/86.42) [22/179.09]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 43.5 : 46.22 (38/68.06) [16/61.92]
+|   |   demanda_hoy >= 43.5 : 69.58 (24/139.06) [12/112.31]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 159.5 : 24.08 (27/12.55) [9/4.48]
+|   |   indice_tiempo_objetivo >= 159.5 : 33.67 (33/13.2) [21/15.01]
+producto = P014
+|   dia_semana_objetivo = lunes : 35.72 (63/77.96) [27/92.24]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 57 : 31.92 (39/30.57) [14/25.39]
+|   |   demanda_hoy >= 57 : 47.28 (22/47.47) [17/57.28]
+|   dia_semana_objetivo = miercoles : 42.36 (56/134.32) [36/95.49]
+|   dia_semana_objetivo = jueves : 40.65 (58/54.72) [34/65.3]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 39.3 : 39.24 (29/27.28) [12/36.57]
+|   |   media_demanda_28_dias >= 39.3 : 54.2 (35/21.21) [16/41]
+|   dia_semana_objetivo = sabado : 57.31 (62/224.72) [28/192.11]
+|   dia_semana_objetivo = domingo : 33.92 (48/71.09) [42/89.66]
+producto = P015
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 195.5 : 28.98 (30/17.66) [16/28.37]
+|   |   indice_tiempo_objetivo >= 195.5 : 38.89 (24/16.71) [20/24.94]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 175.5 : 29.9 (25/13.21) [17/32.97]
+|   |   indice_tiempo_objetivo >= 175.5 : 40.74 (35/17.2) [15/20.89]
+|   dia_semana_objetivo = miercoles : 44.53 (68/126.17) [24/159.65]
+|   dia_semana_objetivo = jueves
+|   |   precio_objetivo < 28.95 : 62.42 (20/166.06) [4/90.04]
+|   |   precio_objetivo >= 28.95
+|   |   |   media_demanda_28_dias < 42.25 : 35.53 (21/20.25) [11/11.5]
+|   |   |   media_demanda_28_dias >= 42.25 : 47.56 (27/17.11) [9/25.7]
+|   dia_semana_objetivo = viernes : 55.72 (53/206.61) [39/204.9]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 46.5 : 51.54 (37/51.97) [20/99.39]
+|   |   demanda_hoy >= 46.5 : 75.06 (25/173.37) [8/154.56]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 47.5 : 30.43 (39/22.25) [17/24.71]
+|   |   demanda_hoy >= 47.5 : 44.26 (24/42.74) [10/85.26]
+producto = P016
+|   media_demanda_28_dias < 47.89
+|   |   dia_semana_objetivo = lunes : 34.29 (32/50.71) [23/98.26]
+|   |   dia_semana_objetivo = martes : 36.67 (43/58.1) [14/73.11]
+|   |   dia_semana_objetivo = miercoles : 39.68 (44/61.96) [13/101.91]
+|   |   dia_semana_objetivo = jueves : 43.04 (40/82.24) [16/103.06]
+|   |   dia_semana_objetivo = viernes : 44.98 (33/29.7) [23/60.44]
+|   |   dia_semana_objetivo = sabado : 48.61 (35/63.8) [21/32.34]
+|   |   dia_semana_objetivo = domingo : 32.13 (34/50.6) [22/70.72]
+|   media_demanda_28_dias >= 47.89
+|   |   dia_semana_objetivo = lunes : 46.89 (23/78.11) [12/104.57]
+|   |   dia_semana_objetivo = martes : 50.4 (24/153.4) [11/84.55]
+|   |   dia_semana_objetivo = miercoles : 56 (25/148.69) [10/119.99]
+|   |   dia_semana_objetivo = jueves : 58.97 (27/178.59) [9/79.13]
+|   |   dia_semana_objetivo = viernes : 61.67 (31/22.24) [5/110.27]
+|   |   dia_semana_objetivo = sabado : 67.88 (24/39.73) [10/21.22]
+|   |   dia_semana_objetivo = domingo : 44.94 (23/70.69) [11/74.08]
+producto = P017
+|   dia_semana_objetivo = lunes : 40.24 (63/112.44) [27/125.11]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 49.77 : 33.37 (33/11.42) [21/38.91]
+|   |   media_demanda_28_dias >= 49.77 : 45.45 (28/21.81) [10/25.28]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 42.91 : 33.95 (30/12.26) [12/12.68]
+|   |   media_demanda_28_dias >= 42.91 : 48.16 (32/27.23) [18/31.21]
+|   dia_semana_objetivo = jueves : 48.9 (63/169.73) [29/199.9]
+|   dia_semana_objetivo = viernes : 59.27 (64/232.94) [28/237.4]
+|   dia_semana_objetivo = sabado : 64.53 (54/300.74) [36/329.25]
+|   dia_semana_objetivo = domingo : 38.02 (64/121.93) [26/83.32]
+producto = P018
+|   dia_semana_objetivo = lunes : 40.76 (69/125.65) [21/104.94]
+|   dia_semana_objetivo = martes
+|   |   precio_objetivo < 34.42 : 51.02 (34/109.18) [14/107.11]
+|   |   precio_objetivo >= 34.42 : 36.41 (32/47.98) [12/85.1]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 169.5 : 38.73 (31/42.11) [9/99.17]
+|   |   indice_tiempo_objetivo >= 169.5 : 55.38 (36/102.9) [16/204.77]
+|   dia_semana_objetivo = jueves : 51.11 (65/194.59) [27/153.28]
+|   dia_semana_objetivo = viernes : 60.61 (46/234.61) [46/293.5]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 45.86 : 48.63 (31/38.45) [12/33.07]
+|   |   media_demanda_28_dias >= 45.86 : 68.83 (34/56.82) [13/32.3]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 166.5 : 29.16 (25/14.8) [13/15.84]
+|   |   indice_tiempo_objetivo >= 166.5 : 39.67 (34/22.56) [18/22.65]
+producto = P019
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 53.5 : 29.93 (20/15.71) [10/31.73]
+|   |   demanda_hoy >= 53.5 : 46.85 (43/68.7) [17/136.04]
+|   dia_semana_objetivo = martes : 44.12 (64/157.98) [28/171.07]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_7_dias < 47.86 : 35.98 (25/25.36) [19/39.14]
+|   |   media_demanda_7_dias >= 47.86 : 50.85 (38/19.4) [10/35.54]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 45.8 : 37.48 (29/15.34) [11/12.68]
+|   |   media_demanda_28_dias >= 45.8 : 53.38 (33/31.07) [19/24.73]
+|   dia_semana_objetivo = viernes : 61.82 (56/233.14) [36/285.91]
+|   dia_semana_objetivo = sabado : 65.89 (59/280.41) [31/388.41]
+|   dia_semana_objetivo = domingo
+|   |   precio_objetivo < 34.16 : 52.09 (20/61.65) [2/135.75]
+|   |   precio_objetivo >= 34.16 : 35.01 (39/49.17) [29/62.48]
+producto = P020
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 45.93 : 31.42 (29/15.39) [7/17.03]
+|   |   media_demanda_28_dias >= 45.93 : 43.54 (37/20.37) [17/21.26]
+|   dia_semana_objetivo = martes : 45.38 (66/155.64) [26/112.23]
+|   dia_semana_objetivo = miercoles : 50.46 (63/167.56) [29/157.73]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hace_7_dias < 39.5 : 44.96 (33/69.46) [14/117.38]
+|   |   demanda_hace_7_dias >= 39.5 : 62.13 (32/99.53) [13/239.29]
+|   dia_semana_objetivo = viernes : 64.25 (58/304.87) [34/160.91]
+|   dia_semana_objetivo = sabado : 68.79 (61/264.88) [29/383.62]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 46.48 : 29.95 (22/17.39) [15/15.57]
+|   |   media_demanda_28_dias >= 46.48 : 41.38 (37/20.46) [16/38.77]
+producto = P021
+|   dia_semana_objetivo = lunes : 43.83 (58/123.67) [32/137.1]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 72 : 38.62 (32/48.89) [21/44.52]
+|   |   demanda_hoy >= 72 : 57.26 (23/54.6) [16/149.27]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 73.5 : 43.25 (31/71.6) [25/50.26]
+|   |   demanda_ayer >= 73.5 : 64.28 (28/90.89) [8/179.79]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 48.84 : 40.18 (28/36.32) [16/36.34]
+|   |   media_demanda_28_dias >= 48.84 : 56.98 (31/51) [17/34.35]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 47.46 : 48.1 (24/33.96) [15/26.85]
+|   |   media_demanda_28_dias >= 47.46 : 66.77 (41/52.17) [12/66.04]
+|   dia_semana_objetivo = sabado : 70.24 (57/325.57) [33/263.86]
+|   dia_semana_objetivo = domingo : 42.01 (54/116.91) [36/124.56]
+producto = P022
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 50.07 : 33.9 (28/26.23) [12/19.96]
+|   |   media_demanda_28_dias >= 50.07 : 48.18 (28/21.52) [22/33.8]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 140.5 : 35.53 (23/15.55) [9/15.62]
+|   |   indice_tiempo_objetivo >= 140.5 : 48.45 (40/32.75) [20/80.45]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 51.25 : 44.23 (29/62.45) [14/96]
+|   |   media_demanda_28_dias >= 51.25 : 61.92 (32/142.5) [17/175.36]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 53.36 : 47.6 (32/121.36) [16/115.97]
+|   |   media_demanda_28_dias >= 53.36 : 66.61 (27/140.49) [17/197.15]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 52.14 : 56.93 (27/125.11) [18/166.5]
+|   |   media_demanda_28_dias >= 52.14 : 77.7 (35/201.44) [12/278.33]
+|   dia_semana_objetivo = sabado : 73.13 (68/353.31) [22/411.46]
+|   dia_semana_objetivo = domingo
+|   |   demanda_ayer < 54.5 : 35.47 (35/35.03) [12/36.89]
+|   |   demanda_ayer >= 54.5 : 52.84 (30/90.47) [13/73.82]
+producto = P023
+|   sin_anual_objetivo < 0.18
+|   |   dia_semana_objetivo = lunes : 38.66 (29/77.62) [15/60.44]
+|   |   dia_semana_objetivo = martes : 39.93 (35/68.7) [11/121.71]
+|   |   dia_semana_objetivo = miercoles : 45.52 (33/96.11) [13/49.88]
+|   |   dia_semana_objetivo = jueves : 47.59 (36/105.91) [10/164.66]
+|   |   dia_semana_objetivo = viernes : 52.04 (29/50.53) [17/30.64]
+|   |   dia_semana_objetivo = sabado : 55.45 (32/49.71) [12/59.01]
+|   |   dia_semana_objetivo = domingo : 37.32 (35/64.6) [9/109.03]
+|   sin_anual_objetivo >= 0.18
+|   |   dia_semana_objetivo = lunes : 54.24 (31/109.92) [15/152.41]
+|   |   dia_semana_objetivo = martes : 57.72 (32/197.48) [14/50.53]
+|   |   dia_semana_objetivo = miercoles : 64 (23/196.11) [23/191.49]
+|   |   dia_semana_objetivo = jueves : 67.61 (30/174.26) [16/220.65]
+|   |   dia_semana_objetivo = viernes : 71.83 (29/46.05) [17/48.9]
+|   |   dia_semana_objetivo = sabado : 78.7 (32/60.38) [14/35.29]
+|   |   dia_semana_objetivo = domingo : 51.78 (32/109.53) [14/104.49]
+producto = P024
+|   dia_semana_objetivo = lunes : 48.08 (57/142.27) [33/207.39]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 53.02 : 37.48 (26/24.94) [16/26.88]
+|   |   media_demanda_28_dias >= 53.02 : 52.08 (34/29.19) [16/58.61]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 169.5 : 40.15 (28/27.94) [12/23.03]
+|   |   indice_tiempo_objetivo >= 169.5 : 58.63 (31/49.31) [21/39.86]
+|   dia_semana_objetivo = jueves : 58.97 (57/284.7) [35/231.34]
+|   dia_semana_objetivo = viernes : 71.12 (63/387.2) [29/229.66]
+|   dia_semana_objetivo = sabado : 76.47 (65/402.42) [25/444.39]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 61.5 : 38.55 (36/51.58) [19/70.59]
+|   |   demanda_hoy >= 61.5 : 57.29 (24/95.53) [11/71.22]
+producto = P025
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 49.96 : 38.49 (22/42.22) [13/68.53]
+|   |   media_demanda_28_dias >= 49.96 : 55.8 (32/130.05) [23/159.81]
+|   dia_semana_objetivo = martes : 51.05 (59/171.08) [33/318.4]
+|   dia_semana_objetivo = miercoles : 57.66 (56/232.83) [36/288.66]
+|   dia_semana_objetivo = jueves : 60.28 (58/261.33) [34/276.67]
+|   dia_semana_objetivo = viernes : 71.51 (60/383.41) [32/279.25]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 53.29 : 55.73 (26/63.69) [14/75.79]
+|   |   media_demanda_28_dias >= 53.29 : 80.5 (33/65.76) [17/80.69]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 55.14 : 33.1 (24/29.52) [18/21.45]
+|   |   media_demanda_28_dias >= 55.14 : 48.27 (32/28.38) [16/36.56]
+producto = P026
+|   dia_semana_objetivo = lunes : 50.1 (61/183.94) [29/130.71]
+|   dia_semana_objetivo = martes : 53.86 (59/226.94) [33/186.5]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 54.73 : 43.84 (26/21.44) [12/35.98]
+|   |   media_demanda_28_dias >= 54.73 : 60.44 (33/39.4) [21/44.45]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 54.46 : 45.95 (27/34.09) [10/16.2]
+|   |   media_demanda_28_dias >= 54.46 : 63.22 (37/43) [18/53.74]
+|   dia_semana_objetivo = viernes : 73.88 (59/314.16) [33/449.16]
+|   dia_semana_objetivo = sabado : 80.02 (60/507.78) [30/379.79]
+|   dia_semana_objetivo = domingo : 47.29 (57/155.55) [33/157.17]
+producto = P027
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 60.75 : 38.98 (26/22.16) [20/28.81]
+|   |   media_demanda_28_dias >= 60.75 : 53.11 (26/21.49) [18/32.89]
+|   dia_semana_objetivo = martes : 54.57 (62/148.29) [30/280.75]
+|   dia_semana_objetivo = miercoles : 60.84 (58/306.35) [34/198.75]
+|   dia_semana_objetivo = jueves : 63.77 (56/266.89) [36/251.17]
+|   dia_semana_objetivo = viernes : 75.8 (62/271.94) [30/548]
+|   dia_semana_objetivo = sabado : 82.37 (50/484.61) [40/442.29]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 60.29 : 35.78 (35/32.48) [10/21.09]
+|   |   media_demanda_28_dias >= 60.29 : 49.76 (31/22.86) [14/32.49]
+producto = P028
+|   dia_semana_objetivo = lunes : 52.96 (56/234.27) [34/175.45]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 84.5 : 46.35 (37/57.1) [15/57.93]
+|   |   demanda_hoy >= 84.5 : 68.85 (28/152.67) [12/155.95]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 83.5 : 51.08 (33/61.54) [18/69.41]
+|   |   demanda_ayer >= 83.5 : 75.34 (25/129.36) [16/265.17]
+|   dia_semana_objetivo = jueves
+|   |   sin_anual_objetivo < 0.13 : 50.73 (31/42.3) [13/64.65]
+|   |   sin_anual_objetivo >= 0.13 : 67.52 (32/32.87) [16/81.88]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 61.71 : 59.44 (30/35.8) [18/67.28]
+|   |   media_demanda_28_dias >= 61.71 : 80.5 (31/48.51) [13/81.83]
+|   dia_semana_objetivo = sabado : 83.99 (68/561.92) [22/271.1]
+|   dia_semana_objetivo = domingo : 50.09 (63/166.44) [27/201.25]
+producto = P029
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 60.88 : 39.66 (26/27.6) [18/35.65]
+|   |   media_demanda_28_dias >= 60.88 : 56.02 (28/31.95) [18/40.37]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 59.2 : 42.39 (34/28.4) [7/34.29]
+|   |   media_demanda_28_dias >= 59.2 : 58.2 (33/50.09) [18/52.54]
+|   dia_semana_objetivo = miercoles
+|   |   sin_anual_objetivo < 0.3 : 52.6 (34/130.02) [16/100.56]
+|   |   sin_anual_objetivo >= 0.3 : 75.93 (28/121.96) [14/202.66]
+|   dia_semana_objetivo = jueves : 66.6 (60/354.35) [32/253.1]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 59.45 : 64.26 (27/114.69) [15/304.71]
+|   |   media_demanda_28_dias >= 59.45 : 91.82 (34/279.79) [16/422.98]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 60 : 66.34 (25/86.16) [13/65]
+|   |   demanda_hoy >= 60 : 100.71 (30/210.26) [22/480.92]
+|   dia_semana_objetivo = domingo
+|   |   demanda_ayer < 62.5 : 40.36 (34/41.31) [8/25.96]
+|   |   demanda_ayer >= 62.5 : 60.65 (28/78.87) [20/209.04]
+producto = P030
+|   media_demanda_28_dias < 58.54
+|   |   dia_semana_objetivo = lunes : 43.59 (25/90.43) [14/59.81]
+|   |   dia_semana_objetivo = martes : 46.76 (24/123.91) [17/98.83]
+|   |   dia_semana_objetivo = miercoles : 51.73 (29/141.79) [12/85]
+|   |   dia_semana_objetivo = jueves : 55.08 (28/95.18) [12/125.23]
+|   |   dia_semana_objetivo = viernes : 58.67 (27/36.54) [13/34.76]
+|   |   dia_semana_objetivo = sabado : 62.7 (24/54.71) [16/83.13]
+|   |   dia_semana_objetivo = domingo : 42.18 (29/84.39) [10/43.7]
+|   media_demanda_28_dias >= 58.54
+|   |   dia_semana_objetivo = lunes : 61.65 (37/128.53) [14/188.63]
+|   |   dia_semana_objetivo = martes : 66.43 (34/109.87) [17/259.74]
+|   |   dia_semana_objetivo = miercoles : 74.35 (33/222.14) [18/176.91]
+|   |   dia_semana_objetivo = jueves : 78.46 (37/263.59) [15/147.51]
+|   |   dia_semana_objetivo = viernes : 83.08 (36/82.32) [16/69.16]
+|   |   dia_semana_objetivo = sabado : 89.54 (33/82.24) [17/88.43]
+|   |   dia_semana_objetivo = domingo : 60.08 (41/115.4) [10/112.94]
+producto = P031
+|   dia_semana_objetivo = lunes
+|   |   demanda_ayer < 69.5 : 45.02 (33/79.58) [15/48.11]
+|   |   demanda_ayer >= 69.5 : 68.52 (29/131) [13/151.32]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 168.5 : 41.7 (23/33.88) [17/51.71]
+|   |   indice_tiempo_objetivo >= 168.5 : 60.6 (31/33.83) [21/44.56]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 169.5 : 46.52 (28/36.86) [12/38.22]
+|   |   indice_tiempo_objetivo >= 169.5 : 68.31 (36/46.74) [16/33.21]
+|   dia_semana_objetivo = jueves
+|   |   sin_anual_objetivo < 0.24 : 56.88 (34/147.66) [14/167.39]
+|   |   sin_anual_objetivo >= 0.24 : 81.34 (30/184.89) [14/364.97]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hace_7_dias < 52.5 : 67.87 (29/156.25) [16/352.25]
+|   |   demanda_hace_7_dias >= 52.5 : 95.62 (32/353.39) [15/195.2]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 59.11 : 70.34 (25/222.06) [13/167.37]
+|   |   media_demanda_28_dias >= 59.11 : 101.73 (30/345.26) [22/435.34]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 67.5 : 41.93 (30/48.61) [13/112.64]
+|   |   demanda_hoy >= 67.5 : 62.53 (36/99.92) [11/81.16]
+producto = P032
+|   dia_semana_objetivo = lunes : 57.4 (63/261.05) [27/181.22]
+|   dia_semana_objetivo = martes : 59.46 (55/242.68) [37/236.63]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 152 : 51.71 (25/107.44) [9/215.36]
+|   |   indice_tiempo_objetivo >= 152 : 74.74 (35/154.75) [23/273.04]
+|   dia_semana_objetivo = jueves : 69.8 (67/379.89) [25/237.01]
+|   dia_semana_objetivo = viernes : 82.96 (58/484.87) [34/416.16]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 60.96 : 65.53 (26/39.62) [10/47.7]
+|   |   media_demanda_28_dias >= 60.96 : 91.96 (34/114.68) [20/99.63]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 58.27 : 38.22 (20/23.26) [12/33.76]
+|   |   media_demanda_28_dias >= 58.27 : 53.64 (44/26.73) [14/33.09]
+producto = P033
+|   dia_semana_objetivo = lunes : 56.98 (54/164.82) [36/243.19]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 88.5 : 52.64 (40/81.39) [21/62.3]
+|   |   demanda_ayer >= 88.5 : 76.74 (24/124.81) [7/268.3]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 64.04 : 50.54 (29/44.93) [12/53.63]
+|   |   media_demanda_28_dias >= 64.04 : 69.9 (34/55.58) [17/37.74]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 60.2 : 52.71 (25/44.44) [10/40.61]
+|   |   media_demanda_28_dias >= 60.2 : 71.91 (41/61.59) [16/86.28]
+|   dia_semana_objetivo = viernes : 86.04 (65/482.42) [27/484.68]
+|   dia_semana_objetivo = sabado : 91.96 (62/585.69) [28/463.55]
+|   dia_semana_objetivo = domingo : 54.46 (57/217.75) [33/144.45]
+producto = P034
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 66.86 : 44.16 (33/32.06) [10/31.84]
+|   |   media_demanda_28_dias >= 66.86 : 61.21 (33/39.79) [14/57.42]
+|   dia_semana_objetivo = martes : 62.88 (62/377.72) [30/242.57]
+|   dia_semana_objetivo = miercoles : 70.92 (61/328.02) [31/374.44]
+|   dia_semana_objetivo = jueves : 74.35 (58/392.8) [34/416.24]
+|   dia_semana_objetivo = viernes : 87.77 (58/481.32) [34/508.52]
+|   dia_semana_objetivo = sabado : 94.86 (65/640.62) [25/473.67]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 67.04 : 41.63 (30/25.09) [13/42.09]
+|   |   media_demanda_28_dias >= 67.04 : 58.62 (30/27.93) [17/54.78]
+producto = P035
+|   dia_semana_objetivo = lunes
+|   |   precio_objetivo < 55.64 : 76.64 (23/229.52) [5/397.51]
+|   |   precio_objetivo >= 55.64
+|   |   |   demanda_ayer < 66.5 : 45.97 (21/30.09) [9/17.92]
+|   |   |   demanda_ayer >= 66.5 : 62.13 (24/59.91) [8/61.88]
+|   dia_semana_objetivo = martes : 64.27 (61/248.33) [31/422.09]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 100.5
+|   |   |   demanda_ayer < 82 : 52.47 (25/37.91) [5/83.8]
+|   |   |   demanda_ayer >= 82 : 67.64 (23/29.1) [5/49.84]
+|   |   demanda_ayer >= 100.5 : 90.74 (21/187.38) [13/332.16]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 63.59 : 53.69 (24/30.33) [15/43.55]
+|   |   media_demanda_28_dias >= 63.59 : 76.6 (37/78.47) [16/104.91]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 69.13 : 67.16 (34/58.4) [15/85.76]
+|   |   media_demanda_28_dias >= 69.13 : 93.28 (34/75.08) [9/70.11]
+|   dia_semana_objetivo = sabado : 97.22 (61/800.04) [29/617.5]
+|   dia_semana_objetivo = domingo : 56.54 (54/247.36) [36/230.44]
+producto = P036
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 67.11 : 45.1 (30/21.78) [11/46.9]
+|   |   media_demanda_28_dias >= 67.11 : 63.18 (33/42.08) [16/63.51]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 78.66 : 51.47 (41/39.07) [16/101.63]
+|   |   media_demanda_28_dias >= 78.66 : 70.54 (22/58.04) [13/29.61]
+|   dia_semana_objetivo = miercoles
+|   |   precio_objetivo < 58.14 : 85.02 (29/326.79) [17/617.08]
+|   |   precio_objetivo >= 58.14 : 61.37 (33/127.41) [13/114.54]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 68.91 : 62.66 (29/184.48) [15/126.76]
+|   |   media_demanda_28_dias >= 68.91 : 89.88 (34/260.19) [14/486.77]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 69.14 : 74.64 (28/175.24) [16/244.11]
+|   |   media_demanda_28_dias >= 69.14 : 106.38 (30/390.77) [18/418.79]
+|   dia_semana_objetivo = sabado : 98.37 (64/720.79) [26/1000]
+|   dia_semana_objetivo = domingo : 58.6 (60/312.73) [30/162.22]
+producto = P037
+|   indice_tiempo_objetivo < 167
+|   |   dia_semana_objetivo = lunes : 49.97 (22/88.12) [16/138.29]
+|   |   dia_semana_objetivo = martes : 53.95 (30/153.33) [10/102.32]
+|   |   dia_semana_objetivo = miercoles : 58.75 (32/122.68) [8/290.5]
+|   |   dia_semana_objetivo = jueves : 62 (30/154.65) [8/124.75]
+|   |   dia_semana_objetivo = viernes : 65.61 (25/91.55) [13/32.25]
+|   |   dia_semana_objetivo = sabado : 72.26 (29/79.96) [9/30.59]
+|   |   dia_semana_objetivo = domingo : 47.89 (28/122.02) [10/85.43]
+|   indice_tiempo_objetivo >= 167
+|   |   dia_semana_objetivo = lunes : 71.15 (33/272.05) [19/219.92]
+|   |   dia_semana_objetivo = martes : 77.69 (35/253.16) [17/240.78]
+|   |   dia_semana_objetivo = miercoles : 86.35 (38/233.67) [14/591.62]
+|   |   dia_semana_objetivo = jueves : 88.7 (34/308.12) [20/418.91]
+|   |   dia_semana_objetivo = viernes : 94.3 (37/72.66) [17/91.12]
+|   |   dia_semana_objetivo = sabado : 101.96 (42/96.15) [10/207.18]
+|   |   dia_semana_objetivo = domingo : 68.27 (30/189.2) [22/274.36]
+producto = P038
+|   dia_semana_objetivo = lunes : 63.62 (62/246.17) [28/313.77]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 151 : 46.5 (23/36.93) [11/61.16]
+|   |   indice_tiempo_objetivo >= 151 : 67.12 (36/52.77) [22/68.59]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 71.52 : 55.17 (26/39.7) [16/53.09]
+|   |   media_demanda_28_dias >= 71.52 : 76.28 (30/47.73) [20/66.16]
+|   dia_semana_objetivo = jueves : 78.63 (61/453.3) [31/441.06]
+|   dia_semana_objetivo = viernes : 93.24 (59/472.44) [33/858.52]
+|   dia_semana_objetivo = sabado : 101 (60/582.08) [30/951.17]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 79.5 : 49.48 (31/71.94) [15/59.68]
+|   |   demanda_hoy >= 79.5 : 72.2 (27/169.18) [17/149.59]
+producto = P039
+|   dia_semana_objetivo = lunes : 64.31 (61/345.46) [29/238.09]
+|   dia_semana_objetivo = martes : 67.72 (68/292.68) [24/343.12]
+|   dia_semana_objetivo = miercoles : 75.27 (64/378.36) [28/379.64]
+|   dia_semana_objetivo = jueves : 79.8 (62/335.01) [30/582.49]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 62 : 73.63 (21/123.49) [17/108.61]
+|   |   demanda_hoy >= 62 : 110.33 (33/231.94) [21/667.86]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 74.2 : 78.48 (28/70.95) [16/133.47]
+|   |   media_demanda_28_dias >= 74.2 : 106.96 (32/89.98) [14/53.27]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 159.5 : 45.36 (29/29.2) [7/37.34]
+|   |   indice_tiempo_objetivo >= 159.5 : 61.81 (33/55.52) [21/39.53]
+producto = P040
+|   dia_semana_objetivo = lunes : 66.74 (62/338.61) [28/238.89]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 104 : 59.34 (33/119.06) [26/113.72]
+|   |   demanda_ayer >= 104 : 88.79 (21/174.3) [12/279.64]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 76.16 : 59.69 (31/54) [17/57.91]
+|   |   media_demanda_28_dias >= 76.16 : 81.86 (30/39.73) [14/70.11]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 76.52 : 62.25 (29/90.16) [19/55.49]
+|   |   media_demanda_28_dias >= 76.52 : 86.27 (30/45.07) [14/50.65]
+|   dia_semana_objetivo = viernes : 97.27 (57/589.55) [35/765.63]
+|   dia_semana_objetivo = sabado : 106.1 (59/702.88) [31/750.35]
+|   dia_semana_objetivo = domingo : 62.38 (58/278.59) [32/256.58]
+producto = P041
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 82.3 : 51.21 (31/58.44) [21/66.05]
+|   |   media_demanda_28_dias >= 82.3 : 72.58 (25/50.29) [13/46.67]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 210.5 : 60.25 (38/120.09) [14/202.26]
+|   |   indice_tiempo_objetivo >= 210.5 : 85.45 (29/274.42) [11/330.88]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 75.66 : 66.49 (30/120.18) [19/302.63]
+|   |   media_demanda_28_dias >= 75.66 : 93.56 (28/344.96) [15/247.78]
+|   dia_semana_objetivo = jueves : 82.83 (64/462.5) [28/435.6]
+|   dia_semana_objetivo = viernes : 99.4 (68/709.29) [24/554.32]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 81 : 88.36 (37/195.51) [13/177.98]
+|   |   demanda_hoy >= 81 : 130.72 (33/414.27) [7/525.5]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 73.04 : 47.45 (27/25.93) [17/44.21]
+|   |   media_demanda_28_dias >= 73.04 : 66.96 (33/50.11) [13/38.65]
+producto = P042
+|   dia_semana_objetivo = lunes : 67.38 (56/324.8) [34/346.49]
+|   dia_semana_objetivo = martes : 71.36 (59/349.69) [33/457.4]
+|   dia_semana_objetivo = miercoles : 78.46 (64/393.03) [28/477.84]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 77.77 : 62.77 (36/55.82) [11/121.1]
+|   |   media_demanda_28_dias >= 77.77 : 88.53 (27/90.32) [18/128.1]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 73.71 : 75.19 (25/66.51) [18/106.85]
+|   |   media_demanda_28_dias >= 73.71 : 104.65 (30/75.82) [19/146.39]
+|   dia_semana_objetivo = sabado : 108.48 (58/796.35) [32/996.63]
+|   dia_semana_objetivo = domingo
+|   |   precio_objetivo < 65 : 82.11 (20/188.69) [8/387.41]
+|   |   precio_objetivo >= 65
+|   |   |   media_demanda_28_dias < 72.41 : 48.32 (20/31.43) [11/44.2]
+|   |   |   media_demanda_28_dias >= 72.41 : 66 (21/75.11) [10/27.93]
+producto = P043
+|   precio_objetivo < 65.32
+|   |   media_demanda_28_dias < 22.09 : 27.52 (26/33.63) [26/23.1]
+|   |   media_demanda_28_dias >= 22.09 : 40.3 (42/65.06) [22/84.7]
+|   precio_objetivo >= 65.32
+|   |   dia_semana_objetivo = lunes
+|   |   |   media_demanda_28_dias < 22.45 : 14.82 (27/4.63) [13/4.51]
+|   |   |   media_demanda_28_dias >= 22.45 : 21.22 (32/3.87) [18/8.99]
+|   |   dia_semana_objetivo = martes
+|   |   |   indice_tiempo_objetivo < 172 : 15.78 (28/4.67) [12/3.45]
+|   |   |   indice_tiempo_objetivo >= 172 : 22.08 (36/5.54) [16/8.75]
+|   |   dia_semana_objetivo = miercoles
+|   |   |   media_demanda_28_dias < 22.89 : 17.64 (23/4.95) [10/7.43]
+|   |   |   media_demanda_28_dias >= 22.89 : 24.89 (25/4.03) [10/4.49]
+|   |   dia_semana_objetivo = jueves
+|   |   |   media_demanda_28_dias < 23.46 : 18.94 (24/3.56) [11/9.18]
+|   |   |   media_demanda_28_dias >= 23.46 : 26.39 (22/5.87) [11/5.16]
+|   |   dia_semana_objetivo = viernes
+|   |   |   indice_tiempo_objetivo < 182 : 22.66 (22/6.06) [10/12.6]
+|   |   |   indice_tiempo_objetivo >= 182 : 31.28 (26/9.51) [10/5.44]
+|   |   dia_semana_objetivo = sabado
+|   |   |   media_demanda_28_dias < 22.59 : 23.61 (22/7.38) [9/4.82]
+|   |   |   media_demanda_28_dias >= 22.59 : 34.08 (25/12.44) [12/15.69]
+|   |   dia_semana_objetivo = domingo : 17.66 (46/15.06) [22/14.98]
+producto = P044
+|   media_demanda_28_dias < 23.55
+|   |   dia_semana_objetivo = lunes : 18.18 (25/15.99) [13/15.1]
+|   |   dia_semana_objetivo = martes : 19.05 (25/11.58) [14/13.95]
+|   |   dia_semana_objetivo = miercoles : 20.18 (30/13.26) [8/17.95]
+|   |   dia_semana_objetivo = jueves : 21.47 (26/20.17) [12/20.43]
+|   |   dia_semana_objetivo = viernes : 23.08 (21/10.03) [17/9.48]
+|   |   dia_semana_objetivo = sabado : 25.24 (27/9.36) [11/12.4]
+|   |   dia_semana_objetivo = domingo : 17.39 (23/12.95) [15/15.26]
+|   media_demanda_28_dias >= 23.55
+|   |   dia_semana_objetivo = lunes : 24.88 (42/25.68) [10/39.55]
+|   |   dia_semana_objetivo = martes : 25.75 (39/22.86) [14/46.11]
+|   |   dia_semana_objetivo = miercoles : 28.98 (40/32.67) [14/45.49]
+|   |   dia_semana_objetivo = jueves : 30.33 (40/38.94) [14/37.56]
+|   |   dia_semana_objetivo = viernes : 32.41 (33/9.88) [21/7.67]
+|   |   dia_semana_objetivo = sabado : 35.06 (40/9.95) [12/17.05]
+|   |   dia_semana_objetivo = domingo : 23.27 (35/21.85) [17/27.88]
+producto = P045
+|   dia_semana_objetivo = lunes : 22.77 (63/39.33) [27/43.95]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 25.05 : 17.51 (27/6.73) [14/6.58]
+|   |   media_demanda_28_dias >= 25.05 : 24.88 (37/3.55) [14/6.37]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 25.48 : 19.93 (24/8.57) [18/7.28]
+|   |   media_demanda_28_dias >= 25.48 : 27.26 (35/9.28) [15/6.46]
+|   dia_semana_objetivo = jueves : 28.18 (54/55.09) [38/47.14]
+|   dia_semana_objetivo = viernes : 33.43 (58/55.95) [34/103.71]
+|   dia_semana_objetivo = sabado : 36.51 (56/82.99) [34/113.97]
+|   dia_semana_objetivo = domingo : 21.6 (57/38.1) [33/34]
+producto = P046
+|   dia_semana_objetivo = lunes : 24.06 (57/43.61) [33/30.33]
+|   dia_semana_objetivo = martes : 25.37 (63/44.97) [29/41.16]
+|   dia_semana_objetivo = miercoles : 28.15 (61/41.2) [31/89.59]
+|   dia_semana_objetivo = jueves : 29.61 (69/61.06) [23/46.32]
+|   dia_semana_objetivo = viernes : 35.29 (62/77.25) [30/88.78]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 26.04 : 28.02 (25/9.33) [15/13.8]
+|   |   media_demanda_28_dias >= 26.04 : 39.38 (29/17.04) [21/12.56]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 26.48 : 16.95 (26/3.82) [15/6.73]
+|   |   media_demanda_28_dias >= 26.48 : 23.47 (33/5.62) [16/17.74]
+producto = P047
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 35.5 : 19.38 (30/8.18) [9/11.2]
+|   |   demanda_hoy >= 35.5 : 29.24 (34/23.47) [17/34.41]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 38.5 : 22.44 (37/16.45) [17/18.11]
+|   |   demanda_ayer >= 38.5 : 33.18 (25/27.35) [13/15.22]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 26.59 : 21.6 (27/9.73) [13/5.49]
+|   |   media_demanda_28_dias >= 26.59 : 30.63 (33/11.66) [19/10.32]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 26.7 : 22.61 (31/9.68) [10/10.17]
+|   |   media_demanda_28_dias >= 26.7 : 32.18 (26/11.62) [25/9.9]
+|   dia_semana_objetivo = viernes
+|   |   sin_anual_objetivo < 0.3 : 30.92 (35/38.58) [15/66.29]
+|   |   sin_anual_objetivo >= 0.3 : 43.67 (29/56.87) [13/71.46]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 31.3 : 34.15 (40/40.36) [14/97.18]
+|   |   media_demanda_28_dias >= 31.3 : 48.31 (22/80.36) [14/61.83]
+|   dia_semana_objetivo = domingo : 23.84 (54/46.2) [36/38.13]
+producto = P048
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 34.43 : 21.03 (38/9.84) [25/18.32]
+|   |   media_demanda_28_dias >= 34.43 : 28.96 (22/6.23) [5/7.64]
+|   dia_semana_objetivo = martes
+|   |   sin_anual_objetivo < 0.3 : 23.12 (35/18.35) [15/27.68]
+|   |   sin_anual_objetivo >= 0.3 : 32.64 (27/40.84) [15/58.8]
+|   dia_semana_objetivo = miercoles : 30.84 (55/76.65) [37/60.41]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hace_7_dias < 24.5 : 28.02 (39/27.02) [17/62.69]
+|   |   demanda_hace_7_dias >= 24.5 : 38.53 (24/47.91) [12/61.1]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 28.5 : 32.74 (41/24.88) [16/46.13]
+|   |   demanda_hoy >= 28.5 : 47.71 (21/48.06) [14/88.68]
+|   dia_semana_objetivo = sabado
+|   |   demanda_ayer < 28.5 : 34.89 (38/37.41) [17/34.26]
+|   |   demanda_ayer >= 28.5 : 51.8 (22/60.9) [13/80.06]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 29.29 : 18.26 (27/8.02) [16/5.57]
+|   |   media_demanda_28_dias >= 29.29 : 25.32 (34/6.59) [13/7.34]
+producto = P049
+|   indice_tiempo_objetivo < 161.5
+|   |   dia_semana_objetivo = lunes : 22.14 (26/17.76) [10/31.9]
+|   |   dia_semana_objetivo = martes : 22.55 (29/31.27) [9/23.17]
+|   |   dia_semana_objetivo = miercoles : 25.5 (20/37.03) [18/43.64]
+|   |   dia_semana_objetivo = jueves : 24.5 (31/10.27) [7/13.54]
+|   |   dia_semana_objetivo = viernes : 28.95 (27/16.48) [11/14.45]
+|   |   dia_semana_objetivo = sabado : 34.28 (26/38.58) [10/77.43]
+|   |   dia_semana_objetivo = domingo : 20.14 (22/22.61) [14/25.34]
+|   indice_tiempo_objetivo >= 161.5
+|   |   dia_semana_objetivo = lunes : 31.28 (25/49.64) [29/36.22]
+|   |   dia_semana_objetivo = martes : 32.7 (38/47.37) [16/42.25]
+|   |   dia_semana_objetivo = miercoles : 36.93 (41/45.21) [13/76.9]
+|   |   dia_semana_objetivo = jueves : 35.04 (34/15.08) [20/18.29]
+|   |   dia_semana_objetivo = viernes : 41.39 (40/23.32) [14/27.12]
+|   |   dia_semana_objetivo = sabado : 49.72 (36/93.53) [18/115.09]
+|   |   dia_semana_objetivo = domingo : 29.48 (41/46.67) [13/14.82]
+producto = P050
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 31.3 : 20.36 (29/6.2) [13/8.12]
+|   |   media_demanda_28_dias >= 31.3 : 28.83 (35/12.76) [13/12.69]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 32.14 : 22.6 (35/7.37) [10/18.22]
+|   |   media_demanda_28_dias >= 32.14 : 31.04 (25/15.28) [22/8.87]
+|   dia_semana_objetivo = miercoles : 32.87 (56/74.28) [36/85.04]
+|   dia_semana_objetivo = jueves : 34.74 (61/95.66) [31/65.3]
+|   dia_semana_objetivo = viernes : 41.45 (54/113.57) [38/112.97]
+|   dia_semana_objetivo = sabado : 44.88 (49/123) [41/166.93]
+|   dia_semana_objetivo = domingo : 26.51 (55/40.82) [35/74.22]
+producto = P051
+|   media_demanda_28_dias < 30
+|   |   dia_semana_objetivo = lunes : 23.47 (19/18.85) [15/28.53]
+|   |   dia_semana_objetivo = martes : 24.73 (21/20.15) [12/34.2]
+|   |   dia_semana_objetivo = miercoles : 27.29 (28/27.85) [6/41.81]
+|   |   dia_semana_objetivo = jueves : 29.3 (25/36.45) [8/15.14]
+|   |   dia_semana_objetivo = viernes : 31.09 (22/12.66) [11/11.29]
+|   |   dia_semana_objetivo = sabado : 33.88 (26/12.34) [7/11.54]
+|   |   dia_semana_objetivo = domingo : 21.65 (24/18.48) [10/19.27]
+|   media_demanda_28_dias >= 30
+|   |   dia_semana_objetivo = lunes : 33.05 (35/48.48) [21/49.18]
+|   |   dia_semana_objetivo = martes : 34.32 (32/43.5) [27/56.48]
+|   |   dia_semana_objetivo = miercoles : 37.84 (41/64.93) [17/63.73]
+|   |   dia_semana_objetivo = jueves : 40.2 (38/79.6) [21/51.77]
+|   |   dia_semana_objetivo = viernes : 43.05 (40/18.55) [19/18.82]
+|   |   dia_semana_objetivo = sabado : 47.23 (41/20.66) [16/29.06]
+|   |   dia_semana_objetivo = domingo : 30.96 (38/52.44) [18/41.35]
+producto = P052
+|   dia_semana_objetivo = lunes : 30.81 (51/65.51) [39/63.51]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 133.5 : 23.7 (25/7.59) [5/9.2]
+|   |   indice_tiempo_objetivo >= 133.5 : 32.15 (43/13.41) [19/24.49]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 32.93 : 26.63 (28/11.22) [10/16.85]
+|   |   media_demanda_28_dias >= 32.93 : 36.94 (39/17.99) [15/17.14]
+|   dia_semana_objetivo = jueves : 38.47 (61/104.39) [31/109.49]
+|   dia_semana_objetivo = viernes : 45.68 (64/133.13) [28/151.91]
+|   dia_semana_objetivo = sabado : 48.93 (66/146.49) [24/215.18]
+|   dia_semana_objetivo = domingo : 29.04 (63/64.1) [27/65.24]
+producto = P053
+|   dia_semana_objetivo = lunes : 32.59 (61/72.58) [29/94.22]
+|   dia_semana_objetivo = martes : 34.38 (61/86.76) [31/111.67]
+|   dia_semana_objetivo = miercoles : 37.88 (57/116.81) [35/96.74]
+|   dia_semana_objetivo = jueves : 39.71 (62/115.21) [30/121.01]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 36.5 : 40.43 (40/36.51) [20/46]
+|   |   demanda_hoy >= 36.5 : 61 (21/97.39) [11/92.52]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 37.46 : 38.75 (31/16.44) [17/26.7]
+|   |   media_demanda_28_dias >= 37.46 : 54.02 (28/23.6) [14/9.76]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 37.93 : 23.55 (34/10.99) [17/15.07]
+|   |   media_demanda_28_dias >= 37.93 : 32.31 (32/12.75) [7/6.73]
+producto = P054
+|   dia_semana_objetivo = lunes : 33.18 (55/85.57) [35/83.75]
+|   dia_semana_objetivo = martes : 35.5 (68/103.9) [24/78.79]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 169.5 : 28.27 (27/8.62) [13/9.57]
+|   |   indice_tiempo_objetivo >= 169.5 : 40.23 (31/14.05) [21/25.66]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 35.46 : 30.55 (34/11.01) [10/11.48]
+|   |   media_demanda_28_dias >= 35.46 : 42.46 (37/17.07) [11/33.55]
+|   dia_semana_objetivo = viernes : 48.74 (64/150.04) [28/193.63]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 34.5 : 41.78 (27/61.35) [14/65.59]
+|   |   demanda_hoy >= 34.5 : 62.04 (27/169.33) [22/212.77]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 36.5 : 27 (31/19.9) [16/27.76]
+|   |   demanda_hoy >= 36.5 : 37.84 (29/74.32) [14/97.94]
+producto = P055
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 36.86 : 24.45 (29/10.75) [11/17.92]
+|   |   media_demanda_28_dias >= 36.86 : 35.42 (36/17.47) [14/14.35]
+|   dia_semana_objetivo = martes
+|   |   precio_objetivo < 83.66 : 43.34 (32/76.79) [12/127.41]
+|   |   precio_objetivo >= 83.66 : 30.23 (31/30.28) [17/31.23]
+|   dia_semana_objetivo = miercoles : 40.23 (60/117.67) [32/133.42]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 37.11 : 34.66 (25/37.08) [16/43.65]
+|   |   media_demanda_28_dias >= 37.11 : 48.84 (32/101.34) [19/102.51]
+|   dia_semana_objetivo = viernes : 50.8 (57/183.22) [35/166.26]
+|   dia_semana_objetivo = sabado
+|   |   demanda_ayer < 37.5 : 44.67 (30/34.38) [21/61.17]
+|   |   demanda_ayer >= 37.5 : 68.87 (20/114.99) [19/212.98]
+|   dia_semana_objetivo = domingo
+|   |   sin_anual_objetivo < 0.24 : 24.43 (28/13.39) [18/26.09]
+|   |   sin_anual_objetivo >= 0.24 : 33.7 (34/17.96) [10/16.29]
+producto = P056
+|   dia_semana_objetivo = lunes : 35.09 (61/92.61) [29/99.5]
+|   dia_semana_objetivo = martes : 37.53 (56/96.99) [36/95.09]
+|   dia_semana_objetivo = miercoles : 41.2 (66/120.21) [26/142.49]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 37.05 : 30.86 (25/17.31) [12/17.02]
+|   |   media_demanda_28_dias >= 37.05 : 45 (43/25.92) [12/12.47]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 35.68 : 36.59 (27/21.04) [7/24.24]
+|   |   media_demanda_28_dias >= 35.68 : 52.86 (43/30.66) [15/37.51]
+|   dia_semana_objetivo = sabado : 55.58 (54/220.22) [36/232.2]
+|   dia_semana_objetivo = domingo : 32.36 (61/77.89) [29/96.91]
+producto = P057
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 41.88 : 26.56 (31/13.27) [12/15.66]
+|   |   media_demanda_28_dias >= 41.88 : 37.7 (32/13.96) [15/28.27]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 40.79 : 28.43 (32/12.59) [10/18.39]
+|   |   media_demanda_28_dias >= 40.79 : 39.6 (36/18.28) [14/16.14]
+|   dia_semana_objetivo = miercoles : 42.17 (52/134.12) [40/126.61]
+|   dia_semana_objetivo = jueves : 44.64 (61/135.22) [31/113.71]
+|   dia_semana_objetivo = viernes : 53.38 (69/179.35) [23/201.77]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 44.5 : 48.43 (38/64.47) [15/97.28]
+|   |   demanda_hoy >= 44.5 : 71.05 (28/114.3) [9/152.54]
+|   dia_semana_objetivo = domingo : 34.34 (60/92.78) [30/65.12]
+producto = P058
+|   media_demanda_28_dias < 42.13
+|   |   dia_semana_objetivo = lunes : 31.61 (27/71.8) [14/41.81]
+|   |   dia_semana_objetivo = martes : 33.74 (25/44.2) [18/73.73]
+|   |   dia_semana_objetivo = miercoles : 36.83 (24/30.16) [18/134.52]
+|   |   dia_semana_objetivo = jueves : 38.2 (22/37.79) [19/127.76]
+|   |   dia_semana_objetivo = viernes : 41.83 (28/27) [13/16.05]
+|   |   dia_semana_objetivo = sabado : 45 (30/33) [11/24.55]
+|   |   dia_semana_objetivo = domingo : 30.07 (30/53.6) [11/58.64]
+|   media_demanda_28_dias >= 42.13
+|   |   dia_semana_objetivo = lunes : 43.12 (27/91.78) [22/75.52]
+|   |   dia_semana_objetivo = martes : 45.8 (32/83.91) [17/61.28]
+|   |   dia_semana_objetivo = miercoles : 50.54 (35/94.81) [15/81.13]
+|   |   dia_semana_objetivo = jueves : 52.82 (27/109.5) [24/94.96]
+|   |   dia_semana_objetivo = viernes : 55.63 (30/23.23) [21/22.45]
+|   |   dia_semana_objetivo = sabado : 62.2 (33/26.78) [16/36.5]
+|   |   dia_semana_objetivo = domingo : 40.55 (30/70.26) [19/76.05]
+producto = P059
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 52.5 : 29.5 (22/15.2) [14/27.58]
+|   |   demanda_hoy >= 52.5 : 45.35 (36/44.69) [18/116.58]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 46.14 : 32.12 (33/13.76) [19/21.47]
+|   |   media_demanda_28_dias >= 46.14 : 44.38 (31/18.22) [9/31.09]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 45.59 : 35.24 (35/14.88) [15/29.48]
+|   |   media_demanda_28_dias >= 45.59 : 48.07 (28/25.81) [14/9.46]
+|   dia_semana_objetivo = jueves
+|   |   sin_anual_objetivo < 0.18 : 40.26 (33/66.88) [13/63.1]
+|   |   sin_anual_objetivo >= 0.18 : 55.28 (32/94.84) [14/169.29]
+|   dia_semana_objetivo = viernes
+|   |   sin_anual_objetivo < 0.18 : 48.28 (27/70.15) [19/119.28]
+|   |   sin_anual_objetivo >= 0.18 : 65.48 (32/128.06) [14/180.11]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 42.77 : 51.64 (24/68.64) [20/167.83]
+|   |   media_demanda_28_dias >= 42.77 : 71.89 (31/190.18) [15/140.28]
+|   dia_semana_objetivo = domingo : 37.18 (66/89.95) [24/95.67]
+producto = P060
+|   dia_semana_objetivo = lunes : 40.2 (61/123.65) [29/103.97]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 62.5 : 37.31 (46/42.15) [15/65.33]
+|   |   demanda_hoy >= 62.5 : 52.29 (22/83.79) [9/145.5]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 59.5 : 40 (30/45.16) [22/89.54]
+|   |   demanda_ayer >= 59.5 : 56.23 (27/121.11) [13/110.32]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hoy < 39.5 : 40.39 (33/57.86) [18/78.35]
+|   |   demanda_hoy >= 39.5 : 60.68 (34/97.26) [7/96.7]
+|   dia_semana_objetivo = viernes : 58.96 (61/247.5) [31/223.44]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 44.39 : 47.61 (27/26.4) [19/36.55]
+|   |   media_demanda_28_dias >= 44.39 : 67.66 (32/56.56) [12/53.1]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 44.8 : 28.04 (31/19.77) [15/11.68]
+|   |   media_demanda_28_dias >= 44.8 : 39.7 (29/17.64) [15/23.12]
+producto = P061
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 61 : 33.04 (35/34) [16/32.41]
+|   |   demanda_hoy >= 61 : 51.31 (20/75.65) [19/82.25]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 67.5 : 37.82 (46/45.59) [22/48.18]
+|   |   demanda_ayer >= 67.5 : 58.58 (20/75.29) [4/42.19]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 43.63 : 34.56 (21/20.63) [18/22.82]
+|   |   media_demanda_28_dias >= 43.63 : 49.43 (36/32.19) [17/40.47]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 46.55 : 38.15 (31/24.19) [15/36.03]
+|   |   media_demanda_28_dias >= 46.55 : 53.2 (26/23.37) [20/59.23]
+|   dia_semana_objetivo = viernes
+|   |   precio_objetivo < 90.72 : 72.82 (26/198.93) [12/374.26]
+|   |   precio_objetivo >= 90.72 : 52.44 (30/99.2) [24/125.92]
+|   dia_semana_objetivo = sabado
+|   |   indice_tiempo_objetivo < 179.5 : 53.12 (31/83.3) [11/217.22]
+|   |   indice_tiempo_objetivo >= 179.5 : 76.23 (31/198.45) [17/331.35]
+|   dia_semana_objetivo = domingo : 38.58 (54/147.44) [36/72.42]
+producto = P062
+|   precio_objetivo < 91.15
+|   |   media_demanda_7_dias < 49.21 : 59.56 (41/118.37) [30/103.48]
+|   |   media_demanda_7_dias >= 49.21 : 86.13 (38/156.26) [15/244.8]
+|   precio_objetivo >= 91.15
+|   |   dia_semana_objetivo = lunes
+|   |   |   media_demanda_28_dias < 43.3 : 30.85 (28/25.17) [6/5.61]
+|   |   |   media_demanda_28_dias >= 43.3 : 42.55 (38/33.04) [18/39.39]
+|   |   dia_semana_objetivo = martes
+|   |   |   media_demanda_28_dias < 47.79 : 32.38 (23/20.25) [9/40.56]
+|   |   |   media_demanda_28_dias >= 47.79 : 46.36 (30/20.98) [6/23.52]
+|   |   dia_semana_objetivo = miercoles : 44.47 (37/109.32) [29/55.39]
+|   |   dia_semana_objetivo = jueves
+|   |   |   media_demanda_28_dias < 45.02 : 37.69 (21/17.32) [8/49.03]
+|   |   |   media_demanda_28_dias >= 45.02 : 53.73 (29/30.12) [8/26]
+|   |   dia_semana_objetivo = viernes
+|   |   |   media_demanda_28_dias < 44.41 : 44.04 (20/16.56) [7/56.21]
+|   |   |   media_demanda_28_dias >= 44.41 : 63.08 (24/35.33) [15/48.9]
+|   |   dia_semana_objetivo = sabado : 60.16 (45/152.56) [23/176.66]
+|   |   dia_semana_objetivo = domingo
+|   |   |   media_demanda_28_dias < 47.77 : 29.57 (27/17.65) [15/27.52]
+|   |   |   media_demanda_28_dias >= 47.77 : 40.75 (33/26.19) [15/28.57]
+producto = P063
+|   dia_semana_objetivo = lunes : 43.06 (62/147.87) [28/114.18]
+|   dia_semana_objetivo = martes : 45.83 (58/172.46) [34/122.25]
+|   dia_semana_objetivo = miercoles : 50.82 (49/173.59) [43/191.24]
+|   dia_semana_objetivo = jueves
+|   |   indice_tiempo_objetivo < 177.5 : 39.67 (23/18.03) [19/26.88]
+|   |   indice_tiempo_objetivo >= 177.5 : 55.2 (27/29.11) [23/50.88]
+|   dia_semana_objetivo = viernes
+|   |   indice_tiempo_objetivo < 171.5 : 46.17 (26/28.73) [14/46.03]
+|   |   indice_tiempo_objetivo >= 171.5 : 65.25 (33/37.69) [19/33.6]
+|   dia_semana_objetivo = sabado : 68.92 (62/343.47) [28/461.17]
+|   dia_semana_objetivo = domingo : 40.28 (65/130.74) [25/118.36]
+producto = P064
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 167.5 : 31.42 (25/18.68) [13/34.84]
+|   |   indice_tiempo_objetivo >= 167.5 : 44.6 (36/22.23) [16/22.5]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 47.8 : 33.67 (25/19.32) [14/16.37]
+|   |   media_demanda_28_dias >= 47.8 : 47.21 (36/25.31) [17/14.25]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 141.5 : 42.25 (23/48.4) [9/190.28]
+|   |   indice_tiempo_objetivo >= 141.5 : 58.03 (36/99.6) [24/236.97]
+|   dia_semana_objetivo = jueves : 54.96 (56/175.08) [36/245.87]
+|   dia_semana_objetivo = viernes : 65.61 (66/292.37) [26/251.97]
+|   dia_semana_objetivo = sabado : 70.79 (65/289.42) [25/624.38]
+|   dia_semana_objetivo = domingo : 41.1 (53/158.05) [37/98.62]
+producto = P065
+|   media_demanda_28_dias < 52.71
+|   |   dia_semana_objetivo = lunes : 38.59 (33/49.42) [13/101.66]
+|   |   dia_semana_objetivo = martes : 41.69 (33/80.13) [15/131.41]
+|   |   dia_semana_objetivo = miercoles : 45.83 (33/80.47) [15/133.78]
+|   |   dia_semana_objetivo = jueves : 48.04 (24/117) [23/97.64]
+|   |   dia_semana_objetivo = viernes : 51.17 (29/36.27) [18/41.75]
+|   |   dia_semana_objetivo = sabado : 55.83 (29/62.04) [17/16.69]
+|   |   dia_semana_objetivo = domingo : 36.59 (31/43.24) [15/98.59]
+|   media_demanda_28_dias >= 52.71
+|   |   dia_semana_objetivo = lunes : 53.84 (29/112.39) [15/146.12]
+|   |   dia_semana_objetivo = martes : 56.66 (29/104.16) [15/165.89]
+|   |   dia_semana_objetivo = miercoles : 62.68 (28/155.74) [16/194.09]
+|   |   dia_semana_objetivo = jueves : 65.38 (27/218.74) [18/93.95]
+|   |   dia_semana_objetivo = viernes : 69.53 (32/38.58) [13/13.66]
+|   |   dia_semana_objetivo = sabado : 75.2 (30/57.38) [14/48.2]
+|   |   dia_semana_objetivo = domingo : 50.86 (29/109.56) [15/78.39]
+producto = P066
+|   dia_semana_objetivo = lunes : 46.86 (58/141.84) [32/167.57]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 51.2 : 35.4 (31/21.39) [12/25.9]
+|   |   media_demanda_28_dias >= 51.2 : 51.57 (32/21.92) [17/37.31]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 169.5 : 39.42 (28/19.9) [12/41.15]
+|   |   indice_tiempo_objetivo >= 169.5 : 56.12 (35/24.78) [17/46.57]
+|   dia_semana_objetivo = jueves : 57.63 (60/190.8) [32/286.06]
+|   dia_semana_objetivo = viernes : 68.88 (63/397.22) [29/184.65]
+|   dia_semana_objetivo = sabado : 74.99 (59/395.27) [31/352.09]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 59.5 : 36.58 (34/42.44) [19/44.36]
+|   |   demanda_hoy >= 59.5 : 54.14 (25/80.96) [12/71.02]
+producto = P067
+|   media_demanda_28_dias < 55.13
+|   |   dia_semana_objetivo = lunes : 40.13 (31/106.22) [17/101.23]
+|   |   dia_semana_objetivo = martes : 42.55 (30/88.5) [19/127.78]
+|   |   dia_semana_objetivo = miercoles : 46.71 (31/116.87) [17/114.56]
+|   |   dia_semana_objetivo = jueves : 48.44 (31/170.59) [17/90.73]
+|   |   dia_semana_objetivo = viernes : 58.13 (33/129.14) [15/316.06]
+|   |   dia_semana_objetivo = sabado : 56.65 (28/60.65) [20/77.34]
+|   |   dia_semana_objetivo = domingo : 33.29 (35/30.71) [13/9.66]
+|   media_demanda_28_dias >= 55.13
+|   |   dia_semana_objetivo = lunes : 56.79 (27/142.96) [15/88.78]
+|   |   dia_semana_objetivo = martes : 58.6 (33/140.79) [10/109.57]
+|   |   dia_semana_objetivo = miercoles : 66.91 (30/131.63) [14/233.87]
+|   |   dia_semana_objetivo = jueves : 70.09 (28/194.04) [16/103.84]
+|   |   dia_semana_objetivo = viernes : 82.45 (35/279.63) [9/87.62]
+|   |   dia_semana_objetivo = sabado : 80.69 (29/58.96) [13/49.64]
+|   |   dia_semana_objetivo = domingo : 47.98 (24/29.33) [18/18.72]
+producto = P068
+|   dia_semana_objetivo = lunes : 48.34 (59/176.32) [31/157.04]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 65.5 : 38.44 (25/15.99) [11/35.31]
+|   |   demanda_ayer >= 65.5 : 59.88 (41/90.19) [15/181.61]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 52.68 : 40.95 (28/24.92) [14/17.62]
+|   |   media_demanda_28_dias >= 52.68 : 59.54 (31/31.96) [19/30.08]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 53.96 : 44.93 (30/23.51) [14/47.17]
+|   |   media_demanda_28_dias >= 53.96 : 62.75 (31/26.04) [17/41.5]
+|   dia_semana_objetivo = viernes : 72.65 (61/403.47) [31/186.17]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 61.16 : 66.98 (34/171.15) [17/308.59]
+|   |   media_demanda_28_dias >= 61.16 : 93.28 (25/312.77) [14/285.94]
+|   dia_semana_objetivo = domingo : 46.56 (53/162.9) [37/137.08]
+producto = P069
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 54.21 : 36.23 (24/17.6) [16/16.41]
+|   |   media_demanda_28_dias >= 54.21 : 51.68 (34/28.81) [16/29.7]
+|   dia_semana_objetivo = martes : 52.34 (58/216) [34/197.67]
+|   dia_semana_objetivo = miercoles : 57.85 (58/227.36) [34/302.58]
+|   dia_semana_objetivo = jueves : 60.66 (62/276.01) [30/258]
+|   dia_semana_objetivo = viernes : 72.52 (59/398.23) [33/359.18]
+|   dia_semana_objetivo = sabado : 79.36 (58/508.83) [32/328.39]
+|   dia_semana_objetivo = domingo
+|   |   indice_tiempo_objetivo < 166.5 : 33.37 (24/29.58) [14/37.85]
+|   |   indice_tiempo_objetivo >= 166.5 : 48.4 (36/36.65) [16/20.01]
+producto = P070
+|   dia_semana_objetivo = lunes : 51.5 (52/160.39) [38/170.83]
+|   dia_semana_objetivo = martes : 54.15 (70/153.68) [22/295.21]
+|   dia_semana_objetivo = miercoles : 59.07 (62/189.64) [30/252.46]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 57.5 : 46.48 (25/22.45) [17/43.8]
+|   |   media_demanda_28_dias >= 57.5 : 64.18 (33/30.78) [17/43.55]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 56.73 : 55.41 (31/34.22) [10/58.72]
+|   |   media_demanda_28_dias >= 56.73 : 77.22 (34/43.74) [17/60.05]
+|   dia_semana_objetivo = sabado : 80.67 (58/422.91) [32/454.25]
+|   dia_semana_objetivo = domingo : 48.61 (69/177.58) [21/123.48]
+producto = P071
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 59.68 : 39.4 (31/26.71) [11/64.82]
+|   |   media_demanda_28_dias >= 59.68 : 53.73 (34/48.47) [14/30.35]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 210.5
+|   |   |   media_demanda_28_dias < 52.91 : 38.69 (21/19.96) [8/8.38]
+|   |   |   media_demanda_28_dias >= 52.91 : 46.83 (20/25.29) [3/37.08]
+|   |   indice_tiempo_objetivo >= 210.5 : 58.08 (25/46.39) [15/60.74]
+|   dia_semana_objetivo = miercoles
+|   |   precio_objetivo < 16.37 : 79.96 (20/247.56) [4/326.29]
+|   |   precio_objetivo >= 16.37
+|   |   |   media_demanda_28_dias < 58.95 : 46.9 (24/24.46) [7/46.39]
+|   |   |   media_demanda_28_dias >= 58.95 : 62.11 (26/47.18) [11/51.13]
+|   dia_semana_objetivo = jueves : 65.17 (64/339.89) [28/203.12]
+|   dia_semana_objetivo = viernes : 77.33 (62/407.13) [30/303.38]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 59.5 : 67.44 (26/70.74) [22/114.38]
+|   |   demanda_hoy >= 59.5 : 99.67 (27/152.87) [15/585.36]
+|   dia_semana_objetivo = domingo : 48.56 (59/193.42) [31/100.66]
+producto = P072
+|   media_demanda_28_dias < 59.84
+|   |   dia_semana_objetivo = lunes : 45.87 (34/85.17) [13/147.54]
+|   |   dia_semana_objetivo = martes : 47.22 (29/68.31) [20/131.64]
+|   |   dia_semana_objetivo = miercoles : 53.86 (31/122.68) [18/130.84]
+|   |   dia_semana_objetivo = jueves : 56.39 (29/157.55) [20/98.23]
+|   |   dia_semana_objetivo = viernes : 60.79 (31/54.85) [16/45.09]
+|   |   dia_semana_objetivo = sabado : 65.21 (31/36.5) [16/85.57]
+|   |   dia_semana_objetivo = domingo : 43.89 (36/85.18) [11/59.28]
+|   media_demanda_28_dias >= 59.84
+|   |   dia_semana_objetivo = lunes : 63.51 (28/191.36) [15/110.66]
+|   |   dia_semana_objetivo = martes : 68.23 (31/227.72) [12/108.09]
+|   |   dia_semana_objetivo = miercoles : 74.53 (23/177.91) [20/277.89]
+|   |   dia_semana_objetivo = jueves : 79.3 (33/278.77) [10/198.84]
+|   |   dia_semana_objetivo = viernes : 82.04 (29/39) [16/70.51]
+|   |   dia_semana_objetivo = sabado : 90.49 (30/66.94) [13/68.71]
+|   |   dia_semana_objetivo = domingo : 59.84 (32/149.89) [11/146.36]
+producto = P073
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 85.5
+|   |   |   demanda_ayer < 61 : 42.03 (25/35.45) [10/42.65]
+|   |   |   demanda_ayer >= 61 : 54.54 (23/19.93) [1/22.46]
+|   |   demanda_hoy >= 85.5 : 71.19 (23/112.87) [8/212.43]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 67.04 : 44.51 (35/39.25) [20/64.69]
+|   |   media_demanda_28_dias >= 67.04 : 62.7 (26/35.39) [11/61.65]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 60.39 : 48.51 (27/27.21) [18/25.65]
+|   |   media_demanda_28_dias >= 60.39 : 68.15 (32/37.6) [15/75.21]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 66.02 : 57.75 (29/101.2) [22/238.88]
+|   |   media_demanda_28_dias >= 66.02 : 80.46 (28/219.38) [13/265.1]
+|   dia_semana_objetivo = viernes : 80.96 (65/447.9) [27/355.12]
+|   dia_semana_objetivo = sabado : 88.6 (58/554.37) [32/629.21]
+|   dia_semana_objetivo = domingo : 52.26 (63/211.93) [27/170.06]
+producto = P074
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 167.5 : 44.03 (27/89.02) [11/87.57]
+|   |   indice_tiempo_objetivo >= 167.5 : 64.96 (34/153.66) [18/225.79]
+|   dia_semana_objetivo = martes : 59.95 (58/251.41) [34/296.41]
+|   dia_semana_objetivo = miercoles : 65.62 (62/333.73) [30/314.46]
+|   dia_semana_objetivo = jueves : 69.33 (64/379.69) [28/269.66]
+|   dia_semana_objetivo = viernes : 83.33 (68/432.32) [24/589.76]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 62.13 : 65.58 (30/46.16) [13/81.53]
+|   |   media_demanda_28_dias >= 62.13 : 94.04 (32/80.09) [15/73.84]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 62.23 : 38.58 (33/23.74) [10/33.61]
+|   |   media_demanda_28_dias >= 62.23 : 55.68 (30/37.69) [17/26.68]
+producto = P075
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 85.5 : 46.72 (33/74.24) [20/83.74]
+|   |   demanda_hoy >= 85.5 : 70.81 (29/143.83) [8/127.87]
+|   dia_semana_objetivo = martes : 60.51 (56/244.96) [36/254.25]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 63.05 : 47.41 (21/39.3) [20/44.34]
+|   |   media_demanda_28_dias >= 63.05 : 69.14 (31/40.54) [20/59.55]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 63.21 : 50.56 (27/50.45) [14/56.63]
+|   |   media_demanda_28_dias >= 63.21 : 72.67 (34/63.46) [17/46.39]
+|   dia_semana_objetivo = viernes
+|   |   sin_anual_objetivo < 0.3 : 70.36 (35/252.66) [15/236.71]
+|   |   sin_anual_objetivo >= 0.3 : 98.76 (23/258.17) [19/439.39]
+|   dia_semana_objetivo = sabado : 90.28 (64/654.05) [26/406]
+|   dia_semana_objetivo = domingo : 53.92 (55/158.94) [35/297.71]
+producto = P076
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 66.55 : 43.54 (25/40.66) [16/56.58]
+|   |   media_demanda_28_dias >= 66.55 : 60.33 (29/29.77) [20/58.73]
+|   dia_semana_objetivo = martes
+|   |   sin_anual_objetivo < 0.18 : 51.43 (30/107.17) [16/258.3]
+|   |   sin_anual_objetivo >= 0.18 : 71.63 (31/177.61) [15/296.2]
+|   dia_semana_objetivo = miercoles : 67.82 (69/338.7) [23/177.76]
+|   dia_semana_objetivo = jueves
+|   |   indice_tiempo_objetivo < 163.5 : 58.18 (28/135.67) [10/205.85]
+|   |   indice_tiempo_objetivo >= 163.5 : 81.78 (36/216.4) [18/368.83]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 61.5 : 69.73 (35/158) [14/109.25]
+|   |   demanda_hoy >= 61.5 : 103.53 (28/267.65) [15/376.57]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 72 : 78.03 (37/191.81) [22/205.68]
+|   |   demanda_hoy >= 72 : 117.77 (21/289.9) [10/497.1]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 66.34 : 41.32 (34/34.79) [7/14.61]
+|   |   media_demanda_28_dias >= 66.34 : 57.37 (34/40.53) [15/38.16]
+producto = P077
+|   dia_semana_objetivo = lunes : 57.94 (55/266.98) [35/161.47]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 95.5 : 51.94 (35/80.23) [18/89.2]
+|   |   demanda_hoy >= 95.5 : 76.9 (23/146.51) [16/135.69]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_ayer < 96 : 58.15 (29/113.84) [24/55.9]
+|   |   demanda_ayer >= 96 : 85.03 (24/168.94) [15/194.3]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 61.45 : 52.36 (24/45.66) [12/57.04]
+|   |   media_demanda_28_dias >= 61.45 : 74.02 (35/58.63) [21/64.34]
+|   dia_semana_objetivo = viernes
+|   |   indice_tiempo_objetivo < 157.5 : 63.94 (20/47.93) [16/66.03]
+|   |   indice_tiempo_objetivo >= 157.5 : 86.11 (38/70.9) [18/119.72]
+|   dia_semana_objetivo = sabado : 93.7 (59/597.52) [31/463.43]
+|   dia_semana_objetivo = domingo : 55.21 (60/229.5) [30/121.45]
+producto = P078
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 65.25 : 44.98 (28/30.96) [13/45.02]
+|   |   media_demanda_28_dias >= 65.25 : 61.65 (31/47.98) [18/32.91]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 66.07 : 47.73 (30/43.72) [14/9.92]
+|   |   media_demanda_28_dias >= 66.07 : 65.83 (34/44.79) [14/49.87]
+|   dia_semana_objetivo = miercoles
+|   |   indice_tiempo_objetivo < 155.5 : 57.08 (27/121.81) [9/192.76]
+|   |   indice_tiempo_objetivo >= 155.5 : 79.88 (33/158.74) [23/400.78]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hace_7_dias < 54.5 : 63.57 (31/103.93) [20/371.81]
+|   |   demanda_hace_7_dias >= 54.5 : 88 (21/186.85) [20/407.11]
+|   dia_semana_objetivo = viernes : 88.1 (59/506.5) [33/445.74]
+|   dia_semana_objetivo = sabado : 96.8 (56/544.32) [34/636.36]
+|   dia_semana_objetivo = domingo : 56.9 (61/207.92) [29/240.9]
+producto = P079
+|   media_demanda_28_dias < 69.86
+|   |   dia_semana_objetivo = lunes : 52.91 (27/101.82) [17/118.69]
+|   |   dia_semana_objetivo = martes : 54.52 (37/163.07) [9/63.71]
+|   |   dia_semana_objetivo = miercoles : 61.74 (31/154.42) [15/167.28]
+|   |   dia_semana_objetivo = jueves : 63.24 (34/161.77) [12/126.84]
+|   |   dia_semana_objetivo = viernes : 68.3 (26/70.35) [18/82.21]
+|   |   dia_semana_objetivo = sabado : 74.43 (32/65.55) [12/99.41]
+|   |   dia_semana_objetivo = domingo : 49.39 (26/117.4) [18/79.24]
+|   media_demanda_28_dias >= 69.86
+|   |   dia_semana_objetivo = lunes : 70.54 (33/254.14) [13/110.04]
+|   |   dia_semana_objetivo = martes : 74.57 (31/193.7) [15/272.86]
+|   |   dia_semana_objetivo = miercoles : 83.41 (27/223.48) [19/443.87]
+|   |   dia_semana_objetivo = jueves : 87.7 (31/232.82) [15/415.78]
+|   |   dia_semana_objetivo = viernes : 93.38 (25/58.22) [23/137.56]
+|   |   dia_semana_objetivo = sabado : 103.39 (29/77.62) [17/138.59]
+|   |   dia_semana_objetivo = domingo : 66.91 (30/226.12) [16/157.81]
+producto = P080
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 101
+|   |   |   demanda_ayer < 61.5 : 44.27 (20/30.53) [6/76.79]
+|   |   |   demanda_ayer >= 61.5 : 59.63 (22/19.41) [10/64.8]
+|   |   demanda_hoy >= 101 : 80.13 (21/122.25) [11/154.17]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 68.05 : 48 (28/50.86) [14/32.95]
+|   |   media_demanda_28_dias >= 68.05 : 70.04 (34/71.2) [16/100.77]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 68.16 : 54.26 (30/45.44) [12/37.78]
+|   |   media_demanda_28_dias >= 68.16 : 77.06 (38/69.92) [12/121.82]
+|   dia_semana_objetivo = jueves
+|   |   precio_objetivo < 28.69 : 96.67 (27/405) [9/447.58]
+|   |   precio_objetivo >= 28.69 : 65.8 (40/175.47) [16/194.24]
+|   dia_semana_objetivo = viernes : 93.34 (64/734.31) [28/456.89]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 70.5 : 84.66 (37/283.68) [16/275.15]
+|   |   demanda_hoy >= 70.5 : 122.62 (23/462.6) [14/566.04]
+|   dia_semana_objetivo = domingo : 59.93 (55/238.37) [35/281.44]
+producto = P081
+|   dia_semana_objetivo = lunes
+|   |   precio_objetivo < 30.09 : 77.29 (23/188.48) [15/343.72]
+|   |   precio_objetivo >= 30.09 : 54.12 (33/109.27) [19/89.69]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 147.5 : 53 (26/89.65) [8/139.06]
+|   |   indice_tiempo_objetivo >= 147.5 : 75.45 (36/242.79) [22/341.14]
+|   dia_semana_objetivo = miercoles : 75.04 (58/414.24) [34/404.72]
+|   dia_semana_objetivo = jueves : 78.8 (69/529.98) [23/338.56]
+|   dia_semana_objetivo = viernes : 93.92 (63/573.35) [29/711.96]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 68.8 : 73.05 (26/80.79) [14/119.68]
+|   |   media_demanda_28_dias >= 68.8 : 105.12 (38/114.39) [12/175.06]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 78.77 : 45.7 (34/54.69) [16/70.84]
+|   |   media_demanda_28_dias >= 78.77 : 63.27 (29/45.07) [11/41.61]
+producto = P082
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 102.5 : 54.71 (42/113.81) [17/139.48]
+|   |   demanda_hoy >= 102.5 : 83.81 (21/201.57) [10/291.94]
+|   dia_semana_objetivo = martes : 68.42 (66/336.8) [26/408.32]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 67.63 : 53.27 (24/48.86) [13/25.82]
+|   |   media_demanda_28_dias >= 67.63 : 78.11 (39/62.62) [16/95.13]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 71.88 : 58.33 (25/53.91) [15/110.5]
+|   |   media_demanda_28_dias >= 71.88 : 82.38 (35/54.52) [17/77.02]
+|   dia_semana_objetivo = viernes : 96 (60/751.52) [32/405.27]
+|   dia_semana_objetivo = sabado : 103.49 (61/819.94) [29/727.02]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hace_7_dias < 64.5 : 47.94 (23/104.22) [11/56.18]
+|   |   demanda_hace_7_dias >= 64.5 : 68.79 (39/130.65) [17/390.12]
+producto = P083
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 73.2 : 48.19 (27/49.46) [10/56.44]
+|   |   media_demanda_28_dias >= 73.2 : 66.81 (24/40.44) [29/78.09]
+|   dia_semana_objetivo = martes : 70.04 (65/376.01) [27/283.3]
+|   dia_semana_objetivo = miercoles : 78.17 (57/519.93) [35/274]
+|   dia_semana_objetivo = jueves
+|   |   demanda_ayer < 57.5 : 67.19 (32/119.75) [15/292.73]
+|   |   demanda_ayer >= 57.5 : 95.47 (32/371.23) [13/377.6]
+|   dia_semana_objetivo = viernes : 97.65 (63/665.08) [29/554.24]
+|   dia_semana_objetivo = sabado : 105.78 (62/843.66) [28/726.17]
+|   dia_semana_objetivo = domingo : 55.64 (61/115.36) [29/245.69]
+producto = P084
+|   media_demanda_28_dias < 76.39
+|   |   dia_semana_objetivo = lunes : 56.91 (29/192.59) [15/110.3]
+|   |   dia_semana_objetivo = martes : 60.7 (30/228.92) [16/184.63]
+|   |   dia_semana_objetivo = miercoles : 66.83 (30/264.92) [16/150]
+|   |   dia_semana_objetivo = jueves : 63.57 (30/52.52) [16/41.79]
+|   |   dia_semana_objetivo = viernes : 75.96 (31/89.83) [14/66.97]
+|   |   dia_semana_objetivo = sabado : 90.73 (28/233.59) [16/779.32]
+|   |   dia_semana_objetivo = domingo : 55 (34/115.71) [10/229.8]
+|   media_demanda_28_dias >= 76.39
+|   |   dia_semana_objetivo = lunes : 78.26 (31/268.2) [15/222.64]
+|   |   dia_semana_objetivo = martes : 83.48 (30/320.57) [16/208.99]
+|   |   dia_semana_objetivo = miercoles : 91.74 (32/337.96) [14/279.42]
+|   |   dia_semana_objetivo = jueves : 86.35 (32/73.06) [14/88.42]
+|   |   dia_semana_objetivo = viernes : 102.32 (27/81.25) [20/117.65]
+|   |   dia_semana_objetivo = sabado : 122.96 (32/586.03) [14/510.49]
+|   |   dia_semana_objetivo = domingo : 74.26 (30/235.65) [16/147.12]
+producto = P085
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 84.95 : 54.54 (35/38.01) [19/49.85]
+|   |   media_demanda_28_dias >= 84.95 : 72.31 (22/51.65) [14/72.69]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 76.23 : 54.98 (33/51.72) [12/68.37]
+|   |   media_demanda_28_dias >= 76.23 : 76.32 (36/60.03) [11/83.39]
+|   dia_semana_objetivo = miercoles : 80.36 (65/439.75) [27/444.18]
+|   dia_semana_objetivo = jueves : 83.68 (57/523.27) [35/380.22]
+|   dia_semana_objetivo = viernes : 100.82 (63/651.77) [29/712.11]
+|   dia_semana_objetivo = sabado : 109.11 (69/858.92) [21/694.81]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 86.5 : 53.87 (39/74.09) [15/48.83]
+|   |   demanda_hoy >= 86.5 : 80.83 (25/144.87) [11/195.51]
+producto = P086
+|   media_demanda_28_dias < 23.82
+|   |   dia_semana_objetivo = lunes : 16.89 (24/23.47) [23/13.07]
+|   |   dia_semana_objetivo = martes : 18.08 (38/10.62) [11/27.7]
+|   |   dia_semana_objetivo = miercoles : 20.29 (30/19.45) [19/13.79]
+|   |   dia_semana_objetivo = jueves : 21.1 (36/20.56) [12/38.28]
+|   |   dia_semana_objetivo = viernes : 22.65 (30/10.18) [18/17.04]
+|   |   dia_semana_objetivo = sabado : 24.32 (30/7.33) [17/12.88]
+|   |   dia_semana_objetivo = domingo : 16.04 (27/13.8) [20/15.63]
+|   media_demanda_28_dias >= 23.82
+|   |   dia_semana_objetivo = lunes : 24.19 (29/23.76) [14/16.6]
+|   |   dia_semana_objetivo = martes : 25.77 (27/34.5) [16/20.29]
+|   |   dia_semana_objetivo = miercoles : 28.42 (29/25.32) [14/36.34]
+|   |   dia_semana_objetivo = jueves : 30.11 (29/27.22) [15/41.53]
+|   |   dia_semana_objetivo = viernes : 31.75 (30/9.65) [14/10.66]
+|   |   dia_semana_objetivo = sabado : 34.74 (34/13.06) [9/4.22]
+|   |   dia_semana_objetivo = domingo : 23.16 (21/11.58) [22/25.1]
+producto = P087
+|   dia_semana_objetivo = lunes : 21.4 (65/37.69) [25/28.95]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 24.36 : 16.89 (29/5.18) [15/3.73]
+|   |   media_demanda_28_dias >= 24.36 : 24.08 (33/5.91) [15/5.92]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 24.14 : 18.93 (27/7.71) [16/5.43]
+|   |   media_demanda_28_dias >= 24.14 : 26.65 (38/7.67) [11/5.2]
+|   dia_semana_objetivo = jueves
+|   |   precio_objetivo < 38.79 : 31.57 (33/37.19) [11/39.44]
+|   |   precio_objetivo >= 38.79 : 22.92 (33/19.14) [15/26.4]
+|   dia_semana_objetivo = viernes : 31.72 (62/60.47) [30/71.52]
+|   dia_semana_objetivo = sabado : 34.37 (54/80.73) [36/80.81]
+|   dia_semana_objetivo = domingo : 20.36 (69/35.79) [21/16.42]
+producto = P088
+|   media_demanda_28_dias < 26.11
+|   |   dia_semana_objetivo = lunes : 18.93 (33/25.29) [12/17.6]
+|   |   dia_semana_objetivo = martes : 19.91 (32/21.84) [15/19.69]
+|   |   dia_semana_objetivo = miercoles : 22.21 (35/25.71) [12/35.93]
+|   |   dia_semana_objetivo = jueves : 23.62 (29/16.41) [18/59.28]
+|   |   dia_semana_objetivo = viernes : 27.59 (28/27.96) [18/74.33]
+|   |   dia_semana_objetivo = sabado : 27.09 (29/17.56) [16/8.59]
+|   |   dia_semana_objetivo = domingo : 15.8 (31/5.34) [14/8]
+|   media_demanda_28_dias >= 26.11
+|   |   dia_semana_objetivo = lunes : 26.2 (33/27.14) [12/19]
+|   |   dia_semana_objetivo = martes : 27.6 (28/26.95) [17/37.37]
+|   |   dia_semana_objetivo = miercoles : 30.53 (31/38.73) [14/25.32]
+|   |   dia_semana_objetivo = jueves : 32 (32/29.54) [13/38.78]
+|   |   dia_semana_objetivo = viernes : 38 (32/57.91) [14/26.16]
+|   |   dia_semana_objetivo = sabado : 38.04 (24/10.58) [21/12.15]
+|   |   dia_semana_objetivo = domingo : 22.44 (26/4.4) [19/7.87]
+producto = P089
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 32.5 : 17.83 (23/6.45) [7/3.71]
+|   |   demanda_hoy >= 32.5 : 27.07 (42/18.66) [18/44.43]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 32.5 : 18.81 (26/4.79) [6/5.73]
+|   |   demanda_ayer >= 32.5 : 28.67 (46/22.07) [14/25.95]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 27.55 : 21.76 (29/6.38) [16/7.21]
+|   |   media_demanda_28_dias >= 27.55 : 29.09 (29/4.87) [18/6.97]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 26.38 : 22.18 (31/5.95) [9/16.45]
+|   |   media_demanda_28_dias >= 26.38 : 30.44 (31/5.9) [21/7.28]
+|   dia_semana_objetivo = viernes : 35.83 (56/90.3) [36/70.31]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 24.5 : 31.75 (20/22.06) [20/61.42]
+|   |   demanda_hoy >= 24.5 : 43.34 (32/47.89) [18/117.01]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 26.5 : 18.87 (29/10.82) [9/17.32]
+|   |   demanda_hoy >= 26.5 : 26.52 (38/20.3) [14/31.02]
+producto = P090
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 27.86 : 18.45 (23/6.75) [15/7.5]
+|   |   media_demanda_28_dias >= 27.86 : 25.23 (37/9.16) [15/12.87]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 30.3 : 23.1 (35/12.54) [16/52.56]
+|   |   media_demanda_28_dias >= 30.3 : 31.24 (28/50.32) [13/36.01]
+|   dia_semana_objetivo = miercoles : 29.85 (54/82.29) [38/30.14]
+|   dia_semana_objetivo = jueves : 31.32 (65/76.69) [27/67.18]
+|   dia_semana_objetivo = viernes : 37.32 (52/78.18) [40/106.1]
+|   dia_semana_objetivo = sabado : 39.66 (66/103.71) [24/114.54]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 27.16 : 17 (25/5) [11/5.37]
+|   |   media_demanda_28_dias >= 27.16 : 23.76 (35/7.27) [19/6.85]
+producto = P091
+|   dia_semana_objetivo = lunes : 26.24 (53/41.87) [37/76.48]
+|   dia_semana_objetivo = martes : 28.04 (64/57.61) [28/67.11]
+|   dia_semana_objetivo = miercoles : 31.15 (64/71) [28/61.44]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_28_dias < 30.5 : 24.98 (31/9.38) [17/13.82]
+|   |   media_demanda_28_dias >= 30.5 : 34.27 (25/9.58) [19/11.82]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_28_dias < 30.57 : 30.21 (32/14.25) [16/7.58]
+|   |   media_demanda_28_dias >= 30.57 : 40.68 (29/13.34) [15/20.06]
+|   dia_semana_objetivo = sabado : 42.24 (64/134.52) [26/123.87]
+|   dia_semana_objetivo = domingo : 24.91 (59/33.73) [31/69.99]
+producto = P092
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 30.73 : 20.35 (35/7.97) [8/7.02]
+|   |   media_demanda_28_dias >= 30.73 : 29.3 (29/10.41) [18/10.49]
+|   dia_semana_objetivo = martes
+|   |   indice_tiempo_objetivo < 147.5 : 20.59 (21/5.84) [13/8.8]
+|   |   indice_tiempo_objetivo >= 147.5 : 29.28 (43/11.21) [15/15.1]
+|   dia_semana_objetivo = miercoles : 32.64 (58/73.9) [34/96.88]
+|   dia_semana_objetivo = jueves : 34.29 (60/84.24) [32/69.99]
+|   dia_semana_objetivo = viernes
+|   |   indice_tiempo_objetivo < 199.5 : 34.63 (38/38.27) [10/48.92]
+|   |   indice_tiempo_objetivo >= 199.5 : 47.77 (27/69.58) [17/123.17]
+|   dia_semana_objetivo = sabado : 44.08 (57/176.49) [33/138.81]
+|   dia_semana_objetivo = domingo : 26.46 (59/49.04) [31/57.59]
+producto = P093
+|   media_demanda_28_dias < 31.32
+|   |   dia_semana_objetivo = lunes : 22.66 (32/22.87) [9/25.48]
+|   |   dia_semana_objetivo = martes : 24.74 (31/29.67) [12/23.06]
+|   |   dia_semana_objetivo = miercoles : 28 (28/29.11) [14/36.79]
+|   |   dia_semana_objetivo = jueves : 28.48 (32/40.05) [10/51.35]
+|   |   dia_semana_objetivo = viernes : 30.98 (29/11.91) [13/21.41]
+|   |   dia_semana_objetivo = sabado : 33.38 (25/13.44) [17/14.43]
+|   |   dia_semana_objetivo = domingo : 22.36 (29/22.14) [13/21.61]
+|   media_demanda_28_dias >= 31.32
+|   |   dia_semana_objetivo = lunes : 32.67 (31/47.89) [18/57.29]
+|   |   dia_semana_objetivo = martes : 35 (34/59.58) [15/40.23]
+|   |   dia_semana_objetivo = miercoles : 38.82 (36/64.41) [14/78.32]
+|   |   dia_semana_objetivo = jueves : 40.74 (28/56.38) [22/103.07]
+|   |   dia_semana_objetivo = viernes : 43.24 (34/20.28) [16/36.13]
+|   |   dia_semana_objetivo = sabado : 47.48 (32/25.51) [16/23.8]
+|   |   dia_semana_objetivo = domingo : 31.27 (36/46.75) [12/34.58]
+producto = P094
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 47 : 24.71 (34/17.68) [25/28.43]
+|   |   demanda_hoy >= 47 : 37.23 (20/29.21) [11/54.09]
+|   dia_semana_objetivo = martes
+|   |   media_demanda_28_dias < 32.55 : 22.55 (28/8.58) [14/15.64]
+|   |   media_demanda_28_dias >= 32.55 : 32.32 (32/15.63) [18/17.78]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 32.39 : 25.15 (30/10.01) [11/17.25]
+|   |   media_demanda_28_dias >= 32.39 : 35.57 (29/13.82) [22/23.2]
+|   dia_semana_objetivo = jueves : 36.13 (62/97.93) [30/92.99]
+|   dia_semana_objetivo = viernes : 43.5 (61/144.03) [31/130.92]
+|   dia_semana_objetivo = sabado : 46.71 (65/176.31) [25/97.94]
+|   dia_semana_objetivo = domingo
+|   |   demanda_hoy < 32.5 : 20.06 (30/16) [6/5]
+|   |   demanda_hoy >= 32.5 : 32.48 (36/33.97) [18/36.13]
+producto = P095
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_28_dias < 34.07 : 24.72 (27/23.14) [12/43.28]
+|   |   media_demanda_28_dias >= 34.07 : 35.04 (33/43.84) [18/43.99]
+|   dia_semana_objetivo = martes : 32.21 (58/88.83) [34/69.58]
+|   dia_semana_objetivo = miercoles : 35.47 (60/77.82) [32/102.91]
+|   dia_semana_objetivo = jueves
+|   |   demanda_hoy < 32.5 : 32.1 (38/30.76) [23/47.01]
+|   |   demanda_hoy >= 32.5 : 47.97 (21/54.88) [10/60.89]
+|   dia_semana_objetivo = viernes : 44.96 (58/130.53) [34/147.14]
+|   dia_semana_objetivo = sabado
+|   |   media_demanda_28_dias < 32.05 : 34.65 (21/12.57) [13/22.62]
+|   |   media_demanda_28_dias >= 32.05 : 49.36 (33/30.13) [23/26.09]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 32.48 : 20.44 (22/11.05) [14/9.79]
+|   |   media_demanda_28_dias >= 32.48 : 29.28 (43/16.07) [11/11.52]
+producto = P096
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 49 : 26.61 (28/20.97) [26/27.37]
+|   |   demanda_hoy >= 49 : 38.64 (21/36.47) [15/46.36]
+|   dia_semana_objetivo = martes
+|   |   demanda_ayer < 52.5 : 29.43 (39/20.33) [28/54.36]
+|   |   demanda_ayer >= 52.5 : 44.48 (20/51.86) [5/26.32]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 36.36 : 28.7 (30/20.62) [17/20.25]
+|   |   media_demanda_28_dias >= 36.36 : 39.31 (31/14.76) [14/19.53]
+|   dia_semana_objetivo = jueves
+|   |   indice_tiempo_objetivo < 177.5 : 29.67 (26/13.71) [16/27.34]
+|   |   indice_tiempo_objetivo >= 177.5 : 41.06 (33/11) [17/21.52]
+|   dia_semana_objetivo = viernes : 46.93 (64/129.89) [28/121.55]
+|   dia_semana_objetivo = sabado : 50.96 (58/150.79) [32/204.83]
+|   dia_semana_objetivo = domingo : 30.04 (59/58.2) [31/60.15]
+producto = P097
+|   dia_semana_objetivo = lunes
+|   |   indice_tiempo_objetivo < 188.5 : 25.25 (34/11.67) [10/6.56]
+|   |   indice_tiempo_objetivo >= 188.5 : 33.91 (29/12.95) [17/12.15]
+|   dia_semana_objetivo = martes : 34.67 (60/84.56) [32/105.09]
+|   dia_semana_objetivo = miercoles : 38.6 (68/117.3) [24/72.7]
+|   dia_semana_objetivo = jueves : 40.87 (66/119.81) [26/97.79]
+|   dia_semana_objetivo = viernes
+|   |   demanda_hoy < 37.5 : 41.09 (42/41.95) [15/45.55]
+|   |   demanda_hoy >= 37.5 : 61.4 (20/92.35) [15/108.27]
+|   dia_semana_objetivo = sabado
+|   |   demanda_hoy < 39.5 : 44.25 (37/44.72) [15/72.14]
+|   |   demanda_hoy >= 39.5 : 64.95 (24/77.54) [14/147.89]
+|   dia_semana_objetivo = domingo
+|   |   media_demanda_28_dias < 37.36 : 23.82 (27/12.1) [17/9.36]
+|   |   media_demanda_28_dias >= 37.36 : 31.93 (27/13.87) [19/15.06]
+producto = P098
+|   dia_semana_objetivo = lunes
+|   |   demanda_hoy < 45.5 : 29.11 (31/25.65) [15/39.61]
+|   |   demanda_hoy >= 45.5 : 41.18 (28/70.39) [16/53.68]
+|   dia_semana_objetivo = martes
+|   |   demanda_hoy < 54.5 : 29.82 (34/22.95) [15/29.46]
+|   |   demanda_hoy >= 54.5 : 44.42 (30/70.06) [13/54]
+|   dia_semana_objetivo = miercoles
+|   |   demanda_hoy < 36.5 : 34.91 (39/35.6) [25/60.17]
+|   |   demanda_hoy >= 36.5 : 52.75 (21/64.85) [7/109.44]
+|   dia_semana_objetivo = jueves
+|   |   media_demanda_7_dias < 40 : 32.62 (35/14.83) [15/29.4]
+|   |   media_demanda_7_dias >= 40 : 45.79 (28/19.39) [14/20.67]
+|   dia_semana_objetivo = viernes
+|   |   media_demanda_7_dias < 40.71 : 38.4 (35/17.74) [15/38.64]
+|   |   media_demanda_7_dias >= 40.71 : 53.69 (31/26.83) [11/35.66]
+|   dia_semana_objetivo = sabado : 54.79 (61/224.05) [29/209.26]
+|   dia_semana_objetivo = domingo : 32.54 (62/74.94) [28/67.53]
+producto = P099
+|   dia_semana_objetivo = lunes
+|   |   media_demanda_7_dias < 40.29 : 26.56 (30/11.25) [13/15.96]
+|   |   media_demanda_7_dias >= 40.29 : 36.3 (27/12.92) [20/21.27]
+|   dia_semana_objetivo = martes
+|   |   sin_anual_objetivo < 0.18 : 27.96 (27/14.84) [19/21.8]
+|   |   sin_anual_objetivo >= 0.18 : 38.67 (28/20.97) [18/10.17]
+|   dia_semana_objetivo = miercoles
+|   |   media_demanda_28_dias < 36.68 : 32.64 (22/32.39) [14/45.62]
+|   |   media_demanda_28_dias >= 36.68 : 47.39 (35/73.42) [21/113.15]
+|   dia_semana_objetivo = jueves
+|   |   precio_objetivo < 53.81 : 54.44 (23/138.3) [11/157.78]
+|   |   precio_objetivo >= 53.81
+|   |   |   indice_tiempo_objetivo < 163.5 : 31.21 (20/13.61) [8/18.24]
+|   |   |   indice_tiempo_objetivo >= 163.5 : 43.9 (20/27.69) [10/21.06]
+|   dia_semana_objetivo = viernes
+|   |   precio_objetivo < 54.19 : 63.2 (27/174.69) [13/136.47]
+|   |   precio_objetivo >= 54.19 : 44.04 (37/71.7) [15/55.27]
+|   dia_semana_objetivo = sabado : 55.97 (61/246.11) [29/240.9]
+|   dia_semana_objetivo = domingo : 33.64 (60/81.38) [30/89.42]
+producto = P100
+|   media_demanda_28_dias < 40.84
+|   |   dia_semana_objetivo = lunes : 29.67 (28/61.02) [15/30.84]
+|   |   dia_semana_objetivo = martes : 31.76 (29/43.76) [16/46.16]
+|   |   dia_semana_objetivo = miercoles : 36.07 (28/66.1) [17/41.93]
+|   |   dia_semana_objetivo = jueves : 36.91 (29/72.76) [15/48.84]
+|   |   dia_semana_objetivo = viernes : 39.84 (24/38.66) [19/23.39]
+|   |   dia_semana_objetivo = sabado : 42.47 (33/31.11) [10/15.37]
+|   |   dia_semana_objetivo = domingo : 28.65 (31/37.06) [12/72.47]
+|   media_demanda_28_dias >= 40.84
+|   |   dia_semana_objetivo = lunes : 42.91 (28/86.43) [19/46.84]
+|   |   dia_semana_objetivo = martes : 45.79 (36/117.27) [11/68.93]
+|   |   dia_semana_objetivo = miercoles : 50.3 (30/111.86) [17/119.81]
+|   |   dia_semana_objetivo = jueves : 51.94 (30/146.77) [18/83.28]
+|   |   dia_semana_objetivo = viernes : 55.61 (31/19.67) [18/24.82]
+|   |   dia_semana_objetivo = sabado : 61 (32/31.68) [15/54.87]
+|   |   dia_semana_objetivo = domingo : 41.28 (33/72.53) [14/65.97]
+
+Size of the tree : 1618

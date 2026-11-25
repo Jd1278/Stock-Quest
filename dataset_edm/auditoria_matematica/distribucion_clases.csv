@@ -1,0 +1,13 @@
+stage,clase,n,fraction
+raw,Apto,49779,0.49779
+raw,Bloqueo_Cognitivo,25248,0.25248
+raw,Exceso_Confianza,24973,0.24973
+referencia_reglas_NO_weka,Apto,39803,0.4975375
+referencia_reglas_NO_weka,Bloqueo_Cognitivo,20192,0.2524
+referencia_reglas_NO_weka,Exceso_Confianza,20005,0.2500625
+train,Apto,38385,0.49635989810300907
+train,Bloqueo_Cognitivo,19574,0.2531131599705171
+train,Exceso_Confianza,19374,0.25052694192647385
+test,Apto,7618,0.4925643346695978
+test,Bloqueo_Cognitivo,3964,0.25630415104099313
+test,Exceso_Confianza,3884,0.25113151428940905

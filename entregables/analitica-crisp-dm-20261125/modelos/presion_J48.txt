@@ -1,0 +1,289 @@
+J48 pruned tree
+------------------
+
+promocion_objetivo = no
+|   dia_semana_objetivo = lunes: no (7570.0/1.0)
+|   dia_semana_objetivo = martes: no (7570.0)
+|   dia_semana_objetivo = miercoles: no (7544.0/29.0)
+|   dia_semana_objetivo = jueves: no (7546.0/138.0)
+|   dia_semana_objetivo = viernes
+|   |   tendencia_7_dias <= 4.571429
+|   |   |   tendencia_7_dias <= 0.714286
+|   |   |   |   demanda_hace_7_dias <= 83
+|   |   |   |   |   sin_anual_objetivo <= 0.99725
+|   |   |   |   |   |   tendencia_7_dias <= -10: si (930.0/323.0)
+|   |   |   |   |   |   tendencia_7_dias > -10
+|   |   |   |   |   |   |   cos_anual_objetivo <= 0.056952
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 58
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 36
+|   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 42
+|   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias <= -1.142857
+|   |   |   |   |   |   |   |   |   |   |   |   almacen = norte
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_ayer <= 31
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 24.857143
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 20: no (46.0/22.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 20: si (51.0/13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 24.857143: no (121.0/48.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_ayer > 31: si (43.0/13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   almacen = sur: si (175.0/83.0)
+|   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias > -1.142857: no (226.0/90.0)
+|   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 42: no (67.0/8.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 36
+|   |   |   |   |   |   |   |   |   |   indice_tiempo_objetivo <= 45: no (53.0/21.0)
+|   |   |   |   |   |   |   |   |   |   indice_tiempo_objetivo > 45: si (425.0/163.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 58
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 65: no (170.0/40.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 65
+|   |   |   |   |   |   |   |   |   |   sin_anual_objetivo <= 0.686676: si (58.0/16.0)
+|   |   |   |   |   |   |   |   |   |   sin_anual_objetivo > 0.686676
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 73: si (30.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 73: no (34.0/13.0)
+|   |   |   |   |   |   |   cos_anual_objetivo > 0.056952
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 32: si (583.0/191.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 32
+|   |   |   |   |   |   |   |   |   cos_anual_objetivo <= 0.997634
+|   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 66
+|   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 37
+|   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 37.428571
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 28: no (68.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 28
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 42
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   almacen = norte
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_28_dias <= 35.142857: no (37.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_28_dias > 35.142857: si (55.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   almacen = sur: si (96.0/39.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 42: no (52.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 37.428571: no (39.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 37
+|   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 58
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 54
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 48.428571: si (322.0/100.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 48.428571
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_ayer <= 48: no (32.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   demanda_ayer > 48: si (39.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 54
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_28_dias <= 50.142857: no (44.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_28_dias > 50.142857
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 54.428571: si (46.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 54.428571: no (31.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 58: si (123.0/29.0)
+|   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 66
+|   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 62: no (57.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 62: si (99.0/27.0)
+|   |   |   |   |   |   |   |   |   cos_anual_objetivo > 0.997634: no (33.0/7.0)
+|   |   |   |   |   sin_anual_objetivo > 0.99725: no (54.0/9.0)
+|   |   |   |   demanda_hace_7_dias > 83
+|   |   |   |   |   tendencia_7_dias <= -17.285714
+|   |   |   |   |   |   demanda_ayer <= 73: si (37.0/7.0)
+|   |   |   |   |   |   demanda_ayer > 73
+|   |   |   |   |   |   |   demanda_hoy <= 87: no (33.0/13.0)
+|   |   |   |   |   |   |   demanda_hoy > 87: si (41.0/16.0)
+|   |   |   |   |   tendencia_7_dias > -17.285714
+|   |   |   |   |   |   media_demanda_28_dias <= 84.035714: no (172.0/26.0)
+|   |   |   |   |   |   media_demanda_28_dias > 84.035714
+|   |   |   |   |   |   |   media_demanda_7_dias <= 84.857143: si (42.0/12.0)
+|   |   |   |   |   |   |   media_demanda_7_dias > 84.857143: no (77.0/21.0)
+|   |   |   tendencia_7_dias > 0.714286
+|   |   |   |   cos_anual_objetivo <= 0.176471
+|   |   |   |   |   tendencia_7_dias <= 3
+|   |   |   |   |   |   demanda_hoy <= 51
+|   |   |   |   |   |   |   demanda_hace_7_dias <= 35
+|   |   |   |   |   |   |   |   demanda_hoy <= 28: no (55.0/14.0)
+|   |   |   |   |   |   |   |   demanda_hoy > 28: si (55.0/24.0)
+|   |   |   |   |   |   |   demanda_hace_7_dias > 35: no (168.0/25.0)
+|   |   |   |   |   |   demanda_hoy > 51
+|   |   |   |   |   |   |   demanda_hace_7_dias <= 68: si (83.0/37.0)
+|   |   |   |   |   |   |   demanda_hace_7_dias > 68: no (74.0/22.0)
+|   |   |   |   |   tendencia_7_dias > 3: no (166.0/26.0)
+|   |   |   |   cos_anual_objetivo > 0.176471
+|   |   |   |   |   demanda_hoy <= 74
+|   |   |   |   |   |   demanda_hace_7_dias <= 74
+|   |   |   |   |   |   |   demanda_ayer <= 23: no (73.0/16.0)
+|   |   |   |   |   |   |   demanda_ayer > 23
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 34: si (156.0/55.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 34
+|   |   |   |   |   |   |   |   |   demanda_ayer <= 31: no (45.0/4.0)
+|   |   |   |   |   |   |   |   |   demanda_ayer > 31
+|   |   |   |   |   |   |   |   |   |   demanda_hoy <= 41
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias <= 1.714286: si (32.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias > 1.714286: no (41.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 45: no (30.0)
+|   |   |   |   |   |   |   |   |   |   demanda_hoy > 41
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 58
+|   |   |   |   |   |   |   |   |   |   |   |   almacen = norte
+|   |   |   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias <= 2.142857: no (45.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   tendencia_7_dias > 2.142857: si (72.0/26.0)
+|   |   |   |   |   |   |   |   |   |   |   |   almacen = sur: si (105.0/38.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 58
+|   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy <= 58: no (32.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   demanda_hoy > 58
+|   |   |   |   |   |   |   |   |   |   |   |   |   almacen = norte: si (34.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   almacen = sur: no (40.0/18.0)
+|   |   |   |   |   |   demanda_hace_7_dias > 74: no (38.0/3.0)
+|   |   |   |   |   demanda_hoy > 74: si (51.0/11.0)
+|   |   tendencia_7_dias > 4.571429
+|   |   |   tendencia_7_dias <= 8.428571
+|   |   |   |   demanda_hoy <= 50: no (353.0/9.0)
+|   |   |   |   demanda_hoy > 50
+|   |   |   |   |   demanda_hace_7_dias <= 83
+|   |   |   |   |   |   demanda_hoy <= 73: no (96.0/27.0)
+|   |   |   |   |   |   demanda_hoy > 73: si (31.0/12.0)
+|   |   |   |   |   demanda_hace_7_dias > 83: no (54.0/4.0)
+|   |   |   tendencia_7_dias > 8.428571: no (1000.0/2.0)
+|   dia_semana_objetivo = sabado
+|   |   tendencia_7_dias <= 4.571429
+|   |   |   demanda_hace_7_dias <= 104
+|   |   |   |   demanda_hoy <= 70
+|   |   |   |   |   demanda_hace_7_dias <= 67
+|   |   |   |   |   |   tendencia_7_dias <= 2.142857
+|   |   |   |   |   |   |   demanda_hoy <= 46
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 46
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 30
+|   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 26.285714: si (602.0/108.0)
+|   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 26.285714: no (43.0/16.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 30: si (1245.0/122.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 46
+|   |   |   |   |   |   |   |   |   tendencia_7_dias <= -6.857143: si (133.0/23.0)
+|   |   |   |   |   |   |   |   |   tendencia_7_dias > -6.857143
+|   |   |   |   |   |   |   |   |   |   demanda_ayer <= 32
+|   |   |   |   |   |   |   |   |   |   |   cos_anual_objetivo <= 0.239557: no (60.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   cos_anual_objetivo > 0.239557: si (52.0/25.0)
+|   |   |   |   |   |   |   |   |   |   demanda_ayer > 32
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias <= 56: si (103.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_hace_7_dias > 56: no (65.0/25.0)
+|   |   |   |   |   |   |   demanda_hoy > 46: si (1229.0/80.0)
+|   |   |   |   |   |   tendencia_7_dias > 2.142857
+|   |   |   |   |   |   |   demanda_hoy <= 39
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 39
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 29: no (34.0/8.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 29: si (59.0/11.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 39: no (54.0/3.0)
+|   |   |   |   |   |   |   demanda_hoy > 39
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 56: si (174.0/23.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 56
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 55: no (31.0/4.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 55: si (59.0/11.0)
+|   |   |   |   |   demanda_hace_7_dias > 67
+|   |   |   |   |   |   tendencia_7_dias <= -10.857143: si (160.0/15.0)
+|   |   |   |   |   |   tendencia_7_dias > -10.857143
+|   |   |   |   |   |   |   media_demanda_28_dias <= 57.107143
+|   |   |   |   |   |   |   |   tendencia_7_dias <= -0.428571
+|   |   |   |   |   |   |   |   |   demanda_hoy <= 60
+|   |   |   |   |   |   |   |   |   |   media_demanda_7_dias <= 51.571429
+|   |   |   |   |   |   |   |   |   |   |   demanda_ayer <= 44: no (77.0/27.0)
+|   |   |   |   |   |   |   |   |   |   |   demanda_ayer > 44: si (37.0/13.0)
+|   |   |   |   |   |   |   |   |   |   media_demanda_7_dias > 51.571429: no (34.0/5.0)
+|   |   |   |   |   |   |   |   |   demanda_hoy > 60: si (39.0/12.0)
+|   |   |   |   |   |   |   |   tendencia_7_dias > -0.428571: no (91.0/13.0)
+|   |   |   |   |   |   |   media_demanda_28_dias > 57.107143
+|   |   |   |   |   |   |   |   demanda_hace_7_dias <= 84: si (135.0/15.0)
+|   |   |   |   |   |   |   |   demanda_hace_7_dias > 84: no (30.0/9.0)
+|   |   |   |   demanda_hoy > 70: si (1085.0/69.0)
+|   |   |   demanda_hace_7_dias > 104
+|   |   |   |   tendencia_7_dias <= -18: si (97.0/6.0)
+|   |   |   |   tendencia_7_dias > -18
+|   |   |   |   |   demanda_hoy <= 98
+|   |   |   |   |   |   cos_anual_objetivo <= 0.056952: no (83.0/15.0)
+|   |   |   |   |   |   cos_anual_objetivo > 0.056952
+|   |   |   |   |   |   |   demanda_hoy <= 86
+|   |   |   |   |   |   |   |   indice_tiempo_objetivo <= 193: no (31.0/10.0)
+|   |   |   |   |   |   |   |   indice_tiempo_objetivo > 193: si (30.0/14.0)
+|   |   |   |   |   |   |   demanda_hoy > 86: si (36.0/9.0)
+|   |   |   |   |   demanda_hoy > 98
+|   |   |   |   |   |   demanda_hace_7_dias <= 135: si (72.0/1.0)
+|   |   |   |   |   |   demanda_hace_7_dias > 135: no (31.0/6.0)
+|   |   tendencia_7_dias > 4.571429
+|   |   |   tendencia_7_dias <= 8.714286
+|   |   |   |   demanda_hoy <= 58: no (302.0/16.0)
+|   |   |   |   demanda_hoy > 58
+|   |   |   |   |   demanda_hace_7_dias <= 84: si (97.0/26.0)
+|   |   |   |   |   demanda_hace_7_dias > 84
+|   |   |   |   |   |   demanda_hoy <= 77: no (44.0)
+|   |   |   |   |   |   demanda_hoy > 77
+|   |   |   |   |   |   |   demanda_hace_7_dias <= 99: si (31.0/7.0)
+|   |   |   |   |   |   |   demanda_hace_7_dias > 99: no (30.0/10.0)
+|   |   |   tendencia_7_dias > 8.714286: no (889.0/8.0)
+|   dia_semana_objetivo = domingo: no (7544.0)
+promocion_objetivo = si
+|   dia_semana_objetivo = lunes
+|   |   tendencia_7_dias <= 2.142857
+|   |   |   tendencia_7_dias <= -0.285714: si (185.0/68.0)
+|   |   |   tendencia_7_dias > -0.285714
+|   |   |   |   cos_anual_objetivo <= -0.182817: no (107.0/15.0)
+|   |   |   |   cos_anual_objetivo > -0.182817
+|   |   |   |   |   tendencia_7_dias <= 0.571429: si (52.0/21.0)
+|   |   |   |   |   tendencia_7_dias > 0.571429: no (117.0/42.0)
+|   |   tendencia_7_dias > 2.142857: no (1169.0/62.0)
+|   dia_semana_objetivo = martes
+|   |   tendencia_7_dias <= 4.571429
+|   |   |   tendencia_7_dias <= 1.857143
+|   |   |   |   indice_tiempo_objetivo <= 56: no (51.0/24.0)
+|   |   |   |   indice_tiempo_objetivo > 56: si (390.0/91.0)
+|   |   |   tendencia_7_dias > 1.857143
+|   |   |   |   cos_anual_objetivo <= -0.78726: no (34.0/4.0)
+|   |   |   |   cos_anual_objetivo > -0.78726
+|   |   |   |   |   media_demanda_28_dias <= 29.142857: no (86.0/19.0)
+|   |   |   |   |   media_demanda_28_dias > 29.142857
+|   |   |   |   |   |   cos_anual_objetivo <= -0.063391
+|   |   |   |   |   |   |   cos_anual_objetivo <= -0.412034: si (53.0/24.0)
+|   |   |   |   |   |   |   cos_anual_objetivo > -0.412034: no (35.0/9.0)
+|   |   |   |   |   |   cos_anual_objetivo > -0.063391: si (137.0/50.0)
+|   |   tendencia_7_dias > 4.571429
+|   |   |   tendencia_7_dias <= 8.428571
+|   |   |   |   media_demanda_28_dias <= 45.464286: no (216.0/19.0)
+|   |   |   |   media_demanda_28_dias > 45.464286
+|   |   |   |   |   cos_anual_objetivo <= -0.063391: no (61.0/8.0)
+|   |   |   |   |   cos_anual_objetivo > -0.063391
+|   |   |   |   |   |   indice_tiempo_objetivo <= 175: si (42.0/14.0)
+|   |   |   |   |   |   indice_tiempo_objetivo > 175: no (50.0/21.0)
+|   |   |   tendencia_7_dias > 8.428571: no (475.0/18.0)
+|   dia_semana_objetivo = miercoles
+|   |   tendencia_7_dias <= 8.285714
+|   |   |   tendencia_7_dias <= 2.285714: si (508.0/16.0)
+|   |   |   tendencia_7_dias > 2.285714
+|   |   |   |   demanda_hoy <= 43
+|   |   |   |   |   tendencia_7_dias <= 5
+|   |   |   |   |   |   indice_tiempo_objetivo <= 134
+|   |   |   |   |   |   |   almacen = norte: no (49.0/22.0)
+|   |   |   |   |   |   |   almacen = sur: si (37.0/13.0)
+|   |   |   |   |   |   indice_tiempo_objetivo > 134: si (93.0/20.0)
+|   |   |   |   |   tendencia_7_dias > 5
+|   |   |   |   |   |   precio_objetivo <= 42.54: no (47.0/9.0)
+|   |   |   |   |   |   precio_objetivo > 42.54: si (55.0/23.0)
+|   |   |   |   demanda_hoy > 43: si (430.0/66.0)
+|   |   tendencia_7_dias > 8.285714
+|   |   |   cos_anual_objetivo <= -0.462305: no (102.0/16.0)
+|   |   |   cos_anual_objetivo > -0.462305
+|   |   |   |   indice_tiempo_objetivo <= 120: no (54.0/9.0)
+|   |   |   |   indice_tiempo_objetivo > 120
+|   |   |   |   |   tendencia_7_dias <= 11.428571
+|   |   |   |   |   |   media_demanda_28_dias <= 55.785714
+|   |   |   |   |   |   |   demanda_ayer <= 50: no (42.0/11.0)
+|   |   |   |   |   |   |   demanda_ayer > 50: si (30.0/14.0)
+|   |   |   |   |   |   media_demanda_28_dias > 55.785714: si (55.0/4.0)
+|   |   |   |   |   tendencia_7_dias > 11.428571: no (154.0/47.0)
+|   dia_semana_objetivo = jueves
+|   |   tendencia_7_dias <= 5.857143: si (963.0/50.0)
+|   |   tendencia_7_dias > 5.857143
+|   |   |   demanda_hoy <= 45
+|   |   |   |   demanda_hoy <= 40: no (34.0/14.0)
+|   |   |   |   demanda_hoy > 40: si (36.0/17.0)
+|   |   |   demanda_hoy > 45
+|   |   |   |   tendencia_7_dias <= 9.857143: si (316.0/39.0)
+|   |   |   |   tendencia_7_dias > 9.857143
+|   |   |   |   |   demanda_hoy <= 87
+|   |   |   |   |   |   almacen = norte
+|   |   |   |   |   |   |   sin_anual_objetivo <= 0.508356: no (50.0/16.0)
+|   |   |   |   |   |   |   sin_anual_objetivo > 0.508356: si (32.0/13.0)
+|   |   |   |   |   |   almacen = sur
+|   |   |   |   |   |   |   precio_objetivo <= 47.41: si (46.0/12.0)
+|   |   |   |   |   |   |   precio_objetivo > 47.41: no (34.0/14.0)
+|   |   |   |   |   demanda_hoy > 87: si (143.0/29.0)
+|   dia_semana_objetivo = viernes: si (1630.0)
+|   dia_semana_objetivo = sabado: si (1596.0)
+|   dia_semana_objetivo = domingo: no (1656.0/91.0)
+
+Number of Leaves  : 	147
+
+Size of the tree : 	283

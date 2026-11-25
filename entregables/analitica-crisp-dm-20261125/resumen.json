@@ -1,0 +1,43 @@
+{
+  "modelos_elegidos": {
+    "1": "RandomForest",
+    "2": "RandomForest",
+    "3": "RandomForest",
+    "4": "RandomForest"
+  },
+  "clasificacion": {
+    "modelo": "J48",
+    "AUC_validacion": {
+      "J48": 0.9754684679112615,
+      "RandomForest": 0.9749921971386254
+    },
+    "umbral": 0.09000000000000001,
+    "coste_FN_FP": 5,
+    "prevalencia_test": 0.24333333333333335,
+    "ROC_AUC": 0.9743612696880092,
+    "PR_AUC_AP": 0.9218644059186226,
+    "Brier": 0.05227146865853026,
+    "precision": 0.7376878130217028,
+    "recall": 0.9684931506849315,
+    "matriz_confusion": [
+      [
+        10093,
+        1257
+      ],
+      [
+        115,
+        3535
+      ]
+    ]
+  },
+  "MAE_h1_IC95_bootstrap_bloques_7dias": [
+    3.00031382436828,
+    3.2840338112214957
+  ],
+  "origenes_calibracion_por_serie": 72,
+  "semilla": 20261125,
+  "weka": "3.8.6",
+  "java": "21.0.11",
+  "datos_sinteticos": true,
+  "sha256_historial": "6e0d81794fcc94ad376cf85f2357221fd9eb9a2f69e58321b1398a1553dd30e5"
+}

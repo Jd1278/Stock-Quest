@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.5",
+  "pandas": "3.0.1",
+  "matplotlib": "3.11.2",
+  "scikit-learn": "1.9.1",
+  "weka": "3.8.6",
+  "java": "21.0.11",
+  "jar_sha256": {
+    "bounce.jar": "bffff1505335c02256b7ab2ccffbe4aa4d3ac9fe14c17557809b7c9d99d666ca",
+    "weka.jar": "932ea2f342b58fe45736389e9c426d5b5955e610d1f5f6485117f532068915e9"
+  }
+}

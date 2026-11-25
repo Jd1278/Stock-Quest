@@ -1,0 +1,5 @@
+RandomForest
+
+Bagging with 50 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 5.0 -V 0.001 -S 20261125 -depth 16 -do-not-check-capabilities
