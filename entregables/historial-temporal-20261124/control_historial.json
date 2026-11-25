@@ -1,0 +1,146 @@
+{
+  "synthetic": true,
+  "seed": 20261124,
+  "historyRows": 100000,
+  "historyFields": 15,
+  "products": 100,
+  "warehouses": [
+    "norte",
+    "sur"
+  ],
+  "series": 200,
+  "daysPerSeries": 500,
+  "start": "2025-07-12",
+  "end": "2026-11-23",
+  "policy": {
+    "leadTimeDays": 3,
+    "reviewDays": 1,
+    "coverageDays": 4,
+    "targetCycleService": 0.95,
+    "lostSalesNoBackorders": true,
+    "orderAt": "close of day t",
+    "receiptAt": "start of day t+3",
+    "calibration": "95th percentile of nonnegative maximum cumulative 1..4-day forecast errors, latest 60 fully observed origins; warmup documented in audit",
+    "initialInventory": "8 days of product base demand, not a forecast result"
+  },
+  "dateSplits": {
+    "trainTargetEnd": "2026-06-26",
+    "validationTargetStart": "2026-06-27",
+    "validationTargetEnd": "2026-09-09",
+    "testTargetStart": "2026-09-10",
+    "testTargetEnd": "2026-11-23"
+  },
+  "splitInfo": {
+    "h1": {
+      "entrenamiento": 64200,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200,
+      "baselineTest": {
+        "MAE": 4.4091,
+        "RMSE": 5.9234,
+        "trainedWEKAModel": false
+      }
+    },
+    "h2": {
+      "entrenamiento": 64000,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200,
+      "baselineTest": {
+        "MAE": 4.4091,
+        "RMSE": 5.9234,
+        "trainedWEKAModel": false
+      }
+    },
+    "h3": {
+      "entrenamiento": 63800,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200,
+      "baselineTest": {
+        "MAE": 4.4091,
+        "RMSE": 5.9234,
+        "trainedWEKAModel": false
+      }
+    },
+    "h4": {
+      "entrenamiento": 63600,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200,
+      "baselineTest": {
+        "MAE": 4.4091,
+        "RMSE": 5.9234,
+        "trainedWEKAModel": false
+      }
+    }
+  },
+  "nextTargets": [
+    "2026-11-24",
+    "2026-11-25",
+    "2026-11-26",
+    "2026-11-27"
+  ],
+  "serviceSimulation": {
+    "definition": "fraction of fully observed replenishment cycles without unsatisfied demand; lost sales",
+    "testCompleteReplenishmentCycles": 14800,
+    "testCyclesWithShortage": 1,
+    "observedCycleService": 0.9999324324324325,
+    "cycleBoundary": "start of a positive receipt through the day before the next positive receipt; test starts >= day 425; final censored cycle omitted",
+    "testDailyIntervals": 15000,
+    "testIntervalsWithShortage": 1,
+    "observedTestDailyService": 0.9999333333333333,
+    "productionCertification": false,
+    "note": "Baseline historical policy; not evaluation of a trained WEKA policy; not a guarantee of 95% for each series"
+  },
+  "temporalLeakageControls": [
+    "lags at or before origin",
+    "target prices and promotions from preannounced calendar",
+    "split by target date",
+    "predecir labels missing",
+    "raw future demand not generated beyond cutoff"
+  ],
+  "sha256": {
+    "auditoria_reposicion.csv": "d54066f28b409b8199dd6c0313b69dddb7c25873c8937eeff7ff1b19747a79ed",
+    "catalogo_productos.csv": "6009ecd565f119f881be1502e237de3b390901e1346004e358bb37762a63bb56",
+    "contexto_prediccion.csv": "fba8cbe37505cf64ca498001ed0872b213fdb26e2054ba2ea5f2914d0d89f200",
+    "diccionario_historial.csv": "597c4e3625d4cb143deede6dc40c31c0ff3ca2f7da1b0baab3b3729ad14c473a",
+    "diccionario_weka.csv": "a0111131af389e4b51c2d7862097cc86582748215be6fe0032881d576ec058c4",
+    "estado_para_reponer.csv": "e15b31c2f74b73d5e4c8e481e8a047797474338ca2ea08621a7ae414720eb599",
+    "historial_100000_15.arff": "853ad1fec83b2ce5b6ad41c97acc0f2163c7bdae32d0d9a99b10876fac49b9f2",
+    "historial_100000_15.csv": "6e0d81794fcc94ad376cf85f2357221fd9eb9a2f69e58321b1398a1553dd30e5",
+    "weka/h1/entrenamiento.arff": "e4722651c05de6bf37598c5fe997879e68e476f31d982b38fc89c0e478ddbf98",
+    "weka/h1/entrenamiento.csv": "cb5537065525b04a0f1cf1738dff8f407f9523db5865675aef1376e4e99e50b1",
+    "weka/h1/predecir.arff": "747fc0ce6b07ac0ff9b5a43de24c94a8c4183fedd005fe1ae17506cdf9607d50",
+    "weka/h1/predecir.csv": "c8763ed1ae11eb8433c09123fa93da0bd3d2d6cadf8775e948f44993ef8abd7c",
+    "weka/h1/prueba.arff": "bd3e74bc8596f921d76555982987eead609e0dfea190bf50e3c661e6e856832f",
+    "weka/h1/prueba.csv": "060b5f8da49b44395eb885a5eac1d0eb0e482d6ff83a5d1610bae79e8d530517",
+    "weka/h1/validacion.arff": "eb6991af440473ed12fda42ded205985773647ce84df5b3a837dc72040075763",
+    "weka/h1/validacion.csv": "471dc40e9b31d6c8d1ea2501e65ca0beab1f5d5c89da9ddfeeef54c3364ecf51",
+    "weka/h2/entrenamiento.arff": "46adb9b7a5520c169f28e6d0169dab6d9cf60bac2fa98c8caf0028cbc17b2b52",
+    "weka/h2/entrenamiento.csv": "8392235266700481df9ef0e1dd4e713fc5a6eb9b46d219a250ca5025d3de193e",
+    "weka/h2/predecir.arff": "d71fc926babfbb4f840a22bec1403f9ada5608000205a8198eafd12ce1c7bdc3",
+    "weka/h2/predecir.csv": "6c60720c87fbd93d7337880463c17d405c26445f63e59547e78b3634b0b35943",
+    "weka/h2/prueba.arff": "7492089d05bc7c72217f40ddebb969b5d237f280e0829ba97af017284d0d1a19",
+    "weka/h2/prueba.csv": "d54dda399faee5f134a7c2ed7e040a2d3e108def1c272dfc9ccb07b62afd847d",
+    "weka/h2/validacion.arff": "fce1d4eb14a8190388b2ce97f74a2332cbf6a81c03ceb24aab906981831d3483",
+    "weka/h2/validacion.csv": "6399bb74644a5a67a524da85e76342d41befac27eca49e20c244817eb5a76580",
+    "weka/h3/entrenamiento.arff": "301f6a1991b1e7e92bb3633000eac3e55573391a18174511a72a358e64666f93",
+    "weka/h3/entrenamiento.csv": "9d3fded0e36b25998371dce3cd5375253dfc663b01fffa5fb5e1f7f8465968cc",
+    "weka/h3/predecir.arff": "a61f39a67a774cfcbbfb527bac353610b35c730e1341c9ed15c61bacda50a316",
+    "weka/h3/predecir.csv": "c06bde9395707b91bd520d5fbef26eae51f20296f53032cd87601074187ffeb4",
+    "weka/h3/prueba.arff": "ce05615e99ad7e5adb46b564610fac09c39063dae298c9a35756cad850605d26",
+    "weka/h3/prueba.csv": "be8c80e28ab44fd0c410513d229c52b931a5450ecfdaa77265ca97fd98117112",
+    "weka/h3/validacion.arff": "5010526e1e904de50c72bc6c991dcb80952e0bcc16ac70814ea526fac11eee37",
+    "weka/h3/validacion.csv": "9409eba047e3754700ecea2c2c09e0f6a0d1d38b28fc90154553ccf97c57ddcd",
+    "weka/h4/entrenamiento.arff": "f9a3fc0d3e8f25cc065e73b0e6afe0a6e4226514b4ccc3a63c454ddb7fb7102d",
+    "weka/h4/entrenamiento.csv": "0dd8576828867e6f2491af7d7ae50e99d3051f0d3129bb895e949503abd658f0",
+    "weka/h4/predecir.arff": "d2ce29d41a11adda68f3244646ea19203c324c943f643e60faa92ca32fb6859c",
+    "weka/h4/predecir.csv": "f7d7b703cb2431791830df6b2c5fbb565bd897240a92375448c85f4404cd356d",
+    "weka/h4/prueba.arff": "58dda64359cfc736bb8b8a91517374c757e40f8020428dd65cee3d075418bdeb",
+    "weka/h4/prueba.csv": "9308edf212881f2f171b59fadb473479bd34328a484e27fcd77891c93ffaa855",
+    "weka/h4/validacion.arff": "1092227c4a5524d98716a0070536b700a8d256295f491fd34e9d4df6e8725a4c",
+    "weka/h4/validacion.csv": "bccfe4103b5145ca21fc431a6dc48a6657deab63f6ad2ee98bb05dff583a0147"
+  }
+}

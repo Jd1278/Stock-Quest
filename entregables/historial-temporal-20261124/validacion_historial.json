@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "historyRows": 100000,
+  "historyFields": 15,
+  "series": 200,
+  "daysPerSeries": 500,
+  "checks": [
+    "unique product/warehouse/date keys",
+    "consecutive dates",
+    "stock carryover and balance",
+    "sales constrained by availability",
+    "receipts exactly three days after orders",
+    "pipeline conservation",
+    "lag windows stay within series",
+    "lag and average values recomputed independently",
+    "split by target date",
+    "forecast labels missing",
+    "15-field ARFF structures",
+    "stock before replacing last baseline order",
+    "dataset SHA-256"
+  ],
+  "counts": {
+    "h1": {
+      "entrenamiento": 64200,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200
+    },
+    "h2": {
+      "entrenamiento": 64000,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200
+    },
+    "h3": {
+      "entrenamiento": 63800,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200
+    },
+    "h4": {
+      "entrenamiento": 63600,
+      "validacion": 15000,
+      "prueba": 15000,
+      "predecir": 200
+    }
+  },
+  "WEKAModelTrained": false,
+  "GUIExecuted": false,
+  "productionServiceCertified": false,
+  "WEKAArffImport": {
+    "status": "PASS",
+    "version": "3.8.6",
+    "files": 17,
+    "rowsAcrossHistoryAndDerivedFiles": 476400,
+    "fieldsPerFile": 15,
+    "classNumericForForecasting": true,
+    "unknownTargetsOnlyInPredictionFiles": true
+  }
+}
